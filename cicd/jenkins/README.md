@@ -2,7 +2,7 @@
 
 ##**Install Jenkins on JP-DTP-JENKINS-VM Ubuntu VM**
 
-1. Login(ssh) to the JP-DTP-JENKINS-VM as the root user using the private keys of the Jenkins VM:
+1. Login(ssh) to the JP-DTP-JENKINS-VM as the root user using the private keys of the Jenkins VM:\
       ssh azureadmin@cicd.southindia.cloudapp.azure.com  -i <local_ssh_keys_folder>/id_rsa
 
 2. Install Java.

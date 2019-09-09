@@ -30,12 +30,12 @@ e) Jenkins service will automatically start after the installation process is co
    
    You should see something similar to this:
    
-   ● jenkins.service - LSB: Start Jenkins at boot time
+`   ● jenkins.service - LSB: Start Jenkins at boot time
    Loaded: loaded (/etc/init.d/jenkins; generated)
    Active: active (exited) since Wed 2019-08-02 13:03:08 GMT; 2min 16s ago
        Docs: man:systemd-sysv-generator(8)
        Tasks: 0 (limit: 2319)
-   CGroup: /system.slice/jenkins.service
+   CGroup: /system.slice/jenkins.service`
 
 
 
@@ -51,8 +51,10 @@ c) Copy the password from your terminal, paste it into the Administrator passwor
         ![Customize Jenkins](/attachments/images/customize-jenkins.png)
 
 d) In next screen, the setup wizard will ask you whether you want to install suggested plugins or you want to select specific plugins. 
-   Click on the Install suggested plugins box, and the installation process will start immediately
+   Click on the Select Plugins to Install, and the installation process will start immediately
         ![Getting Jenkins Started](/attachments/images/jenkins-getting-started.png)   
+        
+e) Once the plugins are installed, you will be prompted to set up the first admin user. Fill out all required information and click Save and Continue
 
 
    

@@ -87,12 +87,28 @@
 
 **Add Credentails Page in Jenkins**
 
+**Pre-Requisite**\
+
+A) Make sure the user say 'dtpuser' with which the Jenkins wants to login to a target VM \
+   has got the DTPUser user created using the following scripts.
+   *  Create a user named dtpuser user 
+   sudo groupadd dtpuser \
+   sudo adduser --ingroup dtpuser dtpuser \
+   password: dtpuser
+   * Set default values for rest of the options
+   * Add DTP user to the sudoers file \
+   sudo usermod -aG sudo dtpuser 
+
 1. From Jenkins Home Page Click Credentials on the Left Side Panel.\
         ![Jenkins is Ready](/cicd/jenkins/images/credentials-page.png) 
 
-    
+2. Under Credentials click on Stores scoped to goto Jenkins --> Credentials --> System --> Global Credentials. \
 
+3. Click on Add Credentials and provide the user credentials for DTP User.\
+        ![Jenkins is Ready](/cicd/jenkins/images/add-dtpuser-credentials.png)     
 
+4. Once DTP User is Created it is shown in the Credentials page as follows:\
+        ![Jenkins is Ready](/cicd/jenkins/images/add-credentials.png)   
    
  
   

@@ -49,12 +49,15 @@ Each Architectural Layer has a set of Open Source packages which include:
 ### Integration
 
 NiFi
+
 Spark
+
 Kafka
 
 ### Data
 
 Hadoop
+
 Spark
 
 ### Business

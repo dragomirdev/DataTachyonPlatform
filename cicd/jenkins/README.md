@@ -69,6 +69,9 @@
 7. Click on the Start using Jenkins button and you will be redirected to the Jenkins dashboard \
    logged in as the admin user you have created in one of the previous steps.
         ![Jenkins is Ready](/cicd/jenkins/images/jenkins-homepage.png)  
+    \
+    Jenkins URL:  http://cicd.southindia.cloudapp.azure.com:8080
+    
 
 
    

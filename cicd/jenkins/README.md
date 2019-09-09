@@ -8,7 +8,7 @@
 
 2. Install Java.\
    sudo apt update \
-   sudo apt install openjdk-8-jdk \
+   sudo apt install openjdk-8-jdk 
 
 3. Add the Jenkins Debian repository:
    Import the GPG keys of the Jenkins repository using the following wget command:\

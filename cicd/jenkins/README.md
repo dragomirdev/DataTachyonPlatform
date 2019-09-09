@@ -1,6 +1,6 @@
 # CICD using Jenkins
 
-**Install Jenkins on JP-DTP-JENKINS-VM Ubuntu VM**
+**A) Install Jenkins on JP-DTP-JENKINS-VM Ubuntu VM**
 
 1. Login(ssh) to the JP-DTP-JENKINS-VM as the root user using the private keys of the Jenkins VM:\
       ssh azureadmin@cicd.southindia.cloudapp.azure.com  -i <local_ssh_keys_folder>/id_rsa
@@ -37,7 +37,7 @@
 
 
 
-**Setting Up Jenkins  on JP-DTP-JENKINS-VM Ubuntu VM**
+**B) Setting Up Jenkins  on JP-DTP-JENKINS-VM Ubuntu VM**
 
 1. Open your browser, use the link, http://cicd.southindia.cloudapp.azure.com:8080 \
        ![Unlock Jenkins](/cicd/jenkins/images/unlock-jenkins.png)
@@ -85,11 +85,11 @@
 
 
 
-**Add Credentails Page in Jenkins**
+**C) Add Credentails Page in Jenkins**
 
-**Pre-Requisite**\
+**Pre-Requisite**
 
-A) Make sure the user say 'dtpuser' with which the Jenkins wants to login to a target VM \
+a) Make sure the user say 'dtpuser' with which the Jenkins wants to login to a target VM \
    has got the DTPUser user created using the following scripts.
    *  Create a user named dtpuser user 
    sudo groupadd dtpuser \

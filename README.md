@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Data Tachyon Platform (DTP) is a software solution that provides a layered architecture for the delivery of end-to-end enterprise software projects.
+Data Tachyon Platform (DTP) is a software solution that provides a layered architecture for the delivery of end-to-end enterprise software projects with a focus on Big-Data AI Analytics solutions.
 
 ## DTP Types
 
@@ -22,6 +22,8 @@ Organisations that have a Cloud strategy in place can deploy DTP in MS-AZURE, Go
 
 
 ## Architectural Layers
+
+The DTP is divided into 4 architectural layers to make the management of software and data workflows easier.
 
 ### Integration
 

@@ -49,7 +49,18 @@
         ![Customize Jenkins](/cicd/jenkins/images/customize-jenkins.png)
 
 4. In next screen, the setup wizard will ask you whether you want to install suggested plugins or you want to select specific plugins. 
-   Click on the Select Plugins to Install, and the installation process will start immediately \
+   Click on the Select Plugins to Install, and select the following plugins\
+        Build Pipeline Plugin, \
+        Conditional Build Step \
+        Credentials \
+        Docker Pipeline \
+        Github plugin \
+        Pipeline \
+        Publish Over SSH \
+        SSH Agent Plugin \
+        SSH plugin \
+        
+   and the installation process will start immediately \
         ![Getting Jenkins Started](/cicd/jenkins/images/jenkins-getting-started.png)   
         
 5. Once the plugins are installed, you will be prompted to set up the first admin user. \

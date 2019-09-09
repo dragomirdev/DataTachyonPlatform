@@ -63,16 +63,23 @@ Spark
 ### Business
 
 Keras
+
 Tensorflow
+
 PyTorch
+
 Numpy
+
 Scipy
+
 SciKit-Learn
+
 Pandas
 
 ### Presentation
 
 Kibana/Logstash/ElasticSearch
+
 GoDot
 
 

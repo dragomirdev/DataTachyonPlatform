@@ -15,6 +15,7 @@ This is achieve all this by ensuring our code is always in a deployable state,
 **Installation of DTP using CI/CD with Jenkins:**
 Using CI/CD with Jenkins, The following DTP software components are installed on the Target VM.
        ![DTP CICD Pipeline](/cicd/images/dtp-cicd-pipeline.png)
+**Data Tachyon CI/CD Pipeline**
 * Data Ingestion using Nifi from the Remote SFTP Folder to landing directory to HDFS.
 * AI/Spark Packages form the Business Layer involving Data Cleansing & Data Preparation Stage. 
 * The Features and Model Generation is done by the AI Software Packages.

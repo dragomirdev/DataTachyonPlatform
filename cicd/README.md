@@ -19,7 +19,7 @@ Using CI/CD with Jenkins, The following DTP software components are installed on
 **Data Tachyon CI/CD Pipeline using Jenkins**
 * Data Ingestion using Nifi from the Remote SFTP Folder to landing directory to HDFS.
 * AI/Spark Packages form the Business Layer involving Data Cleansing & Data Preparation Stage. 
-* The Features and Model Generation is done by the AI Software Packages.
+* The Features and Model Generation is done by the AI Software Packages like Tensorflow, Keras, Pytorch, FastAI, etc.
 * Presentation Layer like  Elasticsearch, Logstash, Kibana  is used to Data Indexing & Data visualisation.
 
 

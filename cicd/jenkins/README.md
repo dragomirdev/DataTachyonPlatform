@@ -134,5 +134,5 @@ b) Add exception to sudoers file for the user dtpuser as follows:\
          ![Jenkins is Ready](/cicd/jenkins/images/configure_ssh_remote_hosts.png)     
  
  4. Once the Remote SSH Host click on Check Connection to test the connection is successful to the remote host as follows:\
-         ![Jenkins is Ready](/cicd/jenkins/images/add-credentials.png)   
+         ![Jenkins is Ready](/cicd/jenkins/images/ssh_remote_connection_test.png)   
     

@@ -42,5 +42,7 @@ e) Jenkins service will automatically start after the installation process is co
 **Setting Up Jenkins  on JP-DTP-JENKINS-VM Ubuntu VM**
 
 a) Open your browser, use the link, http://cicd.southindia.cloudapp.azure.com:8080
+   ![Unlock Jenkins](/attachments/images/unlock-jenkins.png)
    
+ 
   

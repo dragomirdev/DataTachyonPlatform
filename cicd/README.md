@@ -17,7 +17,8 @@ Using CI/CD with Jenkins, The following DTP software components are installed on
        ![DTP CICD Pipeline](/cicd/images/dtp-cicd-pipeline.png)
 * Data Ingestion using Nifi from the Remote SFTP Folder to landing directory to HDFS.
 * AI/Spark Packages form the Business Layer involving Data Cleansing & Data Preparation Stage. 
-* Presentation Layer like  Elasticsearch, Logstash, Kibana.
+* The Features and Model Generation is done by the AI Software Packages.
+* Presentation Layer like  Elasticsearch, Logstash, Kibana  is used to Data Indexing & Data visualisation.
 
 
 

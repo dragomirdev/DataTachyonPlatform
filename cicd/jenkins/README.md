@@ -82,6 +82,14 @@
         ![Jenkins is Ready](/cicd/jenkins/images/jenkins-homepage.png)  
     \
     Jenkins URL:  http://cicd.southindia.cloudapp.azure.com:8080
+
+
+
+**Add Credentails Page in Jenkins**
+
+1. From Jenkins Home Page Click Credentials on the Left Side Panel.\
+        ![Jenkins is Ready](/cicd/jenkins/images/credentials-page.png) 
+
     
 
 

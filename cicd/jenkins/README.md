@@ -43,4 +43,4 @@ e) Jenkins service will automatically start after the installation process is co
 
 a) Open your browser, use the link, http://cicd.southindia.cloudapp.azure.com:8080
    
-   ![layered](/.attachments/images/unlock-jenkins.png)  
+  

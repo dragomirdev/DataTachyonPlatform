@@ -58,6 +58,10 @@
         Email address: dtpadmin@jpyramid.co.uk                    \
         ![Jenkins Create Admin User](/attachments/images/jenkins-create-admin-user.png) 
 
+6. The next page is used to set the URL for your Jenkins instance. \
+   The field will be populated with an automatically generated URL.\
+        ![Jenkins Instance Url](/attachments/images/jenkins-instance-configuration.png)    
+
 
 
    

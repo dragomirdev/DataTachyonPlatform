@@ -100,10 +100,10 @@ a) Make sure the user say 'dtpuser' with which the Jenkins wants to login to a t
    sudo usermod -aG sudo dtpuser 
    
 b) Add exception to sudoers file for the user dtpuser as follows:\
-   sudo vi /etc/sudoers  \
-   dtpuser ALL=(ALL) NOPASSWD: ALL
+        sudo vi /etc/sudoers  \
+        dtpuser ALL=(ALL) NOPASSWD: ALL
   
-   save and exit
+        save and exit
    
    
 

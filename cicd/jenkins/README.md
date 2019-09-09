@@ -1,13 +1,19 @@
 # CICD using Jenkins
 
-[[_TOC_]]
+Table of contents
+=================
+
+<!--ts-->
+   * [Install Jenkins on JP-DTP-JENKINS-VM Ubuntu VM](#installation)
+   * [Setting Up Jenkins  on JP-DTP-JENKINS-VM Ubuntu VM](#setting)
+<!--te-->
 
 #Install Jenkins on JP-DTP-JENKINS-VM Ubuntu VM
 
 ##Prerequisites:
 
-1. Login(ssh) to the JP-DTP-JENKINS-VM as the root user using the private keys of the Jenkins VM 
-   ssh azureadmin@cicd.southindia.cloudapp.azure.com  -i <local_ssh_keys_folder>/id_rsa
+1. Login(ssh) to the JP-DTP-JENKINS-VM as the root user using the private keys of the Jenkins VM:
+      ssh azureadmin@cicd.southindia.cloudapp.azure.com  -i <local_ssh_keys_folder>/id_rsa
 
 2. Install Java.
    sudo apt update

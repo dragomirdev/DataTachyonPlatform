@@ -82,8 +82,13 @@ Kibana/Logstash/ElasticSearch
 
 GoDot
 
+## Software Configuration
 
+The main DTP software configuration covering all layers:
 
+![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-1.3-Tools-Architecture.jpeg)
+
+## Development Team and Business Value
 
 
 ![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-Images.001.jpeg)

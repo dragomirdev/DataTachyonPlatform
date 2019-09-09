@@ -4,6 +4,23 @@
 
 Data Tachyon Platform (DTP) is a software solution that provides a layered architecture for the delivery of end-to-end enterprise software projects.
 
+## DTP Types
+
+There are 3 types of DTP that can be deployed in an organisation i.e.
+
+#### On-Premise
+
+For organisations that have sensitive data where they would like to keep it on-premise, DTP can be installed directly on servers of their choice using any Linux-based OS (in our case Ubuntu).
+
+#### Hybrid
+
+Organisations that would like to do the majority of pre-processing on-premise and sending just a limited dataset to the Cloud then a Hybrid solution can be installed.
+
+#### Cloud
+
+Organisations that have a Cloud strategy in place can deploy DTP in MS-AZURE, Google, AWS or IBM Cloud environments.
+
+
 ## Architectural Layers
 
 ### Integration

@@ -98,6 +98,14 @@ a) Make sure the user say 'dtpuser' with which the Jenkins wants to login to a t
    * Set default values for rest of the options
    * Add DTP user to the sudoers file \
    sudo usermod -aG sudo dtpuser 
+   
+b) Add exception to sudoers file for the user dtpuser as follows:\
+   sudo vi /etc/sudoers
+   dtpuser ALL=(ALL) NOPASSWD: ALL
+  
+   save and exit
+   
+   
 
 1. From Jenkins Home Page Click Credentials on the Left Side Panel.\
         ![Jenkins is Ready](/cicd/jenkins/images/credentials-page.png) 
@@ -111,4 +119,20 @@ a) Make sure the user say 'dtpuser' with which the Jenkins wants to login to a t
         ![Jenkins is Ready](/cicd/jenkins/images/add-credentials.png)   
    
  
-  
+ 
+ **D) Configure SSH Remote Hosts** 
+ 
+ **Pre-Requisite**
+ 
+ a) Make sure the Target VMs like JP-DTP-NIFI-VM, JP-DTP-ELK-VM , etc are created with the public/private keys.
+ 
+ 1. From Jenkins Home Page Click Manage Jenkins on the Left Side Panel.\
+ 
+ 2. Under Manage Plugins click on Configure System. \
+ 
+ 3. Goto SSH Remote hosts and Click on Add to add a Remote SSH Host.\
+         ![Jenkins is Ready](/cicd/jenkins/images/configure_ssh_remote_hosts.png)     
+ 
+ 4. Once the Remote SSH Host click on Check Connection to test the connection is successful to the remote host as follows:\
+         ![Jenkins is Ready](/cicd/jenkins/images/add-credentials.png)   
+    

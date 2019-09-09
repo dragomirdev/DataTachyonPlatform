@@ -5,6 +5,7 @@
 1. Login(ssh) to the JP-DTP-JENKINS-VM as the root user using the private keys of the Jenkins VM:\
       ssh azureadmin@cicd.southindia.cloudapp.azure.com  -i <local_ssh_keys_folder>/id_rsa
 
+
 2. Install Java.
    sudo apt update
    sudo apt install openjdk-8-jdk
@@ -64,6 +65,10 @@
 
 6. Confirm the URL by clicking on the Save and Finish button and the setup process will be completed.\
         ![Jenkins is Ready](/cicd/jenkins/images/jenkins-is-ready.png)  
+
+7. Click on the Start using Jenkins button and you will be redirected to the Jenkins dashboard \
+   logged in as the admin user you have created in one of the previous steps.
+
 
 
    

@@ -42,6 +42,37 @@ The Business Layer is used to apply business logic to the datasets and create ne
 The Presentation Layer is used to visualise results and provide new data insights that are coming from the Business Layer.
 Visualisations can be expressed in a traditional 2D/3D format or 3D in a Virtual Reality format.
 
+## Software Layers
+
+Each Architectural Layer has a set of Open Source packages which include:
+
+### Integration
+
+NiFi
+Spark
+Kafka
+
+### Data
+
+Hadoop
+Spark
+
+### Business
+
+Keras
+Tensorflow
+PyTorch
+Numpy
+Scipy
+SciKit-Learn
+Pandas
+
+### Presentation
+
+Kibana/Logstash/ElasticSearch
+GoDot
+
+
 
 
 

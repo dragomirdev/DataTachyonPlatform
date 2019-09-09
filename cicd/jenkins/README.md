@@ -6,9 +6,9 @@
       ssh azureadmin@cicd.southindia.cloudapp.azure.com  -i <local_ssh_keys_folder>/id_rsa
 
 
-2. Install Java.
-   sudo apt update
-   sudo apt install openjdk-8-jdk
+2. Install Java.\
+   sudo apt update \
+   sudo apt install openjdk-8-jdk \
 
 3. Add the Jenkins Debian repository:
    Import the GPG keys of the Jenkins repository using the following wget command:\

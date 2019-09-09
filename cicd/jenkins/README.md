@@ -58,7 +58,7 @@
         Pipeline \
         Publish Over SSH \
         SSH Agent Plugin \
-        SSH plugin\ 
+        SSH plugin 
         
    and the installation process will start immediately \
         ![Getting Jenkins Started](/cicd/jenkins/images/jenkins-getting-started.png)   

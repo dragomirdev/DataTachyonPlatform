@@ -86,7 +86,7 @@ GoDot
 
 The main DTP software configuration covering all layers:
 
-![alt text](https://github.com/dragomirdev/DataTachyonPlatform/master/documentation/dtp/DTP-1.3-Tools-Architecture.jpeg)
+![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/documentation/dtp/DTP-1.3-Tools-Architecture.jpg)
 
 ## Development Team and Business Value
 

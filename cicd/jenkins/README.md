@@ -50,7 +50,7 @@
 
 4. In next screen, the setup wizard will ask you whether you want to install suggested plugins or you want to select specific plugins. 
    Click on the Select Plugins to Install, and select the following plugins\
-        Build Pipeline Plugin, \
+        Build Pipeline Plugin \
         Conditional Build Step \
         Credentials \
         Docker Pipeline \
@@ -58,7 +58,7 @@
         Pipeline \
         Publish Over SSH \
         SSH Agent Plugin \
-        SSH plugin \
+        SSH plugin\ 
         
    and the installation process will start immediately \
         ![Getting Jenkins Started](/cicd/jenkins/images/jenkins-getting-started.png)   

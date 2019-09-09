@@ -1,13 +1,5 @@
 # CICD using Jenkins
 
-Table of contents
-=================
-
-<!--ts-->
-   * [Install Jenkins on JP-DTP-JENKINS-VM Ubuntu VM](#installation)
-   * [Setting Up Jenkins  on JP-DTP-JENKINS-VM Ubuntu VM](#setting)
-<!--te-->
-
 #Install Jenkins on JP-DTP-JENKINS-VM Ubuntu VM
 
 ##Prerequisites:

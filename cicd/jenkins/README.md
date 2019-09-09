@@ -54,7 +54,8 @@ d) In next screen, the setup wizard will ask you whether you want to install sug
    Click on the Select Plugins to Install, and the installation process will start immediately
         ![Getting Jenkins Started](/attachments/images/jenkins-getting-started.png)   
         
-e) Once the plugins are installed, you will be prompted to set up the first admin user. Fill out all required information and click Save and Continue 
+e) Once the plugins are installed, you will be prompted to set up the first admin user. 
+   Fill out all required information and click Save and Continue:
         Username:      dtpadmin
         Password:      JPSpace2019$
         Email address: dtpadmin@jpyramid.co.uk

@@ -45,10 +45,15 @@ a) Open your browser, use the link, http://cicd.southindia.cloudapp.azure.com:80
        ![Unlock Jenkins](/attachments/images/unlock-jenkins.png)
 
 b) Use the following command to print the initial Jenkins alphanumeric password password on your terminal:
-   cat /var/lib/jenkins/secrets/initialAdminPassword
+        cat /var/lib/jenkins/secrets/initialAdminPassword
    
 c) Copy the password from your terminal, paste it into the Administrator password field and click Continue.
         ![Customize Jenkins](/attachments/images/customize-jenkins.png)
+
+d) In next screen, the setup wizard will ask you whether you want to install suggested plugins or you want to select specific plugins. 
+   Click on the Install suggested plugins box, and the installation process will start immediately
+        ![Getting Jenkins Started](/attachments/images/jenkins-getting-started.png)   
+
 
    
  

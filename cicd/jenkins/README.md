@@ -62,6 +62,8 @@
    The field will be populated with an automatically generated URL.\
         ![Jenkins Instance Url](/cicd/jenkins/images/jenkins-instance-configuration.png)    
 
+6. Confirm the URL by clicking on the Save and Finish button and the setup process will be completed.\
+        ![Jenkins is Ready](/cicd/jenkins/images/jenkins-is-ready.png)  
 
 
    

@@ -42,7 +42,14 @@ e) Jenkins service will automatically start after the installation process is co
 **Setting Up Jenkins  on JP-DTP-JENKINS-VM Ubuntu VM**
 
 a) Open your browser, use the link, http://cicd.southindia.cloudapp.azure.com:8080
-   ![Unlock Jenkins](/attachments/images/unlock-jenkins.png)
+       ![Unlock Jenkins](/attachments/images/unlock-jenkins.png)
+
+b) Use the following command to print the initial Jenkins alphanumeric password password on your terminal:
+   cat /var/lib/jenkins/secrets/initialAdminPassword
+   
+c) Copy the password from your terminal, paste it into the Administrator password field and click Continue.
+        ![Customize Jenkins](/attachments/images/customize-jenkins.png)
+
    
  
   

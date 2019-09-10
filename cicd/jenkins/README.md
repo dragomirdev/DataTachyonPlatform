@@ -97,23 +97,4 @@ b) Add exception to sudoers file for the user dtpuser as follows:\
 ![Jenkins is Ready](/cicd/jenkins/images/ssh_remote_connection_test.png)
 
 
-D) Create a Jenkins Job for DTP Nifi Installer:
 
-1. On Jenkins Home page, click on the New Item.
-
-2. Enter the Item name say DTP-Nifi-Installer.
-![Create-DTP-Nifi-Installer Jenkins](/integrationlayer/nifi/images/dtp-nifi-installer1.png)
-
-3. Select FreeStyle Project and Ok.
-
-4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option.
-![DiscardBuild-DTP-Nifi-Installer Jenkins](/integrationlayer/nifi/images/dtp-nifi-installer2.png)
-
-5. Tick the option, the  project  is parameterized.
-
-6. Add the String parameters and configure for the following key value parameters. \
-   TARGET_IP_ADDRESS: JP-DTP-NIFI-VM
-   SOURCE_SOFTWARE_LOCATION: /var/lib/jenkins/Tools/nifi-1.9.2-bin.zip
-   TARGET_SOFTWARE_LOCATION: /home/dtpuser
-   INSTALLATION_FILE_TO_RUN:nifi_remote_installation.sh
-![Parameterise-DTP-Nifi-Installer Jenkins](/integrationlayer/nifi/images/dtp-nifi-installer3.png)

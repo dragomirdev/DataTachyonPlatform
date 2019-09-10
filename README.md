@@ -115,3 +115,36 @@ The DTP is deployed in many different projects providing great Business Value to
 
 
 ![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-Images.002.jpeg)
+
+
+# Installation Process
+
+## Continuous Integration/Continuous Delivery
+
+### Jenkins
+
+## Integration Layer
+
+### NiFi
+
+## Data Layer
+
+### Hadoop
+
+### Spark
+
+### Hive
+
+### Hue
+
+## Business Layer
+
+### Tensorflow
+
+### PyTorch
+
+## Presentation Layer
+
+### Kibana/ElasticSearch/LogStash
+
+### GoDot

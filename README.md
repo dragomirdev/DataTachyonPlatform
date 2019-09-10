@@ -117,12 +117,15 @@ The DTP is deployed in many different projects providing great Business Value to
 ![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-Images.002.jpeg)
 
 
-- ! [#1589F0] # Installation Process
+```diff
++ # Installation Process
+```
 
-- ! [#1589F0] Test 
 
-'''diff
+
+```diff
 + test
+```
 
 ## Continuous Integration/Continuous Delivery
 

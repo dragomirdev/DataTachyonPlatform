@@ -117,7 +117,7 @@ The DTP is deployed in many different projects providing great Business Value to
 ![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-Images.002.jpeg)
 
 
-# Installation Process
+# ![#1589F0] Installation Process
 
 ## Continuous Integration/Continuous Delivery
 
@@ -135,7 +135,7 @@ The DTP is deployed in many different projects providing great Business Value to
 
 ### Hive
 
-### Hue
+### Hue
 
 ## Business Layer
 

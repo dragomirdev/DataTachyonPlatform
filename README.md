@@ -118,7 +118,7 @@ The DTP is deployed in many different projects providing great Business Value to
 
 
 ```html 
-// <font color="blue">Installation Process</font> 
+<p style='color:red'>Installation Process</p> 
 ```
 
 ## Continuous Integration/Continuous Delivery

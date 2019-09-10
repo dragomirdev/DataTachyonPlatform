@@ -13,7 +13,7 @@
 3. Add the Jenkins Debian repository:
    Import the GPG keys of the Jenkins repository using the following wget command:\
    wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-   
+
    Add the Jenkins repository to the system\
    sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'   
 
@@ -24,9 +24,9 @@
 5. Jenkins service will automatically start after the installation process is complete. \
    This can be verify it by printing the service status: \
    sudo systemctl status jenkins
-   
+
    You should see something similar to this:\
-   
+
     `   ● jenkins.service - LSB: Start Jenkins at boot time
        Loaded: loaded (/etc/init.d/jenkins; generated)
        Active: active (exited) since Wed 2019-08-02 13:03:08 GMT; 2min 16s ago
@@ -104,8 +104,7 @@ b) Add exception to sudoers file for the user dtpuser as follows:\
         dtpuser ALL=(ALL) NOPASSWD: ALL
   
         save and exit
-   
-   
+
 
 1. From Jenkins Home Page Click Credentials on the Left Side Panel.\
         ![Jenkins is Ready](/cicd/jenkins/images/credentials-page.png) 

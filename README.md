@@ -91,6 +91,12 @@ GoDot
 
 Jenkins
 
+## Software Dataflow
+
+The DTP enables a structured dataflow from each layer in order to provide an easier transition from data ingestion to data processing and visualisation as shown below
+
+
+
 ## Software Configuration
 
 The main DTP software configuration covering all layers:

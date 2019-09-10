@@ -101,6 +101,5 @@ There are different types of software development roles that can use DTP which i
 
 The DTP is deployed in many different projects providing great Business Value to the adopters of the platform:
 
-![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-Images.001.jpeg)
 
 ![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-Images.002.jpeg)

@@ -128,7 +128,7 @@ CI/CD is the main DTP component that is used for automated installation of all s
 
 To install Jenkins please go to
 
-![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/cicd/jenkins/README.md)
+![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/cicd/README.md)
 
 ## Integration Layer
 

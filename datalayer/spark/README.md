@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DataTachyonPlatform
 Data Tachyon Platform
 
@@ -28,3 +29,8 @@ UNINSTALL_SPARK_WORKER.sh
 ===========================
 
 Use this script to remove a spark worker node. This script takes no parameters.
+=======
+# DataTachyonPlatform
+Data Tachyon Platform
+
+>>>>>>> ee938a2c6d0078783bc17d5ff0c5ba9b6356de55

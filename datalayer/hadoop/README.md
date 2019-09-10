@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DataTachyonPlatform
 Data Tachyon Platform
 
@@ -54,3 +55,8 @@ UNINSTALL_HADOOP_DN.sh
 Use this script to remove a data node (i.e. data node one and two). The scripts takes two parameters …
 HADOOP_NN_IP – the IP address of the name name node
 HADOOP_NN_NAME – the host name of the name name node
+=======
+# DataTachyonPlatform
+Data Tachyon Platform
+
+>>>>>>> ee938a2c6d0078783bc17d5ff0c5ba9b6356de55

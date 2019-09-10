@@ -5,7 +5,6 @@
 1. Login(ssh) to the JP-DTP-JENKINS-VM as the root user using the private keys of the Jenkins VM:\
       ssh azureadmin@cicd.southindia.cloudapp.azure.com  -i <local_ssh_keys_folder>/id_rsa
 
-
 2. Install Java.\
    sudo apt update \
    sudo apt install openjdk-8-jdk 
@@ -107,7 +106,7 @@ b) Add exception to sudoers file for the user dtpuser as follows:\
 1. From Jenkins Home Page Click Credentials on the Left Side Panel.\
 ![Jenkins is Ready](/cicd/jenkins/images/credentials-page.png) 
 
-2. Under Credentials click on Stores scoped to goto Jenkins --> Credentials --> System --> Global Credentials. \
+2. Under Credentials click on Stores scoped to goto Jenkins --> Credentials --> System --> Global Credentials.
 
 3. Click on Add Credentials and provide the user credentials for DTP User.\
 ![Jenkins is Ready](/cicd/jenkins/images/add-dtpuser-credentials.png)     
@@ -128,7 +127,7 @@ b) Add exception to sudoers file for the user dtpuser as follows:\
  2. Under Manage Plugins click on Configure System. \
  
  3. Goto SSH Remote hosts and Click on Add to add a Remote SSH Host.\
- 
+
 ![Jenkins is Ready](/cicd/jenkins/images/configure_ssh_remote_hosts.png)     
  
  4. Once the Remote SSH Host click on Check Connection to test the connection is successful to the remote host as follows:\

@@ -1,6 +1,5 @@
 # DataTachyonPlatform
 
-<<<<<<< HEAD
 ## Introduction
 
 Data Tachyon Platform (DTP) is a software solution that provides a layered architecture for the delivery of end-to-end enterprise software projects with a focus on Big-Data AI Analytics solutions.
@@ -102,9 +101,6 @@ There are different types of software development roles that can use DTP which i
 
 The DTP is deployed in many different projects providing great Business Value to the adopters of the platform:
 
-=======
-
 ![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-Images.001.jpeg)
 
->>>>>>> ee938a2c6d0078783bc17d5ff0c5ba9b6356de55
 ![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-Images.002.jpeg)

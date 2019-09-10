@@ -1,6 +1,6 @@
 # DTP-Nifi Installation/Uninstallation
 
-#   DTP-Nifi-Installation
+# DTP-Nifi-Installation
 
 A) Create a Jenkins Job for DTP Nifi Installer:
 
@@ -42,3 +42,4 @@ A) Create a Jenkins Job for DTP Nifi Installer:
 
    ![AddBuildSteps-DTP-Nifi-Installer Jenkins](/integrationlayer/nifi/images/dtp-nifi-installer4.png)
 
+8. Click Save.

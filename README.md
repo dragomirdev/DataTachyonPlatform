@@ -60,6 +60,11 @@ Hadoop
 
 Spark
 
+Hive
+
+Hue
+
+
 ### Business
 
 Keras

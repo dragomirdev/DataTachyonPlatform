@@ -122,7 +122,13 @@ The DTP is deployed in many different projects providing great Business Value to
 
 ## Continuous Integration/Continuous Delivery
 
+CI/CD is the main DTP component that is used for automated installation of all software packages.  The installation process is co-ordinated with the Jenkins tool.
+
 ### Jenkins
+
+To install Jenkins please go to
+
+![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/cicd/jenkins/Readme.md)
 
 ## Integration Layer
 

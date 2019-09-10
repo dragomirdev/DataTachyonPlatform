@@ -95,6 +95,7 @@ Jenkins
 
 The DTP enables a structured dataflow from each layer in order to provide an easier transition from data ingestion to data processing and visualisation as shown below
 
+![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/documentation/dtp/DTP-1.3-DataFlow.png)
 
 
 ## Software Configuration

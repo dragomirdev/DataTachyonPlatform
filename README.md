@@ -121,25 +121,62 @@ To install Jenkins please go to
 
 ### NiFi
 
+To install NiFi please go to
+
+![NiFi Installation Process](/integrationlayer/nifi/README.md)
+
 ## Data Layer
 
 ### Hadoop
 
+To install Hadoop please go to
+
+![Hadoop Installation Process](/datalayer/hadoop/README.md)
+
+
 ### Spark
+
+To install Spark please go to
+
+![Spark Installation Process](/datalayer/spark/README.md)
 
 ### Hive
 
+To install Hive please go to
+
+![Hive Installation Process](/datalayer/hive/README.md)
+
 ### Hue
+
+To install Hue please go to
+
+![Hue Installation Process](/datalayer/hue/README.md)
 
 ## Business Layer
 
 ### Tensorflow
 
+To install Tensorflow please go to
+
+![Tensorflow Installation Process](/businesslayer/tensorflow/README.md)
+
 ### PyTorch
+
+To install PyTorch please go to
+
+![PyTorch Installation Process](/businesslayer/pytorch/README.md)
 
 ## Presentation Layer
 
-### Kibana/ElasticSearch/LogStash
+### ElasticSearch/LogStash/Kibana - ELK
+
+To install ELK please go to
+
+![ELK Installation Process](/presentationlayer/elk/README.md)
 
 ### GoDot
+
+To install GoDot please go to
+
+![GoDot Installation Process](/presentationlayer/godot/README.md)
 

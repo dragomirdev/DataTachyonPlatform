@@ -102,7 +102,7 @@ The DTP enables a structured dataflow from each layer in order to provide an eas
 
 The main DTP software configuration covering all layers:
 
-[DTP Tools Architecture](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-1.3-Tools-Architecture.jpg)
+![alt_text](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-1.3-Tools-Architecture.jpg)
 
 
 # Installation Process 

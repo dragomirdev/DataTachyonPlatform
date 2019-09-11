@@ -28,7 +28,7 @@
 
 5. Once the plugins are installed, you will be prompted to set up the first admin user. \
    Fill out all required information and click Save and Continue: \
-        Username:      admin                                   \
+        Username:      dtpadmin                                   \
         Password:      ******                               \
         Email address: admin@test       .co.uk                    \
 ![Jenkins Create Admin User](/cicd/jenkins/images/jenkins-create-admin-user.png)

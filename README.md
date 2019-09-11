@@ -172,11 +172,11 @@ To install PyTorch please go to
 
 To install ELK please go to
 
-![ELK Installation Process](/presentationlayer/elk/README.md)
+![ELK Installation Process](/presentationlayer/README.md)
 
 ### GoDot
 
 To install GoDot please go to
 
-![GoDot Installation Process](/presentationlayer/godot/README.md)
+![GoDot Installation Process](/presentationlayer/README.md)
 

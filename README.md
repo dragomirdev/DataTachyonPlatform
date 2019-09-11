@@ -95,14 +95,14 @@ Jenkins
 
 The DTP enables a structured dataflow from each layer in order to provide an easier transition from data ingestion to data processing and visualisation as shown below
 
-[DTP DataFlow](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/documentation/dtp/DTP-1.3-DataFlow.png)
+[DTP DataFlow](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-1.3-DataFlow.png)
 
 
 ## Software Configuration
 
 The main DTP software configuration covering all layers:
 
-[DTP Tools Architecture](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/documentation/dtp/DTP-1.3-Tools-Architecture.jpg)
+[DTP Tools Architecture](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-1.3-Tools-Architecture.jpg)
 
 
 # Installation Process 

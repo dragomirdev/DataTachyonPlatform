@@ -47,9 +47,9 @@
 
 ## Add Credentails Page in Jenkins
 
-This step enables the jenkins to connect using a given credentials which we are configuring.
+This step enables the jenkins to connect using a user credentials which is configured as follows.
 
-### Pre-Requisite Steps:
+### Pre-Requisite Steps
 
 1. Make sure the user say 'dtpuser' with which the Jenkins wants to login to a target VM has got the DTPUser user created using the following scripts.
 
@@ -83,12 +83,11 @@ This step enables the jenkins to connect using a given credentials which we are 
 
 ## Configure SSH Remote Hosts
 
-This step enables the jenkins to connect to the remote Host/VM to execute the shell commands/scripts.
+This step enables the jenkins to connect to the remote Host/VM to execute the shell commands/script on it.
 
 ### Pre-Requisite
 
 1. Make sure the Target VMs like JP-DTP-NIFI-VM, JP-DTP-ELK-VM , etc are created with the public/private keys.
-
 
 ### Configure Remote Hosts
 

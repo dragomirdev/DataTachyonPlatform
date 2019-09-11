@@ -158,13 +158,13 @@ To install Hue please go to
 
 To install Tensorflow please go to
 
-![Tensorflow Installation Process](/businesslayer/tensorflow/README.md)
+![Tensorflow Installation Process](/businesslayer/README.md)
 
 ### PyTorch
 
 To install PyTorch please go to
 
-![PyTorch Installation Process](/businesslayer/pytorch/README.md)
+![PyTorch Installation Process](/businesslayer/README.md)
 
 ## Presentation Layer
 

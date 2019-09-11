@@ -2,27 +2,26 @@
 
 ## Introduction
 
-## Continuous Integration(CI)
+### Continuous Integration(CI)
 It is used integrate code into a shared repository used by developers. 
 Each check-in is then verified by an automated build, allowing teams to detect problems early. By integrating regularly, you can detect errors quickly, and locate them more easily.
 
 The DTP uses Jenkins a free, open-source, Java-based tool that gives you a lot of flexibility.
 
-## Continuous Delivery (CD)
+### Continuous Delivery (CD)
 It is the ability to get changes of all types—including new features, configuration changes, bug fixes. This is achieve all this by ensuring our code is always in a deployable state, even in the face of teams of thousands of developers making changes on a daily basis.
 
-## Installation of DTP using CI/CD with Jenkins
+### Installation of DTP using CI/CD with Jenkins
 
 Using CI/CD with Jenkins, The following DTP software components are installed on the Target VM.
 ![DTP CICD Pipeline](/cicd/images/dtp-cicd-pipeline.png)
 
-## Data Tachyon CI/CD Pipeline using Jenkins
+### Data Tachyon CI/CD Pipeline using Jenkins
 
 * Data Ingestion using Nifi (Integration Layer) from the Remote SFTP Folder to landing directory in HDFS (Data Layer).
 * Data Cleansing & Data Preparation Stage id done using Hadoop/Spark Packages (Data Layer).
 * The Features and Model Generation is done by the AI Software Packages (Business Layer) like Tensorflow, Keras, Pytorch, FastAI, etc.
 * Data Indexing & Data visualisation is done by Elasticsearch, Logstash, Kibana(Presentation Layer).
-
 
 ## Install Jenkins on JP-DTP-JENKINS-VM Ubuntu VM/Server Node
 
@@ -61,7 +60,7 @@ For Jenkins Installation Scripts go to
 
 [Jenkins Scripts](/cicd/jenkins/scripts/jenkins_installation.sh)     `
 
-**D) Uninstall Jenkins on JP-DTP-JENKINS-VM Ubuntu VM**\
+## Uninstall Jenkins on JP-DTP-JENKINS-VM Ubuntu VM**\
 
 1. Stop Jenkins service first.
 

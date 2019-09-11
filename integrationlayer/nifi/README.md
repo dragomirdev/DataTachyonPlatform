@@ -2,7 +2,7 @@
 
 # DTP-Nifi-Installation
 
-A) Create a Jenkins Job for DTP Nifi Installer:
+## Create a Jenkins Job for DTP Nifi Installer:
 
 1. On Jenkins Home page, click on the New Item.
 
@@ -24,8 +24,7 @@ A) Create a Jenkins Job for DTP Nifi Installer:
 ![Parameterise-DTP-Nifi-Installer Jenkins](/integrationlayer/nifi/images/dtp-nifi-installer3.png)
 
 7. Under Build Option, Click on Add build step add the following steps
-   **Execute shell and add the following commands:** 
-
+   **Execute shell and add the following commands**\
    whoami && hostname && pwd
 
    echo "Running SCP to transfer file to Remote Server:"$TARGET_USERNAME@$TARGET_IP_ADDRESS
@@ -35,11 +34,11 @@ A) Create a Jenkins Job for DTP Nifi Installer:
    scp $INSTALLATION_FILE_TO_RUN $TARGET_USERNAME@$TARGET_IP_ADDRESS:$TARGET_SOFTWARE_LOCATION
 
    **Execute shell script on remote host using ssh** \
-   S    elect to run as a dtp user on the JP-DTP-NIFI-VM: 
+   Select to run as a dtp user on the JP-DTP-NIFI-VM:
 
    echo "Installing Nifi on Remote sever "
    ls -latr && ./nifi_remote_installation.sh
 
    ![AddBuildSteps-DTP-Nifi-Installer Jenkins](/integrationlayer/nifi/images/dtp-nifi-installer4.png)
 
-8. Click Save.
+8. Save the Job.

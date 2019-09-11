@@ -95,14 +95,14 @@ Jenkins
 
 The DTP enables a structured dataflow from each layer in order to provide an easier transition from data ingestion to data processing and visualisation as shown below
 
-![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/documentation/dtp/DTP-1.3-DataFlow.png)
+[DTP DataFlow](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/documentation/dtp/DTP-1.3-DataFlow.png)
 
 
 ## Software Configuration
 
 The main DTP software configuration covering all layers:
 
-![alt text](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/documentation/dtp/DTP-1.3-Tools-Architecture.jpg)
+[DTP Tools Architecture](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/documentation/dtp/DTP-1.3-Tools-Architecture.jpg)
 
 
 # Installation Process 
@@ -115,7 +115,7 @@ CI/CD is the main DTP component that is used for automated installation of all s
 
 To install Jenkins please go to
 
-![Jenkins Installation Process](/cicd/README.md)
+[Jenkins Installation Process](/cicd/README.md)
 
 ## Integration Layer
 
@@ -123,7 +123,7 @@ To install Jenkins please go to
 
 To install NiFi please go to
 
-![NiFi Installation Process](/integrationlayer/nifi/README.md)
+[NiFi Installation Process](/integrationlayer/nifi/README.md)
 
 ## Data Layer
 
@@ -131,26 +131,26 @@ To install NiFi please go to
 
 To install Hadoop please go to
 
-![Hadoop Installation Process](/datalayer/hadoop/README.md)
+[Hadoop Installation Process](/datalayer/hadoop/README.md)
 
 
 ### Spark
 
 To install Spark please go to
 
-![Spark Installation Process](/datalayer/spark/README.md)
+[Spark Installation Process](/datalayer/spark/README.md)
 
 ### Hive
 
 To install Hive please go to
 
-![Hive Installation Process](/datalayer/hive/README.md)
+[Hive Installation Process](/datalayer/hive/README.md)
 
 ### Hue
 
 To install Hue please go to
 
-![Hue Installation Process](/datalayer/hue/README.md)
+[Hue Installation Process](/datalayer/hue/README.md)
 
 ## Business Layer
 
@@ -158,13 +158,13 @@ To install Hue please go to
 
 To install Tensorflow please go to
 
-![Tensorflow Installation Process](/businesslayer/README.md)
+[Tensorflow Installation Process](/businesslayer/README.md)
 
 ### PyTorch
 
 To install PyTorch please go to
 
-![PyTorch Installation Process](/businesslayer/README.md)
+[PyTorch Installation Process](/businesslayer/README.md)
 
 ## Presentation Layer
 
@@ -172,11 +172,11 @@ To install PyTorch please go to
 
 To install ELK please go to
 
-![ELK Installation Process](/presentationlayer/README.md)
+[ELK Installation Process](/presentationlayer/README.md)
 
 ### GoDot
 
 To install GoDot please go to
 
-![GoDot Installation Process](/presentationlayer/README.md)
+[GoDot Installation Process](/presentationlayer/README.md)
 

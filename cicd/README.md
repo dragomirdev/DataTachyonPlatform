@@ -56,7 +56,10 @@ Using CI/CD with Jenkins, The following DTP software components are installed on
            Docs: man:systemd-sysv-generator(8)
            Tasks: 0 (limit: 2319)
        CGroup: /system.slice/jenkins.service
-       `
+
+For Jenkins Installation Scripts go to
+
+[Jenkins Scripts](/cicd/jenkins/scripts/jenkins_installation.sh)     `
 
 **D) Uninstall Jenkins on JP-DTP-JENKINS-VM Ubuntu VM**\
 

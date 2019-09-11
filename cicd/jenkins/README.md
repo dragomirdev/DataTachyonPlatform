@@ -1,4 +1,90 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+# DataTachyonPlatform
+Data Tachyon Platform
+
+The Data Tachyon Platform provides a number of scripts that allows you to install and uninstall its components on premise and in the cloud.
+
+The scripts can be copied to the target server and run manually or automated by creating a Jenkins job
+
+HADOOP_NN.sh
+=============
+
+Use this script to setup the hadoop name node. The script takes six parameters …
+HADOOP_SNN_IP – the IP address of the secondary name node
+HADOOP_SNN_NAME – the host name of the secondary name node
+HADOOP_DN_ONE_IP – the IP address of the first data node
+HADOOP_DN_ONE_NAME – the host name of the first data node
+HADOOP_DN_TWO_IP – the IP address of the second data node
+HADOOP_DN_TWO_NAME – the host name of the second data node
+
+UNINSTALL_HADOOP_NN.sh
+========================
+
+Use this script to remove the hadoop name node. The script takes six parameters …
+HADOOP_SNN_IP – the IP address of the secondary name node
+HADOOP_SNN_NAME – the host name of the secondary name node
+HADOOP_DN_ONE_IP – the IP address of the first data node
+HADOOP_DN_ONE_NAME – the host name of the first data node
+HADOOP_DN_TWO_IP – the IP address of the second data node
+HADOOP_DN_TWO_NAME – the host name of the second data node
+
+HADOOP_SNN.sh
+==============
+
+Use this script to setup the secondary name node. The scripts takes two parameters …
+HADOOP_NN_IP – the IP address of the name name node
+HADOOP_NN_NAME – the host name of the name name node
+
+UNINSTALL_HADOOP_SNN.sh
+=========================
+
+Use this script to remove the hadoop secondary name node. The scripts takes two parameters …
+HADOOP_NN_IP – the IP address of the name name node
+HADOOP_NN_NAME – the host name of the name name node
+
+HADOOP_DN.sh
+=============
+
+Use this script to setup a data node (i.e. data node one and two). The scripts takes two parameters …
+HADOOP_NN_IP – the IP address of the name name node
+HADOOP_NN_NAME – the host name of the name name node
+
+UNINSTALL_HADOOP_DN.sh
+========================
+
+Use this script to remove a data node (i.e. data node one and two). The scripts takes two parameters …
+HADOOP_NN_IP – the IP address of the name name node
+HADOOP_NN_NAME – the host name of the name name node
+
+SPARK_MASTER.sh
+================
+
+Use this script to setup the spark master. The scripts takes two parameters …
+SPARK_WORKER_IP - the IP address of the spark worker node
+SPARK_WORKER_NAME - the host name of the spark worker node
+
+UNINSTALL_SPARK_MASTER.sh
+==========================
+
+Use this script to remove the spark master. The scripts takes two parameters …
+SPARK_WORKER_IP - the IP address of the spark worker node
+SPARK_WORKER_NAME - the host name of the spark worker node
+
+SPARK_WORKER.sh
+================
+
+Use this script to setup a spark worker node. This script takes no parameters.
+
+UNINSTALL_SPARK_WORKER.sh
+===========================
+
+Use this script to remove a spark worker node. This script takes no parameters.
+=======
+# CICD using Jenkins
+=======
 # Configure Jenkins
+>>>>>>> dev
 
 ## Setting Up Jenkins  on JP-DTP-JENKINS-VM Ubuntu VM/Server Node
 
@@ -79,6 +165,29 @@ This step enables the jenkins to connect using a user credentials which is confi
 ![Jenkins is Ready](/cicd/jenkins/images/add-dtpuser-credentials.png)
 
 4. Once DTP User is Created it is shown in the Credentials page as follows:\
+<<<<<<< HEAD
+        ![Jenkins is Ready](/cicd/jenkins/images/add-credentials.png)   
+   
+ 
+ 
+ **D) Configure SSH Remote Hosts** 
+ 
+ **Pre-Requisite**
+ 
+ a) Make sure the Target VMs like JP-DTP-NIFI-VM, JP-DTP-ELK-VM , etc are created with the public/private keys.
+ 
+ 1. From Jenkins Home Page Click Manage Jenkins on the Left Side Panel.\
+ 
+ 2. Under Manage Plugins click on Configure System. \
+ 
+ 3. Goto SSH Remote hosts and Click on Add to add a Remote SSH Host.\
+         ![Jenkins is Ready](/cicd/jenkins/images/configure_ssh_remote_hosts.png)     
+ 
+ 4. Once the Remote SSH Host click on Check Connection to test the connection is successful to the remote host as follows:\
+         ![Jenkins is Ready](/cicd/jenkins/images/ssh_remote_connection_test.png)   
+    
+>>>>>>> ee938a2c6d0078783bc17d5ff0c5ba9b6356de55
+=======
 ![Jenkins is Ready](/cicd/jenkins/images/add-credentials.png)
 
 ## Configure SSH Remote Hosts
@@ -101,3 +210,4 @@ This step enables the jenkins to connect to the remote Host/VM to execute shell 
 4. Once the Remote SSH Host click on Check Connection to test the connection is successful to the remote host as follows:
 
 ![Jenkins is Ready](/cicd/jenkins/images/ssh_remote_connection_test.png)
+>>>>>>> dev

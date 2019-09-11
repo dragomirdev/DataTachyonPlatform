@@ -64,7 +64,7 @@
         sudo vi /etc/sudoers  \
         dtpuser ALL=(ALL) NOPASSWD: ALL
   
-        save and exit
+6. Save and exit the file /etc/sudoers
 
 ### Configure Credentials
 

@@ -83,7 +83,7 @@ This step enables the jenkins to connect using a user credentials which is confi
 
 ## Configure SSH Remote Hosts
 
-This step enables the jenkins to connect to the remote Host/VM to execute the shell commands/script on it.
+This step enables the jenkins to connect to the remote Host/VM to execute shell commands/scripts to install software pacakages  like Nifi, Hadoop, etc.
 
 ### Pre-Requisite
 

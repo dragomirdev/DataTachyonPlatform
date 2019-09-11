@@ -123,7 +123,7 @@ To install Jenkins please go to
 
 To install NiFi please go to
 
-![NiFi Installation Process](/integration/README.md)
+![NiFi Installation Process](/integrationlayer/nifi/README.md)
 
 ## Data Layer
 
@@ -131,26 +131,26 @@ To install NiFi please go to
 
 To install Hadoop please go to
 
-![Hadoop Installation Process](/data/hadoop/README.md)
+![Hadoop Installation Process](/datalayer/hadoop/README.md)
 
 
 ### Spark
 
 To install Spark please go to
 
-![Spark Installation Process](/data/spark/README.md)
+![Spark Installation Process](/datalayer/spark/README.md)
 
 ### Hive
 
 To install Hive please go to
 
-![Hive Installation Process](/data/hive/README.md)
+![Hive Installation Process](/datalayer/hive/README.md)
 
 ### Hue
 
 To install Hue please go to
 
-![Hue Installation Process](/data/hue/README.md)
+![Hue Installation Process](/datalayer/hue/README.md)
 
 ## Business Layer
 
@@ -158,13 +158,13 @@ To install Hue please go to
 
 To install Tensorflow please go to
 
-![Tensorflow Installation Process](/business/tensorflow/README.md)
+![Tensorflow Installation Process](/businesslayer/tensorflow/README.md)
 
 ### PyTorch
 
 To install PyTorch please go to
 
-![PyTorch Installation Process](/business/pytorch/README.md)
+![PyTorch Installation Process](/businesslayer/pytorch/README.md)
 
 ## Presentation Layer
 
@@ -172,11 +172,11 @@ To install PyTorch please go to
 
 To install ELK please go to
 
-![ELK Installation Process](/presentation/elk/README.md)
+![ELK Installation Process](/presentationlayer/elk/README.md)
 
 ### GoDot
 
 To install GoDot please go to
 
-![GoDot Installation Process](/presentation/godot/README.md)
+![GoDot Installation Process](/presentationlayer/godot/README.md)
 

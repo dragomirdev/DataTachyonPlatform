@@ -45,6 +45,7 @@ Using CI/CD with Jenkins, The following DTP software components are installed on
 
 5. Jenkins service will automatically start after the installation process is complete. \
    This can be verify it by printing the service status: \
+   sudo systemctl enable jenkins
    sudo systemctl status jenkins
 
    You should see something similar to this:\

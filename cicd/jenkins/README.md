@@ -79,8 +79,8 @@
 4. Once DTP User is Created it is shown in the Credentials page as follows:\
 ![Jenkins is Ready](/cicd/jenkins/images/add-credentials.png)
 
-
 ## Configure SSH Remote Hosts
+This step enables the jenkins to connect to the remote Host/VM to execute the shell commands/scripts.
 
 ### Pre-Requisite
 

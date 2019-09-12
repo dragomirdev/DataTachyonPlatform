@@ -99,5 +99,5 @@ This step enables the jenkins to connect using a user credentials which is confi
  3. Goto Publish over ssh and Click on Add to add a Remote SSH Host.\
          ![Jenkins is Ready](/cicd/jenkins/images/configure_publish_over_remote_connection.png)
 
- 4. Once the Remote SSH Host click on Check Connection to test the connection is successful to the remote host as follows:\
+ 4. Once the Publish over remote ssh is done, Check Connection to test the connection is successful to the remote host as follows:\
          ![Jenkins is Ready](/cicd/jenkins/images/publish_over_remote_connection_test.png)

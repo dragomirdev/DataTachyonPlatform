@@ -21,4 +21,4 @@ The script takes the following parameters.\
 TARGET_USERNAME the username to login to Nifi Server.\
 TARGET_IP_ADDRESS the IP address of the Nifi Server.\
 TARGET_SOFTWARE_LOCATION the target location on the Nifi Server.\
-INSTALLATION_FILE_TO_RUN the installation file to run for installing Nifi.
+UN_INSTALLATION_FILE_TO_RUN the file to run for uninstalling Nifi.

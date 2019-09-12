@@ -27,9 +27,9 @@ sudo chmod -R 775 /opt/elk/
 # Extracting Nifi
 sudo rm -rf /opt/elk/elasticsearch-7.2.0*
 
-sudo chmod -R 775 /home/dtpuser/*.tar.gz
-sudo chown -R dtpuser:dtpuser /home/dtpuser/*.tar.gz
-sudo mv /home/dtpuser/elasticsearch-7.2.0-linux-x86_64.tar.gz /opt/elk/
+sudo chmod -R 775 /home/dtpuser/ELK/
+sudo chown -R dtpuser:dtpuser /home/dtpuser/ELK/
+sudo mv /home/dtpuser/ELK/elasticsearch-7.2.0-linux-x86_64.tar.gz /opt/elk/
 
 
 ####################### SETTING ELASTIC_SEARCH HOME #############################################

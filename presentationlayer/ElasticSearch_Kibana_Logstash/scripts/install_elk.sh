@@ -32,7 +32,7 @@ sudo rm -rf /opt/elk
 # Extracting ELK
 sudo chmod -R 775 /home/dtpuser/ELK/
 sudo chown -R dtpuser:dtpuser /home/dtpuser/ELK/
-sudo mv /home/dtpuser/ELK/*.tar.gz /opt/elk/
+sudo mv /home/dtpuser/ELK/*.tar* /opt/elk/
 
 
 ####################### SETTING ELASTIC_SEARCH HOME #############################################

@@ -68,29 +68,29 @@ cd $ES_HOME
 echo $USER_NAME_PASS | sudo sysctl -w vm.max_map_count=262144
 
 # Use a descriptive name for your cluster:
-echo "cluster.name: DataTachyon-ElasticSearch-App" >> config/elasticsearch.yml
+echo "cluster.name: DataTachyon-ElasticSearch-App" >> $ES_HOME/config/elasticsearch.yml
 
 # Use a descriptive name for the node:
-echo "node.name: "${HOSTNAME}"-ES-Node" >> config/elasticsearch.yml
+echo "node.name: "${HOSTNAME}"-ES-Node" >> $ES_HOME/config/elasticsearch.yml
 
 # Path to directory where to store the data
-echo "path.data: /datadrive/elk/elasticsearch/data" >> config/elasticsearch.yml
+echo "path.data: /datadrive/elk/elasticsearch/data" >> $ES_HOME/config/elasticsearch.yml
 
 # Path to log files:
-echo "path.logs: /datadrive/elk/elasticsearch/log" >> config/elasticsearch.yml
+echo "path.logs: /datadrive/elk/elasticsearch/log" >> $ES_HOME/config/elasticsearch.yml
 
 # Get IP address on eth0 interface
 ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 
 # Set Network Host Address
-echo "network.host: "${ip_address} >> config/elasticsearch.yml
+echo "network.host: "${ip_address} >> $ES_HOME/config/elasticsearch.yml
 
 # Set a custom port for HTTP
-echo "http.port: 9200" >> config/elasticsearch.yml
+echo "http.port: 9200" >> $ES_HOME/config/elasticsearch.yml
 
 #Important discovery and cluster formation settings
-echo "discovery.seed_hosts: ['${ip_address}']" >> config/elasticsearch.yml
-echo "cluster.initial_master_nodes: ['${HOSTNAME}-ES-Node']" >> config/elasticsearch.yml
+echo "discovery.seed_hosts: ['${ip_address}']" >> $ES_HOME/config/elasticsearch.yml
+echo "cluster.initial_master_nodes: ['${HOSTNAME}-ES-Node']" >> $ES_HOME/config/elasticsearch.yml
 
 # Enable automatic creation of X-Pack indices
 # echo "action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*" >> config/elasticsearch.yml
@@ -118,6 +118,13 @@ echo " Starting Elastic-Search Server...."
 ${ES_HOME}/bin/elasticsearch -d -p pid
 
 sleep 30
+
+######################### Testing Elastic-Search ###################################
+
+#echo "Checking ElasticSearch "
+#curl -X GET "localhost:9200/"
+#ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
+#curl -X GET http://${ip_address}:9200
 
 
 

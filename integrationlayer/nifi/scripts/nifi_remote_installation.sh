@@ -5,6 +5,12 @@
 #(1) Create the users dtpuser and spark on Nifi VM
 #(2) Add exception to sudoers file for the users dtpuser
 #(3) Copy the public key of jenkins user on jenkins VM to dtpuser on Nifi VM
+##Create Nifi User
+#sudo groupadd hadoop
+#sudo adduser --ingroup hadoop nifi
+#### password: nifi
+#### set default values
+#sudo usermod -aG sudo nifi
 
 
 #set -euxo pipefail

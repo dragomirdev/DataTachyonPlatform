@@ -75,3 +75,5 @@ echo "Starting Nifi"
 /opt/nifi-1.9.2/bin/nifi.sh start
 echo "Checking Status of Nifi"
 /opt/nifi-1.9.2/bin/nifi.sh status
+
+EOF

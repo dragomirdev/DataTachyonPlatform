@@ -54,11 +54,11 @@ which java
 
 #sudo -i -u dtpuser   bash << 'EOF'
 # Update bashrc
-echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
-echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+#echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
+#echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
-which java
+echo "JAVA_HOME: "$JAVA_HOME
 
 echo "Installing Nifi"
 sudo /opt/nifi-1.9.2/bin/nifi.sh install

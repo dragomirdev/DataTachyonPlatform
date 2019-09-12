@@ -58,7 +58,11 @@ which java
 #echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+export PATH=$JAVA_HOME/bin:$PATH
+
 echo "JAVA_HOME: "$JAVA_HOME
+echo "PATH: "$PATH
 
 echo "Installing Nifi"
 sudo /opt/nifi-1.9.2/bin/nifi.sh install

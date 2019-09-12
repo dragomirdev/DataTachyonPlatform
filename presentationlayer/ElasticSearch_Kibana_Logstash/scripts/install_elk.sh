@@ -67,7 +67,7 @@ echo "KIBANA_HOME: "$KIBANA_HOME
 echo "LOGSTASH_HOME: "$LOGSTASH_HOME
 echo "PATH: "$PATH
 
-#############################################ELASTIC-SEARCH###############################################################
+################################################# ELASTIC-SEARCH #############################################################
 cd /opt/elk/
 echo "Extracting ElasticSearch...."
 tar -xzf elasticsearch-7.2.0-linux-x86_64.tar.gz
@@ -125,7 +125,7 @@ sudo chmod -R 775 /opt/elk/
 sudo chown -R dtpuser:dtpuser /opt/elk/
 pwd && ls -latr
 
-#############################################KIBANA#######################################################################
+################################################## KIBANA ####################################################################
 cd /opt/elk/
 echo "Extracting Kibana...."
 tar -xzf kibana-7.2.0-linux-x86_64.tar.gz
@@ -166,7 +166,7 @@ sudo chmod -R 775 /opt/elk/
 sudo chown -R dtpuser:dtpuser /opt/elk/
 pwd && ls -latr $KIBANA_HOME
 
-
+#################################################### LOGSTASH #################################################################
 
 
 

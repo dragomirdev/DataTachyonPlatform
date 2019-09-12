@@ -16,11 +16,17 @@ INSTALLATION_FILE_TO_RUN the installation file to run for installing ELK.
 
 [uninstall_elk.sh](/presentationlayer/ElasticSearch_Kibana_Logstash/scripts/uninstall_elk.sh)
 
-Use this script to uninstall the Nifi.\
+Use this script to uninstall the ELK.\
 The script takes the following parameters.\
-TARGET_USERNAME the username to login to Nifi Server.\
-TARGET_IP_ADDRESS the IP address of the Nifi Server.\
-TARGET_SOFTWARE_LOCATION the target location on the Nifi Server.\
-UN_INSTALLATION_FILE_TO_RUN the  file to run for uninstalling Nifi.
+TARGET_USERNAME the username to login to ELK Server.\
+TARGET_IP_ADDRESS the IP address of the ELK Server.\
+TARGET_SOFTWARE_LOCATION the target location on the ELK Server.\
+UN_INSTALLATION_FILE_TO_RUN the  file to run for uninstalling ELK.
 
+[test_elk_status.sh](/presentationlayer/ElasticSearch_Kibana_Logstash/scripts/test_elk_status.sh)
+
+Use this script to Test the ELK.\
+The script takes the following parameters.\
+TARGET_USERNAME the username to login to ELK Server.\
+TARGET_IP_ADDRESS the IP address of the ELK Server.\
 

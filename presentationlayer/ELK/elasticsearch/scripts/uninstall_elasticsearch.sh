@@ -8,10 +8,7 @@ ls -latr /opt/elk/
 ls -latr /home/dtpuser/
 
 sudo rm -rf /opt/elk
-sudo rm -rf /home/dtpuser/elasticsearch*
-sudo rm -rf /home/dtpuser/logstash*
-sudo rm -rf /home/dtpuser/kibana*
-sudo rm -rf /home/dtpuser/*.sh
+sudo rm -rf /home/dtpuser/ELK
 sudo 
 
 ls -latr  /home/dtpuser

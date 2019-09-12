@@ -15,7 +15,7 @@ sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk
 sudo apt -y autoremove
 
-# Run commands as spark user and don't expand variables
+# Run commands as dtpuser user and don't expand variables
 sudo -i -u dtpuser   bash << 'EOF'
 # Update bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc

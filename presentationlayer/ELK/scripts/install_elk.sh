@@ -10,3 +10,4 @@ echo "Initiating Kibana Script"
 
 echo "Initiating Logstash Script"
 ./logstash/scripts/install_logstash.sh
+

@@ -15,14 +15,6 @@ sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk
 sudo apt -y autoremove
 
-# Run commands as dtpuser user and don't expand variables
-sudo -i -u dtpuser   bash << 'EOF'
-# Update bashrc
-echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
-echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
-EOF
-
 # Extracting Nifi
 sudo mv /home/dtpuser/nifi-1.9.2-bin.zip /opt/
 
@@ -38,8 +30,6 @@ cd /opt/nifi-1.9.2/
 
 ls -latr
 
-
-
 #Add the values to the following properties
 #nifi.ui.banner.text=
 #nifi.web.http.port=8080
@@ -53,24 +43,22 @@ sudo sed -i "/nifi.sensitive.props.key=/ s/=.*/=datatachyonnifi1234/" /opt/nifi-
 
 cd ..
 
-sudo chown -R dtpuser:hadoop nifi-1.9.2
-sudo chmod -R 775 nifi-1.9.2
-
-#sudo echo "export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH"  >> /etc/environment
-
-source ~/.bashrc
-cat ~/.bashrc
-
+sudo chown -R dtpuser:hadoop /opt/nifi-1.9.2
+sudo chmod -R 775 /opt/nifi-1.9.2
 
 whoami && hostname && pwd
 ls -latr /opt/
 ls -latr /opt/nifi-1.9.2
 which java
-#echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64"
-#echo "JAVA_HOME: "$JAVA_HOME
-#echo "PATH: "$PATH
 
 sudo -i -u dtpuser   bash << 'EOF'
+# Update bashrc
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+which java
+
 echo "Installing Nifi"
 sudo /opt/nifi-1.9.2/bin/nifi.sh install
 /opt/nifi-1.9.2/bin/nifi.sh stop

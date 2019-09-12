@@ -92,7 +92,7 @@ ls -latr
 cd $ES_HOME"/"
 
 #Setting Virtual memory
-echo $USER_NAME_PASS | sudo sysctl -w vm.max_map_count=262144
+sudo sysctl -w vm.max_map_count=262144
 
 # Use a descriptive name for your cluster:
 echo "cluster.name: DataTachyon-ElasticSearch-App" >> config/elasticsearch.yml

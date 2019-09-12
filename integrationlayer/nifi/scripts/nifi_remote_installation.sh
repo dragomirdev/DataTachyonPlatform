@@ -41,9 +41,9 @@ ls -latr
 #nifi.web.http.port=8080
 #nifi.sensitive.props.key=
 
-sudo sed -i "/nifi.ui.banner.text=/ s/=.*/=DataTachyonNifi/" conf/nifi.properties
-sudo sed -i "/nifi.web.http.port=/ s/=.*/=9090/" conf/nifi.properties
-sudo sed -i "/nifi.sensitive.props.key=/ s/=.*/=datatachyonnifi1234/" conf/nifi.properties
+sudo sed -i "/nifi.ui.banner.text=/ s/=.*/=DataTachyonNifi/" /opt/nifi-1.9.2/conf/nifi.properties
+sudo sed -i "/nifi.web.http.port=/ s/=.*/=9090/" /opt/nifi-1.9.2/conf/nifi.properties
+sudo sed -i "/nifi.sensitive.props.key=/ s/=.*/=datatachyonnifi1234/" /opt/nifi-1.9.2/conf/nifi.properties
 #sudo sed '/Java home/ i     JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"' bin/nifi.sh
 #sudo sed '/JAVA_HOME not set; results may vary/ i     JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"' bin/nifi.sh
 

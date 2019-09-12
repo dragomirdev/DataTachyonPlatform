@@ -14,11 +14,11 @@ sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk zip unzip net-tools
 sudo apt -y autoremove
 
-sudo rm -rf /opt/elk
-
+#Cleanup
 pkill -f elasticsearch
 pkill -f logstash
 pkill -f kibana
+sudo rm -rf /opt/elk
 
 
 #Creating data directories

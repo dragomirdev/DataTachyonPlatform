@@ -1,19 +1,38 @@
 #!/bin/bash
 
+###Note##
+#Before running job ...
+#(1) Create the users dtpuser and spark on Nifi VM
+#(2) Add exception to sudoers file for the users dtpuser
+#(3) Copy the public key of jenkins user on jenkins VM to dtpuser on Nifi VM
+
+
+set -euxo pipefail
+
+# Install dependecies
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt -y install openjdk-8-jdk
+
+sudo -i -u dtpuser   bash << 'EOF'
+# Update bashrc
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+# Extracting Nifi
+sudo mv /home/dtpuser/nifi-1.9.2-bin.zip /opt/
+sudo mv /home/dtpuser/nifi_remote_installation.sh /opt/
+
+cd /opt/
 sudo chmod -R 775 nifi-1.9.2-bin.zip
 sudo unzip nifi-1.9.2-bin.zip
 sudo chown -R dtpuser:hadoop nifi-1.9.2
 sudo chmod -R 775 nifi-1.9.2
 
-
-echo "Setting JAVA_HOME"
-echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> ~/.bashrc
-echo "export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH"  >> ~/.bashrc
-source ~/.bashrc
-
 echo "Setting NIFI PROPERTIES"
 sudo unzip nifi-1.9.2-bin.zip
-cd nifi-1.9.2/
+cd /opt/nifi-1.9.2/
 #Add the values to the following properties
 #nifi.ui.banner.text=
 #nifi.web.http.port=8080
@@ -45,14 +64,14 @@ which java
 #echo "PATH: "$PATH
 
 echo "Installing Nifi"
-sudo nifi-1.9.2/bin/nifi.sh install
-nifi-1.9.2/bin/nifi.sh stop
+sudo /opt/nifi-1.9.2/bin/nifi.sh install
+/opt/nifi-1.9.2/bin/nifi.sh stop
 
 #echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64"
 #echo "JAVA_HOME: "$JAVA_HOME
 #echo "PATH: "$PATH
 ps -ef | grep nifi
 echo "Starting Nifi"
-nifi-1.9.2/bin/nifi.sh start
+/opt/nifi-1.9.2/bin/nifi.sh start
 echo "Checking Status of Nifi"
-nifi-1.9.2/bin/nifi.sh status
+/opt/nifi-1.9.2/bin/nifi.sh status

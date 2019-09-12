@@ -25,7 +25,7 @@ sudo chmod -R 775 /opt/elk/
 
 
 # Extracting Nifi
-sudo rm -rf /opt/elasticsearch-7.2.0*
+sudo rm -rf /opt/elk/elasticsearch-7.2.0*
 
 sudo chmod -R 775 /home/dtpuser/*.tar.gz
 sudo chown -R dtpuser:dtpuser /home/dtpuser/*.tar.gz

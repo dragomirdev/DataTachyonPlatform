@@ -34,6 +34,9 @@ sudo rm -rf /opt/elk
 sudo chmod -R 775 /home/dtpuser/ELK/
 sudo chown -R dtpuser:dtpuser /home/dtpuser/ELK/
 sudo mv /home/dtpuser/ELK/*.tar* /opt/elk/
+sudo chmod -R 775 /opt/elk/
+sudo chown -R dtpuser:dtpuser /opt/elk/
+
 
 pkill -f elasticsearch
 pkill -f logstash

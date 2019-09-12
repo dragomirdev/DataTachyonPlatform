@@ -13,6 +13,7 @@ set -euxo pipefail
 sudo apt -y update
 sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk
+sudo apt -y autoremove
 
 sudo -i -u dtpuser   bash << 'EOF'
 # Update bashrc

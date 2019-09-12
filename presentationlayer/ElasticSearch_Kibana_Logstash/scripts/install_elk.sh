@@ -43,9 +43,9 @@ pkill -f logstash
 pkill -f kibana
 
 ####################### SETTING ELK HOME #############################################
-ES_HOME_FOLDER=/opt/elk/elasticsearch-7.2.0/
-KIBANA_HOME_FOLDER=/opt/elk/kibana-7.2.0-linux-x86_64/
-LOGSTASH_HOME_FOLDER=/opt/elk/logstash-7.2.0/
+ES_HOME_FOLDER=/opt/elk/elasticsearch-7.2.0
+KIBANA_HOME_FOLDER=/opt/elk/kibana-7.2.0-linux-x86_64
+LOGSTASH_HOME_FOLDER=/opt/elk/logstash-7.2.0
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export ES_HOME=$ES_HOME_FOLDER
@@ -86,35 +86,35 @@ ls -latr
 ########### CONFIGURE ELASTIC-SEARCH ########
 
 #export ES_HOME=/opt/elk/elasticsearch-7.2.0
-cd $ES_HOME
+cd $ES_HOME"/"
 
 #Setting Virtual memory
 echo $USER_NAME_PASS | sudo sysctl -w vm.max_map_count=262144
 
 # Use a descriptive name for your cluster:
-echo "cluster.name: DataTachyon-ElasticSearch-App" >> $ES_HOME/config/elasticsearch.yml
+echo "cluster.name: DataTachyon-ElasticSearch-App" >> config/elasticsearch.yml
 
 # Use a descriptive name for the node:
-echo "node.name: "${HOSTNAME}"-ES-Node" >> $ES_HOME/config/elasticsearch.yml
+echo "node.name: "${HOSTNAME}"-ES-Node" >> config/elasticsearch.yml
 
 # Path to directory where to store the data
-echo "path.data: /datadrive/elk/elasticsearch/data" >> $ES_HOME/config/elasticsearch.yml
+echo "path.data: /datadrive/elk/elasticsearch/data" >> config/elasticsearch.yml
 
 # Path to log files:
-echo "path.logs: /datadrive/elk/elasticsearch/log" >> $ES_HOME/config/elasticsearch.yml
+echo "path.logs: /datadrive/elk/elasticsearch/log" >> config/elasticsearch.yml
 
 # Get IP address on eth0 interface
 ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 
 # Set Network Host Address
-echo "network.host: "${ip_address} >> $ES_HOME/config/elasticsearch.yml
+echo "network.host: "${ip_address} >> config/elasticsearch.yml
 
 # Set a custom port for HTTP
-echo "http.port: 9200" >> $ES_HOME/config/elasticsearch.yml
+echo "http.port: 9200" >> config/elasticsearch.yml
 
 #Important discovery and cluster formation settings
-echo "discovery.seed_hosts: ['${ip_address}']" >> $ES_HOME/config/elasticsearch.yml
-echo "cluster.initial_master_nodes: ['${HOSTNAME}-ES-Node']" >> $ES_HOME/config/elasticsearch.yml
+echo "discovery.seed_hosts: ['${ip_address}']" >> config/elasticsearch.yml
+echo "cluster.initial_master_nodes: ['${HOSTNAME}-ES-Node']" >> config/elasticsearch.yml
 
 # Enable automatic creation of X-Pack indices
 # echo "action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*" >> config/elasticsearch.yml
@@ -143,27 +143,27 @@ ls -latr
 
 ########### CONFIGURE KIBANA ####################
 #export KIBANA_HOME=/opt/elk/kibana-7.2.0-linux-x86_64
-cd $KIBANA_HOME
+cd $KIBANA_HOME"/"
 
 # Get IP address on eth0 interface
 ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 
 # Set Server Host Address
-echo "server.host: "${ip_address} >> $KIBANA_HOME/config/kibana.yml
+echo "server.host: "${ip_address} >> config/kibana.yml
 echo "server.port: 5601" >> $KIBANA_HOME/config/kibana.yml
 
 # Set Kibana server's name.
-echo "server.name: DataTachyon-Kibana-App" >> $KIBANA_HOME/config/kibana.yml
+echo "server.name: DataTachyon-Kibana-App" >> config/kibana.yml
 
-echo "logging.dest: /datadrive/elk/kibana/log/kibana.log" >> $KIBANA_HOME/config/kibana.yml
-echo "path.data: /datadrive/elk/kibana/data/" >> $KIBANA_HOME/config/kibana.yml
+echo "logging.dest: /datadrive/elk/kibana/log/kibana.log" >> config/kibana.yml
+echo "path.data: /datadrive/elk/kibana/data/" >> config/kibana.yml
 
 
-echo "xpack.security.encryptionKey: DTP-Kibana-App-1234567890987654321" >>  $KIBANA_HOME/config/kibana.yml
-echo "xpack.encrypted_saved_objects.encryptionKey: DTP-Kibana-App-1234567890987654321" >>  $KIBANA_HOME/config/kibana.yml
+echo "xpack.security.encryptionKey: DTP-Kibana-App-1234567890987654321" >>  config/kibana.yml
+echo "xpack.encrypted_saved_objects.encryptionKey: DTP-Kibana-App-1234567890987654321" >>  config/kibana.yml
 
 # Set the URLs of the Elasticsearch instances to use for all your queries.
-echo "elasticsearch.hosts: ['http://${ip_address}:9200']"   >> $KIBANA_HOME/config/kibana.yml
+echo "elasticsearch.hosts: ['http://${ip_address}:9200']"   >> config/kibana.yml
 
 # Display Contents of config/kibana.yml
 #cat $KIBANA_HOME/config/kibana.yml
@@ -182,7 +182,7 @@ sudo chown -R dtpuser:dtpuser /opt/elk/
 
 ls -latr
 
-cd /opt/elk/logstash-7.2.0/
+cd $LOGSTASH_HOME"/"
 
 touch run_logstash.sh
 echo "bin/logstash -e 'input { stdin { } } output { stdout {} }'"  >> run_logstash.sh

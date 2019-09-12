@@ -34,6 +34,9 @@ sudo chmod -R 775 nifi-1.9.2
 echo "Setting NIFI PROPERTIES"
 sudo unzip nifi-1.9.2-bin.zip
 cd /opt/nifi-1.9.2/
+
+ls -latr
+  
 #Add the values to the following properties
 #nifi.ui.banner.text=
 #nifi.web.http.port=8080

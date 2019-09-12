@@ -52,7 +52,7 @@ ls -latr /opt/
 ls -latr /opt/nifi-1.9.2
 which java
 
-sudo -i -u dtpuser   bash << 'EOF'
+#sudo -i -u dtpuser   bash << 'EOF'
 # Update bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
@@ -73,4 +73,4 @@ echo "Starting Nifi"
 echo "Checking Status of Nifi"
 /opt/nifi-1.9.2/bin/nifi.sh status
 
-EOF
+#EOF

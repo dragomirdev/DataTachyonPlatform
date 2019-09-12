@@ -15,11 +15,13 @@ sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk
 sudo apt -y autoremove
 
+# Run commands as spark user and don't expand variables
 sudo -i -u dtpuser   bash << 'EOF'
 # Update bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
+EOF
 
 # Extracting Nifi
 sudo mv /home/dtpuser/nifi-1.9.2-bin.zip /opt/
@@ -35,7 +37,9 @@ sudo unzip nifi-1.9.2-bin.zip
 cd /opt/nifi-1.9.2/
 
 ls -latr
-  
+
+
+
 #Add the values to the following properties
 #nifi.ui.banner.text=
 #nifi.web.http.port=8080
@@ -66,6 +70,7 @@ which java
 #echo "JAVA_HOME: "$JAVA_HOME
 #echo "PATH: "$PATH
 
+sudo -i -u dtpuser   bash << 'EOF'
 echo "Installing Nifi"
 sudo /opt/nifi-1.9.2/bin/nifi.sh install
 /opt/nifi-1.9.2/bin/nifi.sh stop

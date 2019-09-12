@@ -23,7 +23,6 @@ source ~/.bashrc
 
 # Extracting Nifi
 sudo mv /home/dtpuser/nifi-1.9.2-bin.zip /opt/
-sudo mv /home/dtpuser/nifi_remote_installation.sh /opt/
 
 cd /opt/
 sudo chmod -R 775 nifi-1.9.2-bin.zip

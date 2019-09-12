@@ -7,7 +7,7 @@
 #(3) Copy the public key of jenkins user on jenkins VM to dtpuser on Nifi VM
 
 
-set -euxo pipefail
+#set -euxo pipefail
 
 # Install dependecies
 sudo apt -y update

@@ -13,7 +13,7 @@ sudo /opt/nifi-1.9.2/bin/nifi.sh stop
 
 rm -rf /opt/nifi-1.9.2-bin.zip
 rm -rf /opt/nifi-1.9.2
-rm /opt/nifi_remote_installation.sh
+rm /home/dtpuser/nifi_remote_installation.sh
 
 ls -latr /home/dtpuser/
 

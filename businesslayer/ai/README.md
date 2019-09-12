@@ -1,3 +1,0 @@
-# DataTachyonPlatform
-Data Tachyon Platform
-

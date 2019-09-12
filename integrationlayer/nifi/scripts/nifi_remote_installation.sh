@@ -16,6 +16,8 @@ sudo apt -y install openjdk-8-jdk
 sudo apt -y autoremove
 
 # Extracting Nifi
+sudo rm -rf /opt/nifi-1.9.2*
+
 sudo mv /home/dtpuser/nifi-1.9.2-bin.zip /opt/
 
 cd /opt/

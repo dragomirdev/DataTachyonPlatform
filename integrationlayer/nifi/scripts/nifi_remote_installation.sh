@@ -27,7 +27,6 @@ sudo chown -R dtpuser:hadoop nifi-1.9.2
 sudo chmod -R 775 nifi-1.9.2
 
 echo "Setting NIFI PROPERTIES"
-sudo unzip nifi-1.9.2-bin.zip
 cd /opt/nifi-1.9.2/
 
 ls -latr

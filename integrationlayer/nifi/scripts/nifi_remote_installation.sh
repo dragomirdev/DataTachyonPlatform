@@ -74,7 +74,7 @@ sudo /opt/nifi-1.9.2/bin/nifi.sh install
 ps -ef | grep nifi
 echo "Starting Nifi"
 /opt/nifi-1.9.2/bin/nifi.sh start
-echo "Checking Status of Nifi"
-/opt/nifi-1.9.2/bin/nifi.sh status
+#echo "Checking Status of Nifi"
+#/opt/nifi-1.9.2/bin/nifi.sh status
 
 #EOF

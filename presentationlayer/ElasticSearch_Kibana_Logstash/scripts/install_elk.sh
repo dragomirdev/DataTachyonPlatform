@@ -35,6 +35,9 @@ sudo chmod -R 775 /home/dtpuser/ELK/
 sudo chown -R dtpuser:dtpuser /home/dtpuser/ELK/
 sudo mv /home/dtpuser/ELK/*.tar* /opt/elk/
 
+pkill -f elasticsearch
+pkill -f logstash
+pkill -f kibana
 
 ####################### SETTING ELK HOME #############################################
 ES_HOME_FOLDER=/opt/elk/elasticsearch-7.2.0/

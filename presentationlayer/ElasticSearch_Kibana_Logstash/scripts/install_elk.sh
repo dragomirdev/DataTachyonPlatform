@@ -14,6 +14,7 @@ sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk zip unzip net-tools
 sudo apt -y autoremove
 
+#Creating data directories
 sudo mkdir -p /datadrive/elk/elasticsearch/data
 sudo mkdir -p /datadrive/elk/elasticsearch/log
 sudo mkdir -p /datadrive/elk/kibana/log/
@@ -35,24 +36,38 @@ sudo chown -R dtpuser:dtpuser /home/dtpuser/ELK/
 sudo mv /home/dtpuser/ELK/*.tar* /opt/elk/
 
 
-####################### SETTING ELASTIC_SEARCH HOME #############################################
+####################### SETTING ELK HOME #############################################
+ES_HOME_FOLDER=/opt/elk/elasticsearch-7.2.0/
+KIBANA_HOME_FOLDER=/opt/elk/kibana-7.2.0-linux-x86_64/
+LOGSTASH_HOME_FOLDER=/opt/elk/logstash-7.2.0/
+
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export ES_HOME=/opt/elk/elasticsearch-7.2.0
+export ES_HOME=$ES_HOME_FOLDER
+export KIBANA_HOME=$KIBANA_HOME_FOLDER
+export LOGSTASH_HOME=$LOGSTASH_HOME_FOLDER
 
 echo "Setting JAVA_HOME"
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> ~/.bashrc
 
 echo "Setting ES_HOME"
-ES_HOME=/opt/elk/elasticsearch-7.2.0/
-echo "export ES_HOME=/opt/elk/elasticsearch-7.2.0/" >> ~/.bashrc
+echo "export ES_HOME="$ES_HOME_FOLDER >> ~/.bashrc
 
-#echo "export PATH=/home/dtpuser/kibana-7.2.0-linux-x86_64/bin:/home/dtpuser/logstash-7.2.0/bin:/home/dtpuser/elasticsearch-7.2.0/bin:/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH"  >> ~/.bashrc
-echo "export PATH=/opt/elk/elasticsearch-7.2.0/bin:/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH" 
+echo "Setting KIBANA_HOME"
+echo "export KIBANA_HOME="$KIBANA_HOME_FOLDER >> ~/.bashrc
+
+echo "Setting LOGSTASH_HOME"
+echo "export LOGSTASH_HOME="$LOGSTASH_HOME_FOLDER >> ~/.bashrc
+
+echo "export PATH=/opt/elk/kibana-7.2.0-linux-x86_64/bin:/opt/elk/logstash-7.2.0/bin:/opt/elk/elasticsearch-7.2.0/bin:/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH"  >> ~/.bashrc
 
 source ~/.bashrc
-echo $JAVA_HOME
-echo $ES_HOME
+echo "JAVA_HOME: "$JAVA_HOME
+echo "ES_HOME: "$ES_HOME
+echo "KIBANA_HOME: "$KIBANA_HOME
+echo "LOGSTASH_HOME: "$LOGSTASH_HOME
+echo "PATH: "$PATH
 
+#############################################ELASTIC-SEARCH###############################################################
 cd /opt/elk/
 echo "Extracting ElasticSearch...."
 tar -xzf elasticsearch-7.2.0-linux-x86_64.tar.gz
@@ -62,9 +77,9 @@ sudo chown -R dtpuser:dtpuser /opt/elk/
 
 ls -latr
 
-####################### CONFIGURE ELASTIC-SEARCH #############################################
+########### CONFIGURE ELASTIC-SEARCH ########
 
-export ES_HOME=/opt/elk/elasticsearch-7.2.0
+#export ES_HOME=/opt/elk/elasticsearch-7.2.0
 cd $ES_HOME
 
 #Setting Virtual memory
@@ -109,6 +124,55 @@ sudo  sed -e '/session    required   pam_limits.so/ s/^#*/#/' -i /etc/pam.d/su
 sudo chmod -R 775 /opt/elk/
 sudo chown -R dtpuser:dtpuser /opt/elk/
 pwd && ls -latr
+
+#############################################KIBANA#######################################################################
+cd /opt/elk/
+echo "Extracting Kibana...."
+tar -xzf kibana-7.2.0-linux-x86_64.tar.gz
+
+sudo chmod -R 775 /opt/elk/
+sudo chown -R dtpuser:dtpuser /opt/elk/
+
+ls -latr
+
+########### CONFIGURE KIBANA ####################
+#export KIBANA_HOME=/opt/elk/kibana-7.2.0-linux-x86_64
+cd $KIBANA_HOME
+
+# Get IP address on eth0 interface
+ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
+
+# Set Server Host Address
+echo "server.host: "${ip_address} >> $KIBANA_HOME/config/kibana.yml
+echo "server.port: 5601" >> $KIBANA_HOME/config/kibana.yml
+
+# Set Kibana server's name.
+echo "server.name: DataTachyon-Kibana-App" >> $KIBANA_HOME/config/kibana.yml
+
+echo "logging.dest: /datadrive/elk/kibana/log/kibana.log" >> $KIBANA_HOME/config/kibana.yml
+echo "path.data: /datadrive/elk/kibana/data/" >> $KIBANA_HOME/config/kibana.yml
+
+
+echo "xpack.security.encryptionKey: DTP-Kibana-App-1234567890987654321" >>  $KIBANA_HOME/config/kibana.yml
+echo "xpack.encrypted_saved_objects.encryptionKey: DTP-Kibana-App-1234567890987654321" >>  $KIBANA_HOME/config/kibana.yml
+
+# Set the URLs of the Elasticsearch instances to use for all your queries.
+echo "elasticsearch.hosts: ['http://${ip_address}:9200']"   >> $KIBANA_HOME/config/kibana.yml
+
+# Display Contents of config/kibana.yml
+#cat $KIBANA_HOME/config/kibana.yml
+
+sudo chmod -R 775 /opt/elk/
+sudo chown -R dtpuser:dtpuser /opt/elk/
+pwd && ls -latr $KIBANA_HOME
+
+
+
+
+
+
+
+
 
 ######################### Running Elastic-Search###################################
 ls -latr /home/dtpuser/

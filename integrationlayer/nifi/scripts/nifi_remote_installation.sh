@@ -12,7 +12,7 @@
 # Install dependecies
 sudo apt -y update
 sudo apt -y upgrade
-sudo apt -y install openjdk-8-jdk
+sudo apt -y install openjdk-8-jdk zip unzip net-tools
 sudo apt -y autoremove
 
 # Extracting Nifi

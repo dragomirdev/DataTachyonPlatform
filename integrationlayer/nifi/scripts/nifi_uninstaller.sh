@@ -11,9 +11,9 @@ echo "Uninstalling Nifi"
 sudo /opt/nifi-1.9.2/bin/nifi.sh status
 sudo /opt/nifi-1.9.2/bin/nifi.sh stop
 
-rm -rf /opt/nifi-1.9.2-bin.zip
-rm -rf /opt/nifi-1.9.2
-rm /home/dtpuser/nifi_remote_installation.sh
+sudo rm -rf /opt/nifi-1.9.2-bin.zip
+sudo rm -rf /opt/nifi-1.9.2
+sudo rm /home/dtpuser/nifi_remote_installation.sh
 
 ls -latr /home/dtpuser/
 

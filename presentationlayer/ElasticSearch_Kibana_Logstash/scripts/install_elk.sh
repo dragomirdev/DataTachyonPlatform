@@ -15,13 +15,13 @@ sudo apt -y install openjdk-8-jdk zip unzip net-tools
 sudo apt -y autoremove
 
 #Creating data directories
+sudo mkdir -p /opt/elk/
 sudo mkdir -p /datadrive/elk/elasticsearch/data
 sudo mkdir -p /datadrive/elk/elasticsearch/log
 sudo mkdir -p /datadrive/elk/kibana/log/
 sudo mkdir -p /datadrive/elk/kibana/data/
 sudo mkdir -p /datadrive/elk/logstash/log/
 sudo mkdir -p /datadrive/elk/logstash/data/
-sudo mkdir -p /opt/elk/
 
 sudo chown -R dtpuser:dtpuser /datadrive/elk/
 sudo chmod -R 775 /datadrive/elk/

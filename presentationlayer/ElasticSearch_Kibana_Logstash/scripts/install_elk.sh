@@ -167,11 +167,26 @@ sudo chown -R dtpuser:dtpuser /opt/elk/
 pwd && ls -latr $KIBANA_HOME
 
 #################################################### LOGSTASH #################################################################
+cd /opt/elk/
+echo "Extracting Logstash...."
+tar -xzf logstash-7.2.0.tar.gz
 
+sudo chmod -R 775 /opt/elk/
+sudo chown -R dtpuser:dtpuser /opt/elk/
 
+ls -latr
 
+cd /opt/elk/logstash-7.2.0/
 
+touch run_logstash.sh
+echo "bin/logstash -e 'input { stdin { } } output { stdout {} }'"  >> run_logstash.sh
 
+sudo chmod -R 775 /opt/elk/logstash*
+sudo chown -R dtpuser:dtpuser /opt/elk/logstash*
+pwd && ls -latr
+
+# Check Version
+bin/logstash --version
 
 
 ######################### Running Elastic-Search###################################
@@ -210,6 +225,29 @@ echo $ip_address
 $KIBANA_HOME/bin/kibana --host ${HOSTNAME} --elasticsearch http://${ip_address}:9200 &
 
 #nohup ${KIBANA_HOME}/bin/kibana --host ${HOSTNAME} --elasticsearch http://${ip_address}:9200 > $KIBANA_LOG 2>&1 &
+
+########################### Running LogStash #######################################
+sudo chmod -R 775 /opt/elk/logstash-7.2.0/
+sudo chmod -R 775 /opt/elk/logstash-7.2.0/run_logstash.sh
+sudo chown -R dtpuser:dtpuser /opt/elk/logstash*
+
+cd /opt/elk/logstash-7.2.0/
+# Check Version
+bin/logstash --version
+
+ps -ef | grep logstash
+
+echo " Starting LogStash Server...."
+#Start Logstash
+#bin/logstash -e 'input { stdin { } } output { stdout {} }'
+sudo  ./opt/elk/logstash-7.2.0/run_logstash.sh
+#LOGSTASH_LOG=/datadrive/elk/logstash/log/logstash.log
+#nohup ${LOGSTASH_HOME}/bin/logstash  -e 'input { stdin { } } output { stdout {} }' > $LOGSTASH_LOG 2>&1 &
+
+#####################################################################################
+
+
+#curl -XGET 'localhost:9600/_node/logging?pretty'
 
 ######################### Testing Elastic-Search ###################################
 

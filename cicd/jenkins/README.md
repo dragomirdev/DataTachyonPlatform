@@ -101,37 +101,3 @@ This step enables the jenkins to connect using a user credentials which is confi
 
  4. Once the Publish over remote ssh is done, Check Connection to test the connection is successful to the remote host as follows:\
          ![Jenkins is Ready](/cicd/jenkins/images/publish_over_remote_connection_test.png)
-
-### Create a Jenkins Job for DTP Nifi Installer
-
-1. On Jenkins Home page, click on the New Item.
-
-2. Enter the Item name say DTP-Nifi-Installer.
-![Create-DTP-Nifi-Installer Jenkins](/integrationlayer/nifi/images/dtp-nifi-installer1.png)
-
-3. Select FreeStyle Project and Ok.
-
-4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option.
-![DiscardBuild-DTP-Nifi-Installer Jenkins](/integrationlayer/nifi/images/dtp-nifi-installer2.png)
-
-5. Tick the option, the  project  is parameterized.
-
-6. Add the String parameters and configure for the following key value parameters. \
-   TARGET_IP_ADDRESS: Hostname of the Target 
-   SOURCE_SOFTWARE_LOCATION: Software location of the Nifi Tool
-   TARGET_SOFTWARE_LOCATION: /home/dtpuser
-   INSTALLATION_FILE_TO_RUN:/opt/DataTachyonPlatform/integrationlayer/nifi/scripts/nifi_remote_installation.sh
-![Parameterise-DTP-Nifi-Installer Jenkins](/integrationlayer/nifi/images/dtp-nifi-installer3.png)
-
-7. Under Build Option, Click on Add build step add the following steps
-   **Execute shell and add the following commands**\
-   whoami && hostname && pwd
-
-   echo "Installing Nifi on Remote sever "
-   ls -latr && ./nifi_remote_installation.sh
-   echo "Removing Nifi Installation Script on Remote sever "
-   sudo rm -rf /home/dtpuser/nifi_remote_installation.sh
-
-   ![AddBuildSteps-DTP-Nifi-Installer Jenkins](/integrationlayer/nifi/images/dtp-nifi-installer4.png)
-
-8. Save the Job.

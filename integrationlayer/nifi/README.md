@@ -63,13 +63,12 @@ INSTALLATION_FILE_TO_RUN: the installation file to run for installing Nifi.
 
 7. The following scripts is used to create the Jenkins job \
 [nifi_uninstaller.sh](/integrationlayer/nifi/scripts/nifi_uninstaller.sh)
-
 Use this script to uninstall the Nifi.\
 The script takes the following parameters.\
-TARGET_USERNAME the username to login to Nifi Server.\
-TARGET_IP_ADDRESS the IP address of the Nifi Server.\
-TARGET_SOFTWARE_LOCATION the target location on the Nifi Server.\
-UN_INSTALLATION_FILE_TO_RUN the file to run for uninstalling Nifi.
+TARGET_USERNAME: the username to login to Nifi Server.\
+TARGET_IP_ADDRESS: the IP address of the Nifi Server.\
+TARGET_SOFTWARE_LOCATION: the target location on the Nifi Server.\
+UN_INSTALLATION_FILE_TO_RUN: the file to run for uninstalling Nifi.
 
 8. Under Build Option, Click on Add build step add the following steps.\
    **Execute shell and add the following commands**\

@@ -42,6 +42,22 @@ INSTALLATION_FILE_TO_RUN: the installation file to run for installing Nifi.
 
 9. Save the Job.
 
+## DTP-Nifi-DataFlow Template
+
+1. Once the Nifi is Up and running on say http://localhost:9090,
+Open the browser and using the link to view the Weg GUI.
+
+2. Upload the DTP Nifi Template using the template file:\
+[DTP-Nifi-DataFlow-Template](/integrationlayer/nifi/template/Master_NiFi_Template_Data_to_HDFS.xml)
+as shown:
+
+![DTP-Nifi-DataFlow-Diagram](/integrationlayer/nifi/images/dtp_nifi_upload_template.png)
+
+3. Once the Template is upload, the dataflow is as follows:
+
+![DTP-Nifi-DataFlow-Diagram](/integrationlayer/nifi/images/dtp_nifi_dataflow.png)
+
+
 ## DTP-Nifi-Uninstallation
 
 ### Create a Jenkins Job for DTP Nifi Uninstaller

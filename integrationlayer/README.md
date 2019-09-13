@@ -43,3 +43,6 @@ The primary components of NiFi on the JVM are shown by the following diagram:\
 * A backup of the files is stored in the Remote SFTP Backup Folder.
 
 * In case of any Data Flow Transfer Error, those files are stored in the Remote SFTP Error Folders to recorrect and repush.
+
+#### For DTP Nifi Setup using Jenkins goto: [DTP NiFi Setup  Process](/integrationlayer/nifi/README.md)
+

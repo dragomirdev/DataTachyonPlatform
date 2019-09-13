@@ -123,7 +123,7 @@ To install Jenkins please go to
 
 To install NiFi please go to
 
-[NiFi Installation Process](/integrationlayer/nifi/README.md)
+[NiFi Installation Process](/integrationlayer/README.md)
 
 ## Data Layer
 

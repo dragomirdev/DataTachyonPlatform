@@ -27,10 +27,8 @@ TARGET_USERNAME the username to login to ELK Server.\
 TARGET_IP_ADDRESS the IP address of the ELK Server.\
 SOURCE_SOFTWARE_LOCATION the source location for the ELK Tool on Jenkins Server.\
 TARGET_SOFTWARE_LOCATION the target location on the ELK Server.\
-INSTALLATION_FILE_TO_RUN the installation file to run for installing ELK.
-
-[test_elk_status.sh](/presentationlayer/ElasticSearch_Kibana_Logstash/scripts/test_elk_status.sh)
-
+INSTALLATION_FILE_TO_RUN the installation file to run for installing ELK.\
+[test_elk_status.sh](/presentationlayer/ElasticSearch_Kibana_Logstash/scripts/test_elk_status.sh)\
 Use this script to Test the ELK.\
 The script takes the following parameters.\
 TARGET_USERNAME the username to login to ELK Server.\

@@ -1,4 +1,4 @@
-# DTP-Elasticsearch Kibana Logstash(ELK) Installation/Uninstallation
+# DTP-Elasticsearch Kibana Logstash(ELK)
 
 ## DTP-Elasticsearch Kibana Logstash Installation
 

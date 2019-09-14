@@ -4,12 +4,15 @@
 
 ### Before Running Jenkins Job
 
-[PreInstallation-DTP-Nifi-Installer Jenkins](/common/scripts/pre_installation.sh)
-(1) Create the users dtpuser on the Nifi host/VM
-(2) Add exception to sudoers file for the users dtpuser as follows:\
+[PreInstallation-DTP-Nifi-Installer Jenkins](/common/scripts/pre_installation.sh)\
+
+1. Create the users dtpuser on the Nifi host/VM.
+
+2. Add exception to sudoers file for the users dtpuser as follows:\
         sudo vi /etc/sudoers  \
         dtpuser ALL=(ALL) NOPASSWD: ALL
-(3) Copy the public key of jenkins user on jenkins VM to dtpuser on Nifi VM.
+
+3. Copy the public key of jenkins user on jenkins VM to dtpuser on Nifi VM.
 
 ### Create a Jenkins Job for DTP Nifi Installer
 
@@ -68,7 +71,7 @@ as shown:
 
 ### After Running Jenkins Job
 
-(1) Remove exception from sudoers file for the users dtpuser by removing the last line shown below:\
+1. Remove exception from sudoers file for the users dtpuser by removing the last line shown below:\
     sudo vi /etc/sudoers  \
     dtpuser ALL=(ALL) NOPASSWD: ALL
 

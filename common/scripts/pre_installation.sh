@@ -15,25 +15,26 @@ ssh localhost
 ## ssh-copy-id bothways i.e. from Jenkins to target VM and also from target VM to Jenkins
 ssh-copy-id <USER>@<HOST_NAME>
 
-
+# FOR ALL HOSTS/VMS IN THE DTP
 # Create dtpuser user
 sudo groupadd hadoop
 sudo adduser --ingroup hadoop dtpuser
-#### password: hadoop
+#### password: <PASSWORD>
 #### set default values
 sudo usermod -aG sudo dtpuser
 
-
+# FOR HADOOP AND SPARK HOSTS/VMS ONLY IN THE DTP 
 # Create hadoop user
 sudo groupadd hadoop
 sudo adduser --ingroup hadoop hadoop
-#### password: hadoop
+#### password: <PASSWORD>
 #### set default values
 sudo usermod -aG sudo hadoop
 
+# FOR SPARK HOSTS/VMS ONLY IN THE DTP 
 # Create spark user
 sudo groupadd hadoop
 sudo adduser --ingroup hadoop spark
-#### password: spark
+#### password: <PASSWORD>
 #### set default values
 sudo usermod -aG sudo spark

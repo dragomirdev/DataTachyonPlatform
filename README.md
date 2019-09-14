@@ -64,7 +64,6 @@ Hive
 
 Hue
 
-
 ### Business
 
 Keras
@@ -97,15 +96,19 @@ The DTP enables a structured dataflow from each layer in order to provide an eas
 
 [DTP DataFlow](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-1.3-DataFlow.png)
 
-
 ## Software Configuration
 
 The main DTP software configuration covering all layers:
 
 [DTP Architecture](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-1.3-Tools-Architecture.jpg)
 
+# Installation Process
 
-# Installation Process 
+## DTP Server Initial Setup Process
+
+Before Installing the DTP Software Tools on the given Server/VM, there are some Pre Installation Steps needed.
+
+For further information go to [DTP Server Pre Installation Steps](/common/Readme.md)
 
 ## Continuous Integration/Continuous Delivery
 
@@ -179,4 +182,3 @@ To install ELK please go to
 To install GoDot please go to
 
 [GoDot Installation Process](/presentationlayer/README.md)
-

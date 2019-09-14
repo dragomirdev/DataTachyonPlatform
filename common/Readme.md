@@ -43,9 +43,18 @@ sudo adduser --ingroup hadoop hadoop
 <!-- set default values -->
 sudo usermod -aG sudo hadoop
 
-### Add exception to sudoers file for the user dtpuser as follows:\
+### Add exception to sudoers file for the user dtpuser before the DTP Installation using Jenkins as follows:\
 
-<!-- Note: This is a manual step -->
+<!-- Note: This is a manual step  -->
+<!--
+sudo vi /etc/sudoers  
+dtpuser ALL=(ALL) NOPASSWD: ALL
+-->
+
+### Remove exception to sudoers file for the user dtpuser after the DTP Installation using Jenkins as follows:\
+
+<!-- Note: This is a manual step done. Remove the last line as shown below for the dtpuser entry
+-->
 <!--
 sudo vi /etc/sudoers  
 dtpuser ALL=(ALL) NOPASSWD: ALL

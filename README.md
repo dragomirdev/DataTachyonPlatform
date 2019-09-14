@@ -62,6 +62,7 @@ Each Architectural Layer has a set of Open Source packages which include:
 
 * Keras
 * Tensorflow
+* Fast-AI
 * PyTorch
 * Numpy
 * Scipy

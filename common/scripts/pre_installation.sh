@@ -32,3 +32,8 @@ sudo adduser --ingroup hadoop hadoop
 #### set default values
 sudo usermod -aG sudo hadoop
 
+# Add exception to sudoers file for the user dtpuser as follows:\
+# Note: This is a manual step
+# sudo vi /etc/sudoers  \
+# dtpuser ALL=(ALL) NOPASSWD: ALL
+

@@ -2,17 +2,9 @@
 
 ## DTP-Elasticsearch Kibana Logstash Installation
 
-### Before Running Jenkins Job
+### Setup DTP ELK Server before running Jenkins Job
 
-[PreInstallation-DTP-ELK-Installer Jenkins](/common/scripts/pre_installation.sh)\
-
-1. Create the users dtpuser on the ELK host/VM.
-
-2. Add exception to sudoers file for the users dtpuser as follows:\
-        sudo vi /etc/sudoers  \
-        dtpuser ALL=(ALL) NOPASSWD: ALL
-
-3. Copy the public key of jenkins user on jenkins VM to dtpuser on ELK VM.
+1. To setup the ELK Server Host go to [DTP-Server-Host-Setup](/common/Readme.md).
 
 ### Create a Jenkins Job for DTP ELK Installer
 

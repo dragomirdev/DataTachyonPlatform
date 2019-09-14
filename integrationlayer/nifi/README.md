@@ -2,17 +2,9 @@
 
 ## DTP-Nifi-Installation
 
-### Before Running Jenkins Job
+### Setup DTP Nifi Server before running Jenkins Job
 
-[PreInstallation-DTP-Nifi-Installer Jenkins](/common/scripts/pre_installation.sh)\
-
-1. Create the users dtpuser on the Nifi host/VM.
-
-2. Add exception to sudoers file for the users dtpuser as follows:\
-        sudo vi /etc/sudoers  \
-        dtpuser ALL=(ALL) NOPASSWD: ALL
-
-3. Copy the public key of jenkins user on jenkins VM to dtpuser on Nifi VM.
+1. To setup the Nifi Server Host go to [DTP-Server-Host-Setup](/common/Readme.md).
 
 ### Create a Jenkins Job for DTP Nifi Installer
 

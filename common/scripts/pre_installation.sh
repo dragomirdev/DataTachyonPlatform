@@ -12,7 +12,7 @@ sudo chmod -R 640 .ssh/authorized_keys
 ssh localhost
 
 ## Copying the public keys of the remote host/VM to the local .ssh/authorized_keys file.
-## ssh-copy-id bothways i.e. from Jenkins to target VM and also from target VM to Jenkins
+## ssh-copy-id Bothways i.e. from Jenkins to target VM and also from target VM to Jenkins
 ssh-copy-id <USER>@<HOST_NAME>
 
 # FOR ALL HOSTS/VMS IN THE DTP

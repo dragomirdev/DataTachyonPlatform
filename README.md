@@ -25,19 +25,19 @@ Organisations that have a Cloud strategy in place can deploy DTP in MS-AZURE, Go
 
 The DTP is divided into 4 architectural layers to make the management of software and data workflows easier.
 
-### Integration
+### Integration Layer
 
 The Integration Layer enables the connectivity with the back-end systems like RDBMS, IOT, Cloud Databases and any other current or legacy data sources.
 
-### Data
+### Data Layer
 
 The Data Layer is used to store any data, clean and enrich the datasets coming from the Integration Layer and provide backup capabilities.
 
-### Business
+### Business Layer
 
 The Business Layer is used to apply business logic to the datasets and create new data insights using Artificial Intelligence with Real-Time and Batch-Type systems.
 
-### Presentation
+### Presentation Layer
 
 The Presentation Layer is used to visualise results and provide new data insights that are coming from the Business Layer.
 Visualisations can be expressed in a traditional 2D/3D format or 3D in a Virtual Reality format.
@@ -46,49 +46,40 @@ Visualisations can be expressed in a traditional 2D/3D format or 3D in a Virtual
 
 Each Architectural Layer has a set of Open Source packages which include:
 
-### Integration
+### Integration Layer Software Tools
 
-NiFi
+* NiFi
+* Spark
 
-Spark
+### Data Layer Software Tools
 
-Kafka
+* Hadoop
+* Spark
+* Hive
+* Hue
 
-### Data
+### Business Layer Software Packages
 
-Hadoop
+* Keras
+* Tensorflow
+* PyTorch
+* Numpy
+* Scipy
+* SciKit-Learn
+* Xgboost
+* Gensim
+* Pandas
 
-Spark
+### Presentation Layer Software Tools
 
-Hive
+* ElasticSearch
+* Logstash
+* Kibana
+* GoDot
 
-Hue
+### Continuous Integration / Continuous Delivery Tool
 
-### Business
-
-Keras
-
-Tensorflow
-
-PyTorch
-
-Numpy
-
-Scipy
-
-SciKit-Learn
-
-Pandas
-
-### Presentation
-
-Kibana/Logstash/ElasticSearch
-
-GoDot
-
-### Continuous Integration / Continuous Delivery
-
-Jenkins
+* Jenkins
 
 ## Software Dataflow
 

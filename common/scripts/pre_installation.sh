@@ -13,6 +13,7 @@ ssh localhost
 
 ## Copying the public keys of the remote host/VM to the local .ssh/authorized_keys file.
 ## ssh-copy-id Bothways i.e. from JENKINS to TARGET HOSTS/VMS and also from TARGET VM to JENKINS HOSTS/VMS.
+## This is also done for all the SPARK, HADOOP and all other Hosts/VMs for intercommunication.
 ssh-copy-id <USER>@<HOST_NAME>
 
 # FOR ALL HOSTS/VMS IN THE DTP

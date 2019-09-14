@@ -4,7 +4,7 @@
 
 ### Setup DTP ELK Server before running Jenkins Job
 
-1. To setup the ELK Server Host go to [DTP-Server-Host-Setup](/common/Readme.md).
+1. To setup the DTP ELK Server Host go to [DTP-Server-Setup](/common/Readme.md).
 
 ### Create a Jenkins Job for DTP ELK Installer
 

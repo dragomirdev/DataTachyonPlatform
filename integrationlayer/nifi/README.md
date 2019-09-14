@@ -4,7 +4,7 @@
 
 ### Setup DTP Nifi Server before running Jenkins Job
 
-1. To setup the Nifi Server Host go to [DTP-Server-Host-Setup](/common/Readme.md).
+1. To setup the DTP Nifi Server Host go to [DTP-Server-Setup](/common/Readme.md).
 
 ### Create a Jenkins Job for DTP Nifi Installer
 

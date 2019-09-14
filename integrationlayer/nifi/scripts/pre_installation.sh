@@ -13,3 +13,12 @@ ssh localhost
 ## Copying the public keys of the remote host/VM to the local .ssh/authorized_keys file.
 Do ssh-copy-id:
 ssh-copy-id <USER>@<HOST_NAME>
+
+
+# Create dtpuser user
+sudo groupadd hadoop
+sudo adduser --ingroup hadoop dtpuser
+#### password: hadoop
+#### set default values
+sudo usermod -aG sudo dtpuser
+

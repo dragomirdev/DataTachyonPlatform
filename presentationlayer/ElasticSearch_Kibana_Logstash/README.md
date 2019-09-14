@@ -2,6 +2,15 @@
 
 ## DTP-Elasticsearch Kibana Logstash Installation
 
+### Before Running Jenkins Job
+
+[PreInstallation-DTP-ELK-Installer Jenkins](/common/scripts/pre_installation.sh)
+(1) Create the users dtpuser on the ELK host/VM
+(2) Add exception to sudoers file for the users dtpuser as follows:\
+        sudo vi /etc/sudoers  \
+        dtpuser ALL=(ALL) NOPASSWD: ALL
+(3) Copy the public key of jenkins user on jenkins VM to dtpuser on ELK VM.
+
 ### Create a Jenkins Job for DTP ELK Installer
 
 1. On Jenkins Home page, click on the New Item.
@@ -45,6 +54,12 @@ TARGET_IP_ADDRESS the IP address of the ELK Server.\
    ![AddBuildSteps-DTP-ELK-Installer Jenkins](/presentationlayer/ElasticSearch_Kibana_Logstash/images/dtp-elk-install4.png)
 
 9. Save the Job.
+
+### After Running Jenkins Job
+
+(1) Remove exception from sudoers file for the users dtpuser by removing the last line shown below:\
+    sudo vi /etc/sudoers  \
+    dtpuser ALL=(ALL) NOPASSWD: ALL
 
 ## DTP-ELK-Uninstallation
 

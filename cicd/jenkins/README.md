@@ -62,7 +62,7 @@ This step enables the jenkins to connect using a user credentials which is confi
 3. Set default values for rest of the options
 
 4. Add DTP user to the sudoers file \
-   sudo usermod -aG sudo dtpuser 
+   sudo usermod -aG sudo dtpuser
 
 5. Add exception to sudoers file for the user dtpuser as follows:\
         sudo vi /etc/sudoers  \
@@ -81,8 +81,7 @@ This step enables the jenkins to connect using a user credentials which is confi
 ![Jenkins is Ready](/cicd/jenkins/images/add-dtpuser-credentials.png)
 
 4. Once DTP User is Created it is shown in the Credentials page as follows:\
-<<<<<<< HEAD
-        ![Jenkins is Ready](/cicd/jenkins/images/add-credentials.png)   
+![Add Jenkins Credentials](/cicd/jenkins/images/add-credentials.png)
 
 ### Configure Publish over SSH
 

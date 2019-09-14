@@ -11,7 +11,7 @@ sudo chmod -R 640 .ssh/authorized_keys
 ssh localhost
 
 ## Copying the public keys of the remote host/VM to the local .ssh/authorized_keys file.
-Do ssh-copy-id:
+## ssh-copy-id bothways i.e. from Jenkins to Nifi and also from Nifi to Jenkins
 ssh-copy-id <USER>@<HOST_NAME>
 
 

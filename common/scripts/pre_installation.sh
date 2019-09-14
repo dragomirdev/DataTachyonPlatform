@@ -32,10 +32,3 @@ sudo adduser --ingroup hadoop hadoop
 #### set default values
 sudo usermod -aG sudo hadoop
 
-# FOR SPARK HOSTS/VMS ONLY IN THE DTP 
-# Create spark user
-sudo groupadd hadoop
-sudo adduser --ingroup hadoop spark
-#### password: <PASSWORD>
-#### set default values
-sudo usermod -aG sudo spark

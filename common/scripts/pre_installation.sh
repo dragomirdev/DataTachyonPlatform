@@ -22,3 +22,18 @@ sudo adduser --ingroup hadoop dtpuser
 #### password: hadoop
 #### set default values
 sudo usermod -aG sudo dtpuser
+
+
+# Create hadoop user
+sudo groupadd hadoop
+sudo adduser --ingroup hadoop hadoop
+#### password: hadoop
+#### set default values
+sudo usermod -aG sudo hadoop
+
+# Create spark user
+sudo groupadd hadoop
+sudo adduser --ingroup hadoop spark
+#### password: spark
+#### set default values
+sudo usermod -aG sudo spark

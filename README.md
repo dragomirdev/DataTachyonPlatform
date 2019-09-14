@@ -94,7 +94,7 @@ The main DTP software configuration covering all layers:
 
 ![DTP Architecture](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP-1.3-Tools-Architecture.jpg)
 
-# Installation Process
+# DTP Installation Process 
 
 ## DTP Server Initial Setup Process
 
@@ -106,50 +106,46 @@ For further information go to [DTP Server Pre Installation Steps](/common/Readme
 
 CI/CD is the main DTP component that is used for automated installation of all software packages.  The installation process is co-ordinated with the Jenkins tool.
 
-### Jenkins
+### Jenkins Installation
 
 To install Jenkins please go to [Jenkins Installation Process](/cicd/README.md)
 
-## Integration Layer
+## Integration Layer Installation
 
-### NiFi
+### NiFi Installation
 
 To install NiFi please go to [NiFi Installation Process](/integrationlayer/README.md)
 
-## Data Layer
+## Data Layer Installation
 
-### Hadoop
+### Hadoop Installation
 
 To install Hadoop please go to [Hadoop Installation Process](/datalayer/hadoop/README.md)
 
-### Spark
+### Spark Installation
 
 To install Spark please go to [Spark Installation Process](/datalayer/spark/README.md)
 
-### Hive
+### Hive Installation
 
 To install Hive please go to [Hive Installation Process](/datalayer/hive/README.md)
 
-### Hue
+### Hue Installation
 
 To install Hue please go to [Hue Installation Process](/datalayer/hue/README.md)
 
-## Business Layer
+## Business Layer Installation
 
-### Tensorflow
+### Tensorflow, Keras, Pytorch, Fast-AI Installation
 
-To install Tensorflow please go to [Tensorflow Installation Process](/businesslayer/README.md)
+To install Business Layer packages like Tensorflow, Keras, Pytorch, Fast-AI, etc please go to [Tensorflow Installation Process](/businesslayer/README.md)
 
-### PyTorch
+## Presentation Layer Installation
 
-To install PyTorch please go to [PyTorch Installation Process](/businesslayer/README.md)
-
-## Presentation Layer
-
-### ElasticSearch/LogStash/Kibana - ELK
+### ElasticSearch/LogStash/Kibana - ELK Installation
 
 To install ELK please go to [ELK Installation Process](/presentationlayer/README.md)
 
-### GoDot
+### GoDot Installation
 
 To install GoDot please go to [GoDot Installation Process](/presentationlayer/README.md)

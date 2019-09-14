@@ -104,7 +104,9 @@ For further information go to [DTP Server Pre Installation Steps](/common/Readme
 
 ## Continuous Integration/Continuous Delivery
 
-CI/CD is the main DTP component that is used for automated installation of all software packages.  The installation process is co-ordinated with the Jenkins tool.
+CI/CD is the main DTP component that is used for automated installation of all software packages.
+
+The installation process is co-ordinated with the Jenkins tool.
 
 ### Jenkins Installation
 
@@ -138,8 +140,9 @@ To install Hue please go to [Hue Installation Process](/datalayer/hue/README.md)
 
 ### Tensorflow, Keras, Pytorch, Fast-AI Installation
 
-To install Business Layer packages like Tensorflow, Keras, \
-Pytorch, Fast-AI, etc please go to [Business Layer Installation Process](/businesslayer/README.md)
+To install Business Layer packages like Tensorflow, Keras, Pytorch, Fast-AI, etc please go to \
+
+[Business Layer Installation Process](/businesslayer/README.md)
 
 ## Presentation Layer Installation
 

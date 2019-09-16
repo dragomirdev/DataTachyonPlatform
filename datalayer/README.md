@@ -8,7 +8,7 @@ The DTP Data layer consists of the following:
 * Apache Hive
 * Apache Spark
 
-### Hadoop Distributed File System (HDFS)
+## Apache Hadoop Distributed File System (HDFS)
 
 ### Introduction to HDFS
 
@@ -87,7 +87,7 @@ Its systems are highly economical as ordinary computers can be used for data pro
 
 #### For DTP HDFS Setup using Jenkins goto: [DTP HDFS Setup  Process](/datalayer/hadoop/README.md)
 
-### Hive
+## Apache Hive
 
 ### Introduction to Hive
 
@@ -153,8 +153,33 @@ The main components of Apache Hive are
 
 #### For DTP Hive Setup using Jenkins goto: [DTP Hive Setup  Process](/datalayer/hive/README.md)
 
-### Spark
+## Apache Spark
 
 ### Introduction to Spark
+
+Apache Spark is an open-source general-purpose & lightning fast cluster computing framework for real-time processing and integrates with all the Big data tools like Apache Hadoop.
+
+#### Advantages of Spark
+
+* It process the data swiftly using Parallel Processing of the data over the cluster.
+* It is Fault Tolerant & is able to recover lost data easily in case of any worker node failure.
+* It improves the performance by an order of magnitudes by keeping the data In-Memory Computation
+* Reusability
+* It limits how much work it has to do using Lazy Evaluation and only after an action triggers all the changes or the computation is performed.
+* It performs Coarse Grained Operation by applying it to the whole dataset not on the single element in the data set.
+* It supports multiple languages.
+
+### Spark Architecture
+
+![Spark Architecture](/datalayer/spark/images/spark_architecture.png)
+
+* The SparkContext connects to the cluster manager which allocates resources across applications.
+* Once the SparkContext is connected to the cluster manager, Spark acquires executors on nodes in the cluster, which are processes that run computations and store data for the application.
+* The application code is then sent to the executors.
+* SparkContext then sends tasks to the executors to run.
+
+### DTP Spark Setup
+
+![DTP-Spark-Setup](/datalayer/spark/images/dtp_spark_cluster_setup.png)
 
 #### For DTP Spark Setup using Jenkins goto: [DTP Spark Setup  Process](/datalayer/spark/README.md)

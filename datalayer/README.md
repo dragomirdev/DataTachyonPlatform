@@ -147,6 +147,10 @@ The main components of Apache Hive are
 
 * It has two modes of run namely Non-Interactive mode and Interactive mode. Non-interactive mode is run with -f option.
 
+### DTP Hive Setup
+
+![DTP-Hive-Setup](/datalayer/hive/images/dtp_hive_setup.png)
+
 #### For DTP Hive Setup using Jenkins goto: [DTP Hive Setup  Process](/datalayer/hive/README.md)
 
 ### Spark

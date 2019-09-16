@@ -83,3 +83,4 @@ Its systems are highly economical as ordinary computers can be used for data pro
 * It is also responsible for creating blocks, deleting blocks and replicating the same based on the decisions taken by the NameNode
 * It sends heartbeats to the NameNode periodically to report the overall health of HDFS, by default, this frequency is set to 3 seconds.
 
+#### For DTP HDFS Setup using Jenkins goto: [DTP HDFS Setup  Process](/datalayer/hadoop/README.md)

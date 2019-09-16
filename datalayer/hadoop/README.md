@@ -46,7 +46,7 @@ HADOOP_DN_TWO_NAME – the host name of the second data node.
    chmod 775 install_hadoop_namenode.sh \
    ./install_hadoop_namenode.sh $HADOOP_SNN_IP $HADOOP_SNN_NAME $HADOOP_DN1_IP $HADOOP_DN1_NAME $HADOOP_DN2_IP $HADOOP_DN2_NAME \
    echo "*** Removing installation files ***" \
-   rm install_hadoop_namenode.sh \
+   rm install_hadoop_namenode.sh
 
    ![AddBuildSteps-DTP-HDFS-NN-Installer Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-installer4.png)
 
@@ -57,7 +57,7 @@ On Similar lines create the following Jenkins Jobs.
 ### Create the Jenkins Job for DTP HDFS Secondary NameNode Installer
 
 1. Use the following Script to setup the secondary name node: \
-[HADOOP_SNN.sh](/datalayer/hadoop/HADOOP_SNN.sh) \
+[HADOOP_SNN.sh](/datalayer/hadoop/scripts//HADOOP_SNN.sh) \
 The scripts takes two parameters.\
 HADOOP_NN_IP – the IP address of the name name node.\
 HADOOP_NN_NAME – the host name of the name name node.
@@ -65,7 +65,7 @@ HADOOP_NN_NAME – the host name of the name name node.
 ### Create the Jenkins Job for DTP HDFS DataNode(s) Installer
 
 1. Use the following Script to setup the DataNode node (i.e. data node one and two): \
-[HADOOP_DN.sh](/datalayer/hadoop/HADOOP_DN.sh) \
+[HADOOP_DN.sh](/datalayer/hadoop/scripts/HADOOP_DN.sh) \
 The scripts takes two parameters.\
 HADOOP_NN_IP – the IP address of the name name node.
 HADOOP_NN_NAME – the host name of the name name node.
@@ -77,7 +77,7 @@ HADOOP_NN_NAME – the host name of the name name node.
    chmod 775 install_hadoop_datanode.sh \
    ./install_hadoop_datanode.sh $HADOOP_NN_IP $HADOOP_NN_NAME \
    echo "*** Removing installation files ***" \
-   rm install_hadoop_datanode.sh \
+   rm install_hadoop_datanode.sh
 
 ![AddBuildSteps-DTP-HDFS-DN-Installer Jenkins](/datalayer/hadoop/images/dtp-hadoop-dn-installer1.png)
 
@@ -135,7 +135,7 @@ On Similar lines create the following Jenkins Jobs.
 ### Create the Jenkins Job for DTP HDFS Secondary NameNode Uninstaller
 
 1. Use the following Script to remove the secondary name node: \
-[UNINSTALL_HADOOP_SNN.sh](/datalayer/hadoop/UNINSTALL_HADOOP_SNN.sh) \
+[UNINSTALL_HADOOP_SNN.sh](/datalayer/hadoop/scripts//UNINSTALL_HADOOP_SNN.sh) \
 The scripts takes two parameters.\
 HADOOP_NN_IP – the IP address of the name name node.\
 HADOOP_NN_NAME – the host name of the name name node..

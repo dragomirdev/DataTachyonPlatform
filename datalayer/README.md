@@ -4,11 +4,11 @@
 
 The DTP Data layer consists of the following:
 
-* Hadoop Distributed File System (HDFS)
-* Hive
-* Spark
+* Apache Hadoop Distributed File System (HDFS)
+* Apache Hive
+* Apache Spark
 
-### Hadoop Distributed File System (HDFS)
+## Apache Hadoop Distributed File System (HDFS)
 
 ### Introduction to HDFS
 
@@ -50,7 +50,7 @@ Its systems are highly economical as ordinary computers can be used for data pro
 
 * HDFS uses a command line interface to interact with Hadoop.
 
-### HDFS Architecture
+#### HDFS Architecture
 
 ![HDFS Architecture](/datalayer/hadoop/images/hdfs_architecture.png)
 
@@ -86,3 +86,100 @@ Its systems are highly economical as ordinary computers can be used for data pro
 ![DTP-HDFS-Setup](/datalayer/hadoop/images/dtp-hdfs-setup.png)
 
 #### For DTP HDFS Setup using Jenkins goto: [DTP HDFS Setup  Process](/datalayer/hadoop/README.md)
+
+## Apache Hive
+
+### Introduction to Hive
+
+Apache Hive is an open source data processing software tool on Hadoop. 
+It is a database tool for querying and analyzing large datasets stored in Hadoop.
+
+#### Advantages of Hive
+
+* Schema flexibility and evolution.
+* Tables can be portioned and bucketed.
+* Apache Hive tables are defined directly in the HDFS.
+* JDBC/ODBC drivers are available.
+* It provides data summarization, query, and analysis in much easier manner.
+* It supports external tables which make it possible to process data without actually storing in HDFS.
+* It fits the low-level interface requirement of Hadoop perfectly.
+* It also supports partitioning of data at the level of tables to improve performance.
+* It has a rule based optimizer for optimizing logical plans.
+* It is scalable, familiar, and extensible.
+* Using HiveQL doesn’t require any knowledge of programming language, Knowledge of basic SQL query is enough.
+* The users can easily process structured data in Hadoop using Hive.
+Querying in Hive is very simple as it is similar to SQL.
+* The users can also run Ad-hoc queries for the data analysis using Hive.
+
+### Hive Architecture
+
+![Hive Architecture](/datalayer/hive/images/hive_architecture.png)
+
+The main components of Apache Hive are
+
+#### Metastore
+
+* Hive stores the metadata for each of the tables like their schema and includes the partition metadata which helps the driver to track the progress of various data sets distributed over the cluster. Hive metadata helps the driver to keep a track of the highly crucial data. Backup server regularly replicates the data which it can retrieve in case of data loss.
+
+#### Driver
+
+* The Driver acts like a controller which receives the HiveQL statements and starts the execution of the statement by creating sessions. It monitors the life cycle and progress of the execution and stores the necessary metadata generated during the execution of a HiveQL statement and acts as a collection point of data or query result obtained after the Reduce operation.
+
+#### Compiler
+
+* The Compiler performs the compilation of the HiveQL query and converts the query to an execution plan which contains the tasks and also contains steps needed to be performed by the MapReduce to get the output as translated by the query.
+
+#### Optimizer
+
+* It performs various transformations on the execution plan to provide optimized It performs various transformations on the execution plan to provide optimized Directed Acyclic Graph (DAG) obtained by the compiler.
+
+#### Executor
+
+* Once compilation and optimization complete, the executor executes the tasks. Executor takes care of pipelining the tasks.
+
+#### Command-line interface (CLI)), UI, and Thrift Server
+
+* CLI (command-line interface) provides a user interface for an external user to interact with Hive. Thrift server in Hive allows external clients to interact with Hive over a network, similar to the JDBC or ODBC protocols.
+
+#### Hive Shell
+
+* It is the command line interface which is used to interact with the Hive and to issue  commands or queries in HiveQL.
+
+* It has two modes of run namely Non-Interactive mode and Interactive mode. Non-interactive mode is run with -f option.
+
+### DTP Hive Setup
+
+![DTP-Hive-Setup](/datalayer/hive/images/dtp_hive_setup.png)
+
+#### For DTP Hive Setup using Jenkins goto: [DTP Hive Setup  Process](/datalayer/hive/README.md)
+
+## Apache Spark
+
+### Introduction to Spark
+
+Apache Spark is an open-source general-purpose & lightning fast cluster computing framework for real-time processing and integrates with all the Big data tools like Apache Hadoop.
+
+#### Advantages of Spark
+
+* It process the data swiftly using Parallel Processing of the data over the cluster.
+* It is Fault Tolerant & is able to recover lost data easily in case of any worker node failure.
+* It improves the performance by an order of magnitudes by keeping the data In-Memory Computation
+* Reusability
+* It limits how much work it has to do using Lazy Evaluation and only after an action triggers all the changes or the computation is performed.
+* It performs Coarse Grained Operation by applying it to the whole dataset not on the single element in the data set.
+* It supports multiple languages.
+
+### Spark Architecture
+
+![Spark Architecture](/datalayer/spark/images/spark_architecture.png)
+
+* The SparkContext connects to the cluster manager which allocates resources across applications.
+* Once the SparkContext is connected to the cluster manager, Spark acquires executors on nodes in the cluster, which are processes that run computations and store data for the application.
+* The application code is then sent to the executors.
+* SparkContext then sends tasks to the executors to run.
+
+### DTP Spark Setup
+
+![DTP-Spark-Setup](/datalayer/spark/images/dtp_spark_cluster_setup.png)
+
+#### For DTP Spark Setup using Jenkins goto: [DTP Spark Setup  Process](/datalayer/spark/README.md)

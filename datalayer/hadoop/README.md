@@ -85,7 +85,7 @@ HADOOP_NN_NAME – the host name of the name name node.
 
 1. Remove exception from sudoers file for the users dtpuser by removing the last line shown below:\
     sudo vi /etc/sudoers  \
-    dtpuser ALL=(ALL) NOPASSWD: ALL
+    hadoop ALL=(ALL) NOPASSWD: ALL
 
 ## DTP-HDFS-Uninstallation
 

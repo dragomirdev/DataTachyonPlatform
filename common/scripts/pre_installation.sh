@@ -38,5 +38,6 @@ sudo usermod -aG sudo hadoop
 <!--
 sudo vi /etc/sudoers  
 dtpuser ALL=(ALL) NOPASSWD: ALL
+hadoop ALL=(ALL) NOPASSWD: ALL
 -->
 

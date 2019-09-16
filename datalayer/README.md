@@ -12,9 +12,7 @@ The DTP Data layer consists of the following:
 
 ### Introduction to HDFS
 
-Hadoop is a framework that allows for the distributed processing of large datasets across clusters of computers using simple programming models.
-
-It is inspired by a technical document published by Google.
+Hadoop is a framework that allows for the distributed processing of large datasets across clusters of computers using simple programming models & is inspired by a technical document published by Google.
 
 The four key characteristics of Hadoop are:
 
@@ -82,5 +80,9 @@ Its systems are highly economical as ordinary computers can be used for data pro
 * It is responsible for serving read and write requests from the clients
 * It is also responsible for creating blocks, deleting blocks and replicating the same based on the decisions taken by the NameNode
 * It sends heartbeats to the NameNode periodically to report the overall health of HDFS, by default, this frequency is set to 3 seconds.
+
+### DTP HDFS Setup
+
+![DTP-HDFS-Setup](/datalayer/hadoop/images/dtp-hdfs-setup.png)
 
 #### For DTP HDFS Setup using Jenkins goto: [DTP HDFS Setup  Process](/datalayer/hadoop/README.md)

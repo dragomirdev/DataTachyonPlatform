@@ -17,17 +17,17 @@ This following HDFS setup consist of
 1. On Jenkins Home page, click on the New Item.
 
 2. Enter the Item name say DTP-Hadoop-Namenode-Installer.
-![Create-DTP-ELK-Installer Jenkins](/datalayer/hadoop/images/hdfs/dtp-hadoop-nn-installer1.png)
+![Create-DTP-ELK-Installer Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-installer1.png)
 
 3. Select FreeStyle Project and Ok.
 
 4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option.
-![DiscardBuild-DTP-HDFS-NN-Installer Jenkins](/datalayer/hadoop/images/hdfs/dtp-hadoop-nn-installer2.png)
+![DiscardBuild-DTP-HDFS-NN-Installer Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-installer2.png)
 
 5. Tick the option, the  project  is parameterized.
 
 6. Add the String parameters and configure for the following key value parameters. \
-![Parameterise-DTP-HDFS-NN-Installer Jenkins](/datalayer/hadoop/images/hdfs/dtp-hadoop-nn-installer3.png)
+![Parameterise-DTP-HDFS-NN-Installer Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-installer3.png)
 
 7. The following scripts is used to create the Jenkins job to setup the hadoop primary name node\
 [HADOOP_NN.sh](/datalayer/hadoop/scripts/HADOOP_NN.sh) \
@@ -48,7 +48,7 @@ HADOOP_DN_TWO_NAME – the host name of the second data node.
    echo "*** Removing installation files ***" \
    rm install_hadoop_namenode.sh \
 
-   ![AddBuildSteps-DTP-HDFS-NN-Installer Jenkins](/datalayer/hadoop/images/hdfs/dtp-hadoop-nn-installer4.png)
+   ![AddBuildSteps-DTP-HDFS-NN-Installer Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-installer4.png)
 
 9. Save the Job.
 
@@ -79,7 +79,7 @@ HADOOP_NN_NAME – the host name of the name name node.
    echo "*** Removing installation files ***" \
    rm install_hadoop_datanode.sh \
 
-![AddBuildSteps-DTP-HDFS-DN-Installer Jenkins](/datalayer/hadoop/images/hdfs/dtp-hadoop-dn-installer1.png)
+![AddBuildSteps-DTP-HDFS-DN-Installer Jenkins](/datalayer/hadoop/images/dtp-hadoop-dn-installer1.png)
 
 ### After Running Jenkins Job
 
@@ -94,17 +94,17 @@ HADOOP_NN_NAME – the host name of the name name node.
 1. On Jenkins Home page, click on the New Item.
 
 2. Enter the Item name say DTP-Hadoop-Datanode-One-Uninstaller.
-![Create-DTP-Hadoop-Datanode-One-Uninstaller Jenkins](/datalayer/hadoop/images/hdfs/dtp-hadoop-nn-uninstaller1.png)
+![Create-DTP-Hadoop-Datanode-One-Uninstaller Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-uninstaller1.png)
 
 3. Select FreeStyle Project and Ok.
 
 4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option.
-![DiscardBuild-DTP-Hadoop-Datanode-One-Uninstaller Jenkins](/datalayer/hadoop/images/hdfs/dtp-hadoop-nn-uninstaller2.png)
+![DiscardBuild-DTP-Hadoop-Datanode-One-Uninstaller Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-uninstaller2.png)
 
 5. Tick the option, the  project  is parameterized.
 
 6. Add the String parameters and configure for the following key value parameters. \
-![Parameterise-DTP-Hadoop-Datanode-One-Uninstaller Jenkins](/datalayer/hadoop/images/hdfs/dtp-hadoop-nn-uninstaller3.png)
+![Parameterise-DTP-Hadoop-Datanode-One-Uninstaller Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-uninstaller3.png)
 
 7. The following script is used to create the Jenkins job \
 [UNINSTALL_HADOOP_NN.sh](/datalayer/hadoop/scripts/UNINSTALL_HADOOP_NN.sh) \
@@ -126,7 +126,7 @@ HADOOP_DN_TWO_NAME – the host name of the second data node.
     echo "*** Removing uninstall script ***"
     rm uninstall_hadoop_datanode.sh
 
-   ![AddBuildSteps-DTP-Hadoop-Datanode-One-Installer Jenkins](/datalayer/hadoop/images/hdfs/dtp-hadoop-nn-uninstaller4.png)
+   ![AddBuildSteps-DTP-Hadoop-Datanode-One-Installer Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-uninstaller4.png)
 
 9. Save the Job.
 
@@ -156,4 +156,4 @@ HADOOP_NN_NAME – the host name of the name name node.
    echo "*** Removing uninstall script ***" \
    rm uninstall_hadoop_datanode.sh 
 
-![AddBuildSteps-DTP-HDFS-DN-Uninstaller Jenkins](/datalayer/hadoop/images/hdfs/dtp-hadoop-dn-uninstaller1.png)
+![AddBuildSteps-DTP-HDFS-DN-Uninstaller Jenkins](/datalayer/hadoop/images/dtp-hadoop-dn-uninstaller1.png)

@@ -1,5 +1,4 @@
-# DataTachyonPlatform
-Data Tachyon Platform
+# DataTachyonPlatform - Hadoop Distributed File System (HDFS)
 
 The Data Tachyon Platform provides a number of scripts that allows you to install and uninstall its components on premise and in the cloud.
 

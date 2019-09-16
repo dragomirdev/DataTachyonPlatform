@@ -86,3 +86,15 @@ Its systems are highly economical as ordinary computers can be used for data pro
 ![DTP-HDFS-Setup](/datalayer/hadoop/images/dtp-hdfs-setup.png)
 
 #### For DTP HDFS Setup using Jenkins goto: [DTP HDFS Setup  Process](/datalayer/hadoop/README.md)
+
+### Hive
+
+### Introduction to Hive
+
+#### For DTP Hive Setup using Jenkins goto: [DTP Hive Setup  Process](/datalayer/hive/README.md)
+
+### Spark
+
+### Introduction to Spark
+
+#### For DTP Spark Setup using Jenkins goto: [DTP Spark Setup  Process](/datalayer/spark/README.md)

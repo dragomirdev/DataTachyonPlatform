@@ -132,10 +132,6 @@ To install Spark please go to [Spark Installation Process](/datalayer/spark/READ
 
 To install Hive please go to [Hive Installation Process](/datalayer/hive/README.md)
 
-### Hue Installation
-
-To install Hue please go to [Hue Installation Process](/datalayer/hue/README.md)
-
 ## Business Layer Installation
 
 ### Tensorflow, Keras, Pytorch, Fast-AI Installation
@@ -150,6 +146,3 @@ To install Business Layer packages like Tensorflow, Keras, Pytorch, Fast-AI, etc
 
 To install ELK please go to [ELK Installation Process](/presentationlayer/README.md)
 
-### GoDot Installation
-
-To install GoDot please go to [GoDot Installation Process](/presentationlayer/README.md)

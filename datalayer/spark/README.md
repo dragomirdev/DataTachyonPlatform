@@ -6,7 +6,7 @@
 
 1. To setup the DTP Spark Server go to [DTP-Server-Setup](/common/Readme.md).
 
-### Create a Jenkins Job for DTP Spark Installer
+### Create a Jenkins Job for DTP Spark Master Installer
 
 1. On Jenkins Home page, click on the New Item.
 
@@ -71,7 +71,7 @@ This script takes no parameters.
 
 ## DTP-Spark-Uninstallation
 
-### Create a Jenkins Job for DTP Spark Uninstaller
+### Create a Jenkins Job for DTP Spark Master Uninstaller
 
 1. On Jenkins Home page, click on the New Item.
 

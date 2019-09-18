@@ -19,7 +19,7 @@ sudo sed -i "/$HADOOP_DN_ONE_IP $HADOOP_DN_ONE_NAME/d" /etc/hosts
 sudo sed -i "/$HADOOP_DN_TWO_IP $HADOOP_DN_TWO_NAME/d" /etc/hosts
 
 # Delete hadoop user
-sudo deluser --remove-home hadoop
+#sudo deluser --remove-home hadoop
 
 # Uninstall hadoop
 sudo rm -r /opt/hadoop/

@@ -15,6 +15,7 @@ sudo apt -y update
 sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk
 
+# Make sure the hadoop user is already created with the ssh keys copied across all hadoop nodes.
 sudo usermod -aG sudo hadoop
 
 # Run commands as hadoop user and don't expand variables
@@ -65,15 +66,3 @@ echo "        </property>" >> /opt/hadoop/etc/hadoop/core-site.xml
 echo "</configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
 EOF
 
-# ========== to manually create hadoop user
-
-# Create hadoop user
-sudo adduser hadoop
-# Password : bee5Haveknee5!
-# Set default values
-
-# ========== to manually add an exception to sudoers file for the users dtpuser and hadoop
-
-sudo visudo
-dtpuser ALL=(ALL) NOPASSWD: ALL
-hadoop ALL=(ALL) NOPASSWD: ALL

@@ -53,36 +53,5 @@ touch /opt/spark/conf/slaves
 echo "$SPARK_WORKER_NAME" >> /opt/spark/conf/slaves
 EOF
 
-# ========== to manually create spark user ADDED THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-# Create spark user
-#sudo adduser hadoop
-# Password : bee5Haveknee5!
-# Set default values
-
-# ========== to manually add an exception to sudoers file for the users dtpuser and spark  ADDED THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-#sudo visudo
-#dtpuser ALL=(ALL) NOPASSWD: ALL
-#hadoop ALL=(ALL) NOPASSWD: ALL
-
-# ========== to manually enable passwordless ssh between spark master and worker
-
-# on spark worker
-sudo vim /etc/ssh/sshd_config
-"PasswordAuthentication no" change to "PasswordAuthentication yes"
-sudo service sshd reload
-
-# on spark master
-#ssh-keygen -t rsa -b 4096
-#ssh-copy-id hadoop@JP-DTP-SPARK-WORKER-VM
-
-# on spark worker
-sudo vim /etc/ssh/sshd_config
-"PasswordAuthentication yes" change to "PasswordAuthentication no"
-sudo service sshd reload
-
-# ==========
-
 #START SPARK AT SYSTEM BOOT!!!!!!!!!!!!!!!!!
 #START SPARK WOULD NEED TO HAVE WORKER INSTALLED FIRST!!!!!!!!!!!!!!!!!!!!!!!!!!!

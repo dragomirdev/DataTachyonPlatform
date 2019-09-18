@@ -36,11 +36,9 @@ sudo adduser --ingroup hadoop hadoop
 sudo usermod -aG sudo hadoop
 
 # Add exception to sudoers file for the user dtpuser before DTP Installation on each Server/VM as follows:\
-
-<!-- Note: This is a manual step  -->
-<!--
+# Note: This is a manual step
 sudo vi /etc/sudoers  
 dtpuser ALL=(ALL) NOPASSWD: ALL
 hadoop ALL=(ALL) NOPASSWD: ALL
--->
+
 

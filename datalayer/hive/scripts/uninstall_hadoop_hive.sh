@@ -9,8 +9,8 @@ pkill -f hive
 pkill -f beeline
 
 # Uninstall hadoop
-sudo rm -r /opt/hadoop/
-sudo rm -r /opt/hive
-sudo rm -r ~/metastore_db/
-sudo rm -r ~/derby.log
+sudo rm -rf /opt/hadoop/
+sudo rm -rf /opt/hive
+sudo rm -rf ~/metastore_db/
+sudo rm -rf ~/derby.log
 

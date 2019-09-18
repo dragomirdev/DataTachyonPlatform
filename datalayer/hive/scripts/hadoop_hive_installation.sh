@@ -78,6 +78,7 @@ echo "************ Starting Hive installation *********"
 sudo mv /home/hadoop/hive_311.zip /opt/
 cd /opt/
 sudo unzip hive_311.zip
+sudo mv hive_311 hive
 sudo chown -R hadoop:hadoop hive
 sudo chmod -R 775 hive
 echo "************ Position - 2 Hive installation *********"

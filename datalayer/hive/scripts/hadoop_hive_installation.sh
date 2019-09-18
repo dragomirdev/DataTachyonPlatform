@@ -64,6 +64,12 @@ EOF
 
 sudo -i -u hadoop bash << EOF
 
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
+echo "export HADOOP_HOME=/opt/hadoop" >> ~/.bashrc
+echo "export HIVE_HOME=/opt/hive" >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
 # Install Hive
 echo "************ Starting Hive installation *********"
 sudo mv /home/hadoop/hive_311.zip /opt/

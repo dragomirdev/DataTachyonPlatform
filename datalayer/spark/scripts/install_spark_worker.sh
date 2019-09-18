@@ -41,15 +41,3 @@ sudo echo "SPARK_WORKER_OPTS='-Dspark.worker.cleanup.enabled=true -Dspark.worker
 sudo echo "spark.serializer                   org.apache.spark.serializer.KryoSerializer"  >> /opt/spark/conf/spark-defaults.conf
 EOF
 
-# ========== to manually create hadoop user
-
-# Create spark user
-#sudo adduser hadoop
-# Password : bee5Haveknee5!
-# Set default values
-
-# ========== to manually add an exception to sudoers file for the users dtpuser and spark
-
-#sudo visudo
-#dtpuser ALL=(ALL) NOPASSWD: ALL
-#hadoop ALL=(ALL) NOPASSWD: ALL

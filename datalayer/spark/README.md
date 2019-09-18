@@ -24,7 +24,7 @@
 ![Parameterise-DTP-Spark-Installer Jenkins](/datalayer/spark/images/dtp_spark_installer3.png)
 
 7. The following scripts is used to create the Jenkins job to setup the Spark master. \
-[SPARK_MASTER.sh](/datalayer/spark/scripts/SPARK_MASTER.sh) \
+[install_spark_master.sh](/datalayer/spark/scripts/install_spark_master.sh) \
 Use this script to setup the spark master.\
 The scripts takes two parameters.\
 SPARK_WORKER_IP - the IP address of the spark worker node.\
@@ -48,7 +48,7 @@ On Similar lines create the following Jenkins Jobs.
 ### Create the Jenkins Job for DTP Spark Worker Installer
 
 1. Use the following Script to setup the Spark Worker node: \
-[SPARK_WORKER.sh]/datalayer/spark/scripts/SPARK_WORKER.sh) \
+[install_spark_worker.sh]/datalayer/spark/scripts/install_spark_worker.sh) \
 This script takes no parameters.
 
 2. Under Build Option, Click on Add build step add the following steps.\

@@ -48,11 +48,6 @@ sudo service sshd reload
 ssh-copy-id <USER>@<HOST_NAME>
 
 
-# enable PasswordAuthentication to no
-sudo vim /etc/ssh/sshd_config
-"PasswordAuthentication yes" change to "PasswordAuthentication no"
-sudo service sshd reload
-
 
 #Test SSH from each node to all other nodes.
 ssh <USER>@<HOST_NAME>
@@ -70,7 +65,10 @@ ssh-copy-id hadoop@JP-DTP-ELK-VM
 # On Each Node run the following
 ssh-copy-id jenkins@JP-DTP-JENKINS-VM
 
-
+# NOTE: Make sure for each Spark and Hadoop nodes we have the done the following checks
+# ssh-copy-id hadoop@JP-DTP-HADOOP-<NODENAME>-VM
+# ssh-copy-id hadoop@JP-DTP-SPARK-<NODENAME>-VM
+# ssh localhost
 
 
 # Add exception to sudoers file for the user dtpuser before DTP Installation on each Server/VM as follows:\
@@ -84,3 +82,9 @@ hadoop ALL=(ALL) NOPASSWD: ALL
 # Remove the last line as shown below for the dtpuser entry.
 # sudo vi /etc/sudoers
 # dtpuser ALL=(ALL) NOPASSWD: ALL hadoop ALL=(ALL) NOPASSWD: ALL
+
+# Change PasswordAuthentication to no
+sudo vim /etc/ssh/sshd_config
+"PasswordAuthentication yes" change to "PasswordAuthentication no"
+sudo service sshd reload
+

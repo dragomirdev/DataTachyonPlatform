@@ -27,6 +27,16 @@ sudo chmod -R 640 .ssh/authorized_keys
 ## adding the localhost keys to the known_hosts
 ssh localhost
 
+## Copy the hosts names to the /etc/hosts
+<JENKINS_IP_ADDRESS> JP-DTP-JENKINS-VM
+<NIFI_IP_ADDRESS>  JP-DTP-NIFI-VM
+<ELK_IP_ADDRESS>  JP-DTP-ELK-VM
+<SPARK_MASTER_IP_ADDRESS>  JP-DTP-SPARK-VM
+<SPARK_WORKER_IP_ADDRESS>  JP-DTP-SPARK-WORKER-VM
+<HADOOP_NAMENODE_IP_ADDRESS>  JP-DTP-HADOOP-NM-VM
+<HADOOP_DATANODE_IP_ADDRESS>  JP-DTP-HADOOP-DN1-VM
+
+
 # enable PasswordAuthentication yes
 sudo vim /etc/ssh/sshd_config
 "PasswordAuthentication no" change to "PasswordAuthentication yes"

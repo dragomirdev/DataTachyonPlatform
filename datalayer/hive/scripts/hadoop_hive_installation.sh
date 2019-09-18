@@ -4,24 +4,17 @@ HIVE_VM_IP_ADDRESS=$1
 HADOOP_NAMENODE_IP_ADDRESS=$2
 set -euxo pipefail
 
-cd
-
-# Add hadoop name node vm to hosts
 
 # Install dependecies
 sudo apt -y update
 sudo apt -y upgrade
-sudo apt -y install openjdk-8-jdk
-sudo apt -y install zip unzip
+sudo apt -y install openjdk-8-jdk zip unzip
 
-#sudo useradd hadoop
-#sudo mkdir /home/hadoop
+# Make sure the hadoop user is already created with the ssh keys copied across all hadoop nodes.
 sudo usermod -aG sudo hadoop
-#sudo chown -R hadoop:hadoop /home/hadoop
-
 
 # Run commands as hadoop user and don't expand variables
-sudo -i -u hadoop bash << EOF
+sudo -i -u hadoop bash << 'EOF'
 
 # Update bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
@@ -39,12 +32,13 @@ sudo chown -R hadoop:hadoop hadoop/
 sudo chmod -R 775 hadoop/
 sudo rm hadoop-3.1.2.tar.gz
 
-mkdir -p /home/hadoop/hadoopdata/
+mkdir -p /home/hadoop/hadoopdata/dataNode/
 chown hadoop:hadoop /home/hadoop/hadoopdata/
 chmod 775 /home/hadoop/hadoopdata/
 
 # Configure hadoop
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> /opt/hadoop/etc/hadoop/hadoop-env.sh
+
 sed -i '/<configuration>/d' /opt/hadoop/etc/hadoop/hdfs-site.xml
 sed -i '\+</configuration>+d' /opt/hadoop/etc/hadoop/hdfs-site.xml
 echo "<configuration>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
@@ -57,6 +51,7 @@ EOF
 
 # Run commands as hadoop user and expand variables
 sudo -i -u hadoop bash << EOF
+
 sed -i '/<configuration>/d' /opt/hadoop/etc/hadoop/core-site.xml
 sed -i '\+</configuration>+d' /opt/hadoop/etc/hadoop/core-site.xml
 echo "<configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
@@ -67,7 +62,7 @@ echo "        </property>" >> /opt/hadoop/etc/hadoop/core-site.xml
 echo "</configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
 EOF
 
-sudo -i -u hadoop bash << OUTER
+sudo -i -u hadoop bash << EOF
 
 # Install Hive
 echo "************ Starting Hive installation *********"
@@ -119,5 +114,5 @@ echo "************ Starting Beeline Service*********"
 hive --service beeline
 !connect jdbc:hive2://52.183.128.193:10000 hadoop hadoop
 
-OUTER
+EOF
 

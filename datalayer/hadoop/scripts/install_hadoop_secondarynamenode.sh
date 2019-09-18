@@ -77,3 +77,4 @@ echo "                <value>hdfs://$HADOOP_NN_NAME:9000</value>" >> /opt/hadoop
 echo "        </property>" >> /opt/hadoop/etc/hadoop/core-site.xml
 echo "</configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
 EOF
+

@@ -27,15 +27,17 @@ sudo mv /home/hadoop/spark-2.4.3-bin-hadoop2.7.tgz /opt/
 cd /opt/
 sudo tar -zxvf spark-2.4.3-bin-hadoop2.7.tgz
 sudo mv spark-2.4.3-bin-hadoop2.7 spark
-sudo chown -R hadoop:hadoop spark/
-sudo chmod -R 775 spark/ 
 sudo rm spark-2.4.3-bin-hadoop2.7.tgz
 
 # Configure spark
 sudo cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh
+sudo cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.conf
+
+sudo chown -R hadoop:hadoop spark/
+sudo chmod -R 775 spark/ 
+
 sudo echo "SPARK_WORKER_OPTS='-Dspark.worker.cleanup.enabled=true -Dspark.worker.cleanup.appDataTtl=604800'"  >> /opt/spark/conf/spark-env.sh
 
-sudo cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.conf
 sudo echo "spark.serializer                   org.apache.spark.serializer.KryoSerializer"  >> /opt/spark/conf/spark-defaults.conf
 EOF
 

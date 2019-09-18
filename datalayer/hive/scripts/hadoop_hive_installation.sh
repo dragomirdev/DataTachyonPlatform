@@ -103,8 +103,6 @@ echo "************ Position - 4 *********"
 
 ######
 # Hive beeline service
-JDBC_URL="jdbc:hive2://"$HIVE_VM_IP_ADDRESS":10000"
-echo "Connecting to Hive Beeline Service:"$JDBC_URL
 hive --service beeline
-!connect $JDBC_URL hadoop hadoop  
+!connect jdbc:hive2://52.183.128.193:10000 hadoop hadoop
 OUTER

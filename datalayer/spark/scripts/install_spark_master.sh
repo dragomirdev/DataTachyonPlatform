@@ -33,7 +33,7 @@ sudo mv /home/hadoop/spark-2.4.3-bin-hadoop2.7.tgz /opt/ #CHANGED THIS FROM BEIN
 cd /opt/ #SWAPPED THIS WITH LINE ABOVE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 sudo tar -zxvf spark-2.4.3-bin-hadoop2.7.tgz
 sudo mv spark-2.4.3-bin-hadoop2.7 spark
-sudo chown -R spark:spark spark/
+sudo chown -R hadoop:hadoop spark/
 sudo chmod -R 775 spark/ 
 sudo rm spark-2.4.3-bin-hadoop2.7.tgz
 

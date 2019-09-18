@@ -15,10 +15,10 @@ sudo apt -y update
 sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk
 
-sudo usermod -aG sudo spark
+sudo usermod -aG sudo hadoop
 
-# Run commands as spark user and don't expand variables
-sudo -i -u spark bash << 'EOF'
+# Run commands as hadoop user and don't expand variables
+sudo -i -u hadoop bash << 'EOF'
 
 # Update bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
@@ -45,8 +45,8 @@ cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.c
 echo "spark.serializer                   org.apache.spark.serializer.KryoSerializer" >> /opt/spark/conf/spark-defaults.conf
 EOF
 
-# Run commands as spark user and expand variables
-sudo -i -u spark bash << EOF
+# Run commands as hadoop user and expand variables
+sudo -i -u hadoop bash << EOF
 
 touch /opt/spark/conf/slaves
 echo "$SPARK_WORKER_NAME" >> /opt/spark/conf/slaves
@@ -55,7 +55,7 @@ EOF
 # ========== to manually create spark user ADDED THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 # Create spark user
-sudo adduser spark
+sudo adduser hadoop
 # Password : bee5Haveknee5!
 # Set default values
 
@@ -63,7 +63,7 @@ sudo adduser spark
 
 sudo visudo
 dtpuser ALL=(ALL) NOPASSWD: ALL
-spark ALL=(ALL) NOPASSWD: ALL
+hadoop ALL=(ALL) NOPASSWD: ALL
 
 # ========== to manually enable passwordless ssh between spark master and worker
 
@@ -73,8 +73,8 @@ sudo vim /etc/ssh/sshd_config
 sudo service sshd reload
 
 # on spark master
-ssh-keygen -t rsa -b 4096
-ssh-copy-id spark@JP-DTP-SPARK-WORKER-VM
+#ssh-keygen -t rsa -b 4096
+#ssh-copy-id hadoop@JP-DTP-SPARK-WORKER-VM
 
 # on spark worker
 sudo vim /etc/ssh/sshd_config

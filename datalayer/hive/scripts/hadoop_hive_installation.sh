@@ -23,16 +23,6 @@ sudo usermod -aG sudo hadoop
 # Run commands as hadoop user and don't expand variables
 sudo -i -u hadoop bash << EOF
 
-# Update bashrc
-cat >> ~/.bashrc << INN1
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
-export HADOOP_HOME=/opt/hadoop
-export SPARK_HOME=/opt/spark
-export HADOOP_HOME=/opt/hadoop
-export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$SPARK_HOME/bin:$HADOOP_HOME/sbin:$PATH
-INN1
-source ~/.bashrc
-
 # Install hadoop
 sudo mv /home/hadoop/hadoop-3.1.2.tar.gz /opt/
 cd /opt/
@@ -73,6 +63,17 @@ cat >> /opt/hadoop/etc/hadoop/core-site.xml << INNER
 </property>
 </configuration>
 INNER
+
+# Update bashrc
+cat >> ~/.bashrc << INN1
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+export HADOOP_HOME=/opt/hadoop
+export HIVE_HOME=/opt/hive
+export HADOOP_HOME=/opt/hadoop
+export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HIVE_HOME/bin:$HADOOP_HOME/sbin:$PATH
+INN1
+source ~/.bashrc
+
 
 # Install Hive
 echo "************ Starting Hive installation *********"

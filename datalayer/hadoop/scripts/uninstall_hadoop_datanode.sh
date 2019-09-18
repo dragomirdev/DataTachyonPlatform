@@ -8,7 +8,7 @@ HADOOP_NN_NAME=$2
 cd
 
 # Remove hadoop name node vm from hosts
-sudo sed -i "/$HADOOP_NN_IP $HADOOP_NN_NAME/d" /etc/hosts
+# sudo sed -i "/$HADOOP_NN_IP $HADOOP_NN_NAME/d" /etc/hosts
 
 # Delete hadoop user
 # sudo deluser --remove-home hadoop

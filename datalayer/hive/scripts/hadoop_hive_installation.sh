@@ -65,13 +65,11 @@ cat >> /opt/hadoop/etc/hadoop/core-site.xml << INNER
 INNER
 
 # Update bashrc
-cat >> ~/.bashrc << INN1
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 export HADOOP_HOME=/opt/hadoop
 export HIVE_HOME=/opt/hive
 export HADOOP_HOME=/opt/hadoop
 export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HIVE_HOME/bin:$HADOOP_HOME/sbin:$PATH
-INN1
 source ~/.bashrc
 
 

@@ -105,7 +105,7 @@ echo "************ Initialising derby database *********"
 mkdir -p ~/hiveserver2
 cd ~/hiveserver2
 
-echo "Starting HiveServer2 "
+echo "************ Starting HiveServer2 *********"
 hive --service hiveserver2 \
   --hiveconf hive.server2.transport.mode=binary \
   --hiveconf  hive.server2.thrift.bind.host=52.183.128.193 \
@@ -119,7 +119,7 @@ cd ~/beeline
 ######
 # Hive beeline service
 cd /home/hadoop
-echo "Starting HiveServer2 "
+echo "************ Starting Beeline Service*********"
 
 hive --service beeline
 !connect jdbc:hive2://52.183.128.193:10000 hadoop hadoop

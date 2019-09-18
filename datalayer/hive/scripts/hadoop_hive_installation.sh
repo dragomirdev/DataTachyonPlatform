@@ -23,6 +23,13 @@ sudo usermod -aG sudo hadoop
 # Run commands as hadoop user and don't expand variables
 sudo -i -u hadoop bash << EOF
 
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+export HADOOP_HOME=/opt/hadoop
+export HIVE_HOME=/opt/hive
+export HADOOP_HOME=/opt/hadoop
+export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HIVE_HOME/bin:$HADOOP_HOME/sbin:$PATH
+source ~/.bashrc
+
 # Install hadoop
 sudo mv /home/hadoop/hadoop-3.1.2.tar.gz /opt/
 cd /opt/
@@ -35,14 +42,6 @@ sudo rm hadoop-3.1.2.tar.gz
 mkdir -p /home/hadoop/hadoopdata/
 chown hadoop:hadoop /home/hadoop/hadoopdata/
 chmod 775 /home/hadoop/hadoopdata/
-
-
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
-export HADOOP_HOME=/opt/hadoop
-export HIVE_HOME=/opt/hive
-export HADOOP_HOME=/opt/hadoop
-export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HIVE_HOME/bin:$HADOOP_HOME/sbin:$PATH
-source ~/.bashrc
 
 # Configure hadoop
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> /opt/hadoop/etc/hadoop/hadoop-env.sh
@@ -61,8 +60,10 @@ EOF
 
 
 sudo -i -u hadoop bash << OUTER
+
 sed -i '/<configuration>/d' /opt/hadoop/etc/hadoop/core-site.xml
 sed -i '\+</configuration>+d' /opt/hadoop/etc/hadoop/core-site.xml
+
 cat >> /opt/hadoop/etc/hadoop/core-site.xml << INNER
 <configuration>
 <property>
@@ -122,3 +123,4 @@ echo "************ Starting Beeline Service*********"
 hive --service beeline
 !connect jdbc:hive2://52.183.128.193:10000 hadoop hadoop
 OUTER
+

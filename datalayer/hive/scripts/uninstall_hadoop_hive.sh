@@ -6,6 +6,7 @@
 #sudo deluser --remove-home dtpuser
 
 pkill -f hive
+pkill -f beeline
 
 # Uninstall hadoop
 sudo rm -r /opt/hadoop/

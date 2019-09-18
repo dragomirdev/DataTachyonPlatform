@@ -107,7 +107,7 @@ HADOOP_NN_NAME – the host name of the name name node.
 ![Parameterise-DTP-Hadoop-Datanode-One-Uninstaller Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-uninstaller3.png)
 
 7. The following script is used to create the Jenkins job \
-[UNINSTALL_HADOOP_NN.sh](/datalayer/hadoop/scripts/UNINSTALL_HADOOP_NN.sh) \
+[uninstall_hadoop_namenode.sh](/datalayer/hadoop/scripts/uninstall_hadoop_namenode.sh) \
 Use this script to remove the hadoop name node.\
 The script takes six parameters.\
 HADOOP_SNN_IP – the IP address of the secondary name node.\

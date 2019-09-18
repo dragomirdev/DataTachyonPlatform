@@ -48,7 +48,7 @@ On Similar lines create the following Jenkins Jobs.
 ### Create the Jenkins Job for DTP Spark Worker Installer
 
 1. Use the following Script to setup the Spark Worker node: \
-[install_spark_worker.sh]/datalayer/spark/scripts/install_spark_worker.sh) \
+[install_spark_worker.sh](/datalayer/spark/scripts/install_spark_worker.sh) \
 This script takes no parameters.
 
 2. Under Build Option, Click on Add build step add the following steps.\

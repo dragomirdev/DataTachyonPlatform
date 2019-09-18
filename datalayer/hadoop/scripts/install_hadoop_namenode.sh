@@ -23,6 +23,7 @@ sudo apt -y update
 sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk
 
+#Make sure hadoop user is created and the ssh keys are generated and copied across all the hadoop nodes.
 sudo usermod -aG sudo hadoop
 
 # Run commands as hadoop user and don't expand variables
@@ -35,7 +36,7 @@ echo 'export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH' >> ~/
 source ~/.bashrc
 
 # Install hadoop
-sudo mv /home/dtpuser/hadoop-3.1.2.tar.gz /opt/
+sudo mv /home/hadoop/hadoop-3.1.2.tar.gz /opt/
 cd /opt/
 sudo tar -zxvf hadoop-3.1.2.tar.gz
 sudo mv hadoop-3.1.2 hadoop
@@ -87,37 +88,6 @@ echo "$HADOOP_DN_TWO_NAME" >> /opt/hadoop/etc/hadoop/workers
 # Format The nameNode
 hdfs namenode -format
 EOF
-
-# ========== to manually create hadoop user
-
-# Create hadoop user
-sudo adduser hadoop
-# Password : bee5Haveknee5!
-# Set default values
-
-# ========== to manually add an exception to sudoers file for the users dtpuser and hadoop
-
-sudo visudo
-dtpuser ALL=(ALL) NOPASSWD: ALL
-hadoop ALL=(ALL) NOPASSWD: ALL
-
-# ========== to manually enable passwordless ssh between name node, ITSELF, 2nd name node and data nodes
-
-# on ITSELF, 2nd name node and data nodes
-sudo vim /etc/ssh/sshd_config
-"PasswordAuthentication no" change to "PasswordAuthentication yes"
-sudo service sshd reload
-
-# on name node
-ssh-keygen -t rsa -b 4096
-ssh-copy-id hadoop@JP-DTP-HADOOP-SN-VM
-
-# on 2nd name node and data nodes
-sudo vim /etc/ssh/sshd_config
-"PasswordAuthentication yes" change to "PasswordAuthentication no"
-sudo service sshd reload
-
-# ==========
 
 #START HADOOP AT SYSTEM BOOT!!!!!!!!!!!!!!!!!
 #START HADOOP WOULD NEED TO HAVE 2NN AND DATANODES INSTALLED FIRST!!!!!!!!!!!!!!!!!!!!!!!!!!!

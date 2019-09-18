@@ -90,7 +90,7 @@ This script takes no parameters.
 
 7. The following script is used to create the Jenkins job \
 Use this script to remove the spark master.\
-[UNINSTALL_SPARK_MASTER.sh](/datalayer/spark/scripts/UNINSTALL_SPARK_MASTER.sh)
+[uninstall_spark_master.sh](/datalayer/spark/scripts/uninstall_spark_master.sh)
 Use this script to remove the spark master.\
 The scripts takes two parameters.\
 SPARK_WORKER_IP - the IP address of the spark worker node.\

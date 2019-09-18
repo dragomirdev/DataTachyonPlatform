@@ -55,15 +55,15 @@ EOF
 # ========== to manually create spark user ADDED THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 # Create spark user
-sudo adduser hadoop
+#sudo adduser hadoop
 # Password : bee5Haveknee5!
 # Set default values
 
 # ========== to manually add an exception to sudoers file for the users dtpuser and spark  ADDED THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-sudo visudo
-dtpuser ALL=(ALL) NOPASSWD: ALL
-hadoop ALL=(ALL) NOPASSWD: ALL
+#sudo visudo
+#dtpuser ALL=(ALL) NOPASSWD: ALL
+#hadoop ALL=(ALL) NOPASSWD: ALL
 
 # ========== to manually enable passwordless ssh between spark master and worker
 

@@ -24,7 +24,7 @@ cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 sudo chmod -R 700 .ssh
 sudo chmod -R 640 .ssh/authorized_keys
 
-## adding the localhost keys to the known_hosts
+## adding the localhost keys to the known_hosts on each node
 ssh localhost
 
 ## Copy the hosts names to the /etc/hosts
@@ -69,6 +69,8 @@ ssh-copy-id hadoop@JP-DTP-ELK-VM
 
 # On Each Node run the following
 ssh-copy-id jenkins@JP-DTP-JENKINS-VM
+
+
 
 
 # Add exception to sudoers file for the user dtpuser before DTP Installation on each Server/VM as follows:\

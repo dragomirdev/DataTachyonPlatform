@@ -13,4 +13,7 @@ sudo rm -rf /opt/hadoop/
 sudo rm -rf /opt/hive
 sudo rm -rf ~/metastore_db/
 sudo rm -rf ~/derby.log
+sudo rm -rf ~/beeline
+sudo rm -rf ~/hiveserver2
+
 

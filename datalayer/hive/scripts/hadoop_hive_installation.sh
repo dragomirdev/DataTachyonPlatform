@@ -45,33 +45,29 @@ chmod 775 /home/hadoop/hadoopdata/
 
 # Configure hadoop
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> /opt/hadoop/etc/hadoop/hadoop-env.sh
-
 sed -i '/<configuration>/d' /opt/hadoop/etc/hadoop/hdfs-site.xml
 sed -i '\+</configuration>+d' /opt/hadoop/etc/hadoop/hdfs-site.xml
-cat >> /opt/hadoop/etc/hadoop/hdfs-site.xml << INN2
-<configuration>
-<property>
-        <name>dfs.datanode.data.dir</name>
-        <value>/home/hadoop/hadoopdata/dataNode</value>
-</property>
-</configuration>
-INN2
+echo "<configuration>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
+echo "        <property>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
+echo "                <name>dfs.datanode.data.dir</name>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
+echo "                <value>/home/hadoop/hadoopdata/dataNode</value>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
+echo "        </property>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
+echo "</configuration>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
 EOF
 
-
-sudo -i -u hadoop bash << OUTER
-
+# Run commands as hadoop user and expand variables
+sudo -i -u hadoop bash << EOF
 sed -i '/<configuration>/d' /opt/hadoop/etc/hadoop/core-site.xml
 sed -i '\+</configuration>+d' /opt/hadoop/etc/hadoop/core-site.xml
+echo "<configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
+echo "        <property>" >> /opt/hadoop/etc/hadoop/core-site.xml
+echo "                <name>fs.default.name</name>" >> /opt/hadoop/etc/hadoop/core-site.xml
+echo "                <value>hdfs://$HADOOP_NAMENODE_IP_ADDRESS:9000</value>" >> /opt/hadoop/etc/hadoop/core-site.xml
+echo "        </property>" >> /opt/hadoop/etc/hadoop/core-site.xml
+echo "</configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
+EOF
 
-cat >> /opt/hadoop/etc/hadoop/core-site.xml << INNER
-<configuration>
-<property>
-        <name>fs.default.name</name>
-        <value>hdfs://${HADOOP_NAMENODE_IP_ADDRESS}:9000</value>
-</property>
-</configuration>
-INNER
+sudo -i -u hadoop bash << OUTER
 
 # Install Hive
 echo "************ Starting Hive installation *********"
@@ -122,5 +118,6 @@ cd ~/beeline
 echo "************ Starting Beeline Service*********"
 hive --service beeline
 !connect jdbc:hive2://52.183.128.193:10000 hadoop hadoop
+
 OUTER
 

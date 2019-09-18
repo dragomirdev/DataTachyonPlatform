@@ -36,6 +36,14 @@ mkdir -p /home/hadoop/hadoopdata/
 chown hadoop:hadoop /home/hadoop/hadoopdata/
 chmod 775 /home/hadoop/hadoopdata/
 
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+export HADOOP_HOME=/opt/hadoop
+export HIVE_HOME=/opt/hive
+export HADOOP_HOME=/opt/hadoop
+export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HIVE_HOME/bin:$HADOOP_HOME/sbin:$PATH
+source ~/.bashrc
+
 # Configure hadoop
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> /opt/hadoop/etc/hadoop/hadoop-env.sh
 
@@ -63,15 +71,6 @@ cat >> /opt/hadoop/etc/hadoop/core-site.xml << INNER
 </property>
 </configuration>
 INNER
-
-# Update bashrc
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
-export HADOOP_HOME=/opt/hadoop
-export HIVE_HOME=/opt/hive
-export HADOOP_HOME=/opt/hadoop
-export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HIVE_HOME/bin:$HADOOP_HOME/sbin:$PATH
-source ~/.bashrc
-
 
 # Install Hive
 echo "************ Starting Hive installation *********"

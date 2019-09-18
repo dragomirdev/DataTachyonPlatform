@@ -1,6 +1,7 @@
 #!/bin/bash
 
-TARGET_SERVER=$1
+HIVE_VM_IP_ADDRESS=$1
+HADOOP_NAMENODE_IP_ADDRESS=$2
 set -euxo pipefail
 
 cd
@@ -68,7 +69,7 @@ cat >> /opt/hadoop/etc/hadoop/core-site.xml << INNER
 <configuration>
 <property>
         <name>fs.default.name</name>
-        <value>hdfs://${TARGET_SERVER}:9000</value>
+        <value>hdfs://${HADOOP_NAMENODE_IP_ADDRESS}:9000</value>
 </property>
 </configuration>
 INNER
@@ -102,6 +103,8 @@ echo "************ Position - 4 *********"
 
 ######
 # Hive beeline service
+JDBC_URL="jdbc:hive2://"$HIVE_VM_IP_ADDRESS":10000"
+echo "Connecting to Hive Beeline Service:"$JDBC_URL
 hive --service beeline
-!connect jdbc:hive2://52.183.128.193:10000 hadoop hadoop  
+!connect $JDBC_URL hadoop hadoop  
 OUTER

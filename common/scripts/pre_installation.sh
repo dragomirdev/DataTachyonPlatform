@@ -41,4 +41,8 @@ sudo vi /etc/sudoers
 dtpuser ALL=(ALL) NOPASSWD: ALL
 hadoop ALL=(ALL) NOPASSWD: ALL
 
-
+# Note: Remove exception to sudoers file for the user dtpuser After the DTP Installation on the Server/VM as follows
+# This is a manual step.
+# Remove the last line as shown below for the dtpuser entry.
+# sudo vi /etc/sudoers
+# dtpuser ALL=(ALL) NOPASSWD: ALL hadoop ALL=(ALL) NOPASSWD: ALL

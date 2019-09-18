@@ -11,7 +11,7 @@ cd
 sudo sed -i "/$HADOOP_NN_IP $HADOOP_NN_NAME/d" /etc/hosts
 
 # Delete hadoop user
-sudo deluser --remove-home hadoop
+#sudo deluser --remove-home hadoop
 
 # Uninstall hadoop
-sudo rm -r /opt/hadoop/
+sudo rm -rf /opt/hadoop/

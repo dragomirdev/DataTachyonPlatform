@@ -16,7 +16,6 @@ sudo apt -y install zip unzip
 #sudo useradd hadoop
 #sudo mkdir /home/hadoop
 sudo usermod -aG sudo hadoop
-sudo usermod -aG sudo dtpuser
 #sudo chown -R hadoop:hadoop /home/hadoop
 
 
@@ -34,7 +33,7 @@ INN1
 source ~/.bashrc
 
 # Install hadoop
-sudo mv /home/dtpuser/hadoop-3.1.2.tar.gz /opt/
+sudo mv /home/hadoop/hadoop-3.1.2.tar.gz /opt/
 cd /opt/
 sudo tar -zxvf hadoop-3.1.2.tar.gz
 sudo mv hadoop-3.1.2 hadoop
@@ -42,7 +41,7 @@ sudo chown -R hadoop:hadoop hadoop/
 sudo chmod -R 775 hadoop/
 sudo rm hadoop-3.1.2.tar.gz
 
-mkdir /home/hadoop/hadoopdata/
+mkdir -p /home/hadoop/hadoopdata/
 chown hadoop:hadoop /home/hadoop/hadoopdata/
 chmod 775 /home/hadoop/hadoopdata/
 
@@ -76,7 +75,7 @@ INNER
 
 # Install Hive
 echo "************ Starting Hive installation *********"
-sudo mv /home/dtpuser/hive_311.zip /opt/
+sudo mv /home/hadoop/hive_311.zip /opt/
 cd /opt/
 sudo unzip hive_311.zip
 sudo chown -R hadoop:hadoop hive

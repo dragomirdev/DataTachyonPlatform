@@ -15,7 +15,7 @@ sudo adduser --ingroup hadoop hadoop
 #### set default values
 sudo usermod -aG sudo hadoop
 
-## Generate ssh keys
+## Login to each user on each server and generate the ssh keys
 ssh-keygen -t rsa
 <no password>
 

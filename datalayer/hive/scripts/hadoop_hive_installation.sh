@@ -74,3 +74,6 @@ echo "                <value>hdfs://$HADOOP_NAMENODE_IP_ADDRESS:9000</value>" >>
 echo "        </property>" >> /opt/hadoop/etc/hadoop/core-site.xml
 echo "</configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
 EOF
+
+echo " The Hive Server Configuration is Complete."
+echo " To Manually start the Hive Server run the /datalayer/hive/scripts/start_hive.sh script"

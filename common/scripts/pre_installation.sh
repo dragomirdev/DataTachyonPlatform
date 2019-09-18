@@ -1,4 +1,20 @@
 
+# FOR ALL HOSTS/VMS IN THE DTP
+# Create dtpuser user
+sudo groupadd hadoop
+sudo adduser --ingroup hadoop dtpuser
+#### password: <PASSWORD>
+#### set default values
+sudo usermod -aG sudo dtpuser
+
+# FOR HADOOP AND SPARK HOSTS/VMS ONLY IN THE DTP 
+# Create hadoop user
+sudo groupadd hadoop
+sudo adduser --ingroup hadoop hadoop
+#### password: <PASSWORD>
+#### set default values
+sudo usermod -aG sudo hadoop
+
 ## Generate ssh keys
 ssh-keygen -t rsa
 <no password>
@@ -31,21 +47,6 @@ sudo service sshd reload
 #Test SSH from each node to all other nodes.
 ssh <USER>@<HOST_NAME>
 
-# FOR ALL HOSTS/VMS IN THE DTP
-# Create dtpuser user
-sudo groupadd hadoop
-sudo adduser --ingroup hadoop dtpuser
-#### password: <PASSWORD>
-#### set default values
-sudo usermod -aG sudo dtpuser
-
-# FOR HADOOP AND SPARK HOSTS/VMS ONLY IN THE DTP 
-# Create hadoop user
-sudo groupadd hadoop
-sudo adduser --ingroup hadoop hadoop
-#### password: <PASSWORD>
-#### set default values
-sudo usermod -aG sudo hadoop
 
 # Add exception to sudoers file for the user dtpuser before DTP Installation on each Server/VM as follows:\
 # Note: This is a manual step

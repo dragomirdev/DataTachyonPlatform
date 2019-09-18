@@ -135,7 +135,7 @@ On Similar lines create the following Jenkins Jobs.
 ### Create the Jenkins Job for DTP HDFS Secondary NameNode Uninstaller
 
 1. Use the following Script to remove the secondary name node: \
-[UNINSTALL_HADOOP_SNN.sh](/datalayer/hadoop/scripts//UNINSTALL_HADOOP_SNN.sh) \
+[uninstall_hadoop_secondarynamenode.sh](/datalayer/hadoop/scripts//uninstall_hadoop_secondarynamenode.sh) \
 The scripts takes two parameters.\
 HADOOP_NN_IP – the IP address of the name name node.\
 HADOOP_NN_NAME – the host name of the name name node..

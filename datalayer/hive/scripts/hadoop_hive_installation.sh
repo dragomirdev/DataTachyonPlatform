@@ -98,7 +98,7 @@ mkdir -p /tmp/hive/java
 
 echo "************ Position - 4 *********"
 # initialise derby database
-bin/schematool -initSchema -dbType derby --verbose
+/opt/hive/bin/schematool -initSchema -dbType derby --verbose
 
 ######
 # Hive beeline service

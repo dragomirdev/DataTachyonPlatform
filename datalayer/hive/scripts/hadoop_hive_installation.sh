@@ -97,12 +97,30 @@ mkdir -p /tmp/hadoop/hive_tmp
 mkdir -p /tmp/hadoop/hive_resources
 mkdir -p /tmp/hive/java
 
-echo "************ Position - 4 *********"
+clear
+echo "************ Initialising derby database *********"
 # initialise derby database
 /opt/hive/bin/schematool -initSchema -dbType derby --verbose
 
+mkdir -p ~/hiveserver2
+cd ~/hiveserver2
+
+echo "Starting HiveServer2 "
+hive --service hiveserver2 \
+  --hiveconf hive.server2.transport.mode=binary \
+  --hiveconf  hive.server2.thrift.bind.host=52.183.128.193 \
+  --hiveconf hive.server2.thrift.port=10000 \
+  --hiveconf hive.root.logger=WARN,console &
+
+
+mkdir -p ~/beeline
+cd ~/beeline
+
 ######
 # Hive beeline service
+cd /home/hadoop
+echo "Starting HiveServer2 "
+
 hive --service beeline
 !connect jdbc:hive2://52.183.128.193:10000 hadoop hadoop
 OUTER

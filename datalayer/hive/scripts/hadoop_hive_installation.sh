@@ -70,6 +70,7 @@ echo "export HIVE_HOME=/opt/hive" >> ~/.bashrc
 echo 'export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
+
 # Install Hive
 echo "************ Starting Hive installation *********"
 sudo mv /home/hadoop/hive_311.zip /opt/

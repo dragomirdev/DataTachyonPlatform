@@ -114,7 +114,7 @@ On Similar lines create the following Jenkins Jobs.
 ### Create the Jenkins Job for DTP Spark Worker Uninstaller
 
 1. Use the following Script to remove the Spark Worker node: \
-[uninstall_spark_worker.sh]/datalayer/spark/scripts/uninstall_spark_worker.sh) \
+[uninstall_spark_worker.sh] (/datalayer/spark/scripts/uninstall_spark_worker.sh) \
 This script takes no parameters.
 
 2. Under Build Option, Click on Add build step add the following steps.\

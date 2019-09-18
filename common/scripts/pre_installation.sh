@@ -56,6 +56,13 @@ sudo service sshd reload
 
 #Test SSH from each node to all other nodes.
 ssh <USER>@<HOST_NAME>
+Eg:
+ssh-copy-id hadoop@JP-DTP-HADOOP-NM-VM
+ssh-copy-id hadoop@JP-DTP-HADOOP-SN-VM
+ssh-copy-id hadoop@JP-DTP-HADOOP-DN1-VM
+
+# On Each Node run the following
+ssh-copy-id jenkins@JP-DTP-JENKINS-VM
 
 
 # Add exception to sudoers file for the user dtpuser before DTP Installation on each Server/VM as follows:\

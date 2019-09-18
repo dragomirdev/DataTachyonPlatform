@@ -28,13 +28,13 @@ echo 'export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH' >> ~/
 source ~/.bashrc
 
 # Install hadoop
-sudo mv /home/dtpuser/hadoop-3.1.2.tar.gz /opt/
+sudo mv /home/hadoop/hadoop-3.1.2.tar.gz /opt/
 cd /opt/
 sudo tar -zxvf hadoop-3.1.2.tar.gz
 sudo mv hadoop-3.1.2 hadoop
+sudo rm hadoop-3.1.2.tar.gz
 sudo chown -R hadoop:hadoop hadoop/
 sudo chmod -R 775 hadoop/
-sudo rm hadoop-3.1.2.tar.gz
 
 mkdir -p /home/hadoop/hadoopdata/
 chown hadoop:hadoop /home/hadoop/hadoopdata/
@@ -77,4 +77,8 @@ echo "                <value>hdfs://$HADOOP_NN_NAME:9000</value>" >> /opt/hadoop
 echo "        </property>" >> /opt/hadoop/etc/hadoop/core-site.xml
 echo "</configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
 EOF
+
+sudo chown -R hadoop:hadoop /opt/hadoop/
+sudo chmod -R 775 /opt/hadoop/
+
 

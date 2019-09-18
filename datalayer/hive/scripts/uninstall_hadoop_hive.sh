@@ -1,9 +1,11 @@
 #!/bin/sh
 # Delete hadoop user and it's home directory
-sudo deluser --remove-home hadoop
+#sudo deluser --remove-home hadoop
 
 # Delete dtpuser user and it's home directory
-sudo deluser --remove-home dtpuser
+#sudo deluser --remove-home dtpuser
+
+pkill -f hive
 
 # Uninstall hadoop
 sudo rm -r /opt/hadoop/

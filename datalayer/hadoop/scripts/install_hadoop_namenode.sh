@@ -44,7 +44,7 @@ sudo chown -R hadoop:hadoop hadoop/
 sudo chmod -R 775 hadoop/
 sudo rm hadoop-3.1.2.tar.gz
 
-mkdir /home/hadoop/hadoopdata/
+mkdir -p /home/hadoop/hadoopdata/
 chown hadoop:hadoop /home/hadoop/hadoopdata/
 chmod 775 /home/hadoop/hadoopdata/
 

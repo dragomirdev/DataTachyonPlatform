@@ -51,7 +51,6 @@ EOF
 
 # Run commands as hadoop user and expand variables
 sudo -i -u hadoop bash << EOF
-
 # Configure hadoop
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> /opt/hadoop/etc/hadoop/hadoop-env.sh
 
@@ -63,8 +62,9 @@ echo "                <name>dfs.datanode.data.dir</name>" >> /opt/hadoop/etc/had
 echo "                <value>/home/hadoop/hadoopdata/dataNode</value>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
 echo "        </property>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
 echo "</configuration>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
+EOF
 
-
+sudo -i -u hadoop bash << EOF
 sed -i '/<configuration>/d' /opt/hadoop/etc/hadoop/core-site.xml
 sed -i '\+</configuration>+d' /opt/hadoop/etc/hadoop/core-site.xml
 echo "<configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
@@ -74,9 +74,6 @@ echo "                <value>hdfs://$HADOOP_NAMENODE_IP_ADDRESS:9000</value>" >>
 echo "        </property>" >> /opt/hadoop/etc/hadoop/core-site.xml
 echo "</configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
 EOF
-
-# Run commands as hadoop user and expand variables
-sudo -i -u hadoop bash << EOF
 
 # Update bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
@@ -125,5 +122,4 @@ echo "************ Starting Beeline Service*********"
 hive --service beeline
 !connect jdbc:hive2://52.183.128.193:10000 hadoop hadoop
 
-EOF
 

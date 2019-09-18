@@ -56,10 +56,16 @@ sudo service sshd reload
 
 #Test SSH from each node to all other nodes.
 ssh <USER>@<HOST_NAME>
-Eg:
+# Eg:
+# On Jenkins node run the following
 ssh-copy-id hadoop@JP-DTP-HADOOP-NM-VM
 ssh-copy-id hadoop@JP-DTP-HADOOP-SN-VM
 ssh-copy-id hadoop@JP-DTP-HADOOP-DN1-VM
+ssh-copy-id hadoop@JP-DTP-HADOOP-DN2-VM
+ssh-copy-id hadoop@JP-DTP-SPARK-MASTER-VM
+ssh-copy-id hadoop@JP-DTP-SPARK-WORKER-VM
+ssh-copy-id hadoop@JP-DTP-NIFI-VM
+ssh-copy-id hadoop@JP-DTP-ELK-VM
 
 # On Each Node run the following
 ssh-copy-id jenkins@JP-DTP-JENKINS-VM

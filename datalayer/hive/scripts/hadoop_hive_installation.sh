@@ -75,13 +75,6 @@ echo "        </property>" >> /opt/hadoop/etc/hadoop/core-site.xml
 echo "</configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
 EOF
 
-# Update bashrc
-echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
-echo "export HADOOP_HOME=/opt/hadoop" >> ~/.bashrc
-echo "export HIVE_HOME=/opt/hive" >> ~/.bashrc
-echo 'export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
-
 hdfs dfs -mkdir -p /user/hive/warehouse
 hdfs dfs -mkdir -p /tmp
 hdfs dfs -chmod g+w /user/hive/warehouse

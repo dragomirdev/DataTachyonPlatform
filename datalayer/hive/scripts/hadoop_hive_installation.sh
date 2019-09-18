@@ -16,13 +16,6 @@ sudo usermod -aG sudo hadoop
 # Run commands as hadoop user and don't expand variables
 sudo -i -u hadoop bash << 'EOF'
 
-# Update bashrc
-#echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
-#echo "export HADOOP_HOME=/opt/hadoop" >> ~/.bashrc
-#echo "export HIVE_HOME=/opt/hive" >> ~/.bashrc
-#echo 'export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$PATH' >> ~/.bashrc
-#source ~/.bashrc
-
 # Install hadoop
 sudo mv /home/hadoop/hadoop-3.1.2.tar.gz /opt/
 cd /opt/
@@ -36,6 +29,29 @@ mkdir -p /home/hadoop/hadoopdata/dataNode/
 chown hadoop:hadoop /home/hadoop/hadoopdata/
 chmod 775 /home/hadoop/hadoopdata/
 
+# Install Hive
+echo "************ Starting Hive installation *********"
+sudo mv /home/hadoop/hive_311.zip /opt/
+cd /opt/
+sudo unzip hive_311.zip
+sudo mv hive_311 hive
+sudo chown -R hadoop:hadoop hive
+sudo chmod -R 775 hive
+echo "************ Position - 2 Hive installation *********"
+sudo rm hive_311.zip
+
+# Update bashrc
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
+echo "export HADOOP_HOME=/opt/hadoop" >> ~/.bashrc
+echo "export HIVE_HOME=/opt/hive" >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+EOF
+
+# Run commands as hadoop user and expand variables
+sudo -i -u hadoop bash << EOF
+
 # Configure hadoop
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> /opt/hadoop/etc/hadoop/hadoop-env.sh
 
@@ -47,10 +63,7 @@ echo "                <name>dfs.datanode.data.dir</name>" >> /opt/hadoop/etc/had
 echo "                <value>/home/hadoop/hadoopdata/dataNode</value>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
 echo "        </property>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
 echo "</configuration>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
-EOF
 
-# Run commands as hadoop user and expand variables
-sudo -i -u hadoop bash << EOF
 
 sed -i '/<configuration>/d' /opt/hadoop/etc/hadoop/core-site.xml
 sed -i '\+</configuration>+d' /opt/hadoop/etc/hadoop/core-site.xml
@@ -62,27 +75,17 @@ echo "        </property>" >> /opt/hadoop/etc/hadoop/core-site.xml
 echo "</configuration>" >> /opt/hadoop/etc/hadoop/core-site.xml
 EOF
 
+# Run commands as hadoop user and expand variables
 sudo -i -u hadoop bash << EOF
 
-#echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
-#echo "export HADOOP_HOME=/opt/hadoop" >> ~/.bashrc
-#echo "export HIVE_HOME=/opt/hive" >> ~/.bashrc
-#echo 'export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$PATH' >> ~/.bashrc
-#source ~/.bashrc
+# Update bashrc
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
+echo "export HADOOP_HOME=/opt/hadoop" >> ~/.bashrc
+echo "export HIVE_HOME=/opt/hive" >> ~/.bashrc
+echo 'export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HIVE_HOME/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
 
-
-# Install Hive
-echo "************ Starting Hive installation *********"
-sudo mv /home/hadoop/hive_311.zip /opt/
-cd /opt/
-sudo unzip hive_311.zip
-sudo mv hive_311 hive
-sudo chown -R hadoop:hadoop hive
-sudo chmod -R 775 hive
-echo "************ Position - 2 Hive installation *********"
-sudo rm hive_311.zip
 hdfs dfs -mkdir -p /user/hive/warehouse
-
 hdfs dfs -mkdir -p /tmp
 hdfs dfs -chmod g+w /user/hive/warehouse
 hdfs dfs -chmod g+w /tmp
@@ -95,6 +98,7 @@ mkdir -p /tmp/hadoop/hive_resources
 mkdir -p /tmp/hive/java
 
 clear
+
 echo "************ Initialising derby database *********"
 # initialise derby database
 /opt/hive/bin/schematool -initSchema -dbType derby --verbose

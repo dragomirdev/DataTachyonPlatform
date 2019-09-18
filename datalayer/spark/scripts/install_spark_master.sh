@@ -29,7 +29,7 @@ echo 'export PATH=$JAVA_HOME/bin:$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH' >> ~/.b
 source ~/.bashrc
 
 # Install spark
-sudo mv /home/dtpuser/spark-2.4.3-bin-hadoop2.7.tgz /opt/ #CHANGED THIS FROM BEING WGET!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+sudo mv /home/hadoop/spark-2.4.3-bin-hadoop2.7.tgz /opt/ #CHANGED THIS FROM BEING WGET!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 cd /opt/ #SWAPPED THIS WITH LINE ABOVE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 sudo tar -zxvf spark-2.4.3-bin-hadoop2.7.tgz
 sudo mv spark-2.4.3-bin-hadoop2.7 spark

@@ -11,7 +11,7 @@ cd
 sudo apt -y update
 sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk
-sudo apt -y install unzip
+sudo apt -y install zip unzip
 
 #sudo useradd hadoop
 #sudo mkdir /home/hadoop

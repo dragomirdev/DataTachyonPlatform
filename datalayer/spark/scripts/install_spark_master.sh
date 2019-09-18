@@ -43,7 +43,6 @@ sudo chmod -R 775 spark/
 
 echo "SPARK_WORKER_OPTS='-Dspark.worker.cleanup.enabled=true -Dspark.worker.cleanup.appDataTtl=604800'" >> /opt/spark/conf/spark-env.sh
 
-
 echo "spark.serializer                   org.apache.spark.serializer.KryoSerializer" >> /opt/spark/conf/spark-defaults.conf
 EOF
 

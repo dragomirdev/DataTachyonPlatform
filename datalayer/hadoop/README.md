@@ -65,7 +65,7 @@ HADOOP_NN_NAME – the host name of the name name node.
 ### Create the Jenkins Job for DTP HDFS DataNode(s) Installer
 
 1. Use the following Script to setup the DataNode node (i.e. data node one and two): \
-[HADOOP_DN.sh](/datalayer/hadoop/scripts/HADOOP_DN.sh) \
+[install_hadoop_datanode.sh](/datalayer/hadoop/scripts/install_hadoop_datanode.sh) \
 The scripts takes two parameters.\
 HADOOP_NN_IP – the IP address of the name name node.
 HADOOP_NN_NAME – the host name of the name name node.

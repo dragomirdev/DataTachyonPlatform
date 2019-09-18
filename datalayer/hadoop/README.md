@@ -30,7 +30,7 @@ This following HDFS setup consist of
 ![Parameterise-DTP-HDFS-NN-Installer Jenkins](/datalayer/hadoop/images/dtp-hadoop-nn-installer3.png)
 
 7. The following scripts is used to create the Jenkins job to setup the hadoop primary name node\
-[HADOOP_NN.sh](/datalayer/hadoop/scripts/HADOOP_NN.sh) \
+[install_hadoop_namenode.sh](/datalayer/hadoop/scripts/install_hadoop_namenode.sh) \
 The script takes six parameters.\
 HADOOP_SNN_IP – the IP address of the secondary name node.\
 HADOOP_SNN_NAME – the host name of the secondary name node.\

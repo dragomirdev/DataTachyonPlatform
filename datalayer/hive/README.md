@@ -45,7 +45,7 @@ HADOOP_NAMENODE_IP_ADDRESS � the host name of the remote Hadoop NameNode serve
 9. Save the Job.
 
 10. Once the above Job ran successfully, to Manually start the Hive Server run the following script.\
-[Start_Hive_Server](/datalayer/hive/scripts/start_hive.sh script)
+[Start_Hive_Server.sh](/datalayer/hive/scripts/start_hive.sh)
 
 
 ### After Running Jenkins Job

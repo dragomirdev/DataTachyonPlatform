@@ -16,6 +16,9 @@ ssh localhost
 ## This is also done for all the SPARK, HADOOP and all other Hosts/VMs for intercommunication.
 ssh-copy-id <USER>@<HOST_NAME>
 
+#Test SSH from each node to all other nodes.
+ssh <USER>@<HOST_NAME>
+
 # FOR ALL HOSTS/VMS IN THE DTP
 # Create dtpuser user
 sudo groupadd hadoop

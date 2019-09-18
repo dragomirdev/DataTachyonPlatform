@@ -11,10 +11,22 @@ sudo chmod -R 640 .ssh/authorized_keys
 ## adding the localhost keys to the known_hosts
 ssh localhost
 
+# enable PasswordAuthentication yes
+sudo vim /etc/ssh/sshd_config
+"PasswordAuthentication no" change to "PasswordAuthentication yes"
+sudo service sshd reload
+
 ## Copying the public keys of the remote host/VM to the local .ssh/authorized_keys file.
 ## ssh-copy-id Bothways i.e. from JENKINS to TARGET HOSTS/VMS and also from TARGET VM to JENKINS HOSTS/VMS.
 ## This is also done for all the SPARK, HADOOP and all other Hosts/VMs for intercommunication.
 ssh-copy-id <USER>@<HOST_NAME>
+
+
+# enable PasswordAuthentication to no
+sudo vim /etc/ssh/sshd_config
+"PasswordAuthentication yes" change to "PasswordAuthentication no"
+sudo service sshd reload
+
 
 #Test SSH from each node to all other nodes.
 ssh <USER>@<HOST_NAME>

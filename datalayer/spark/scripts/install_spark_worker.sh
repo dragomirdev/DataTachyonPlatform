@@ -48,6 +48,6 @@ EOF
 
 # ========== to manually add an exception to sudoers file for the users dtpuser and spark
 
-sudo visudo
-dtpuser ALL=(ALL) NOPASSWD: ALL
-hadoop ALL=(ALL) NOPASSWD: ALL
+#sudo visudo
+#dtpuser ALL=(ALL) NOPASSWD: ALL
+#hadoop ALL=(ALL) NOPASSWD: ALL

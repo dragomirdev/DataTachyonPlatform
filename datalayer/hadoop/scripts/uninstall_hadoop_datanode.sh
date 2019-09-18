@@ -14,4 +14,4 @@ cd
 # sudo deluser --remove-home hadoop
 
 # Uninstall hadoop
-sudo rm -r /opt/hadoop/
+sudo rm -rf /opt/hadoop/

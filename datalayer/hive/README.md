@@ -6,6 +6,9 @@
 
 1. To setup the DTP Hive Server go to [DTP-Server-Setup](/common/Readme.md).
 
+2. Follow the instruction using the file below to Zip the hive bundle after making configurations.
+[Hive_Zipped_Bundle](/datalayer/hive/scripts/hive_configuration.txt) 
+
 ### Create a Jenkins Job for DTP Hive Installer
 
 1. On Jenkins Home page, click on the New Item.
@@ -26,8 +29,8 @@
 7. The following scripts is used to create the Jenkins job to setup the Hive. \
 [hadoop_hive_installation.sh](/datalayer/hive/scripts/hadoop_hive_installation.sh) \
 The script the following parameters:\
-TARGET_IP_ADDRESS � the IP address of the target node.\
-TARGET_HOSTNAME � the host name of the remote hive server.
+HIVE_VM_IP_ADDRESS � the IP address of the target node.\
+HADOOP_NAMENODE_IP_ADDRESS � the host name of the remote Hadoop NameNode server.
 
 8. Under Build Option, Click on Add build step add the following steps.\
    **Send Files or execute commands over SSH**\

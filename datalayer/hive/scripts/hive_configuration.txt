@@ -1,0 +1,84 @@
+
+# Hive setup
+
+# Download the tar file from “http://archive.apache.org/dist/hive/hive-3.1.1/”
+# Untar the file
+tar -xzvf apache-hive-3.1.1-bin.tar.gz
+
+# Move the contents 
+mv ~/apache-hive-3.1.1-bin/ ~/ive_311
+
+cd ~/hive_311/conf
+cp hive-env.sh.template hive-env.sh
+cp hive-default.xml.template hive-site.xml
+cp beeline-log4j2.properties.template beeline-log4j2.properties
+cp hive-log4j2.properties.template hive-log4j2.properties
+vi hive-log4j2.properties
+property.hive.log.level = WARN
+
+
+# Copy the following at the begining in hive-site.xml
+  <property>
+      <name>system:java.io.tmpdir</name>
+      <value>/tmp/hive/java</value>
+  </property>
+  <property>
+      <name>system:user.name</name>
+      <value>${user.name}</value>
+  </property> 
+
+
+# Update the following property in hive-site.xml to false
+  <property>
+    <name>hive.server2.enable.doAs</name>
+    <value>false</value>
+    <description>
+      Setting this property to true will have HiveServer2 execute
+      Hive operations as the user making the calls to it.
+    </description>
+  </property>
+
+
+# set property to false
+  <property>
+    <name>hive.metastore.schema.verification</name>
+    <value>false</value>
+    <description>
+      Enforce metastore schema version consistency.
+      True: Verify that version information stored in is compatible with one from Hive jars.  Also disable automatic
+            schema migration attempt. Users are required to manually migrate schema after Hive upgrade which ensures
+            proper metastore schema migration. (Default)
+      False: Warn if the version information stored in metastore doesn't match with one from in Hive jars.
+    </description>
+  </property>
+
+
+# property to true. 
+  <property>
+    <name>datanucleus.schema.autoCreateAll</name>
+    <value>true</value>
+    <description>Auto creates necessary schema on a startup if one doesn't exist. Set this to false, after creating it once.To enable auto create also set hive.metastore.schema.verification=false. Auto creation is not recommended for production use cases, run schematool command instead.</description>
+  </property>
+
+
+
+# Remove "&#8" from the following property
+
+ <property>
+   <name>hive.txn.xlock.iow</name>
+   <value>true</value>
+   <description>
+     Ensures commands with OVERWRITE (such as INSERT OVERWRITE) acquire Exclusive locks for;transactional tables.  This ensures that inserts (w/o overwrite) running concurrently
+    are not hidden by the INSERT OVERWRITE.
+   </description>
+ </property>
+
+
+
+ # Zip the folder hive_311 into a zip file.
+ cd ~
+ zip -r hive_311.zip hive_311
+ ls -latr
+
+
+

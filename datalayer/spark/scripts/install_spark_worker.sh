@@ -9,10 +9,10 @@ sudo apt -y update
 sudo apt -y upgrade
 sudo apt -y install openjdk-8-jdk
 
-sudo usermod -aG sudo spark
+sudo usermod -aG sudo hadoop
 
-# Run commands as spark user and don't expand variables
-sudo -i -u spark bash << 'EOF'
+# Run commands as hadoop user and don't expand variables
+sudo -i -u hadoop bash << 'EOF'
 
 # Update bashrc
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
@@ -39,10 +39,10 @@ cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.c
 echo "spark.serializer                   org.apache.spark.serializer.KryoSerializer"  >> /opt/spark/conf/spark-defaults.conf
 EOF
 
-# ========== to manually create spark user
+# ========== to manually create hadoop user
 
 # Create spark user
-sudo adduser spark
+#sudo adduser hadoop
 # Password : bee5Haveknee5!
 # Set default values
 
@@ -50,4 +50,4 @@ sudo adduser spark
 
 sudo visudo
 dtpuser ALL=(ALL) NOPASSWD: ALL
-spark ALL=(ALL) NOPASSWD: ALL
+hadoop ALL=(ALL) NOPASSWD: ALL

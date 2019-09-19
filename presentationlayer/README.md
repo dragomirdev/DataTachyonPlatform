@@ -42,4 +42,6 @@ Kibana is a visualization layer that works on top of Elasticsearch, providing us
 
 #### For DTP ELK Setup using Jenkins goto: [ELK Setup Process](/presentationlayer/ElasticSearch_Kibana_Logstash/README.md)
 
+### Liferay
 
+#### For DTP Liferay Setup using Jenkins goto: [ELK Setup Process](/presentationlayer/Liferay/README.md)

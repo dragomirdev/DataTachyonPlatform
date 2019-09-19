@@ -12,7 +12,7 @@
 
 2. Enter the Item name say DTP-Jupyter NoteBook-Installer.
 
-![Create-DTP-Jupyter NoteBook-Installer Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-install1.png)
+![Create-DTP-Jupyter NoteBook-Installer Jenkins](/presentationlayer/JupyterNotebook/images/dtp-jupyter-install1.png)
 
 3. Select FreeStyle Project and Ok.
 

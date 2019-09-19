@@ -20,7 +20,8 @@ sudo apt -y install  python3-pip python3-dev
 sudo wget https://bootstrap.pypa.io/get-pip.py
 sudo python3.6 get-pip.py
 
-pip3 install --upgrade notebook
+sudo pip3 install --upgrade notebook
+sudo pip3 install ipython-sql cython rpy2
 
 # Login as dtpuser Run the following commands manually.
 jupyter notebook --generate-config

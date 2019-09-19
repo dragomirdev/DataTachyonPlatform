@@ -81,4 +81,29 @@ through mobile apps and browsers.
 used inside it but also made available for applications
 built on top of it.
 
-#### For DTP Liferay Setup using Jenkins goto: [ELK Setup Process](/presentationlayer/Liferay/README.md)
+#### For DTP Liferay Setup using Jenkins goto: [Liferay Setup Process](/presentationlayer/Liferay/README.md)
+
+### Jupyter NoteBook
+
+* The Jupyter Notebook is an Useful tool for interactively developing and presenting data science projects.
+* As a server-client application, the Jupyter Notebook App allows you to edit and run your notebooks via a web browser.
+* The application can be executed on a PC without Internet access, or it can be installed on a remote server, where you can access it through the Internet.
+* Its two main components are the kernels and a dashboard.
+
+#### Kernel
+
+![Native Kernel](/presentationlayer/JupyterNotebook/images/ipy_kernel_and_terminal.png)
+
+* A kernel is a program that runs and introspects the user’s code. The Jupyter Notebook App has a kernel for Python code, but there are also kernels available for other programming languages.
+
+#### Notebook Dashboard
+
+![Native Kernel](/presentationlayer/JupyterNotebook/images/notebook_components.png)
+
+* The dashboard of the application not only shows you the notebook documents that you have made and can reopen but can also be used to manage the kernels: you can which ones are running and shut them down if necessary.
+
+* The Notebook frontend does something extra. In addition to running your code, it stores code and output, together with markdown notes, in an editable document called a notebook. When you save it, this is sent from your browser to the notebook server, which saves it on disk as a JSON file with a .ipynb extension.
+
+* The notebook server, not the kernel, is responsible for saving and loading notebooks, so you can edit notebooks even if you don’t have the kernel for that language—you just won’t be able to run code. The kernel doesn’t know anything about the notebook document: it just gets sent cells of code to execute when the user runs them.
+
+#### For DTP Jupyter NoteBook Setup using Jenkins goto: [Jupyter NoteBook Setup Process](/presentationlayer/JupyterNoteBook/README.md)

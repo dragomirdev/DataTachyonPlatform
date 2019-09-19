@@ -46,9 +46,9 @@ INSTALLATION_FILE_TO_RUN the installation file to run for installing Liferay.\
 
 9. Save the Job.
 
-### DTP Liferay Portal:
+### DTP Liferay Portal
 
-The Liferay once Started would be running on the following Link.
+The Liferay once Started & configured with DTP would be running on the following Link.
 
 [DTP-Liferay-Portal](http://localhost:8080/web/datatachyonplatform)
 

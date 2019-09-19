@@ -44,4 +44,41 @@ Kibana is a visualization layer that works on top of Elasticsearch, providing us
 
 ### Liferay
 
+* Liferay is implemented portlet technology and it exposed as Open Source and follows the JSR 168 and JSR 286 Compliants.
+* Liferay is very good open source for portlet technology have very good working group and community.
+* Portlet technology is similar to servlet technology but portlet is small part of dynamic content in web page.
+* In normal web application when we send request then server serve the response to the client or browser. Here entire page will be served by one response.
+* Coming to portlet technology in one web page there may be many portlets and each portlet have its own request and response.
+* Each portlet can send request and get the response from server then the response belongs to only the portlet which send the request.
+* Liferay Community Edition is available to public and anybody can get source code and then can add or customize.
+
+#### Features of Liferay
+
+* Liferay is ready to use web application
+* Liferay have many portlet to full fill dynamic web application functionality
+* Very Good Enterprise Web Content Management System
+* Sites, Organization and User Groups
+* Collaboration (Blogs, Wikis and Forums)
+* Service Oriented Architecture Support.
+* Dynamic Look and Feel from Themes
+* Changing page layouts
+* Good Portal Administration User Interface.
+* Roles and Permission System
+* Easy Customization and Development
+* Support Many Integrations
+* Liferay Market Place.
+
+#### Liferay-Architecture
+
+![Liferay-Architecture](/presentationlayer/Liferay/images/liferay-architecture.png)
+
+* Liferay is very flexible in terms of accessing external
+systems as well as being accessed by all sorts of external
+"clients" from regular desktops to third party apps going
+through mobile apps and browsers.
+* Liferay is compliant with terms such as SOA, WOA even since before the terms existed.
+* Liferay includes many transversal frameworks that are
+used inside it but also made available for applications
+built on top of it.
+
 #### For DTP Liferay Setup using Jenkins goto: [ELK Setup Process](/presentationlayer/Liferay/README.md)

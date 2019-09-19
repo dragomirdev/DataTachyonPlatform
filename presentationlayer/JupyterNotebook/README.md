@@ -34,7 +34,7 @@ TARGET_USERNAME the username to login to JupyterNoteBook Server.\
 TARGET_IP_ADDRESS the IP address of the JupyterNoteBook Server.\
 SOURCE_SOFTWARE_LOCATION the source location for the JupyterNoteBook Tool on Jenkins Server.\
 TARGET_SOFTWARE_LOCATION the target location on the JupyterNoteBook Server.\
-INSTALLATION_FILE_TO_RUN the installation file to run for installing JupyterNoteBook.\
+INSTALLATION_FILE_TO_RUN the installation file to run for installing JupyterNoteBook.
 
 8. Under Build Option, Click on Add build step add the following steps.\
    **Execute shell and add the following commands**\
@@ -103,10 +103,10 @@ UN_INSTALLATION_FILE_TO_RUN the  file to run for uninstalling JupyterNoteBook.
     sudo chmod 775 -R /home/dtpuser/*.sh \
     cd /home/dtpuser/  \
     echo "UnInstalling JupyterNoteBook on Remote sever " \
-    ls -latr && ./uninstall_jupyter.sh \
+    ls -latr && ./uninstall_jupyter.sh 
 
     echo "Removing JupyterNoteBook Installation Script on Remote sever " \
-    sudo rm -rf /home/dtpuser/uninstall_jupyter.sh \
+    sudo rm -rf /home/dtpuser/uninstall_jupyter.sh 
 
    ![AddBuildSteps-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNotebook/images/dtp-jupyter-uninstall4.png)
 

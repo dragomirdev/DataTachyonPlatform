@@ -27,7 +27,6 @@
 ![Parameterise-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNotebook/images/dtp-jupyter-install3.png)
 
 7. The following scripts is used to create the Jenkins job \
-
 [install_jupyter.sh.sh](/presentationlayer/JupyterNoteBook/scripts/install_jupyter.sh )
 Use this script to setup the JupyterNoteBook.\
 The script takes the following parameters.\
@@ -77,17 +76,17 @@ the DTP JupyterNoteBook Home page is shown with tabs pointing to the Home Folder
 1. On Jenkins Home page, click on the New Item.
 
 2. Enter the Item name say DTP-JupyterNoteBook-Uninstaller.
-![Create-DTP-JupyterNoteBook-Uninstaller Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-uninstall1.png)
+![Create-DTP-JupyterNoteBook-Uninstaller Jenkins](/presentationlayer/JupyterNotebook/images/dtp-jupyter-uninstall1.png)
 
 3. Select FreeStyle Project and Ok.
 
 4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option.
-![DiscardBuild-DTP-JupyterNoteBook-Uninstaller Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-uninstall2.png)
+![DiscardBuild-DTP-JupyterNoteBook-Uninstaller Jenkins](/presentationlayer/JupyterNotebook/images/dtp-jupyter-uninstall2.png)
 
 5. Tick the option, the  project  is parameterized.
 
 6. Add the String parameters and configure for the following key value parameters. \
-![Parameterise-DTP-JupyterNoteBook-Uninstaller Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-uninstall3.png)
+![Parameterise-DTP-JupyterNoteBook-Uninstaller Jenkins](/presentationlayer/JupyterNotebook/images/dtp-jupyter-uninstall3.png)
 
 7. The following scripts is used to create the Jenkins job \
 [uninstall_jupyter.sh](/presentationlayer/JupyterNoteBook/scripts/uninstall_jupyter.sh)
@@ -109,7 +108,7 @@ UN_INSTALLATION_FILE_TO_RUN the  file to run for uninstalling JupyterNoteBook.
     echo "Removing JupyterNoteBook Installation Script on Remote sever " \
     sudo rm -rf /home/dtpuser/uninstall_jupyter.sh \
 
-   ![AddBuildSteps-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-uninstall4.png)
+   ![AddBuildSteps-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNotebook/images/dtp-jupyter-uninstall4.png)
 
 9. Save the Job.
 

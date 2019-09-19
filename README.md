@@ -146,3 +146,11 @@ To install Business Layer packages like Tensorflow, Keras, Pytorch, Fast-AI, etc
 
 To install ELK please go to [ELK Installation Process](/presentationlayer/README.md)
 
+### Liferay Portal Installation
+
+To install ELK please go to [Liferay Portal Installation Process](/presentationlayer/README.md)
+
+### Jupyter NoteBook Installation
+
+To install ELK please go to [Jupyter NoteBook Installation Process](/presentationlayer/README.md)
+

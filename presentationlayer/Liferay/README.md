@@ -48,14 +48,17 @@ INSTALLATION_FILE_TO_RUN the installation file to run for installing Liferay.\
 
 ### DTP Liferay Portal:
 
-The Liferay once Started would be running on the url.\
+The Liferay once Started would be running on the following Link.
 
 [DTP-Liferay-Portal](http://localhost:8080/web/datatachyonplatform)
 
-The Following DTP Liferay Loging Page is shown:
+The Following DTP Liferay Loging Page is shown.
+
 ![DTP-Liferay-Portal-Login](/presentationlayer/Liferay/images/dtp-liferay-portal1.png)
 
-After Successful login using the Credentials provide to you, the DTP Liferay Welcome page is shown with tabs pointing to the DTP Software Tools.
+After Successful login using the Credentials provided to you,\
+the DTP Liferay Welcome page is shown with tabs pointing to the DTP Software Tools.
+
 ![DTP-Liferay-Portal-Welcome](/presentationlayer/Liferay/images/dtp-liferay-portal2.png)
 
 ### After Running Jenkins Job

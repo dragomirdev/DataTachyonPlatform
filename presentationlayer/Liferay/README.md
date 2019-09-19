@@ -10,7 +10,7 @@
 
 1. On Jenkins Home page, click on the New Item.
 
-2. Enter the Item name say DTP-Elk-Installer.
+2. Enter the Item name say DTP-Liferay-Installer.
 ![Create-DTP-Liferay-Installer Jenkins](/presentationlayer/Liferay/images/dtp-liferay-install1.png)
 
 3. Select FreeStyle Project and Ok.
@@ -32,11 +32,7 @@ TARGET_IP_ADDRESS the IP address of the Liferay Server.\
 SOURCE_SOFTWARE_LOCATION the source location for the Liferay Tool on Jenkins Server.\
 TARGET_SOFTWARE_LOCATION the target location on the Liferay Server.\
 INSTALLATION_FILE_TO_RUN the installation file to run for installing Liferay.\
-[test_liferay_status.sh](/presentationlayer/Liferay/scripts/test_liferay_status.sh)\
-Use this script to Test the Liferay.\
-The script takes the following parameters.\
-TARGET_USERNAME the username to login to Liferay Server.\
-TARGET_IP_ADDRESS the IP address of the Liferay Server.\
+
 
 8. Under Build Option, Click on Add build step add the following steps.\
    **Execute shell and add the following commands**\
@@ -49,6 +45,18 @@ TARGET_IP_ADDRESS the IP address of the Liferay Server.\
    ![AddBuildSteps-DTP-Liferay-Installer Jenkins](/presentationlayer/Liferay/images/dtp-liferay-install4.png)
 
 9. Save the Job.
+
+### DTP Liferay Portal:
+
+The Liferay once Started would be running on the url.\
+
+[DTP-Liferay-Portal](http://localhost:8080/web/datatachyonplatform)
+
+The Following DTP Liferay Loging Page is shown:
+![DTP-Liferay-Portal-Login](/presentationlayer/Liferay/images/dtp-liferay-portal1.png)
+
+After Successful login using the Credentials provide to you, the DTP Liferay Welcome page is shown with tabs pointing to the DTP Software Tools.
+![DTP-Liferay-Portal-Welcome](/presentationlayer/Liferay/images/dtp-liferay-portal2.png)
 
 ### After Running Jenkins Job
 

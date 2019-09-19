@@ -106,4 +106,4 @@ built on top of it.
 
 * The notebook server, not the kernel, is responsible for saving and loading notebooks, so you can edit notebooks even if you don’t have the kernel for that language—you just won’t be able to run code. The kernel doesn’t know anything about the notebook document: it just gets sent cells of code to execute when the user runs them.
 
-#### For DTP Jupyter NoteBook Setup using Jenkins goto: [Jupyter NoteBook Setup Process](/presentationlayer/JupyterNoteBook/README.md)
+#### For DTP Jupyter NoteBook Setup using Jenkins goto: [Jupyter NoteBook Setup Process](/presentationlayer/JupyterNotebook/README.md)

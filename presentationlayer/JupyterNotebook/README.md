@@ -56,12 +56,12 @@ The JupyterNoteBook once Started & configured with DTP would be running on the f
 
 The Following DTP JupyterNoteBook Loging Page is shown.
 
-![DTP-JupyterNoteBook-Portal-Login](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-portal1.png)
+![DTP-JupyterNoteBook-Portal-Login](/presentationlayer/JupyterNotebook/images/dtp-jupyter-portal1.png)
 
 After Successful login using the Credentials provided to you,\
 the DTP JupyterNoteBook Home page is shown with tabs pointing to the Home Folder.
 
-![DTP-JupyterNoteBook-Portal-Welcome](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-portal2.png)
+![DTP-JupyterNoteBook-Portal-Welcome](/presentationlayer/JupyterNotebook/images/dtp-jupyter-portal2.png)
 
 ### After Running Jenkins Job
 

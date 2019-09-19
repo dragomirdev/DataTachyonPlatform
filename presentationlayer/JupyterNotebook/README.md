@@ -11,19 +11,23 @@
 1. On Jenkins Home page, click on the New Item.
 
 2. Enter the Item name say DTP-Jupyter NoteBook-Installer.
+
 ![Create-DTP-Jupyter NoteBook-Installer Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-install1.png)
 
 3. Select FreeStyle Project and Ok.
 
 4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option.
+
 ![DiscardBuild-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-install2.png)
 
 5. Tick the option, the  project  is parameterized.
 
 6. Add the String parameters and configure for the following key value parameters. \
+
 ![Parameterise-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-install3.png)
 
 7. The following scripts is used to create the Jenkins job \
+
 [install_jupyter.sh.sh](/presentationlayer/JupyterNoteBook/scripts/install_jupyter.sh )
 Use this script to setup the JupyterNoteBook.\
 The script takes the following parameters.\
@@ -33,14 +37,13 @@ SOURCE_SOFTWARE_LOCATION the source location for the JupyterNoteBook Tool on Jen
 TARGET_SOFTWARE_LOCATION the target location on the JupyterNoteBook Server.\
 INSTALLATION_FILE_TO_RUN the installation file to run for installing JupyterNoteBook.\
 
-
 8. Under Build Option, Click on Add build step add the following steps.\
    **Execute shell and add the following commands**\
    whoami && pwd && hostname \
    sudo chmod 775 -R /home/dtpuser/JupyterNoteBook \
    cd /home/dtpuser/JupyterNoteBook \
    echo "Installing JupyterNoteBook on Remote sever " \
-   ls -latr && ./install_jupyter.sh 
+   ls -latr && ./install_jupyter.sh
 
    ![AddBuildSteps-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-install4.png)
 

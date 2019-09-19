@@ -18,13 +18,13 @@
 
 4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option.
 
-![DiscardBuild-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-install2.png)
+![DiscardBuild-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNotebook/images/dtp-jupyter-install2.png)
 
 5. Tick the option, the  project  is parameterized.
 
 6. Add the String parameters and configure for the following key value parameters. \
 
-![Parameterise-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-install3.png)
+![Parameterise-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNotebook/images/dtp-jupyter-install3.png)
 
 7. The following scripts is used to create the Jenkins job \
 
@@ -45,7 +45,7 @@ INSTALLATION_FILE_TO_RUN the installation file to run for installing JupyterNote
    echo "Installing JupyterNoteBook on Remote sever " \
    ls -latr && ./install_jupyter.sh
 
-   ![AddBuildSteps-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNoteBook/images/dtp-jupyter-install4.png)
+   ![AddBuildSteps-DTP-JupyterNoteBook-Installer Jenkins](/presentationlayer/JupyterNotebook/images/dtp-jupyter-install4.png)
 
 9. Save the Job.
 

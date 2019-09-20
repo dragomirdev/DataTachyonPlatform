@@ -23,15 +23,24 @@
 6. Add the String parameters and configure for the following key value parameters. \
 ![Parameterise-DTP-AI-Installer Jenkins](/businesslayer/ai/images/dtp-ai-install3.png)
 
-7. The following scripts is used to create the Jenkins job \
-[install_ai_packages.sh](/businesslayer/ai/scripts/install_ai_packages.sh )
-Use this script to setup the ai.\
-The script takes the following parameters.\
-TARGET_USERNAME the username to login to AI Server.\
-TARGET_IP_ADDRESS the IP address of the AI Server.\
-SOURCE_SOFTWARE_LOCATION the source location for the AI Tools on Jenkins Server.\
-TARGET_SOFTWARE_LOCATION the target location on the AI Server.\
-INSTALLATION_FILE_TO_RUN the installation file to run for installing ai.
+7. The following scripts are used to create the Jenkins job to Install the AI Packages.
+
+   **Machine Learning Package Installation**\
+   The following Script is used for installing Machine Learning Packages like Numpy, Scipy, Scikit-Learn, Pandas\
+[Install Machine Learning Packages](/businesslayer/ai/machine-learning/scripts/install_ml_packages.sh)
+
+   **Deep Learning Package Installation**\
+   The following Script are used for installing Deep Learning Packages\
+   [Tensorflow Package Installation](/businesslayer/ai/deep-learning/tensorflow/scripts/install_tensorflow.sh)\
+   [Tensorboard Package Installation](/businesslayer/ai/deep-learning/tensorboard/scripts/install_tensorboard.sh)\
+   [Pytorch Package Installation](/businesslayer/ai/deep-learning/pytorch/scripts/install_pytorch.sh)
+
+   The scripts takes the following parameters.\
+   TARGET_USERNAME the username to login to AI Server.\
+   TARGET_IP_ADDRESS the IP address of the AI Server.\
+   SOURCE_SOFTWARE_LOCATION the source location for the AI Tools on Jenkins Server.\
+   TARGET_SOFTWARE_LOCATION the target location on the AI Server.\
+   INSTALLATION_FILE_TO_RUN the installation file to run for installing AI.
 
 8. Under Build Option, Click on Add build step add the following steps.\
    **Execute shell and add the following commands**\
@@ -70,14 +79,24 @@ INSTALLATION_FILE_TO_RUN the installation file to run for installing ai.
 6. Add the String parameters and configure for the following key value parameters. \
 ![Parameterise-DTP-AI-Uninstaller Jenkins](/businesslayer/ai/images/dtp-ai-uninstall3.png)
 
-7. The following scripts is used to create the Jenkins job \
-[uninstall_ai_packages.sh](/businesslayer/ai/scripts/uninstall_ai_packages.sh)
-Use this script to uninstall the ai.\
-The script takes the following parameters.\
-TARGET_USERNAME the username to login to AI Server.\
-TARGET_IP_ADDRESS the IP address of the AI Server.\
-TARGET_SOFTWARE_LOCATION the target location on the AI Server.\
-UN_INSTALLATION_FILE_TO_RUN the  file to run for uninstalling AI.
+7. The following scripts iare used to create the Jenkins job to Uninstall the AI Packages.
+
+   **Machine Learning Package Uninstallation**\
+   The following Script is used for uninstalling Machine Learning Packages like Numpy, Scipy, Scikit-Learn, Pandas\
+[Uninstall Machine Learning Packages](/businesslayer/ai/machine-learning/scripts/uninstall_ml_packages.sh)
+
+   **Deep Learning Package Uninstallation**\
+   The following Script are used for installing Deep Learning Packages\
+   [Tensorflow Package Uninstallation](/businesslayer/ai/deep-learning/tensorflow/scripts/uninstall_tensorflow.sh)\
+   [Tensorboard Package Uninstallation](/businesslayer/ai/deep-learning/tensorboard/scripts/uninstall_tensorboard.sh)\
+   [Pytorch Package Uninstallation](/businesslayer/ai/deep-learning/pytorch/scripts/uninstall_pytorch.sh)
+
+   Use this script to uninstall the ai.\
+   The script takes the following parameters.\
+   TARGET_USERNAME the username to login to AI Server.\
+   TARGET_IP_ADDRESS the IP address of the AI Server.\
+   TARGET_SOFTWARE_LOCATION the target location on the AI Server.\
+   UN_INSTALLATION_FILE_TO_RUN the  file to run for uninstalling AI.
 
 8. Under Build Option, Click on Add build step add the following steps.\
    **Execute shell and add the following commands**\

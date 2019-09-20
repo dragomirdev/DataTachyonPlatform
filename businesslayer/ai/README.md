@@ -29,6 +29,7 @@
    The following Script is used for installing Machine Learning Packages like Numpy, Scipy, Scikit-Learn, Pandas\
 [Install Machine Learning Packages](/businesslayer/ai/machine-learning/scripts/install_ml_packages.sh)
 
+   On similar lines, we have Jenkins Job for the following:
    **Deep Learning Package Installation**\
    The following Script are used for installing Deep Learning Packages\
    [Tensorflow Package Installation](/businesslayer/ai/deep-learning/tensorflow/scripts/install_tensorflow.sh)\
@@ -85,6 +86,7 @@
    The following Script is used for uninstalling Machine Learning Packages like Numpy, Scipy, Scikit-Learn, Pandas\
 [Uninstall Machine Learning Packages](/businesslayer/ai/machine-learning/scripts/uninstall_ml_packages.sh)
 
+   On similar lines, we have Jenkins Job for the following:
    **Deep Learning Package Uninstallation**\
    The following Script are used for installing Deep Learning Packages\
    [Tensorflow Package Uninstallation](/businesslayer/ai/deep-learning/tensorflow/scripts/uninstall_tensorflow.sh)\

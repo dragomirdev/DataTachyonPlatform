@@ -172,7 +172,7 @@ There are six components to artificial neurons
 * Output node.
 * Perceptron may be an additional parameter, called a bias.
 
-#### Deep Learning Stages
+### Deep Learning Stages
 
 * Loading In The Data.
 * Data Exploration.
@@ -184,6 +184,8 @@ There are six components to artificial neurons
 * Compile and Fit
 * Predict Values
 * Evaluate Model
+
+### Deep Learning Neural Network Types are as follows
 
 #### Convolutional Neural Network (CNN)
 

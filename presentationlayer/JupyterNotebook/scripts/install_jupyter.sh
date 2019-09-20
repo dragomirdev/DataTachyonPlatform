@@ -2,9 +2,9 @@
 
 ###Note##
 #Before running job ...
-#(1) Create the users dtpuser and spark on ELK VM
+#(1) Create the users dtpuser on EdgeNode VM
 #(2) Add exception to sudoers file for the users dtpuser
-#(3) Copy the public key of jenkins user on jenkins VM to dtpuser on ELK VM
+#(3) Copy the public key of jenkins user on jenkins VM to dtpuser on EdgeNode VM
 
 #set -euxo pipefail
 

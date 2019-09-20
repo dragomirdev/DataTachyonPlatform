@@ -153,4 +153,3 @@ To install ELK please go to [Liferay Portal Installation Process](/presentationl
 ### Jupyter NoteBook Installation
 
 To install ELK please go to [Jupyter NoteBook Installation Process](/presentationlayer/README.md)
-

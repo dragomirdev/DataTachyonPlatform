@@ -9,7 +9,7 @@
 #set -euxo pipefail
 
 # Install dependecies
-sudo pip3 install tensorboard
+sudo pip3 install -U numpy scipy pandas scikit-learn==0.19.2 hdfs gensim xgboost
 
 pip3 list
 

@@ -20,7 +20,7 @@ Each of the layers can be differentiated using the following diagram
 
  “A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.”
 
-### Machine Learning Software Packags
+### Software Packages using for Machine Learning
 
 * Numpy
 * Scipy
@@ -152,7 +152,7 @@ There are two categories of supervised learning
 * Deep learning is a machine learning method that relies on artificial neural networks, allowing computer systems to learn by example.
 * In most cases, deep learning algorithms are based on information patterns found in biological nervous systems.
 
-### Deep Learning Software Packags
+### Software Packages using for Deep Learning
 
 * Keras
 * Tensorflow

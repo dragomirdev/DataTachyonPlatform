@@ -39,7 +39,7 @@ sudo apt -y install python3-h5py
 sudo pip3 install keras textblob nltk 
 sudo pip3 install scikit-build --user
 sudo pip3 install gensim
-sudo apt -y install python3-numpy python3-matplotlib ipython ipython-notebook python3-pandas python3-sympy python3-nose python3-seaborn python3-scipy
+sudo apt -y install python3-numpy python3-matplotlib ipython python3-pandas python3-sympy python3-nose python3-seaborn python3-scipy
 sudo pip3 install pyzmq jupyter http://h2o-release.s3.amazonaws.com/h2o/rel-wright/5/Python/h2o-3.20.0.5-py2.py3-none-any.whl h2o_pysparkling_2.2
 sudo pip3 install keras textblob nltk tensorflow
 sudo pip3  install numpy pyparsing==2.2.0
@@ -61,5 +61,6 @@ jupyter notebook --generate-config
 
 sudo apt -y autoremove
 
+pip3 list
 
 

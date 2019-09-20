@@ -80,8 +80,7 @@ Each of the layers can be differentiated using the following diagram
 
 ![ML-Stages](/businesslayer/ai/images/machine_learning_works.png)
 
-The life of Machine Learning programs is straightforward\
-and can be summarized in the following points:
+The life of Machine Learning programs is straightforward and can be summarized in the following points:
 
 * Define a question
 * Collect data

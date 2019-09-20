@@ -93,8 +93,8 @@ There are two categories of supervised learning
 * Classification task
 * Regression task
 
-| Algorithm Name | Description | Type |
-| :---         |     :---:      |          ---: |
+|Algorithm Name|  Description |  Type |
+|---|---|---|
 | Linear regression | Finds a way to correlate each feature to the output to help predict future values. | Regression
 | Logistic regression | Extension of linear regression that's used for classification tasks. The output variable 3is binary (e.g., only black or white) rather than continuous (e.g., an infinite list of potential colors)| Classification
 | Decision tree | Highly interpretable classification or regression model that splits data-feature values into branches at decision nodes (e.g., if a feature is a color, each possible color becomes a new branch) until a final decision output is made| Regression Classification
@@ -104,6 +104,26 @@ There are two categories of supervised learning
 | AdaBoost | Classification or regression technique that uses a multitude of models to come up with a decision but weighs them based on their accuracy in predicting the outcome. | Regression Classification
 | Gradient-Boosting Trees | Gradient-boosting trees is a state-of-the-art classification/regression technique. It is focusing on the error committed by the previous trees and tries to correct it. | Regression Classification
 
+#### Unsupervised Learning
 
+* In unsupervised learning, an algorithm explores input data without being given an explicit output variable.
+  (e.g., explores customer demographic data to identify patterns)
+* You can use it when you do not know how to classify the data,
+  and you want the algorithm to find patterns and classify the data for you.
 
+|Algorithm Name|  Description |  Type |
+|---|---|---|
+|K-means clustering | Puts data into some groups (k) that each contains data with similar characteristics (as determined by the model, not in advance by humans) | Clustering |
+|Gaussian mixture model | A generalization of k-means clustering that provides more flexibility in the size and shape of groups (clusters) | Clustering |
+| Hierarchical clustering | Splits clusters along a hierarchical tree to form a classification system. Can be used for Cluster loyalty-card customer | Clustering |
+| Recommender system | Help to define the relevant data for making a recommendation. | Clustering |
+| PCA/T-SNE | Mostly used to decrease the dimensionality of the data. The algorithms reduce the number of features to 3 or 4 vectors with the highest variances. | Dimension Reduction |
 
+#### Areas for Application of Machine learning
+
+* Augmentation
+* Automation
+* Finance Industry
+* Government organization
+* Healthcare industry
+* Marketing

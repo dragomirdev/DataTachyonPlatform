@@ -22,9 +22,6 @@ sudo wget https://bootstrap.pypa.io/get-pip.py
 sudo python3.6 get-pip.py
 sudo pip3 install -U setuptools pip
 
-sudo pip3 install --upgrade notebook
-sudo pip3 install ipython-sql cython rpy2
-
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update && sudo apt upgrade -y
 sudo apt-get update && sudo apt-get upgrade -y 
@@ -48,10 +45,10 @@ sudo pip3 install requests>=2.18.4 flask-wtf==0.14 sqlalchemy docutils lockfile 
 sudo pip3 install -U numpy scipy pandas nvidia-ml-py3 bottleneck
 sudo pip3 install torch spacy==2.0.18 torchvision fastai
 
-sudo pip3 install --upgrade notebook
-sudo pip3 install ipython-sql cython rpy2
+#sudo pip3 install --upgrade notebook
+#sudo pip3 install ipython-sql cython rpy2
 # Login as dtpuser Run the following commands manually.
-jupyter notebook --generate-config
+#jupyter notebook --generate-config
 
 # Manual one time step to store password
 # jupyter notebook password

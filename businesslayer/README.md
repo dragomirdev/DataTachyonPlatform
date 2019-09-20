@@ -10,6 +10,15 @@ The Business Layer provides the visual graphical output by reading the processed
 
  “A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.”
 
+### Machine Learning Software Packags
+
+* Numpy
+* Scipy
+* SciKit-Learn
+* Pandas
+* Xgboost
+* Gensim
+
 ### Machine Learning vs. Traditional Programming
 
 #### Traditional programming
@@ -127,3 +136,6 @@ There are two categories of supervised learning
 * Government organization
 * Healthcare industry
 * Marketing
+
+
+## Deep Learning

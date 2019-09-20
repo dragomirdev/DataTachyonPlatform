@@ -2,7 +2,17 @@
 
 ## Introduction
 
-The Business Layer provides the visual graphical output by reading the processed and model data generated using AI Techniques and provies insights using different metrics to GUI Layer by converting the data into useful information.
+The Business Layer consists of the following Layers
+
+* Artificial Intelligence.
+* Machine Learning.
+* Deep Learning
+
+![AI_ML_DL](/businesslayer/ai/images/AI_ML_DL.png)
+
+Each of the layers can be differentiated using the following diagram
+
+![Introduction](/businesslayer/ai/images/introduction.png)
 
 ## Machine Learning
 
@@ -189,11 +199,15 @@ There are six components to artificial neurons
 
 #### Convolutional Neural Network (CNN)
 
+![convolutional_neural_network](/businesslayer/ai/images/convolutional_neural_network.png)
+
 * A CNN is basically a neural-based approach which represents a feature function that is applied to constituting words or n-grams to extract higher-level features.
 * The resulting abstract features have been effectively used for sentiment analysis, machine translation, and question answering, among other tasks. Collobert and Weston were among the first researchers to apply CNN-based frameworks to NLP tasks. 
 * The goal of their method was to transform words into a vector representation via a look-up table, which resulted in a primitive word embedding approach that learn weights during the training of the network
 
 #### Recurrent Neural Network (RNN)
+
+![recurrent_neural_network](/businesslayer/ai/images/recurrent_neural_network.png)
 
 * RNNs are specialized neural-based approaches that are effective at processing sequential information.
 * An RNN recursively applies a computation to every instance of an input sequence conditioned on the previous computed results.

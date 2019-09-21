@@ -25,7 +25,7 @@
 
 7. The following Jenkins job are configured to Install the AI Packages.
 
-   ****DTP-AI-MachineLearning-Installer Job**** is for Installing  Machinee-Learning Packages\
+   ****DTP-AI-MachineLearning-Installer Job**** is for Installing  Machine-Learning Packages\
    The following Script is used for installing Machine Learning Packages like Numpy, Scipy, Scikit-Learn, Pandas\
 [Install Machine Learning Packages](/businesslayer/ai/machine-learning/scripts/install_ml_packages.sh)
 

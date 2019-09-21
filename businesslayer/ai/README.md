@@ -25,12 +25,12 @@
 
 7. The following scripts are used to create the Jenkins job to Install the AI Packages.
 
-   **Machine Learning Package Installation**\
+   ****DTP-AI-MachineLearning-Installer Job****\
    The following Script is used for installing Machine Learning Packages like Numpy, Scipy, Scikit-Learn, Pandas\
 [Install Machine Learning Packages](/businesslayer/ai/machine-learning/scripts/install_ml_packages.sh)
 
-   On similar lines, we have Jenkins Job for the following:
-   **Deep Learning Package Installation**\
+   On similar lines, we have Jenkins Job for the following\
+   **DTP-AI-DeepLearning-Installer Job**\
    The following Script are used for installing Deep Learning Packages\
    [Tensorflow Package Installation](/businesslayer/ai/deep-learning/tensorflow/scripts/install_tensorflow.sh)\
    [Tensorboard Package Installation](/businesslayer/ai/deep-learning/tensorboard/scripts/install_tensorboard.sh)\

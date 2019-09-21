@@ -23,22 +23,21 @@
 6. Add the String parameters and configure for the following key value parameters. \
 ![Parameterise-DTP-AI-Installer Jenkins](/businesslayer/ai/images/dtp-ai-install3.png)
 
-7. The following scripts are used to create the Jenkins job to Install the AI Packages.
+7. The following Jenkins job are configured to Install the AI Packages.
 
-   ****DTP-AI-MachineLearning-Installer Job****\
+   ****DTP-AI-MachineLearning-Installer Job**** is for Installing  Machinee-Learning Packages\
    The following Script is used for installing Machine Learning Packages like Numpy, Scipy, Scikit-Learn, Pandas\
 [Install Machine Learning Packages](/businesslayer/ai/machine-learning/scripts/install_ml_packages.sh)
 
-   For Deep-Learning, we have the following Jenkins Job\
-   **DTP-AI-DeepLearning-Installer Job** is made up of the following jobs
+   **DTP-AI-DeepLearning-Installer Job** is for Installing  Deep-Learning Packages which is made of the following jobs
 
    **DTP-AI-Tensorflow-Installer**\
-    The following Script are used for installing Deep Learning Packages\
+    The following Script is used for installing Tensorflow Packages\
     [Tensorflow Package Installation](/businesslayer/ai/deep-learning/tensorflow/scripts/install_tensorflow.sh)\
     [Tensorboard Package Installation](/businesslayer/ai/deep-learning/tensorboard/scripts/install_tensorboard.sh)
 
-   **DTP-AI-Pytorch-Installer**
-    The following Script are used for installing Deep Learning Packages\
+   **DTP-AI-Pytorch-Installer**\
+    The following Script is used for installing Pytorch Packages\
     [Pytorch Package Installation](/businesslayer/ai/deep-learning/pytorch/scripts/install_pytorch.sh)
 
    The scripts takes the following parameters.\

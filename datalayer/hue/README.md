@@ -15,8 +15,8 @@
 
 3. Select FreeStyle Project and Ok.
 
-4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option.
-![DiscardBuild-DTP-Hue-Installer Jenkins](/datalayer/hive/images/Hue_Jenkins_setup_1.png)
+4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option. \
+![DiscardBuild-DTP-Hue-Installer Jenkins](/datalayer/hue/images/Hue_Jenkins_setup_1.png)
 
 5. Tick the option, the  project  is parameterized.
 

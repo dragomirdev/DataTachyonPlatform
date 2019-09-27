@@ -1,0 +1,17 @@
+[Unit]
+Description=Hive systemd service
+
+[Service]
+Type=simple
+User=hadoop
+Group=hadoop
+WorkingDirectory=/opt/hive
+ExecStart=/opt/hive/bin/hive --service hiveserver2 --hiveconf hive.server2.transport.mode=binary --hiveconf hive.server2.thrift.bind.host=thorb1067 --hiveconf hive.server2.thrift.port=10000 --hiveconf hive.root.logger=INFO,console
+TimeoutSec=30
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=350
+StartLimitBurst=10
+
+[Install]
+WantedBy=multi-user.target

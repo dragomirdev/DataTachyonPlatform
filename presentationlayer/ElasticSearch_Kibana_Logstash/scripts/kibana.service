@@ -1,0 +1,17 @@
+[Unit]
+Description=Docker Kibana service
+
+[Service]
+Type=simple
+User=nvidia
+Group=nvidia
+WorkingDirectory=/home/nvidia/
+ExecStart=/usr/bin/docker start 3c46337bba42 
+TimeoutSec=30
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=350
+StartLimitBurst=10
+
+[Install]
+WantedBy=multi-user.target

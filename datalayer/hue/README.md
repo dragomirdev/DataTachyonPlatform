@@ -55,7 +55,7 @@ HUE_VM_IP_ADDRESS:8000
 
 ## DTP-Hue-Uninstallation
 
-### Create a Jenkins Job for DTP Hive Uninstaller
+### Create a Jenkins Job for DTP Hue Uninstaller
 
 1. On Jenkins Home page, click on the New Item.
 

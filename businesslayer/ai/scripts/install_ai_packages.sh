@@ -38,7 +38,7 @@ sudo pip3 install scikit-build --user
 sudo pip3 install gensim
 sudo apt -y install python3-numpy python3-matplotlib ipython python3-pandas python3-sympy python3-nose python3-seaborn python3-scipy
 sudo pip3 install pyzmq jupyter http://h2o-release.s3.amazonaws.com/h2o/rel-wright/5/Python/h2o-3.20.0.5-py2.py3-none-any.whl h2o_pysparkling_2.2
-sudo pip3 install keras textblob nltk tensorflow
+sudo pip3 install keras textblob nltk tensorflow==2.0.0-rc1
 sudo pip3  install numpy pyparsing==2.2.0
 sudo pip3 install findspark  numexpr scikit-learn==0.19.2 hdfs pywebhdfs snakebite hdfs3 graphviz==0.8.4 xgboost
 sudo pip3 install requests>=2.18.4 flask-wtf==0.14 sqlalchemy docutils lockfile libhdf5-serial-dev hdf5-tools bokeh seaborn

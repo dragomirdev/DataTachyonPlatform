@@ -10,8 +10,8 @@ import time
 
 def main(args):
 
-    process_group = "14678882-b46d-3468-1e33-cb9c91ccc182"
-    hostname_port = 'thorb1111:9090'
+    process_group = "14678882-b46d-3468-e262-b1bd410751af" 
+    hostname_port = "JP-DTP-NIFI-VM:9090"
 
     data_input_path = args[1]
     data_output_path = args[2]

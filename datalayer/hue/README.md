@@ -15,8 +15,8 @@
 
 3. Select FreeStyle Project and Ok.
 
-4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option.
-![DiscardBuild-DTP-Hue-Installer Jenkins](/datalayer/hive/images/Hue_Jenkins_setup_1.png)
+4. Tick the Discard Builds checkbox and enter 2 for Max # of builds to keep option. \
+![DiscardBuild-DTP-Hue-Installer Jenkins](/datalayer/hue/images/Hue_Jenkins_setup_1.png)
 
 5. Tick the option, the  project  is parameterized.
 
@@ -55,7 +55,7 @@ HUE_VM_IP_ADDRESS:8000
 
 ## DTP-Hue-Uninstallation
 
-### Create a Jenkins Job for DTP Hive Uninstaller
+### Create a Jenkins Job for DTP Hue Uninstaller
 
 1. On Jenkins Home page, click on the New Item.
 

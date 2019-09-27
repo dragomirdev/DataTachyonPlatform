@@ -2,7 +2,7 @@
 <template encoding-version="1.2">
     <description></description>
     <groupId>bd5bc208-016b-1000-6896-7bbef971de64</groupId>
-    <name>Data_to_HDFS</name>
+    <name>DataTachyonNifiDataIngestToHDFS</name>
     <snippet>
         <processGroups>
             <id>14678882-b46d-3468-0000-000000000000</id>
@@ -341,7 +341,7 @@
                         <properties>
                             <entry>
 <key>Hostname</key>
-<value>thorb1021</value>
+<value>JP-DTP-EDGENODE-VM</value>
                             </entry>
                             <entry>
 <key>Port</key>
@@ -349,7 +349,7 @@
                             </entry>
                             <entry>
 <key>Username</key>
-<value>nvidia</value>
+<value>dtpuser</value>
                             </entry>
                             <entry>
 <key>Password</key>
@@ -665,7 +665,7 @@
                         <properties>
                             <entry>
 <key>Hostname</key>
-<value>thorb1020</value>
+<value>JP-DTP-EDGENODE-VM</value>
                             </entry>
                             <entry>
 <key>Port</key>
@@ -673,7 +673,7 @@
                             </entry>
                             <entry>
 <key>Username</key>
-<value>nvidia</value>
+<value>dtpuser</value>
                             </entry>
                             <entry>
 <key>Password</key>
@@ -686,7 +686,7 @@
                             </entry>
                             <entry>
 <key>Remote Path</key>
-<value>${err_path}/${path:replaceFirst('${in_path}','')}/ingestiondate=${now():format('yyyy-MM-dd')}</value>
+<value>${err_path}/${path:replaceFirst('${in_path}','')}/${now():format('yyyyMMdd')}</value>
                             </entry>
                             <entry>
 <key>Create Directory</key>
@@ -998,7 +998,7 @@
                         <properties>
                             <entry>
 <key>Hostname</key>
-<value>thorb1020</value>
+<value>JP-DTP-EDGENODE-VM</value>
                             </entry>
                             <entry>
 <key>Port</key>
@@ -1006,7 +1006,7 @@
                             </entry>
                             <entry>
 <key>Username</key>
-<value>nvidia</value>
+<value>dtpuser</value>
                             </entry>
                             <entry>
 <key>Password</key>
@@ -1019,7 +1019,7 @@
                             </entry>
                             <entry>
 <key>Remote Path</key>
-<value>${bkp_path}/${path:replaceFirst('${in_path}','')}/ingestiondate=${now():format('yyyy-MM-dd')}</value>
+<value>${bkp_path}/${path:replaceFirst('${in_path}','')}/${now():format('yyyyMMdd')}</value>
                             </entry>
                             <entry>
 <key>Create Directory</key>
@@ -1261,7 +1261,7 @@
                             </entry>
                             <entry>
 <key>Directory</key>
-<value>${out_path}/${path:replaceFirst('${in_path}','')}/ingestiondate=${now():format('yyyy-MM-dd')}</value>
+<value>${out_path}/${path:replaceFirst('${in_path}','')}/${now():format('yyyyMMdd')}</value>
                             </entry>
                             <entry>
 <key>Conflict Resolution Strategy</key>
@@ -1408,23 +1408,23 @@
                     <type>org.apache.nifi.processors.standard.RouteOnAttribute</type>
                 </processors>
             </contents>
-            <name>NiFi_SAP_Data_To_HDFS</name>
+            <name>DataTachyonNifiDataIngestToHDFS</name>
             <variables>
                 <entry>
                     <key>out_path</key>
-                    <value>/user/data/landing/sap_data</value>
+                    <value>/data/dtp/landing/</value>
                 </entry>
                 <entry>
                     <key>err_path</key>
-                    <value>/media/nvidia/r2dlhdd/data_archive/landing/sap_data/error</value>
+                    <value>/datadrive/dtp/error/</value>
                 </entry>
                 <entry>
                     <key>in_path</key>
-                    <value>/media/nvidia/r2dlssd/landing/sap_data</value>
+                    <value>/datadrive/dtp/input/</value>
                 </entry>
                 <entry>
                     <key>bkp_path</key>
-                    <value>/media/nvidia/r2dlhdd/data_archive/landing/sap_data/backup</value>
+                    <value>/datadrive/dtp/backup/</value>
                 </entry>
             </variables>
         </processGroups>

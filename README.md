@@ -136,9 +136,11 @@ To install Hive please go to [Hive Installation Process](/datalayer/hive/README.
 
 ### Tensorflow, Keras, Pytorch, Fast-AI Installation
 
-To install Business Layer packages like Tensorflow, Keras, Pytorch, Fast-AI, etc please go to
+To install Business Layer packages like Tensorflow, Keras, Pytorch, Fast-AI, etc please go to [Deep Learning Installation Process](/businesslayer/README.md)
 
-[Business Layer Installation Process](/businesslayer/README.md)
+### Numpy, Scipy, Scikit-Learn, Pandas Installation
+
+To install Business Layer packages like Numpy, Scipy, Scikit-Learn, Pandas, etc please go to [Machine Learning Installation Process](/businesslayer/README.md)
 
 ## Presentation Layer Installation
 
@@ -148,8 +150,12 @@ To install ELK please go to [ELK Installation Process](/presentationlayer/README
 
 ### Liferay Portal Installation
 
-To install ELK please go to [Liferay Portal Installation Process](/presentationlayer/README.md)
+To install Liferay Portal please go to [Liferay Portal Installation Process](/presentationlayer/README.md)
 
 ### Jupyter NoteBook Installation
 
-To install ELK please go to [Jupyter NoteBook Installation Process](/presentationlayer/README.md)
+To install Jupyter NoteBook please go to [Jupyter NoteBook Installation Process](/presentationlayer/README.md)
+
+### Hue Installation
+
+To install Hue please go to [Hue Installation Process](/presentationlayer/README.md)

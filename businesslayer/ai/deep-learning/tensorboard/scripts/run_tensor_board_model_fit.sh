@@ -2,6 +2,8 @@
 
 clear
 
+pwd
+
 # Clear any logs from previous runs
 rm -rf ./logs/
 

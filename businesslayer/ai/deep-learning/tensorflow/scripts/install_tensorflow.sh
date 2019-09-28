@@ -9,7 +9,7 @@
 #set -euxo pipefail
 
 # Install dependecies
-sudo pip3 install keras textblob nltk tensorflow==2.0.0-rc1
+sudo pip3 install keras textblob nltk -U tensorflow==2.0.0-rc1
 
 pip3 list
 

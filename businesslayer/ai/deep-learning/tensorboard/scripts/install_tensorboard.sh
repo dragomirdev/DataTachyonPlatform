@@ -9,7 +9,7 @@
 #set -euxo pipefail
 
 # Install dependecies
-sudo pip3 install tensorboard
+sudo pip3 install -U tensorboard
 
 pip3 list
 

@@ -19,7 +19,7 @@ current_date=$(date '+%Y-%m-%d')
 echo "Running Tensorboard for Gradient Type for Date: " $current_date
 tensorboard --logdir logs/gradient_tape &
 
-TARGET_HDFS_PROCESSED_FOLDER=/data/dtp/processed/mnist/gradient_tape/ingestiondate=$current_date
+TARGET_HDFS_PROCESSED_FOLDER=/data/dtp/processed/mnist/processeddate=$current_date
 
 echo "Pushing to the HDFS Process Folder" $TARGET_HDFS_PROCESSED_FOLDER
 

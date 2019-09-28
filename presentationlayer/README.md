@@ -70,7 +70,7 @@ Kibana is a visualization layer that works on top of Elasticsearch, providing us
 
 #### Liferay-Architecture
 
-![Liferay-Architecture](/presentationlayer/Liferay/images/liferay-architecture.png)
+![Liferay-Architecture](/presentationlayer/Liferay/images/logos/liferay-architecture.png)
 
 * Liferay is very flexible in terms of accessing external
 systems as well as being accessed by all sorts of external

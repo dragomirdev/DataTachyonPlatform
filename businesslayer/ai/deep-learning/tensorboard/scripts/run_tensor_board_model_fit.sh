@@ -1,6 +1,7 @@
 #!/bin/bash
 
 clear
+pkill -f tensorboard
 
 pwd
 current_date=$(date '+%Y-%m-%d')

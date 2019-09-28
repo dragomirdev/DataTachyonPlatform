@@ -10,7 +10,7 @@ tensorboard --logdir logs/fit &
 
 TARGET_HDFS_PROCESSED_FOLDER=/data/dtp/processed/mnist/processeddate=$current_date
 
-echo "Pushing to the HDFS Process Folder" $TARGET_HDFS_PROCESSED_FOLDER
+echo "Pushing Output logs to the HDFS Process Folder" $TARGET_HDFS_PROCESSED_FOLDER
 hdfs dfs -mkdir -p $TARGET_HDFS_PROCESSED_FOLDER
 hdfs dfs -put logs $TARGET_HDFS_PROCESSED_FOLDER
 

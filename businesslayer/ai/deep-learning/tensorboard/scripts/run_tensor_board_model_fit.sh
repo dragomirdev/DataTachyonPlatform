@@ -6,4 +6,5 @@ clear
 rm -rf ./logs/
 
 echo "Running Tensorboard for Model Fit Type"
-tensorboard --logdir logs/fit
+tensorboard --logdir logs/fit &
+

@@ -1,3 +1,6 @@
 dtp.code-workspace
 */.DS_Store
+*/logs
+*.idea
+businesslayer/ai/deep-learning/tensorboard/scripts/logs/
 

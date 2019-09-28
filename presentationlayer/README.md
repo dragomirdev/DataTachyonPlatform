@@ -4,11 +4,12 @@
 
 The Presentation Layer provides the visual graphical output by reading the processed and model data generated using AI Techniques and provies insights using different metrics to GUI Layer by converting the data into useful information.
 
-DTP uses the following Presentation Layer
+DTP uses the following Software Components for the Presentation Layer
 
 * ElasticSearch LogStash Kibana (ELK) Stack
 * Liferay Portal
-* Hue
+* Jupyter Notebook
+* Hue Web User Interface
 
 ### ElasticSearch LogStash Kibana (ELK) Stack
 

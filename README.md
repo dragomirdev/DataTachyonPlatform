@@ -132,6 +132,10 @@ To install Spark please go to [Spark Installation Process](/datalayer/spark/READ
 
 To install Hive please go to [Hive Installation Process](/datalayer/hive/README.md)
 
+### Hue Installation
+
+To install Hue please go to [Hue Installation Process](/presentationlayer/README.md)
+
 ## Business Layer Installation
 
 ### Tensorflow, Keras, Pytorch, Fast-AI Installation
@@ -155,7 +159,3 @@ To install Liferay Portal please go to [Liferay Portal Installation Process](/pr
 ### Jupyter NoteBook Installation
 
 To install Jupyter NoteBook please go to [Jupyter NoteBook Installation Process](/presentationlayer/README.md)
-
-### Hue Installation
-
-To install Hue please go to [Hue Installation Process](/presentationlayer/README.md)

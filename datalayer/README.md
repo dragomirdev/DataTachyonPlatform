@@ -7,6 +7,7 @@ The DTP Data layer consists of the following:
 * Apache Hadoop Distributed File System (HDFS)
 * Apache Hive
 * Apache Spark
+* Hue
 
 ## Apache Hadoop Distributed File System (HDFS)
 

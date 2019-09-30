@@ -1,0 +1,154 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>DTP-Nifi-Installer installs the Nifi Tool on the TARGET_IP_ADDRESS VM on Port 9090&#xd;
+# Pass Nifi TARGET_IP_ADDRESS and TARGET_SOFTWARE_LOCATION to the Nifi Jenkins build job.&#xd;
+&#xd;
+Steps for Installing Nifi Tool:&#xd;
+(1) Copies files from&#xd;
+      /var/lib/jenkins/Tools/Nifi/nifi-1.9.2-bin.zip&#xd;
+      /opt/DataTachyonPlatform/integrationlayer/nifi/scripts/nifi_remote_installation.sh&#xd;
+      on jenkins VM to /home/dtpuser on Nifi VM&#xd;
+(2) Runs nifi_remote_installation.sh on Nifi VM&#xd;
+&#xd;
+Before running job ...&#xd;
+(1) Create the users dtpuser and spark on Nifi VM&#xd;
+(2) Add exception to sudoers file for the users dtpuser&#xd;
+(3) Copy the public key of jenkins user on jenkins VM to dtpuser on Nifi VM&#xd;
+&#xd;
+After running job ...&#xd;
+(1) Remove exception from sudoers file for the users dtpuser.&#xd;
+</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.plugins.jira.JiraProjectProperty plugin="jira@3.0.9"/>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>2</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <hudson.plugins.disk__usage.DiskUsageProperty plugin="disk-usage@0.28"/>
+    <org.jenkinsci.plugins.gogs.GogsProjectProperty plugin="gogs-webhook@1.0.15">
+      <gogsSecret>{AQAAABAAAAAQ9VvJn13mx9V8cz1rZa6fpfPV2ZmiYp1PGP2ponoHsZ8=}</gogsSecret>
+      <gogsUsePayload>false</gogsUsePayload>
+      <gogsBranchFilter></gogsBranchFilter>
+    </org.jenkinsci.plugins.gogs.GogsProjectProperty>
+    <com.sonyericsson.rebuild.RebuildSettings plugin="rebuild@1.31">
+      <autoRebuild>false</autoRebuild>
+      <rebuildDisabled>false</rebuildDisabled>
+    </com.sonyericsson.rebuild.RebuildSettings>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>TARGET_USERNAME</name>
+          <description></description>
+          <defaultValue>dtpuser</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TARGET_IP_ADDRESS</name>
+          <description></description>
+          <defaultValue>JP-DTP-NIFI-VM</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>SOURCE_SOFTWARE_LOCATION</name>
+          <description></description>
+          <defaultValue>/var/lib/jenkins/Tools/Nifi/nifi-1.9.2-bin.zip</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TARGET_SOFTWARE_LOCATION</name>
+          <description></description>
+          <defaultValue>/home/dtpuser</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>INSTALLATION_FILE_TO_RUN</name>
+          <description></description>
+          <defaultValue>/opt/DataTachyonPlatform/integrationlayer/nifi/scripts/nifi_remote_installation.sh</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <hudson.plugins.throttleconcurrents.ThrottleJobProperty plugin="throttle-concurrents@2.0.1">
+      <categories class="java.util.concurrent.CopyOnWriteArrayList"/>
+      <throttleEnabled>false</throttleEnabled>
+      <throttleOption>project</throttleOption>
+      <limitOneJobWithMatchingParams>false</limitOneJobWithMatchingParams>
+      <paramsToUseForLimit></paramsToUseForLimit>
+    </hudson.plugins.throttleconcurrents.ThrottleJobProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>
+whoami &amp;&amp; hostname &amp;&amp; pwd
+
+echo &quot;Running SCP to transfer file to Remote Server:&quot;$TARGET_USERNAME@$TARGET_IP_ADDRESS
+
+#scp -v /var/lib/jenkins/Tools/nifi-1.9.2-bin.zip azureadmin@JP-DTP-NIFI-VM:/home/azureadmin
+scp $SOURCE_SOFTWARE_LOCATION $TARGET_USERNAME@$TARGET_IP_ADDRESS:$TARGET_SOFTWARE_LOCATION
+scp $INSTALLATION_FILE_TO_RUN $TARGET_USERNAME@$TARGET_IP_ADDRESS:$TARGET_SOFTWARE_LOCATION
+</command>
+    </hudson.tasks.Shell>
+    <jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin plugin="publish-over-ssh@1.20.1">
+      <delegate>
+        <consolePrefix>SSH: </consolePrefix>
+        <delegate plugin="publish-over@0.22">
+          <publishers>
+            <jenkins.plugins.publish__over__ssh.BapSshPublisher plugin="publish-over-ssh@1.20.1">
+              <configName>JP-DTP-NIFI-VM</configName>
+              <verbose>false</verbose>
+              <transfers>
+                <jenkins.plugins.publish__over__ssh.BapSshTransfer>
+                  <remoteDirectory></remoteDirectory>
+                  <sourceFiles>*</sourceFiles>
+                  <excludes></excludes>
+                  <removePrefix></removePrefix>
+                  <remoteDirectorySDF>false</remoteDirectorySDF>
+                  <flatten>false</flatten>
+                  <cleanRemote>false</cleanRemote>
+                  <noDefaultExcludes>false</noDefaultExcludes>
+                  <makeEmptyDirs>false</makeEmptyDirs>
+                  <patternSeparator>[, ]+</patternSeparator>
+                  <execCommand>pwd
+whoami
+hostname
+cd /home/dtpuser/
+chmod 775 nifi_remote_installation.sh
+echo &quot;Installing Nifi on Remote sever &quot;
+ls -latr &amp;&amp; ./nifi_remote_installation.sh
+echo &quot;Checking Status of Nifi&quot;
+/opt/nifi-1.9.2/bin/nifi.sh status
+echo &quot;Removing Nifi Installation Script on Remote sever &quot;
+sudo rm -rf /home/dtpuser/nifi_remote_installation.sh</execCommand>
+                  <execTimeout>120000</execTimeout>
+                  <usePty>false</usePty>
+                  <useAgentForwarding>false</useAgentForwarding>
+                </jenkins.plugins.publish__over__ssh.BapSshTransfer>
+              </transfers>
+              <useWorkspaceInPromotion>false</useWorkspaceInPromotion>
+              <usePromotionTimestamp>false</usePromotionTimestamp>
+            </jenkins.plugins.publish__over__ssh.BapSshPublisher>
+          </publishers>
+          <continueOnError>false</continueOnError>
+          <failOnError>false</failOnError>
+          <alwaysPublishFromMaster>false</alwaysPublishFromMaster>
+          <hostConfigurationAccess class="jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin" reference="../.."/>
+        </delegate>
+      </delegate>
+    </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

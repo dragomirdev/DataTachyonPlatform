@@ -1,0 +1,27 @@
+Started by user [8mha:////4Fs8I0HOxdL4nCbljaK4WrTxfxn9gTJ4TwMMUuW8NXSVAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgY+/dLi1CL9lJKCxJTczDwATPxy5cMAAAA=[0mDTP Admin
+Running as SYSTEM
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/lib/jenkins/workspace/NifiDataIngestionToHdfsLanding
+SSH: Connecting from host [JP-DTP-JENKINS-VM]
+SSH: Connecting with configuration [hadoop@JP-DTP-NIFI-VM] ...
+SSH: EXEC: STDOUT/STDERR from command [# Running the Script  On NifiVM: /home/hadoop/DataTachyonPlatform/integrationlayer/nifi/scripts/dataingestion/run_NiFi_data_loader.sh
+cd /home/hadoop/DataTachyonPlatform/integrationlayer/nifi/scripts/dataingestion/ &&
+export PATH=${PATH}:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin:/opt/hadoop/bin:/opt/hadoop/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin &&  ls -latr  &&  echo "Running Nifi Data Loader" &&  /home/hadoop/DataTachyonPlatform/integrationlayer/nifi/scripts/dataingestion/run_NiFi_data_loader.sh /datadrive/dtp/input /data/dtp/landing /datadrive/dtp/backup /datadrive/dtp/error
+
+#clear && python3 /home/hadoop/DataTachyonPlatform/integrationlayer/nifi/scripts/dataingestion/run_NiFi_data_loader.sh /datadrive/dtp/input /data/dtp/landing /datadrive/dtp/backup /datadrive/dtp/error] ...
+total 16
+-rw-rw-r-- 1 hadoop hadoop  540 Sep 27 17:27 run_NiFi_data_loader.sh
+drwxrwxr-x 3 hadoop hadoop 4096 Sep 27 17:27 ..
+-rw-rw-r-- 1 hadoop hadoop 3462 Sep 27 17:28 nifi_data_loader.py
+drwxrwxr-x 2 hadoop hadoop 4096 Sep 27 17:28 .
+Running Nifi Data Loader
+bash: line 2: /home/hadoop/DataTachyonPlatform/integrationlayer/nifi/scripts/dataingestion/run_NiFi_data_loader.sh: Permission denied
+SSH: EXEC: completed after 201 ms
+SSH: Disconnecting configuration [hadoop@JP-DTP-NIFI-VM] ...
+ERROR: Exception when publishing, exception message [Exec exit status not zero. Status [126]]
+Build step 'Send files or execute commands over SSH' changed build result to UNSTABLE
+Started calculate disk usage of build
+Finished Calculation of disk usage of build in 0 seconds
+Started calculate disk usage of workspace
+Finished Calculation of disk usage of workspace in 0 seconds
+Finished: UNSTABLE

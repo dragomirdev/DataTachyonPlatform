@@ -76,6 +76,10 @@ echo "                <name>dfs.replication</name>" >> /opt/hadoop/etc/hadoop/hd
 echo "                <value>2</value>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
 echo "        </property>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
 echo "        <property>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
+echo "                <name>dfs.client.use.datanode.hostname</name>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
+echo "                <value>true</value>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
+echo "        </property>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
+echo "        <property>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
 echo "                <name>dfs.secondary.http.address</name>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
 echo "                <value>$HADOOP_SNN_NAME:50090</value>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml
 echo "        </property>" >> /opt/hadoop/etc/hadoop/hdfs-site.xml

@@ -31,3 +31,21 @@ sudo rm -rf /opt/hadoop/
 
 #REMOVE START HADOOP AT SYSTEM BOOT!!!!!!!!!!!!!!!!!
 #STOP HADOOP!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# Run commands as hadoop user and expand variables
+sudo -i -u hadoop bash << 'EOF'
+
+echo 'Hadoop user'
+cd
+
+EOF
+
+# Run commands as hadoop user and expand variables
+sudo -i -u hadoop bash << EOF
+
+sudo systemctl stop hadoop
+sudo rm -rf /etc/systemd/system/hadoop.service
+sudo systemctl daemon-reload
+
+EOF
+

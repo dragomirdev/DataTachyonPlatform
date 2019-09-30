@@ -77,3 +77,43 @@ EOF
 
 echo " The Hive Server Configuration is Complete."
 echo " To Manually start the Hive Server run the /datalayer/hive/scripts/start_hive.sh script"
+
+
+
+# setup config
+sudo -i -u hadoop bash << EOF
+
+hdfs dfs -mkdir -p /user/hive/warehouse
+hdfs dfs -mkdir -p /tmp
+hdfs dfs -chmod g+w /user/hive/warehouse
+hdfs dfs -chmod g+w /tmp
+
+# Running creation of hadoop folder on hdfs
+echo "************ Position - 3 Hive installation *********"
+mkdir -p /tmp/hadoop/logs
+mkdir -p /tmp/hadoop/hive_tmp
+mkdir -p /tmp/hadoop/hive_resources
+mkdir -p /tmp/hive/java
+
+clear
+
+echo "************ Initialising derby database *********"
+# initialise derby database
+/opt/hive/bin/schematool -initSchema -dbType derby --verbose
+
+EOF
+
+
+
+# Run commands as hadoop user and start the hiveserver2
+sudo -i -u hadoop bash << EOF
+
+sudo mv /home/hadoop/hive.service /etc/systemd/system/
+sudo chmod 755 /etc/systemd/system/hive.service
+sudo systemctl daemon-reload
+sudo systemctl start hive
+sudo systemctl enable hive
+
+EOF
+
+

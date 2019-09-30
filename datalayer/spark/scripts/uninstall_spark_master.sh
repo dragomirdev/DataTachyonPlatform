@@ -22,3 +22,23 @@ sudo rm -r /opt/spark/
 
 #REMOVE START SPARK AT SYSTEM BOOT!!!!!!!!!!!!!!!!!
 #STOP SPARK!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# Run commands as hadoop user and expand variables
+sudo -i -u hadoop bash << 'EOF'
+
+echo "hadoop user"
+cd
+
+EOF
+
+
+# Run commands as hadoop user and expand variables
+sudo -i -u hadoop bash << EOF
+
+sudo systemctl stop spark
+sudo rm -rf /etc/systemd/system/spark.service
+sudo systemctl daemon-reload
+
+EOF
+
+

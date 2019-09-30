@@ -25,8 +25,8 @@ echo "************ Initialising derby database *********"
 
 
 #Note: The following are the manual steps:
-mkdir -p /opt/hive
-cd /opt/hive
+mkdir -p ~/hiveserver2
+cd ~/hiveserver2
 
 echo "************ Starting HiveServer2 *********"
 # Starting HiveServer2
@@ -45,6 +45,6 @@ cd ~/beeline
 
 echo "************ Starting Beeline Service*********"
 hive --service beeline
-!connect jdbc:hive2://52.172.4.179:10000 hadoop hadoop
+!connect jdbc:hive2://52.183.128.193:10000 hadoop hadoop
 
 

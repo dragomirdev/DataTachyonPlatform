@@ -5,14 +5,15 @@ After=systemd-user-sessions.service
 Requires=network-online.target
 
 [Service]
+ExecStartPre=/bin/sleep 300
 Type=forking
 User=hadoop
 Group=hadoop
 WorkingDirectory=/opt/hadoop
 ExecStart=/opt/hadoop/sbin/start-dfs.sh
-TimeoutSec=30
+TimeoutSec=480
 Restart=on-failure
-RestartSec=30
+RestartSec=60
 
 [Install]
 WantedBy=multi-user.target

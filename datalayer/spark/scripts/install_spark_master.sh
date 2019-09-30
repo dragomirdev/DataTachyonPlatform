@@ -55,3 +55,15 @@ EOF
 
 #START SPARK AT SYSTEM BOOT!!!!!!!!!!!!!!!!!
 #START SPARK WOULD NEED TO HAVE WORKER INSTALLED FIRST!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# Run commands as hadoop user and expand variables
+sudo -i -u hadoop bash << EOF
+
+sudo mv /home/hadoop/spark.service /etc/systemd/system/
+sudo chmod 755 /etc/systemd/system/spark.service
+sudo systemctl daemon-reload
+sudo systemctl start spark
+sudo systemctl enable spark
+
+EOF
+

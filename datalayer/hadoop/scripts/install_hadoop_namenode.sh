@@ -91,3 +91,17 @@ EOF
 
 #START HADOOP AT SYSTEM BOOT!!!!!!!!!!!!!!!!!
 #START HADOOP WOULD NEED TO HAVE 2NN AND DATANODES INSTALLED FIRST!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+# Run commands as hadoop user and expand variables
+sudo -i -u hadoop bash << EOF
+
+sudo mv /home/hadoop/hadoop.service /etc/systemd/system/
+sudo chmod 755 /etc/systemd/system/hadoop.service
+sudo systemctl daemon-reload
+sudo systemctl start hadoop
+sudo systemctl enable hadoop
+
+EOF
+
+

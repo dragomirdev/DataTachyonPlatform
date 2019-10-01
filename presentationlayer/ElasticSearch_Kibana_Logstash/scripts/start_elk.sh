@@ -54,11 +54,11 @@ ps -ef | grep logstash
 
 echo " Starting LogStash Server...."
 #Start Logstash
-/opt/elk/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }' &
+/opt/elk/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }' 
 
 #sudo  ./opt/elk/logstash-7.2.0/run_logstash.sh
 #LOGSTASH_LOG=/datadrive/elk/logstash/log/logstash.log
-#nohup ${LOGSTASH_HOME}/bin/logstash  -e 'input { stdin { } } output { stdout {} }' > $LOGSTASH_LOG 2>&1 
+#nohup ${LOGSTASH_HOME}/bin/logstash  -e 'input { stdin { } } output { stdout {} }' > $LOGSTASH_LOG 2>&1 &
 
 #####################################################################################
 

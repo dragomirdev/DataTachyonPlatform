@@ -21,6 +21,13 @@ sudo chown -R dtpuser:hadoop liferay-portal-7.2.0-ga1/
 sudo chmod -R 775 liferay-portal-7.2.0-ga1/
 sudo rm liferay-ce-portal-tomcat-7.2.0-ga1-20190531153709761.tar.gz
 
+#################################################### Adding Startup Services #################################################################
+sudo mv /home/dtpuser/liferay.service /etc/systemd/system/
+sudo chmod 755 /etc/systemd/system/liferay.service
+sudo systemctl daemon-reload
+sudo systemctl start liferay
+sudo systemctl enable liferay
+
 cd /opt/liferay-portal-7.2.0-ga1/
 
 echo "Starting Liferay Server"

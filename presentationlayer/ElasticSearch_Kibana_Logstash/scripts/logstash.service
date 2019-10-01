@@ -7,7 +7,7 @@ Requires=network-online.target
 [Service]
 Type=forking
 User=dtpuser
-Group=hadoop
+Group=dtpuser
 WorkingDirectory=/opt/elk/logstash
 ExecStart=/opt/elk/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'
 TimeoutSec=30

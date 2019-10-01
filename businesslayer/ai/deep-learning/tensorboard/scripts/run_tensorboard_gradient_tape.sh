@@ -5,10 +5,9 @@ pkill -f tensorboard
 
 pwd
 current_date=$(date '+%Y-%m-%d')
-
 TARGET_HDFS_PROCESSED_FOLDER=/data/dtp/processed/mnist/
 
-echo "Started Pushing Output logs to the HDFS Process Folder" $TARGET_HDFS_PROCESSED_FOLDER
+echo "Pushing Output logs to the HDFS Process Folder" $TARGET_HDFS_PROCESSED_FOLDER
 
 hdfs dfs -mkdir -p $TARGET_HDFS_PROCESSED_FOLDER
 hdfs dfs -put logs $TARGET_HDFS_PROCESSED_FOLDER

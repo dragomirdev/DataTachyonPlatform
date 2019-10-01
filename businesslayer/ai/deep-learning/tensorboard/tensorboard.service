@@ -1,17 +1,17 @@
 [Unit]
-Description=Tensorboard service
+Description=Tensorboard systemd service
+After=syslog.target network.target remote-fs.target nss-lookup.target network-online.target
+After=systemd-user-sessions.service
+Requires=network-online.target
 
 [Service]
-Type=simple
+Type=forking
 User=hadoop
 Group=hadoop
-WorkingDirectory=/opt/liferay-portal-7.2.0-ga1
-ExecStart=/opt/liferay-portal-7.2.0-ga1/tomcat-9.0.17/bin/startup.sh
+WorkingDirectory=/opt/DataTachyonPlatform/businesslayer/ai/deep-learning/tensorboard/scripts
+ExecStart=tensorboard --logdir  /opt/DataTachyonPlatform/businesslayer/ai/deep-learning/tensorboard/scripts/logs/gradient_tape &
 TimeoutSec=30
 Restart=on-failure
-RestartSec=30
-StartLimitInterval=350
-StartLimitBurst=10
 
 [Install]
 WantedBy=multi-user.target

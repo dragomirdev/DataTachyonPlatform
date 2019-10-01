@@ -9,7 +9,7 @@ Type=forking
 User=hadoop
 Group=hadoop
 WorkingDirectory=/opt/DataTachyonPlatform/businesslayer/ai/deep-learning/tensorboard/scripts
-ExecStart=python3 /usr/local/lib/python3.6/dist-packages/tensorboard/main.py --logdir  /opt/DataTachyonPlatform/businesslayer/ai/deep-learning/tensorboard/scripts/logs/gradient_tape &
+ExecStart=/usr/bin/python3.6 /usr/local/bin/tensorboard --logdir  /opt/DataTachyonPlatform/businesslayer/ai/deep-learning/tensorboard/scripts/logs/gradient_tape &
 TimeoutSec=30
 Restart=on-failure
 

@@ -43,7 +43,7 @@ echo $ip_address
 
 ########################### Starting LogStash #######################################
 sudo chmod -R 775 /opt/elk/logstash/
-sudo chmod -R 775 /opt/elk/logstash/run_logstash.sh
+#sudo chmod -R 775 /opt/elk/logstash/run_logstash.sh
 sudo chown -R dtpuser:dtpuser /opt/elk/logstash*
 
 cd /opt/elk/logstash/

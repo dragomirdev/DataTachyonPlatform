@@ -42,11 +42,11 @@ $KIBANA_HOME/bin/kibana --host ${HOSTNAME} --elasticsearch http://${ip_address}:
 #nohup ${KIBANA_HOME}/bin/kibana --host ${HOSTNAME} --elasticsearch http://${ip_address}:9200 > $KIBANA_LOG 2>&1 &
 
 ########################### Starting LogStash #######################################
-sudo chmod -R 775 /opt/elk/logstash-7.2.0/
-sudo chmod -R 775 /opt/elk/logstash-7.2.0/run_logstash.sh
+sudo chmod -R 775 /opt/elk/logstash/
+sudo chmod -R 775 /opt/elk/logstash/run_logstash.sh
 sudo chown -R dtpuser:dtpuser /opt/elk/logstash*
 
-cd /opt/elk/logstash-7.2.0/
+cd /opt/elk/logstash/
 # Check Version
 bin/logstash --version
 
@@ -54,7 +54,8 @@ ps -ef | grep logstash
 
 echo " Starting LogStash Server...."
 #Start Logstash
-#/opt/elk/logstash-7.2.0/bin/logstash -e 'input { stdin { } } output { stdout {} }'
+/opt/elk/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }' &
+
 #sudo  ./opt/elk/logstash-7.2.0/run_logstash.sh
 #LOGSTASH_LOG=/datadrive/elk/logstash/log/logstash.log
 #nohup ${LOGSTASH_HOME}/bin/logstash  -e 'input { stdin { } } output { stdout {} }' > $LOGSTASH_LOG 2>&1 &

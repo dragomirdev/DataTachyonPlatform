@@ -1,6 +1,6 @@
 #!/bin/bash
 
 ######################### Stopping ELK###################################
-pkill -f elasticsearch
-pkill -f logstash
-pkill -f kibana
+sudo pkill -f elasticsearch
+sudo pkill -f logstash
+sudo pkill -f kibana

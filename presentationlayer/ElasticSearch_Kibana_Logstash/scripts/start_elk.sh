@@ -58,7 +58,7 @@ echo " Starting LogStash Server...."
 
 #sudo  ./opt/elk/logstash-7.2.0/run_logstash.sh
 #LOGSTASH_LOG=/datadrive/elk/logstash/log/logstash.log
-#nohup ${LOGSTASH_HOME}/bin/logstash  -e 'input { stdin { } } output { stdout {} }' > $LOGSTASH_LOG 2>&1 &
+#nohup ${LOGSTASH_HOME}/bin/logstash  -e 'input { stdin { } } output { stdout {} }' > $LOGSTASH_LOG 2>&1 
 
 #####################################################################################
 

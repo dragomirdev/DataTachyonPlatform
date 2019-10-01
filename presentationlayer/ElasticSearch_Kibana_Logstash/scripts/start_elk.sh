@@ -1,5 +1,9 @@
 #!/bin/bash
 
+ES_HOME_FOLDER=/opt/elk/elasticsearch
+KIBANA_HOME_FOLDER=/opt/elk/kibana
+LOGSTASH_HOME_FOLDER=/opt/elk/logstash
+
 ######################### Starting Elastic-Search###################################
 ls -latr /home/dtpuser/
 ls -latr ${ES_HOME}

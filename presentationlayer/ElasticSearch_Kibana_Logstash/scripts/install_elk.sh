@@ -204,19 +204,19 @@ pwd && ls -latr
 bin/logstash --version
 
 #################################################### Adding Startup Services #################################################################
-sudo mv /home/dtpuser/elasticsearch.service /etc/systemd/system/
+sudo mv /home/dtpuser/ELK/elasticsearch.service /etc/systemd/system/
 sudo chmod 755 /etc/systemd/system/elasticsearch.service
 sudo systemctl daemon-reload
 sudo systemctl start elasticsearch
 sudo systemctl enable elasticsearch
 
-sudo mv /home/dtpuser/kibana.service /etc/systemd/system/
+sudo mv /home/dtpuser/ELK/kibana.service /etc/systemd/system/
 sudo chmod 755 /etc/systemd/system/kibana.service
 sudo systemctl daemon-reload
 sudo systemctl start kibana
 sudo systemctl enable kibana
 
-sudo mv /home/dtpuser/logstash.service /etc/systemd/system/
+sudo mv /home/dtpuser/ELK/logstash.service /etc/systemd/system/
 sudo chmod 755 /etc/systemd/system/logstash.service
 sudo systemctl daemon-reload
 sudo systemctl start logstash

@@ -1,0 +1,17 @@
+[Unit]
+Description=Elasticsearch service
+
+[Service]
+Type=simple
+User=dtpuser
+Group=dtpuser
+WorkingDirectory=/opt/elk/elasticsearch-7.2.0
+ExecStart=/opt/elk/elasticsearch-7.2.0/bin/elasticsearch -d -p pid
+TimeoutSec=30
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=350
+StartLimitBurst=10
+
+[Install]
+WantedBy=multi-user.target

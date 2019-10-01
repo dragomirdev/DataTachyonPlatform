@@ -1,12 +1,12 @@
 [Unit]
-Description=Docker Kibana service
+Description=Kibana service
 
 [Service]
 Type=simple
-User=nvidia
-Group=nvidia
-WorkingDirectory=/home/nvidia/
-ExecStart=/usr/bin/docker start 3c46337bba42 
+User=dtpuser
+Group=dtpuser
+WorkingDirectory=/opt/elk/kibana-7.2.0-linux-x86_64
+ExecStart=/opt/elk/kibana-7.2.0-linux-x86_64/bin/kibana --host JP-DTP-ELK-VM --elasticsearch http://10.0.4.10:9200 &
 TimeoutSec=30
 Restart=on-failure
 RestartSec=30

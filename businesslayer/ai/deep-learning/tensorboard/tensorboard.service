@@ -1,0 +1,17 @@
+[Unit]
+Description=Tensorboard service
+
+[Service]
+Type=simple
+User=hadoop
+Group=hadoop
+WorkingDirectory=/opt/liferay-portal-7.2.0-ga1
+ExecStart=/opt/liferay-portal-7.2.0-ga1/tomcat-9.0.17/bin/startup.sh
+TimeoutSec=30
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=350
+StartLimitBurst=10
+
+[Install]
+WantedBy=multi-user.target

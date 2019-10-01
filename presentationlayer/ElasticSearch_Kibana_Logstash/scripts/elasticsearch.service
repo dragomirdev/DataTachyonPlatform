@@ -1,17 +1,17 @@
 [Unit]
-Description=Elasticsearch service
+Description=Elasticsearch systemd service
+After=syslog.target network.target remote-fs.target nss-lookup.target network-online.target
+After=systemd-user-sessions.service
+Requires=network-online.target
 
 [Service]
-Type=simple
+Type=forking
 User=dtpuser
-Group=dtpuser
+Group=hadoop
 WorkingDirectory=/opt/elk/elasticsearch
 ExecStart=/opt/elk/elasticsearch/bin/elasticsearch -d -p pid
 TimeoutSec=30
 Restart=on-failure
-RestartSec=30
-StartLimitInterval=350
-StartLimitBurst=10
 
 [Install]
 WantedBy=multi-user.target

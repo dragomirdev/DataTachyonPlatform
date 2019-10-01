@@ -46,9 +46,12 @@ sudo chown -R dtpuser:dtpuser /opt/elk/
 
 
 ####################### SETTING ELK HOME #############################################
-ES_HOME_FOLDER=/opt/elk/elasticsearch-7.2.0
-KIBANA_HOME_FOLDER=/opt/elk/kibana-7.2.0-linux-x86_64
-LOGSTASH_HOME_FOLDER=/opt/elk/logstash-7.2.0
+#ES_HOME_FOLDER=/opt/elk/elasticsearch-7.2.0
+#KIBANA_HOME_FOLDER=/opt/elk/kibana-7.2.0-linux-x86_64
+#LOGSTASH_HOME_FOLDER=/opt/elk/logstash-7.2.0
+ES_HOME_FOLDER=/opt/elk/elasticsearch
+KIBANA_HOME_FOLDER=/opt/elk/kibana
+LOGSTASH_HOME_FOLDER=/opt/elk/logstash
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export ES_HOME=$ES_HOME_FOLDER
@@ -67,7 +70,7 @@ echo "export KIBANA_HOME="$KIBANA_HOME_FOLDER >> ~/.bashrc
 echo "Setting LOGSTASH_HOME"
 echo "export LOGSTASH_HOME="$LOGSTASH_HOME_FOLDER >> ~/.bashrc
 
-echo "export PATH=/opt/elk/kibana-7.2.0-linux-x86_64/bin:/opt/elk/logstash-7.2.0/bin:/opt/elk/elasticsearch-7.2.0/bin:/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH"  >> ~/.bashrc
+echo "export PATH=/opt/elk/kibana/bin:/opt/elk/logstash/bin:/opt/elk/elasticsearch:/usr/lib/jvm/java-8-openjdk-amd64/bin:$PATH"  >> ~/.bashrc
 
 source ~/.bashrc
 echo "JAVA_HOME: "$JAVA_HOME
@@ -80,6 +83,7 @@ echo "PATH: "$PATH
 cd /opt/elk/
 echo "Extracting ElasticSearch...."
 tar -xzf elasticsearch-7.2.0-linux-x86_64.tar.gz
+sudo mv elasticsearch-7.2.0 elasticsearch
 
 sudo chmod -R 775 /opt/elk/
 sudo chown -R dtpuser:dtpuser /opt/elk/
@@ -88,7 +92,7 @@ ls -latr
 
 ########### CONFIGURE ELASTIC-SEARCH ########
 
-#export ES_HOME=/opt/elk/elasticsearch-7.2.0
+#export ES_HOME=/opt/elk/elasticsearch
 cd $ES_HOME"/"
 
 #Setting Virtual memory
@@ -138,6 +142,7 @@ pwd && ls -latr
 cd /opt/elk/
 echo "Extracting Kibana...."
 tar -xzf kibana-7.2.0-linux-x86_64.tar.gz
+sudo mv kibana-7.2.0-linux-x86_64 kibana
 
 sudo chmod -R 775 /opt/elk/
 sudo chown -R dtpuser:dtpuser /opt/elk/
@@ -145,7 +150,7 @@ sudo chown -R dtpuser:dtpuser /opt/elk/
 ls -latr
 
 ########### CONFIGURE KIBANA ####################
-#export KIBANA_HOME=/opt/elk/kibana-7.2.0-linux-x86_64
+#export KIBANA_HOME=/opt/elk/kibana
 cd $KIBANA_HOME"/"
 
 # Get IP address on eth0 interface
@@ -179,6 +184,7 @@ pwd && ls -latr $KIBANA_HOME
 cd /opt/elk/
 echo "Extracting Logstash...."
 tar -xzf logstash-7.2.0.tar.gz
+sudo mv logstash-7.2.0 logstash
 
 sudo chmod -R 775 /opt/elk/
 sudo chown -R dtpuser:dtpuser /opt/elk/
@@ -197,72 +203,25 @@ pwd && ls -latr
 # Check Version
 bin/logstash --version
 
+#################################################### Adding Startup Services #################################################################
+sudo mv /home/dtpuser/elasticsearch.service /etc/systemd/system/
+sudo chmod 755 /etc/systemd/system/elasticsearch.service
+sudo systemctl daemon-reload
+sudo systemctl start elasticsearch
+sudo systemctl enable elasticsearch
 
-######################### Running Elastic-Search###################################
-ls -latr /home/dtpuser/
-ls -latr ${ES_HOME}
+sudo mv /home/dtpuser/kibana.service /etc/systemd/system/
+sudo chmod 755 /etc/systemd/system/kibana.service
+sudo systemctl daemon-reload
+sudo systemctl start kibana
+sudo systemctl enable kibana
 
-ps -ef | grep elastic
-
-echo " Starting Elastic-Search Server...."
-# Running Elastic-Search as a Daemon
-${ES_HOME}/bin/elasticsearch -d -p pid
-
-sleep 1m
-
-############################## Running Kibana #######################################
-
-ps -ef | grep elasticsearch
-
-sleep 1m
-
-# First wait for ES to start...
-ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
-curl -X GET http://${ip_address}:9200
-#curl  -XGET "http://${ip_address}:9200/_xpack?pretty"
+sudo mv /home/dtpuser/logstash.service /etc/systemd/system/
+sudo chmod 755 /etc/systemd/system/logstash.service
+sudo systemctl daemon-reload
+sudo systemctl start logstash
+sudo systemctl enable logstash
 
 
-ps -ef | grep kibana
-
-# Run Kibana
-KIBANA_LOG=/datadrive/elk/kibana/log/kibana.log
-echo " Starting Kibana Server...."
-sudo rm -rf $KIBANA_LOG
-ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
-echo $ip_address
-
-$KIBANA_HOME/bin/kibana --host ${HOSTNAME} --elasticsearch http://${ip_address}:9200 &
-
-#nohup ${KIBANA_HOME}/bin/kibana --host ${HOSTNAME} --elasticsearch http://${ip_address}:9200 > $KIBANA_LOG 2>&1 &
-
-########################### Running LogStash #######################################
-sudo chmod -R 775 /opt/elk/logstash-7.2.0/
-sudo chmod -R 775 /opt/elk/logstash-7.2.0/run_logstash.sh
-sudo chown -R dtpuser:dtpuser /opt/elk/logstash*
-
-cd /opt/elk/logstash-7.2.0/
-# Check Version
-bin/logstash --version
-
-ps -ef | grep logstash
-
-echo " Starting LogStash Server...."
-#Start Logstash
-#/opt/elk/logstash-7.2.0/bin/logstash -e 'input { stdin { } } output { stdout {} }'
-#sudo  ./opt/elk/logstash-7.2.0/run_logstash.sh
-#LOGSTASH_LOG=/datadrive/elk/logstash/log/logstash.log
-#nohup ${LOGSTASH_HOME}/bin/logstash  -e 'input { stdin { } } output { stdout {} }' > $LOGSTASH_LOG 2>&1 &
-
-#####################################################################################
-
-
-#curl -XGET 'localhost:9600/_node/logging?pretty'
-
-######################### Testing Elastic-Search ###################################
-
-#echo "Checking ElasticSearch "
-##curl -X GET "localhost:9200/"
-#ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
-#curl -X GET http://${ip_address}:9200
 
 

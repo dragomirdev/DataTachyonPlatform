@@ -12,7 +12,7 @@ ps -ef | grep elastic
 
 echo " Starting Elastic-Search Server...."
 # Running Elastic-Search as a Daemon
-${ES_HOME}/bin/elasticsearch -d -p pid
+/opt/elk/elasticsearch/bin/elasticsearch -d -p pid
 
 sleep 1m
 
@@ -37,7 +37,7 @@ sudo rm -rf $KIBANA_LOG
 ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 echo $ip_address
 
-$KIBANA_HOME/bin/kibana --host ${HOSTNAME} --elasticsearch http://${ip_address}:9200 &
+/opt/elk/kibana/bin/kibana --host ${HOSTNAME} --elasticsearch http://${ip_address}:9200 &
 
 #nohup ${KIBANA_HOME}/bin/kibana --host ${HOSTNAME} --elasticsearch http://${ip_address}:9200 > $KIBANA_LOG 2>&1 &
 

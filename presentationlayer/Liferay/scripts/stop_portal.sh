@@ -1,7 +1,7 @@
 #!/bin/bash
 
-######################### Stopping ELK###################################
-pkill -f elasticsearch
+######################### Stopping Liferay###################################
+pkill -f liferay
 
 ps -ef | pgrep -f "liferay" | xargs kill -9
 

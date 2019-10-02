@@ -50,7 +50,7 @@ sudo sed -i "/nifi.sensitive.props.key=/ s/=.*/=datatachyonnifi1234/" /opt/nifi-
 
 cd ..
 
-sudo chown -R dtpuser:hadoop /opt/nifi-1.9.2
+sudo chown -R hadoop:hadoop /opt/nifi-1.9.2
 sudo chmod -R 775 /opt/nifi-1.9.2
 
 whoami && hostname && pwd
@@ -58,7 +58,7 @@ ls -latr /opt/
 ls -latr /opt/nifi-1.9.2
 which java
 
-#sudo -i -u dtpuser   bash << 'EOF'
+#sudo -i -u hadoop   bash << 'EOF'
 # Update bashrc
 #echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre" >> ~/.bashrc
 #echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc

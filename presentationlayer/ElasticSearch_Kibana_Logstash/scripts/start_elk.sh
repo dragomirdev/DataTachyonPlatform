@@ -9,7 +9,7 @@ ls -latr /home/dtpuser/
 ls -latr ${ES_HOME}
 
 ps -ef | grep elastic
-
+sudo sysctl -w vm.max_map_count=262144
 echo " Starting Elastic-Search Server...."
 # Running Elastic-Search as a Daemon
 /opt/elk/elasticsearch/bin/elasticsearch -d -p pid
@@ -27,6 +27,8 @@ ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 curl -X GET http://${ip_address}:9200
 #curl  -XGET "http://${ip_address}:9200/_xpack?pretty"
 
+
+curl --user elastic:JPSpace2019$ -XPUT "http://${ip_address}:9200/idx"
 
 ps -ef | grep kibana
 

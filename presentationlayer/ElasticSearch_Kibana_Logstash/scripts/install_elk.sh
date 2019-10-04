@@ -44,6 +44,11 @@ sudo mv /home/dtpuser/ELK/*.tar* /opt/elk/
 sudo chmod -R 775 /opt/elk/
 sudo chown -R dtpuser:dtpuser /opt/elk/
 
+# Download Links
+# curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.2.0-linux-x86_64.tar.gz
+# curl -L -O https://artifacts.elastic.co/downloads/kibana/kibana-7.2.0-linux-x86_64.tar.gz
+# curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-7.2.0.tar.gz
+# curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.2.0-linux-x86_64.tar.gz
 
 ####################### SETTING ELK HOME #############################################
 #ES_HOME_FOLDER=/opt/elk/elasticsearch-7.2.0
@@ -130,9 +135,24 @@ echo "cluster.initial_master_nodes: ['${HOSTNAME}-ES-Node']" >> config/elasticse
 
 # Display Contents of config/elasticsearch.yml
 #cat config/elasticsearch.yml
-
 #Configuring System Settings
 sudo  sed -e '/session    required   pam_limits.so/ s/^#*/#/' -i /etc/pam.d/su
+
+# Set General Security Settings
+echo "xpack.security.enabled: true" >> config/elasticsearch.yml
+echo "xpack.security.authc.accept_default_password: false" >> config/elasticsearch.yml
+echo "xpack.security.transport.ssl.enabled: true" >> config/elasticsearch.yml
+
+
+# Set Creating Keystore for the Basic Security authentication
+/opt/elk/elasticsearch/bin/elasticsearch-keystore create
+/opt/elk/elasticsearch/bin/elasticsearch-keystore list
+echo "JPSpace2019$" | /opt/elk/elasticsearch/bin/elasticsearch-keystore add bootstrap.password
+
+#Note: To Set the built-in users' passwords
+#There are built-in users that you can use for specific administrative purposes:
+# apm_system, beats_system, elastic, kibana, logstash_system, and remote_monitoring_user.
+# ./opt/elk/elasticsearch/bin/elasticsearch-setup-passwords interactive
 
 sudo chmod -R 775 /opt/elk/
 sudo chown -R dtpuser:dtpuser /opt/elk/
@@ -154,7 +174,7 @@ ls -latr
 cd $KIBANA_HOME"/"
 
 # Get IP address on eth0 interface
-ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
+ip_address=$(ip addr show eth0 | grep "inet\b" | awk '{ print $2}' | cut -d/ -f1)
 
 # Set Server Host Address
 echo "server.host: "${ip_address} >> config/kibana.yml
@@ -166,15 +186,18 @@ echo "server.name: DataTachyon-Kibana-App" >> config/kibana.yml
 echo "logging.dest: /datadrive/elk/kibana/log/kibana.log" >> config/kibana.yml
 echo "path.data: /datadrive/elk/kibana/data/" >> config/kibana.yml
 
-
-echo "xpack.security.encryptionKey: DTP-Kibana-App-1234567890987654321" >>  config/kibana.yml
-echo "xpack.encrypted_saved_objects.encryptionKey: DTP-Kibana-App-1234567890987654321" >>  config/kibana.yml
+# Note: the following 2 properties are neeeded for kibana without authentication
+#echo "xpack.security.encryptionKey: DTP-Kibana-App-1234567890987654321" >>  config/kibana.yml
+#echo "xpack.encrypted_saved_objects.encryptionKey: DTP-Kibana-App-1234567890987654321" >>  config/kibana.yml
 
 # Set the URLs of the Elasticsearch instances to use for all your queries.
 echo "elasticsearch.hosts: ['http://${ip_address}:9200']"   >> config/kibana.yml
 
 # Display Contents of config/kibana.yml
 #cat $KIBANA_HOME/config/kibana.yml
+
+echo "elasticsearch.username: \"elastic\"" >>  config/kibana.yml
+echo "elasticsearch.password: \"JPSpace2019$\"" >>  config/kibana.yml
 
 sudo chmod -R 775 /opt/elk/
 sudo chown -R dtpuser:dtpuser /opt/elk/

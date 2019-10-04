@@ -33,7 +33,7 @@ echo "************ Starting HiveServer2 *********"
 
 hive --service hiveserver2 \
   --hiveconf hive.server2.transport.mode=binary \
-  --hiveconf  hive.server2.thrift.bind.host=52.183.128.193 \
+  --hiveconf  hive.server2.thrift.bind.host=JP-DTP-ELK-VM \
   --hiveconf hive.server2.thrift.port=10000 \
   --hiveconf hive.root.logger=WARN,console &
 
@@ -45,6 +45,6 @@ cd ~/beeline
 
 echo "************ Starting Beeline Service*********"
 hive --service beeline
-!connect jdbc:hive2://52.183.128.193:10000 hadoop hadoop
+!connect jdbc:hive2://JP-DTP-ELK-VM:10000 hadoop hadoop
 
 

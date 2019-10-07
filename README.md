@@ -175,5 +175,3 @@ The following DTP Services hosted on their respective DTP Server on their respec
 | Apache Spark Worker | https://dtp-spark-worker1.ukwest.cloudapp.azure.com/| dtpuser/Dtpuser2019$ | 8081 |
 | ElasticSearch | http://dtp-elk.southindia.cloudapp.azure.com:9200/| elastic/Dtpuser2019$ | 9200 |
 | Kibana | http://dtp-elk.southindia.cloudapp.azure.com:5601/| elastic/Dtpuser2019$ | 5601 |
-
-

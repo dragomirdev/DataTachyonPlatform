@@ -179,3 +179,7 @@ The following DTP Services hosted on their respective DTP Server on their respec
 | Apache Spark Worker | https://dtp-spark-worker1.ukwest.cloudapp.azure.com/| dtpuser/Dtpuser2019$ | 8081 |
 | ElasticSearch | http://dtp-elk.southindia.cloudapp.azure.com:9200/| elastic/Dtpuser2019$ | 9200 |
 | Kibana | http://dtp-elk.southindia.cloudapp.azure.com:5601/| elastic/Dtpuser2019$ | 5601 |
+| Jupyter | http://dtp-jupyter.northeurope.cloudapp.azure.com:8888/| dtpuser/Dtpuser2019$ | 9200 |
+| Hue | http://dtp-hue.westindia.cloudapp.azure.com:8000/| hadoop/JPSpace2019$ | 8000 |
+| TensorBoard | http://dtp-ai.francecentral.cloudapp.azure.com:6006/|  | 6066 |
+| Jenkins | http://dtp-cicd.westeurope.cloudapp.azure.com:8080/| dtpadmin/JPSpace2019$ | 8080 |

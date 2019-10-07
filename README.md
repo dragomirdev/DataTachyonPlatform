@@ -159,3 +159,21 @@ To install Liferay Portal please go to [Liferay Portal Installation Process](/pr
 ### Jupyter NoteBook Installation
 
 To install Jupyter NoteBook please go to [Jupyter NoteBook Installation Process](/presentationlayer/README.md)
+
+## DTP-Live-Services
+
+### DTP Live Services Running Information
+
+The following DTP Services hosted on their respective DTP Server on their respective VM/Nodes.
+
+|DTP Service|  Service Url | User Credentials |Running on Internal Port |
+|---|---|---|---|
+| DTP Portal | http://dtp-portal.francecentral.cloudapp.azure.com:8080/web/datatachyonplatform/dashboard | dtpuser/Dtpuser2019$ | 8080 |
+| Apache Nifi | https://nifiint.southindia.cloudapp.azure.com | dtpuser/Dtpuser2019$ | 9090 |
+| Apache Hadoop | https://dtp-haddop.southindia.cloudapp.azure.com | dtpuser/Dtpuser2019$ | 9870 |
+| Apache Spark Master | https://dtp-spark.westindia.cloudapp.azure.com/| dtpuser/Dtpuser2019$ | 8080 |
+| Apache Spark Worker | https://dtp-spark-worker1.ukwest.cloudapp.azure.com/| dtpuser/Dtpuser2019$ | 8081 |
+| ElasticSearch | http://dtp-elk.southindia.cloudapp.azure.com:9200/| elastic/Dtpuser2019$ | 9200 |
+| Kibana | http://dtp-elk.southindia.cloudapp.azure.com:5601/| elastic/Dtpuser2019$ | 5601 |
+
+

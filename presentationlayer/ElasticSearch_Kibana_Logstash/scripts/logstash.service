@@ -1,0 +1,17 @@
+[Unit]
+Description=Logstash systemd service
+After=syslog.target network.target remote-fs.target nss-lookup.target network-online.target
+After=systemd-user-sessions.service
+Requires=network-online.target
+
+[Service]
+Type=forking
+User=dtpuser
+Group=dtpuser
+WorkingDirectory=/opt/elk/logstash
+ExecStart=/opt/elk/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'
+TimeoutSec=30
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

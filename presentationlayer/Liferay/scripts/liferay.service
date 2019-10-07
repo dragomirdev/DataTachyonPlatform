@@ -1,0 +1,17 @@
+[Unit]
+Description=Liferay systemd service
+After=syslog.target network.target remote-fs.target nss-lookup.target network-online.target
+After=systemd-user-sessions.service
+Requires=network-online.target
+
+[Service]
+Type=forking
+User=dtpuser
+Group=hadoop
+WorkingDirectory=/opt/liferay-portal-7.2.0-ga1
+ExecStart=/opt/liferay-portal-7.2.0-ga1/tomcat-9.0.17/bin/startup.sh
+TimeoutSec=30
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

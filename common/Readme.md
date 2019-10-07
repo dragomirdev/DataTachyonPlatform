@@ -63,3 +63,7 @@ Remove the last line as shown below for the dtpuser entry.
 sudo vi /etc/sudoers  
 dtpuser ALL=(ALL) NOPASSWD: ALL
 hadoop ALL=(ALL) NOPASSWD: ALL
+
+## DataTachyonPlatform - Security
+
+To install Security for DTP-Services please go to [DTP-Security](/common/security/README.md)

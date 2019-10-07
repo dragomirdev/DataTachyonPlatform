@@ -160,6 +160,10 @@ To install Liferay Portal please go to [Liferay Portal Installation Process](/pr
 
 To install Jupyter NoteBook please go to [Jupyter NoteBook Installation Process](/presentationlayer/README.md)
 
+## DataTachyonPlatform - Security
+
+To install Security for DTP-Services please go to [DTP-Security](/common/security/README.md)
+
 ## DTP-Live-Services
 
 ### DTP Live Services Running Information

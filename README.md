@@ -177,8 +177,8 @@ The following DTP Services hosted on their respective DTP Server on their respec
 | Apache Hadoop | https://dtp-haddop.southindia.cloudapp.azure.com | dtpuser/Dtpuser2019$ | 9870 | hadoop |
 | Apache Spark Master | https://dtp-spark.westindia.cloudapp.azure.com/| dtpuser/Dtpuser2019$ | 8080 | hadoop |
 | Apache Spark Worker | https://dtp-spark-worker1.ukwest.cloudapp.azure.com/| dtpuser/Dtpuser2019$ | 8081 | hadoop |
-| ElasticSearch | http://dtp-elk.southindia.cloudapp.azure.com:9200/| elastic/Dtpuser2019$ | 9200 | dtpuser |
-| Kibana | http://dtp-elk.southindia.cloudapp.azure.com:5601/| elastic/Dtpuser2019$ | 5601 | dtpuser |
+| ElasticSearch | http://dtp-elk.southindia.cloudapp.azure.com:9200/| elastic/JPSpace2019$ | 9200 | dtpuser |
+| Kibana | http://dtp-elk.southindia.cloudapp.azure.com:5601/| elastic/JPSpace2019$ | 5601 | dtpuser |
 | Jupyter | http://dtp-jupyter.northeurope.cloudapp.azure.com:8888/| dtpuser/Dtpuser2019$ | 8888 | dtpuser |
 | Hue | http://dtp-hue.westindia.cloudapp.azure.com:8000/| hadoop/JPSpace2019$ | 8000 | hadoop |
 | TensorBoard | http://dtp-ai.francecentral.cloudapp.azure.com:6006/|  | 6066 | hadoop |

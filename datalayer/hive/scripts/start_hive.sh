@@ -23,10 +23,13 @@ echo "************ Initialising derby database *********"
 /opt/hive/bin/schematool -initSchema -dbType derby --verbose
 
 
-
 #Note: The following are the manual steps:
-mkdir -p ~/hiveserver2
-cd ~/hiveserver2
+
+cd /opt/hive
+
+source ~/.bashrc
+export HADOOP_HOME=/opt/hadoop
+export HIVE_HOME=/opt/hive
 
 echo "************ Starting HiveServer2 *********"
 # Starting HiveServer2

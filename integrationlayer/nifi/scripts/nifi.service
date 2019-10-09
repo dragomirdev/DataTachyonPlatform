@@ -10,8 +10,10 @@ User=hadoop
 Group=hadoop
 WorkingDirectory=/opt/nifi
 ExecStart=/opt/nifi/bin/nifi.sh start
-TimeoutSec=30
+ExecStop=/opt/nifi/bin/nifi.sh stop
+TimeoutSec=90
 Restart=on-failure
+RestartSec=60
 
 [Install]
 WantedBy=multi-user.target

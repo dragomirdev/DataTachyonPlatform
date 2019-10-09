@@ -70,17 +70,43 @@ export PATH=$JAVA_HOME/bin:$PATH
 echo "JAVA_HOME: "$JAVA_HOME
 echo "PATH: "$PATH
 
-echo "Installing Nifi"
-sudo /opt/nifi-1.9.2/bin/nifi.sh install
-/opt/nifi-1.9.2/bin/nifi.sh stop
+sudo mv /opt/nifi-1.9.2/ /opt/nifi
+sudo chown -R hadoop:hadoop /opt/nifi/
+sudo chmod -R 775 /opt/nifi/
 
+echo "Installing Nifi"
+sudo /opt/nifi/bin/nifi.sh install
+/opt/nifi/bin/nifi.sh stop
+
+### Note: Add the following properties inside /etc/init.d/nifi after the #!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          nifi
+# Required-Start:    $all
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Nifi Service...
+
+sudo mv /home/hadoop/nifi.service /etc/systemd/system/
+sudo chmod 755 /etc/systemd/system/nifi.service
+sudo systemctl daemon-reload
+sudo systemctl start nifi.service
+sudo systemctl status nifi.service
+sudo systemctl enable nifi.service
+
+
+
+
+#Manual Start
 #echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64"
 #echo "JAVA_HOME: "$JAVA_HOME
 #echo "PATH: "$PATH
-ps -ef | grep nifi
-echo "Starting Nifi"
-/opt/nifi-1.9.2/bin/nifi.sh start
-sleep 60
+
+#ps -ef | grep nifi
+#echo "Starting Nifi"
+#/opt/nifi/bin/nifi.sh start
+#sleep 60
 
 #echo "Checking Status of Nifi"
 #/opt/nifi-1.9.2/bin/nifi.sh status

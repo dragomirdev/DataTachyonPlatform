@@ -172,7 +172,7 @@ The following DTP Services hosted on their respective DTP Server on their respec
 
 |DTP Service|  Service Url | User Credentials |Running on Internal Port | Running on username on VM/Node |
 |---|---|---|---|---|
-| DTP Portal | http://dtp-portal.francecentral.cloudapp.azure.com:8080/web/datatachyonplatform/dashboard | dtpuser/Dtpuser2019$ | 8080 | dtpuser |
+| DTP Portal | http://dtp-portal.francecentral.cloudapp.azure.com:8080/web/datatachyonplatform/dashboard | dtpuser@jpyramid.co.uk/Dtpuser2019$ | 8080 | dtpuser |
 | Apache Nifi | https://nifiint.southindia.cloudapp.azure.com | dtpuser/Dtpuser2019$ | 9090 | hadoop |
 | Apache Hadoop | https://dtp-haddop.southindia.cloudapp.azure.com | dtpuser/Dtpuser2019$ | 9870 | hadoop |
 | Apache Spark Master | https://dtp-spark.westindia.cloudapp.azure.com/| dtpuser/Dtpuser2019$ | 8080 | hadoop |

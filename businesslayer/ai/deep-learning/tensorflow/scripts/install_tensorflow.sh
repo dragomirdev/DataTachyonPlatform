@@ -13,4 +13,12 @@ sudo pip3 install keras textblob nltk -U tensorflow==2.0.0-rc1 --ignore-installe
 
 pip3 list
 
+echo "deb [arch=amd64] http://storage.googleapis.com/tensorflow-serving-apt stable tensorflow-model-server tensorflow-model-server-universal" | sudo tee /etc/apt/sources.list.d/tensorflow-serving.list && \
+curl https://storage.googleapis.com/tensorflow-serving-apt/tensorflow-serving.release.pub.gpg | sudo apt-key add -
 
+sudo apt-get -y update & sudo apt-get -y install tensorflow-model-server
+sudo apt-get -y upgrade tensorflow-model-server
+
+sudo pip3 install requests
+
+pip3 list

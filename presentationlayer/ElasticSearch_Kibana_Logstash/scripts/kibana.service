@@ -1,7 +1,7 @@
 [Unit]
 Description=Kibana systemd service
 After=syslog.target network.target remote-fs.target nss-lookup.target network-online.target
-After=systemd-user-sessions.service
+After=systemd-user-sessions.servicei elasticsearch.service
 Requires=network-online.target
 
 [Service]
@@ -9,7 +9,7 @@ Type=forking
 User=dtpuser
 Group=dtpuser
 WorkingDirectory=/opt/elk/kibana
-ExecStart=/opt/elk/kibana/bin/kibana --host JP-DTP-ELK-VM --elasticsearch http://10.0.4.10:9200 &
+ExecStart=/opt/elk/kibana/runkibana.sh
 TimeoutSec=30
 Restart=on-failure
 

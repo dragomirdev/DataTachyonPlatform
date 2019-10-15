@@ -9,9 +9,10 @@ Type=forking
 User=dtpuser
 Group=dtpuser
 WorkingDirectory=/opt/elk/elasticsearch
-ExecStart=/opt/elk/elasticsearch/bin/elasticsearch -d -p pid
+ExecStart=/opt/elk/elasticsearch/runelasticsearch.sh
 TimeoutSec=30
 Restart=on-failure
+LimitNOFILE=65536
 
 [Install]
 WantedBy=multi-user.target

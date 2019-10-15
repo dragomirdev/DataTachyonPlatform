@@ -18,14 +18,15 @@ sudo usermod -aG sudo hadoop
 ## Login to each user on each server and generate the ssh keys
 ssh-keygen -t rsa
 <no password>
+## adding the localhost keys to the known_hosts on each node
+ssh localhost
 
 ## add the public keys to the authorized keys
 cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 sudo chmod -R 700 .ssh
 sudo chmod -R 640 .ssh/authorized_keys
 
-## adding the localhost keys to the known_hosts on each node
-ssh localhost
+
 
 ## Copy the hosts names to the /etc/hosts
 <JENKINS_IP_ADDRESS> JP-DTP-JENKINS-VM

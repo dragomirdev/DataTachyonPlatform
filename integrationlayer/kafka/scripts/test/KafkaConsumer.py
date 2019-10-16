@@ -8,14 +8,16 @@ from kafka import KafkaConsumer
 from json import loads
 import logging
 import sys
+import multiprocessing
 import requests, re, time
 
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.WARN)
-logger = logging.getLogger('KafkaProducer')
+logger = logging.getLogger('KafkaConsumer')
 logger.setLevel(30)
+TIMEOUT = 90
 
 
 def main(args):
@@ -37,8 +39,17 @@ def main(args):
 
     for message in consumer:
         print(message)
+        time.sleep(1)
 
 
 if __name__ == '__main__':
-    main(sys.argv)
+    p = multiprocessing.Process(target=main(sys.argv), name="Foo")
+    p.start()
+    p.join(TIMEOUT)
+
+    if p.is_alive():
+        print('Stopping Consuming Messages')
+        p.terminate()
+        p.join()
+
 

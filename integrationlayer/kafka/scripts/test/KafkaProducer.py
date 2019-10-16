@@ -39,8 +39,8 @@ def main(args):
         sleep(5)
 
 
-def constructPayload(e):
-    payload = SensorInfo(e, 'MachineSensor123', getRandomFloat(start, stop),
+def constructPayload(id):
+    payload = SensorInfo(id, 'MachineSensor123', getRandomFloat(start, stop),
                          getRandomFloat(start, stop), getRandomFloat(start, 50),
                          getRandomFloat(start, stop), getRandomFloat(start, stop))
     return payload

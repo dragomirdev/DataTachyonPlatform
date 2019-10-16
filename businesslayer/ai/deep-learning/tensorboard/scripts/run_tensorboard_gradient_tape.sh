@@ -15,4 +15,4 @@ hdfs dfs -put logs $TARGET_HDFS_PROCESSED_FOLDER
 echo "Completed Pushing Output logs to the HDFS Process Folder " $TARGET_HDFS_PROCESSED_FOLDER
 
 echo "Running Tensorboard for Gradient Type for Date: " $current_date
-tensorboard --logdir logs/gradient_tape &
+tensorboard --logdir logs/gradient_tape   --port=8008  &

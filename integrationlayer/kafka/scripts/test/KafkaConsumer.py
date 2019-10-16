@@ -7,17 +7,15 @@ from json import dumps
 from kafka import KafkaConsumer
 from json import loads
 import logging
-import sys
-import multiprocessing
-import requests, re, time
-
+import sys, time
+import requests, re
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.WARN)
 logger = logging.getLogger('KafkaConsumer')
 logger.setLevel(30)
-TIMEOUT = 20
+PERIOD_OF_TIME = 60 # 1min
 
 
 def main(args):
@@ -37,20 +35,18 @@ def main(args):
     consumer.subscribe([kafka_topic_name])
     print('Consuming Messages from Kafka Topic: ' + kafka_topic_name)
 
+    start = time.time()
     for message in consumer:
         print(message)
-        time.sleep(1)
+        if time.time() > start + PERIOD_OF_TIME:
+            print("Stopping Consumer")
+            break
 
 
 if __name__ == '__main__':
-    p = multiprocessing.Process(target=main(sys.argv), name="Foo")
-    p.start()
-    time.sleep(10)
-    p.join(TIMEOUT)
+    main(sys.argv)
 
-    if p.is_alive():
-        print('Stopping Consuming Messages')
-        p.terminate()
-        p.join()
+
+
 
 

@@ -29,16 +29,22 @@ def main(args):
                              value_serializer=lambda x: dumps(x).encode('utf-8'))
 
     print('Sending Messages to Kafka Topic: ' + kafka_topic_name)
+    for e in range(5):
+        payload = constructPayload(e)
+        json_payload = dumps(payload.__dict__)
+        print(json_payload)
+        #data = {'ID': e}
+        producer.send(kafka_topic_name, value=json_payload)
+        sleep(5)
+
+
+def constructPayload(e):
     start = 0
     stop = 100
-
-    for e in range(5):
-        payload = SensorInfo(e, 'MachineSensor123', getRandomFloat(start, stop), 100, 20, 22.1, 25.1)
-        payload_data = dumps(payload.__dict__)
-        print(payload_data)
-        #data = {'ID': e}
-        producer.send(kafka_topic_name, value=payload_data)
-        sleep(5)
+    payload = SensorInfo(e, 'MachineSensor123', getRandomFloat(start, stop),
+                         getRandomFloat(start, stop), getRandomFloat(start, 50),
+                         getRandomFloat(start, stop), getRandomFloat(start, stop))
+    return payload
 
 
 class SensorInfo:

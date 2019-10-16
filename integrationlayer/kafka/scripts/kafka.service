@@ -5,7 +5,7 @@ After=zookeeper.service
 [Service]
 Type=simple
 User=kafka
-ExecStart=/opt/kafka/runKafka.sh
+ExecStart=/opt/kafka/startKafka.sh
 ExecStop=/opt/kafka/kafka/bin/kafka-server-stop.sh
 Restart=on-abnormal
 

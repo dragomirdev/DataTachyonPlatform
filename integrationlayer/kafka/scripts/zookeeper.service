@@ -5,7 +5,7 @@ After=network.target remote-fs.target
 [Service]
 Type=simple
 User=kafka
-ExecStart=/opt/kafka/runZookeeper.sh
+ExecStart=/opt/kafka/startZookeeper.sh
 ExecStop=/opt/kafka/bin/zookeeper-server-stop.sh
 Restart=on-abnormal
 

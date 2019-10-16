@@ -43,8 +43,8 @@ echo log.dirs=/datadrive/kafka/logs >> /opt/kafka/config/server.properties
 
 
 #Move the bash files to /opt directory
-sudo mv /home/kafka/runZookeeper.sh /opt/kafka/
-sudo mv /home/kafka/runKafka.sh /opt/kafka/
+sudo mv /home/kafka/startZookeeper.sh /opt/kafka/
+sudo mv /home/kafka/startKafka.sh /opt/kafka/
 sudo mv /home/kafka/createDtpTopic.sh /opt/
 sudo mv /home/kafka/producer_testmsg.sh /opt/
 sudo mv /home/kafka/consumer_testmsg.sh /opt/

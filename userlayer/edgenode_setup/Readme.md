@@ -37,6 +37,8 @@ SPARK_MASTER_HOSTNAME � the host name of the remote Spark Master server.
 
 9. Save the Job.
 
-10. Once the above Job ran successfully, Jupyter service should be up and running at,
+10. Open the port 8888 on the VM.
+
+11. Once the above Job ran successfully, Jupyter service should be up and running at,
 EDGE_NODE_HOSTNAME:8888
 

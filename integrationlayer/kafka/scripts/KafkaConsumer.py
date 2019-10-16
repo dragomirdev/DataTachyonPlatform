@@ -33,7 +33,7 @@ def main(args):
                              value_deserializer=lambda x: loads(x.decode('utf-8')))
 
     consumer.subscribe([kafka_topic_name])
-    logger.info('Consuming Messages from Kafka Topic: ' + kafka_topic_name)
+    print('Consuming Messages from Kafka Topic: ' + kafka_topic_name)
 
     for message in consumer:
         print(message)

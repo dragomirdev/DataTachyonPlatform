@@ -28,11 +28,25 @@ def main(args):
     producer = KafkaProducer(bootstrap_servers=[kafka_listener],
                              value_serializer=lambda x: dumps(x).encode('utf-8'))
 
-    logger.info('Sending Messages to Kafka Topic: ' + kafka_topic_name)
+    class SensorInfo:
+        def __init__(self, id, name, temperature, pressure,
+                     humidity, latitude, longitude):
+            self.id = id
+            self.name = name
+            self.temperature = temperature
+            self.pressure = pressure
+            self.humidity = humidity
+            self.latitude = latitude
+            self.longitude = longitude
 
-    for e in range(10):
-        data = {'ID': e}
-        producer.send(kafka_topic_name, value=data)
+    print('Sending Messages to Kafka Topic: ' + kafka_topic_name)
+
+    for e in range(5):
+        payload = SensorInfo(e, 'MachineSensor123', 30, 100, 20, 22.1, 25.1)
+        payload_data = dumps(payload.__dict__)
+        print(payload_data)
+        #data = {'ID': e}
+        producer.send(kafka_topic_name, value=payload_data)
         sleep(5)
 
 

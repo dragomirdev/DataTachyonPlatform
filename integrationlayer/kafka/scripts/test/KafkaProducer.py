@@ -11,11 +11,12 @@ import requests
 import re
 import time
 
-logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S',
-                    level=logging.WARN)
+logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', datefmt='%Y-%m-%d %H:%M:%S', level=logging.WARN)
 logger = logging.getLogger('KafkaProducer')
 logger.setLevel(30)
+start = 0
+stop = 100
+noOfDecimalPlaces = 4
 
 
 def main(args):
@@ -39,8 +40,6 @@ def main(args):
 
 
 def constructPayload(e):
-    start = 0
-    stop = 100
     payload = SensorInfo(e, 'MachineSensor123', getRandomFloat(start, stop),
                          getRandomFloat(start, stop), getRandomFloat(start, 50),
                          getRandomFloat(start, stop), getRandomFloat(start, stop))
@@ -60,7 +59,7 @@ class SensorInfo:
 
 
 def getRandomFloat(start, stop):
-    return random.uniform(start, stop)
+    return round(random.uniform(start, stop), noOfDecimalPlaces)
 
 
 if __name__ == '__main__':

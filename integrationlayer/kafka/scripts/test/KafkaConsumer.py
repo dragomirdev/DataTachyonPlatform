@@ -17,7 +17,7 @@ logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
                     level=logging.WARN)
 logger = logging.getLogger('KafkaConsumer')
 logger.setLevel(30)
-TIMEOUT = 90
+TIMEOUT = 20
 
 
 def main(args):
@@ -45,6 +45,7 @@ def main(args):
 if __name__ == '__main__':
     p = multiprocessing.Process(target=main(sys.argv), name="Foo")
     p.start()
+    time.sleep(10)
     p.join(TIMEOUT)
 
     if p.is_alive():

@@ -60,10 +60,10 @@ output.elasticsearch:
 ################ End of Manual Step #################################
 
 sudo mv /home/dtpuser/ELK/metrobeat.service /etc/systemd/system/
-sudo chmod 755 /etc/systemd/system/metrobeat.service
+sudo chmod 755 /etc/systemd/system/metricbeat.service
 sudo systemctl daemon-reload
-sudo systemctl start metrobeat
-sudo systemctl enable metrobeat
+sudo systemctl start metricbeat
+sudo systemctl enable metricbeat
 
 chmod go-w /opt/elk/metricbeat/metricbeat.yml
 /opt/elk/metricbeat/metricbeat modules enable system

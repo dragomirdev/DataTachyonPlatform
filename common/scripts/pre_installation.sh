@@ -1,3 +1,10 @@
+#!/bin/bash
+
+sudo apt -y update && sudo apt -y upgrade
+sudo apt -y install openjdk-8-jdk zip unzip net-tools curl
+# Current default time zone:
+sudo timedatectl set-timezone Europe/London
+
 
 # FOR ALL HOSTS/VMS IN THE DTP
 # Create dtpuser user
@@ -14,6 +21,16 @@ sudo adduser --ingroup hadoop hadoop
 #### password: <PASSWORD>
 #### set default values
 sudo usermod -aG sudo hadoop
+
+
+
+# FOR KAFKA HOSTS/VMS ONLY IN THE DTP
+# Create kafka user
+sudo useradd kafka -m
+sudo passwd kafka
+sudo adduser kafka sudo
+sudo usermod -aG sudo kafka
+
 
 ## Login to each user on each server and generate the ssh keys
 ssh-keygen -t rsa

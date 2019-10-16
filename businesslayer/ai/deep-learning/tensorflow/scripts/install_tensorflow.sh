@@ -9,6 +9,10 @@
 #set -euxo pipefail
 
 # Install dependecies
+sudo apt -y install  python3-pip python3-dev
+sudo wget https://bootstrap.pypa.io/get-pip.py
+sudo python3.6 get-pip.py
+sudo pip3 install -U setuptools pip
 sudo pip3 install keras textblob nltk -U tensorflow==2.0.0-rc1 --ignore-installed
 
 pip3 list

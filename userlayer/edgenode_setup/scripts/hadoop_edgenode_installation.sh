@@ -4,6 +4,7 @@ set -euxo pipefail
 
 EDGE_NODE_HOSTNAME=$1
 SPARK_HOSTNAME=$2
+HADOOP_NN_HOSTNAME=$3
 
 cd
 
@@ -73,6 +74,47 @@ echo 'export PATH=$JAVA_HOME/bin:$HIVE_HOME/bin:$SPARK_HOME/bin:$SPARK_HOME/sbin
 source ~/.bashrc
 
 EOF
+
+# Run commands as hadoop user to setup jupyter config
+sudo -i -u hadoop bash << EOF
+
+mkdir /home/hadoop/.jupyter
+sudo chmod 755 -R /home/hadoop/.jupyter
+
+echo '{
+  "NotebookApp": {
+    "password": "sha1:a102fdbe01b2:64327b915c0b4e9d8db5155de10fdaff61731c5e"
+  }
+}' >> /home/hadoop/.jupyter/jupyter_notebook_config.json
+
+sudo chmod 600 /home/hadoop/.jupyter/jupyter_notebook_config.json
+
+EOF
+
+
+# Run commands as hadoop user to setup jupyter example
+sudo -i -u hadoop bash << EOF
+
+sudo mv /home/dtpuser/airport-codes-na.txt /home/hadoop/development/projects/
+sudo mv /home/dtpuser/departuredelays.csv /home/hadoop/development/projects/
+cd /home/hadoop/development/projects/
+sudo chown hadoop:hadoop airport-codes-na.txt
+sudo chmod 755 airport-codes-na.txt
+sudo chown hadoop:hadoop departuredelays.csv
+sudo chmod 755 departuredelays.csv
+hdfs dfs -mkdir -p hdfs://$HADOOP_NN_HOSTNAME:9000/inputdata/spark_test_data/
+hdfs dfs -put airport-codes-na.txt hdfs://$HADOOP_NN_HOSTNAME:9000/inputdata/spark_test_data/
+hdfs dfs -put departuredelays.csv hdfs://$HADOOP_NN_HOSTNAME:9000/inputdata/spark_test_data/
+
+sudo mv /home/dtpuser/flights_mod.ipynb /home/hadoop/development/projects/
+sudo chown hadoop:hadoop /home/hadoop/development/projects/flights_mod.ipynb
+sudo chmod 755 /home/hadoop/development/projects/flights_mod.ipynb
+
+sudo sed -i -e "s/hdfs_name_node_hostname/$HADOOP_NN_HOSTNAME/g" /home/hadoop/development/projects/flights_mod.ipynb
+
+EOF
+
+
 
 # Run commands as hadoop user and start the jpyspark
 sudo -i -u hadoop bash << EOF

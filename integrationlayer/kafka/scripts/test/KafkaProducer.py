@@ -28,7 +28,7 @@ def main(args):
     kafka_topic_name = 'DTPTopic'
 
     producer = KafkaProducer(bootstrap_servers=[kafka_listener],
-                             value_serializer=lambda x: dumps(x).encode('ascii')) #utf-8
+                             value_serializer=lambda x: dumps(x).encode('utf-8')) #utf-8
 
     payload = '{  "Sensor":  { "id" : 1,  "name":  "MachineSensor123",  "temperature":  20,  "pressure":  12.0}}'
     # Decoding or converting JSON format in dictionary using loads()

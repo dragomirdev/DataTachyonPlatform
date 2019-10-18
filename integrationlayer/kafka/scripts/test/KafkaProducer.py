@@ -30,7 +30,7 @@ def main(args):
     producer = KafkaProducer(bootstrap_servers=[kafka_listener],
                              value_serializer=lambda x: dumps(x).encode('utf-8')) #utf-8
 
-    payload = '{  "Sensor":  { "id" : 1,  "name":  "MachineSensor123",  "temperature":  20,  "pressure":  12.0}}'
+    payload = '{"id": 0, "name": "MachineSensor123", "temperature": 67.5905, "pressure": 63.7212, "humidity": 25.5804, "latitude": 47.9148, "longitude": 67.0776}'
     # Decoding or converting JSON format in dictionary using loads()
     dict_obj = json.loads(payload)
     print(dict_obj)

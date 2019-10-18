@@ -30,12 +30,14 @@ def main(args):
     producer = KafkaProducer(bootstrap_servers=[kafka_listener],
                              value_serializer=lambda x: dumps(x).encode('ascii')) #utf-8
 
-    print('Sending Messages to Kafka Topic: ' + kafka_topic_name)
     payload = '{  "Sensor":  { "id" : 1,  "name":  "MachineSensor123",  "temperature":  20,  "pressure":  12.0}}'
     # Decoding or converting JSON format in dictionary using loads()
     dict_obj = json.loads(payload)
     print(dict_obj)
+    print('Sending Messages to Kafka Topic: ' + kafka_topic_name)
     producer.send(kafka_topic_name, value=dict_obj)
+
+
 
 #    for e in range(1):
 #        #payload = constructPayload(e)
@@ -47,7 +49,6 @@ def main(args):
 #        #data = {'ID': e}
 #        producer.send(kafka_topic_name, value=json_payload)
 #        sleep(5)
-
 
 
 def constructPayload(id):

@@ -1,0 +1,49 @@
+# JSON Schema
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "temperature": {
+      "type": "number"
+    },
+    "pressure": {
+      "type": "number"
+    },
+    "humidity": {
+      "type": "number"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "temperature",
+    "pressure",
+    "humidity",
+    "latitude",
+    "longitude"
+  ]
+}
+
+# JSON
+{
+  "id": 0,
+  "name": "MachineSensor123",
+  "temperature": 6.2579,
+  "pressure": 53.4768,
+  "humidity": 45.3098,
+  "latitude": 0.7149,
+  "longitude": 80.7709
+}

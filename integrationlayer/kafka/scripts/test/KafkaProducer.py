@@ -1,6 +1,7 @@
 #==========================================================
 # Load libraries and constants
 #==========================================================
+import json
 import random
 from time import sleep
 from json import dumps
@@ -27,16 +28,26 @@ def main(args):
     kafka_topic_name = 'DTPTopic'
 
     producer = KafkaProducer(bootstrap_servers=[kafka_listener],
-                             value_serializer=lambda x: dumps(x).encode('utf-8'))
+                             value_serializer=lambda x: dumps(x).encode('ascii')) #utf-8
 
     print('Sending Messages to Kafka Topic: ' + kafka_topic_name)
-    for e in range(5):
-        payload = constructPayload(e)
-        json_payload = dumps(payload.__dict__)
-        print(json_payload)
-        #data = {'ID': e}
-        producer.send(kafka_topic_name, value=json_payload)
-        sleep(5)
+    payload = '{  "Sensor":  { "id" : 1,  "name":  "MachineSensor123",  "temperature":  20,  "pressure":  12.0}}'
+    # Decoding or converting JSON format in dictionary using loads()
+    dict_obj = json.loads(payload)
+    print(dict_obj)
+    producer.send(kafka_topic_name, value=dict_obj)
+
+#    for e in range(1):
+#        #payload = constructPayload(e)
+#        payload = '{  "person":  { "name":  "Kenn",  "sex":  "male",  "age":  28}}'
+#        json_payload = dumps(payload.__dict__)
+#        #json_string = escaped_json.decode('string_escape')
+#
+#        print(json_payload)
+#        #data = {'ID': e}
+#        producer.send(kafka_topic_name, value=json_payload)
+#        sleep(5)
+
 
 
 def constructPayload(id):
@@ -45,6 +56,8 @@ def constructPayload(id):
                          getRandomFloat(start, stop), getRandomFloat(start, stop))
     return payload
 
+
+# {"id": 4, "name": "MachineSensor123", "temperature": 75.6384, "pressure": 4.265, "humidity": 1.5484, "latitude": 12.2508, "longitude": 13.2787}
 
 class SensorInfo:
     def __init__(self, id, name, temperature, pressure,

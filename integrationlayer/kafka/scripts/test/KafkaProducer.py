@@ -36,6 +36,7 @@ def main(args):
     print(dict_obj)
     print('Sending Messages to Kafka Topic: ' + kafka_topic_name)
     producer.send(kafka_topic_name, value=dict_obj)
+    producer.flush()
 
 
 

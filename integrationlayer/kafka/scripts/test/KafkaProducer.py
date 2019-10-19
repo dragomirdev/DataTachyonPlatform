@@ -27,7 +27,7 @@ def getSensorPayload(id, name, temperature, pressure, humidity, event_datetime, 
               '"temperature": ' + str(temperature) + ', ' \
               '"pressure": ' + str(pressure) + ', ' \
               '"humidity": ' + str(humidity) + ', ' \
-              '"event_datetime": ' + str(event_datetime) + ', ' \
+              '"event_datetime": "' + str(event_datetime) + '", ' \
               '"latitude": ' + str(latitude) + ', ' \
               '"longitude": ' + str(longitude) + '}'
     #print("payload\n", payload)
@@ -105,8 +105,8 @@ def sendMessages(args):
         print(event_datetime)
         payload = getSensorPayload(id, name, temperature, pressure, humidity, event_datetime, latitude, longitude)
         # Decoding or converting JSON format in dictionary using loads()
-        # dict_obj = json.loads(payload)
-        dict_obj = json.loads(json.dumps(payload, cls=DateTimeEncoder), cls=DateTimeDecoder)
+        dict_obj = json.loads(payload)
+        #dict_obj = json.loads(json.dumps(payload, cls=DateTimeEncoder), cls=DateTimeDecoder)
         print("payload", dict_obj)
         print('Sending Messages to Kafka Topic: ' + kafka_topic_name)
         producer.send(kafka_topic_name, value=dict_obj)

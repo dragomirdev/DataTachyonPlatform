@@ -33,13 +33,14 @@ def getRandomDateInCurrentYear():
     print(random_day)
     return random_day
 
-def getSensorPayload(id, name, temperature, pressure, humidity, event_date, latitude, longitude):
+def getSensorPayload(id, name, temperature, pressure, humidity, event_date, event_datetime, latitude, longitude):
     payload = '{"id": ' + str(id) + ', ' \
-              '"name": "' + str(name) + str(randint(0, 10)) + '", ' \
+              '"name": "' + str(name) + str(randint(1, 10)) + '", ' \
               '"temperature": ' + str(temperature) + ', ' \
               '"pressure": ' + str(pressure) + ', ' \
               '"humidity": ' + str(humidity) + ', ' \
               '"event_date": "' + str(event_date) + '", ' \
+              '"event_datetime": "' + str(event_datetime) + '", ' \
               '"latitude": ' + str(latitude) + ', ' \
               '"longitude": ' + str(longitude) + '}'
     #print("payload\n", payload)
@@ -74,16 +75,8 @@ class DateTimeEncoder(JSONEncoder):
 
     def default(self, obj):
         if isinstance(obj, datetime):
-            return {
-                '__type__': 'datetime',
-                'year': obj.year,
-                'month': obj.month,
-                'day': obj.day,
-                'hour': obj.hour,
-                'minute': obj.minute,
-                'second': obj.second,
-                'microsecond': obj.microsecond,
-            }
+            return obj.isoformat()
+
         else:
             return JSONEncoder.default(self, obj)
 
@@ -92,8 +85,7 @@ class DateTimeEncoder(JSONEncoder):
 
 
 for i in range(5):
-    uid = uuid.uuid1()
-    id = str(uid.int)[:10]
+    id = str(uuid.uuid1().int)[:10]
     name = "MachineSensor"
     temperature = getRandomFloat(start, stop)
     pressure = getRandomFloat(start, stop)
@@ -103,9 +95,12 @@ for i in range(5):
     longitude = getRandomFloat(start, stop)
     event_datetime = datetime.datetime.utcnow().replace(tzinfo=datetime.timezone.utc).isoformat()
     print(event_datetime)
-    payload = getSensorPayload(id, name, temperature, pressure, humidity, event_date, latitude, longitude)
+    payload = getSensorPayload(id, name, temperature, pressure, humidity,
+                               event_date, event_datetime, latitude, longitude)
     # Decoding or converting JSON format in dictionary using loads()
     dict_obj = json.loads(payload)
     #dict_obj = json.loads(json.dumps(payload, cls=DateTimeEncoder), cls=DateTimeDecoder)
     #dict_obj = json.dumps(payload, cls=DateTimeEncoder)
     print("payload", dict_obj)
+    encoded_json = json.dumps(dict_obj, cls=DateTimeEncoder).encode('utf-8')
+    print("encoded_json", dict_obj)

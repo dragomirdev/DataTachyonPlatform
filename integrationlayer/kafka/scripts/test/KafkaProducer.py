@@ -30,13 +30,14 @@ def getRandomDateInCurrentYear():
     return random_day
 
 
-def getSensorPayload(id, name, temperature, pressure, humidity, event_date, latitude, longitude):
+def getSensorPayload(id, name, temperature, pressure, humidity, event_date, event_datetime, latitude, longitude):
     payload = '{"id": ' + str(id) + ', ' \
-              '"name": "' + str(name) + str(randint(0, 10)) + '", ' \
+              '"name": "' + str(name) + str(randint(1, 10)) + '", ' \
               '"temperature": ' + str(temperature) + ', ' \
               '"pressure": ' + str(pressure) + ', ' \
               '"humidity": ' + str(humidity) + ', ' \
               '"event_date": "' + str(event_date) + '", ' \
+              '"event_datetime": "' + str(event_datetime) + '", ' \
               '"latitude": ' + str(latitude) + ', ' \
               '"longitude": ' + str(longitude) + '}'
     #print("payload\n", payload)
@@ -90,7 +91,8 @@ class DateTimeEncoder(JSONEncoder):
 
 def getKafkaProducer(kafka_listener):
     producer = KafkaProducer(bootstrap_servers=[kafka_listener],
-                             value_serializer=lambda x: dumps(x).encode('utf-8'))
+                             value_serializer=lambda x: dumps(x, cls=DateTimeEncoder).encode('utf-8'))
+    #json.loads(json.dumps(payload, cls=DateTimeEncoder), cls=DateTimeDecoder)
     return producer
 
 
@@ -102,8 +104,7 @@ def sendMessages(args):
     producer = getKafkaProducer(kafka_listener)
 
     for e in range(5):
-        uid = uuid.uuid1()
-        id = str(uid.int)[:10]
+        id = str(uuid.uuid1().int)[:10]
         name = "MachineSensor"
         temperature = getRandomFloat(start, stop)
         pressure = getRandomFloat(start, stop)
@@ -113,7 +114,7 @@ def sendMessages(args):
         longitude = getRandomFloat(start, stop)
         event_datetime = datetime.datetime.utcnow().replace(tzinfo=datetime.timezone.utc).isoformat()
         print(event_datetime)
-        payload = getSensorPayload(id, name, temperature, pressure, humidity, event_date, latitude, longitude)
+        payload = getSensorPayload(id, name, temperature, pressure, humidity, event_date, event_datetime, latitude, longitude)
         # Decoding or converting JSON format in dictionary using loads()
         dict_obj = json.loads(payload)
         #dict_obj = json.loads(json.dumps(payload, cls=DateTimeEncoder), cls=DateTimeDecoder)

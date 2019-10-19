@@ -6,6 +6,7 @@ import random
 from json import dumps
 from kafka import KafkaProducer
 import sys
+import uuid
 
 start = 0
 stop = 100
@@ -41,7 +42,8 @@ def sendMessages(args):
     kafka_topic_name = 'DTPTopic'
     producer = getKafkaProducer(kafka_listener)
 
-    for id in range(5):
+    for e in range(5):
+        id = str(uuid.uuid1().int)
         name = "MachineSensor123"
         temperature = getRandomFloat(start, stop)
         pressure = getRandomFloat(start, stop)

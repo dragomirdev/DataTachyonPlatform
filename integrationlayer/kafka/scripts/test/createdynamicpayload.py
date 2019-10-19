@@ -1,6 +1,7 @@
 
 import json
 import random
+import uuid
 
 start = 0
 stop = 100
@@ -26,7 +27,8 @@ def getSensorPayload(id, name, temperature, pressure, humidity, latitude, longit
     return payload
 
 
-for id in range(5):
+for i in range(5):
+    id = str(uuid.uuid1().int)
     name = "MachineSensor123"
     temperature = getRandomFloat(start, stop)
     pressure = getRandomFloat(start, stop)

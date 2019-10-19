@@ -36,7 +36,7 @@ for i in range(5):
     test = randomStringDigits(10)
     print(test)
     uid = uuid.uuid1()
-    id = str(uid.int)[:20]
+    id = str(uid.int)[:10]
     name = "MachineSensor123"
     temperature = getRandomFloat(start, stop)
     pressure = getRandomFloat(start, stop)

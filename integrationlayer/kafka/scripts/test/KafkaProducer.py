@@ -44,7 +44,7 @@ def sendMessages(args):
 
     for e in range(5):
         uid = uuid.uuid1()
-        id = str(uid.int)[:20]
+        id = str(uid.int)[:10]
         name = "MachineSensor123"
         temperature = getRandomFloat(start, stop)
         pressure = getRandomFloat(start, stop)

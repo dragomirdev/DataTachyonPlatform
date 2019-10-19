@@ -38,8 +38,8 @@ def getSensorPayload(id, name, temperature, pressure, humidity, event_date, even
               '"humidity": ' + str(humidity) + ', ' \
               '"event_date": "' + str(event_date) + '", ' \
               '"event_datetime": "' + str(event_datetime) + '", ' \
-              '"latitude": ' + str(latitude) + ', ' \
-              '"longitude": ' + str(longitude) + '}'
+              '"lat": ' + str(latitude) + ', ' \
+              '"lon": ' + str(longitude) + '}'
     #print("payload\n", payload)
     return payload
 
@@ -73,16 +73,7 @@ class DateTimeEncoder(JSONEncoder):
 
     def default(self, obj):
         if isinstance(obj, datetime):
-            return {
-                '__type__': 'datetime',
-                'year': obj.year,
-                'month': obj.month,
-                'day': obj.day,
-                'hour': obj.hour,
-                'minute': obj.minute,
-                'second': obj.second,
-                'microsecond': obj.microsecond,
-            }
+            return obj.isoformat()
         else:
             return JSONEncoder.default(self, obj)
 

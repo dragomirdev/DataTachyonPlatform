@@ -26,8 +26,8 @@ def getSensorPayload(id, name, temperature, pressure, humidity, latitude, longit
               '"temperature": ' + str(temperature) + ', ' \
               '"pressure": ' + str(pressure) + ', ' \
               '"humidity": ' + str(humidity) + ', ' \
-              '"latitude": ' + str(latitude) + ', ' \
-              '"longitude": ' + str(longitude) + '}'
+              '"lat": ' + str(latitude) + ', ' \
+              '"lon": ' + str(longitude) + '}'
     # print("payload\n", payload)
     return payload
 

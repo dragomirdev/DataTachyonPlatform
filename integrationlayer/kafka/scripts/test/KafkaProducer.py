@@ -43,7 +43,8 @@ def sendMessages(args):
     producer = getKafkaProducer(kafka_listener)
 
     for e in range(5):
-        id = str(uuid.uuid1().int)
+        uid = uuid.uuid1()
+        id = str(uid.int)[:20]
         name = "MachineSensor123"
         temperature = getRandomFloat(start, stop)
         pressure = getRandomFloat(start, stop)

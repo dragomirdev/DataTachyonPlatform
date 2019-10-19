@@ -21,13 +21,12 @@ def getRandomFloat(start, stop):
     return round(random.uniform(start, stop), noOfDecimalPlaces)
 
 
-def getSensorPayload(id, name, temperature, pressure, humidity, event_datetime, latitude, longitude):
+def getSensorPayload(id, name, temperature, pressure, humidity, latitude, longitude):
     payload = '{"id": ' + str(id) + ', ' \
               '"name": "' + str(name) + '", ' \
               '"temperature": ' + str(temperature) + ', ' \
               '"pressure": ' + str(pressure) + ', ' \
               '"humidity": ' + str(humidity) + ', ' \
-              '"event_datetime": "' + str(event_datetime) + '", ' \
               '"latitude": ' + str(latitude) + ', ' \
               '"longitude": ' + str(longitude) + '}'
     #print("payload\n", payload)
@@ -103,7 +102,7 @@ def sendMessages(args):
         longitude = getRandomFloat(start, stop)
         event_datetime = datetime.datetime.utcnow().replace(tzinfo=datetime.timezone.utc).isoformat()
         print(event_datetime)
-        payload = getSensorPayload(id, name, temperature, pressure, humidity, event_datetime, latitude, longitude)
+        payload = getSensorPayload(id, name, temperature, pressure, humidity, latitude, longitude)
         # Decoding or converting JSON format in dictionary using loads()
         dict_obj = json.loads(payload)
         #dict_obj = json.loads(json.dumps(payload, cls=DateTimeEncoder), cls=DateTimeDecoder)

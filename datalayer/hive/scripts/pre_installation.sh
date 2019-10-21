@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Run the following on JP-DTP-HIVE-HUE-VM for automating
 # the creation of the dtpuser
 sudo su -c "useradd dtpuser -s /bin/bash -m"

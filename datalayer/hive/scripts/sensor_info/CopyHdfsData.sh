@@ -10,7 +10,7 @@ default_target_path=/data/dtp/processed/kafka-logs/
 target_path=${3:-${default_target_path}}
 
 echo "input_date:"$input_date
-echo "Copying the files from source_data_path:"$source_data_path " to target_path:"$target_path
+echo "Copying the hdfs files from source_data_path:"$source_data_path " to target_path:"$target_path
 
 hdfs dfs -cp -f $source_data_path  $target_path
 

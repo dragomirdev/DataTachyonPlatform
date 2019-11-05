@@ -4,13 +4,18 @@
 
 The Integration Layer provides the capability to mediate which includes transformation, routing, and protocol conversion to transport service requests from the service requester to the correct service provider.
 
+The DTP Integration Layer consists of the following Tools
+
+* Apache Kafka
+* Apache Nifi
+
+### Apache Kafka
+
 In Big Data, an enormous volume of data is used. Regarding data, we have two main challenges.
 * The first challenge is how to collect large volume of data.
 * The second challenge is to analyze the collected data. 
 
-To overcome those challenges, there is a need for messaging system.
-
-### Apache Kafka
+To overcome those challenges, there is a need for messaging system like Apache Kafka.
 
 Apache Kafka is a distributed publish-subscribe messaging system and a robust queue that can handle a high volume of data and enables you to pass messages from one end-point to another.
 * Kafka is designed for distributed high throughput systems, built-in partitioning, replication and inherent fault-tolerance, which makes it a good fit for large-scale message processing applications.
@@ -20,7 +25,7 @@ Apache Kafka is a distributed publish-subscribe messaging system and a robust qu
 * Kafka is built on top of the ZooKeeper synchronization service. 
 * It integrates very well with Apache Nifi, Storm and Spark for real-time streaming data analysis.
 
-### Benefits  of Apache NiFi
+### Benefits  of Apache Kafka
 * Reliability − Kafka is distributed, partitioned, replicated and fault tolerance.
 
 * Scalability − Kafka messaging system scales easily without down time..
@@ -94,6 +99,16 @@ The following table describes each of the Kafka Ecosystem components shown in th
 |Consumers|Since Kafka brokers are stateless, which means that the consumer has to maintain how many messages have been consumed by using partition offset. If the consumer acknowledges a particular message offset, it implies that the consumer has consumed all prior messages. The consumer issues an asynchronous pull request to the broker to have a buffer of bytes ready to consume. The consumers can rewind or skip to any point in a partition simply by supplying an offset value. Consumer offset value is notified by ZooKeeper.|
 
 
+### DTP Data Streaming Flow using Apache Kafka & Nifi
+
+#### Data Streaming Flow is shown using the following diagram:
+
+![Create-DTP-Nifi-Uninstaller Jenkins](/integrationlayer/kafka/images/dtp_data_streaming_kafka.png)
+* In Data Tachyon, Apachee Kafka Topic is configured used to listen for incoming messages.
+* Json messages is pushed from say edge node which acts a producer to the Kafka Topic. 
+* Apache Nifi is configured to act as a consumer and consumes the json messages from the Kafka Topic.
+
+#### For DTP Kafka Setup using Jenkins goto: [DTP Kafka Setup  Process](/integrationlayer/kafka/README.md)
 
 ### Apache Nifi
 

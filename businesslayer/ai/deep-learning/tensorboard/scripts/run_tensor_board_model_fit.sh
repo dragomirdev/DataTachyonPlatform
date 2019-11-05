@@ -16,5 +16,5 @@ hdfs dfs -put logs $TARGET_HDFS_PROCESSED_FOLDER
 echo "Completed Pushing Output logs to the HDFS Process Folder " $TARGET_HDFS_PROCESSED_FOLDER
 
 echo "Running Tensorboard for Model Fit Type on" $current_date
-tensorboard --logdir logs/fit &
+tensorboard --logdir logs/fit   --port=8008 &
 

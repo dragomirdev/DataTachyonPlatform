@@ -23,6 +23,8 @@ cat /etc/nginx/.htpasswd
 #sudo htpasswd /etc/nginx/.htpasswd another_user
 #Enter Password manually
 
+# Note Expose port 80 and 443 before creating the certificates
+
 # Obtaining an Certbot SSL Certificate for the domain names
 #sudo certbot --nginx -d example.com -d www.example.com
 #On Nifi use the following command using the corresponding dns.name

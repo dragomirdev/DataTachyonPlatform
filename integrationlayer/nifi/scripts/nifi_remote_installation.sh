@@ -24,16 +24,17 @@ sudo apt -y autoremove
 # Extracting Nifi
 sudo rm -rf /opt/nifi-1.9.2*
 
-sudo mv /home/dtpuser/nifi-1.9.2-bin.zip /opt/
+sudo mv /home/hadoop/nifi-1.9.2-bin.zip /opt/
 
 cd /opt/
 sudo chmod -R 775 nifi-1.9.2-bin.zip
 sudo unzip nifi-1.9.2-bin.zip
-sudo chown -R dtpuser:hadoop nifi-1.9.2
-sudo chmod -R 775 nifi-1.9.2
+sudo mv /opt/nifi-1.9.2 /opt/nifi
+sudo chown -R hadoop:hadoop nifi
+sudo chmod -R 775 nifi
 
 echo "Setting NIFI PROPERTIES"
-cd /opt/nifi-1.9.2/
+cd /opt/nifi/
 
 ls -latr
 
@@ -50,12 +51,12 @@ sudo sed -i "/nifi.sensitive.props.key=/ s/=.*/=datatachyonnifi1234/" /opt/nifi-
 
 cd ..
 
-sudo chown -R hadoop:hadoop /opt/nifi-1.9.2
-sudo chmod -R 775 /opt/nifi-1.9.2
+sudo chown -R hadoop:hadoop /opt/nifi
+sudo chmod -R 775 /opt/nifi
 
 whoami && hostname && pwd
 ls -latr /opt/
-ls -latr /opt/nifi-1.9.2
+ls -latr /opt/nifi
 which java
 
 #sudo -i -u hadoop   bash << 'EOF'
@@ -70,7 +71,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 echo "JAVA_HOME: "$JAVA_HOME
 echo "PATH: "$PATH
 
-sudo mv /opt/nifi-1.9.2/ /opt/nifi
 sudo chown -R hadoop:hadoop /opt/nifi/
 sudo chmod -R 775 /opt/nifi/
 

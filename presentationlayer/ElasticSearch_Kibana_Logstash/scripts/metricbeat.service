@@ -5,11 +5,11 @@ After=systemd-user-sessions.service elasticsearch.service kibana.service logstas
 Requires=network-online.target
 
 [Service]
-Type=forking
+Type=simple
 User=dtpuser
 Group=dtpuser
 WorkingDirectory=/opt/elk/metricbeat
-ExecStart=/opt/elk/metricbeat/metricbeat -e &
+ExecStart=/opt/elk/metricbeat/runmetricbeat.sh
 TimeoutSec=30
 Restart=on-failure
 

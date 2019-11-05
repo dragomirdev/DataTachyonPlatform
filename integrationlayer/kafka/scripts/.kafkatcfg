@@ -1,0 +1,5 @@
+{
+  "kafka_path": "~/kafka",
+  "log_path": "/datadrive/kafka/logs",
+  "zk_path": "$HOSTNAME:2181"
+}

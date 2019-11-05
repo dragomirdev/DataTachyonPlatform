@@ -1,3 +1,10 @@
+#!/bin/bash
+
+sudo apt -y update && sudo apt -y upgrade
+sudo apt -y install openjdk-8-jdk zip unzip net-tools curl
+# Current default time zone:
+sudo timedatectl set-timezone Europe/London
+
 
 # FOR ALL HOSTS/VMS IN THE DTP
 # Create dtpuser user
@@ -15,17 +22,28 @@ sudo adduser --ingroup hadoop hadoop
 #### set default values
 sudo usermod -aG sudo hadoop
 
+
+
+# FOR KAFKA HOSTS/VMS ONLY IN THE DTP
+# Create kafka user
+sudo useradd kafka -m
+sudo passwd kafka
+sudo adduser kafka sudo
+sudo usermod -aG sudo kafka
+
+
 ## Login to each user on each server and generate the ssh keys
 ssh-keygen -t rsa
 <no password>
+## adding the localhost keys to the known_hosts on each node
+ssh localhost
 
 ## add the public keys to the authorized keys
 cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 sudo chmod -R 700 .ssh
 sudo chmod -R 640 .ssh/authorized_keys
 
-## adding the localhost keys to the known_hosts on each node
-ssh localhost
+
 
 ## Copy the hosts names to the /etc/hosts
 <JENKINS_IP_ADDRESS> JP-DTP-JENKINS-VM

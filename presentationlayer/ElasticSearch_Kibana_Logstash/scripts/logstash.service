@@ -9,7 +9,7 @@ Type=forking
 User=dtpuser
 Group=dtpuser
 WorkingDirectory=/opt/elk/logstash
-ExecStart=/opt/elk/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'
+ExecStart=/opt/elk/logstash/runlogstash.sh
 TimeoutSec=30
 Restart=on-failure
 

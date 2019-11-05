@@ -181,5 +181,5 @@ The following DTP Services hosted on their respective DTP Server on their respec
 | Kibana | http://dtp-elk.southindia.cloudapp.azure.com:5601/| elastic/JPSpace2019$ | 5601 | dtpuser |
 | Jupyter | http://dtp-jupyter.northeurope.cloudapp.azure.com:8888/| dtpuser/Dtpuser2019$ | 8888 | dtpuser |
 | Hue | http://dtp-hue.westindia.cloudapp.azure.com:8000/| hadoop/JPSpace2019$ | 8000 | hadoop |
-| TensorBoard | http://dtp-ai.francecentral.cloudapp.azure.com:6006/| dtpuser/Dtpuser2019$  | 6066 | hadoop |
+| TensorBoard | http://dtp-ai.francecentral.cloudapp.azure.com/| dtpuser/Dtpuser2019$  | 8008 | hadoop |
 | Jenkins | http://dtp-cicd.westeurope.cloudapp.azure.com:8080/| dtpadmin/JPSpace2019$ | 8080 | jenkins |

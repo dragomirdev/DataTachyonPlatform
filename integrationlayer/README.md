@@ -99,16 +99,6 @@ The following table describes each of the Kafka Ecosystem components shown in th
 |Consumers|Since Kafka brokers are stateless, which means that the consumer has to maintain how many messages have been consumed by using partition offset. If the consumer acknowledges a particular message offset, it implies that the consumer has consumed all prior messages. The consumer issues an asynchronous pull request to the broker to have a buffer of bytes ready to consume. The consumers can rewind or skip to any point in a partition simply by supplying an offset value. Consumer offset value is notified by ZooKeeper.|
 
 
-### DTP Data Streaming Flow using Apache Kafka & Nifi
-
-#### Data Streaming Flow is shown using the following diagram:
-
-![Create-DTP-Nifi-Uninstaller Jenkins](/integrationlayer/kafka/images/dtp_data_streaming_kafka.png)
-* In Data Tachyon, Apachee Kafka Topic is configured used to listen for incoming messages.
-* Json messages is pushed from say edge node which acts a producer to the Kafka Topic. 
-* Apache Nifi is configured to act as a consumer and consumes the json messages from the Kafka Topic.
-
-
 ### Apache Nifi
 
 * Apache NiFi is an open source software for automating and managing the flow of data between systems.
@@ -131,7 +121,20 @@ NiFi executes within a JVM on a host operating system.
 The primary components of NiFi on the JVM are shown by the following diagram:\
 ![Nifi-Architecture](/integrationlayer/nifi/images/nifi_architecture.png)
 
+### DTP Data Streaming Flow using Apache Kafka & Nifi
+
+#### Data Streaming Flow is shown using the following diagram:
+
+![Create-DTP-Nifi-Uninstaller Jenkins](/integrationlayer/kafka/images/dtp_data_streaming_kafka.png)
+* In Data Tachyon, Apachee Kafka Topic is configured used to listen for incoming messages.
+* Json messages is pushed from say edge node which acts a producer to the Kafka Topic. 
+* Apache Nifi is configured to act as a consumer and consumes the json messages from the Kafka Topic.
+
 ### DTP Data Ingestion Flow using Apache Nifi
+
+In Data Tachyon, Apachee Nifi is used to look for incoming data in two ways
+* On Kafka Topic & Acts as Kafka Consumer to consume the data and push the data to the Distributed File System like Hadoop.
+* On Remote SFTP Folders, to perform the data ingestion from and push the data to the Distributed File System like Hadoop.
 
 #### Data Flow is shown using the following diagram:
 
@@ -147,7 +150,6 @@ The primary components of NiFi on the JVM are shown by the following diagram:\
 
 * In case of any Data Flow Transfer Error, those files are stored in the Remote SFTP Error Folders to recorrect and repush.
 
-In Data Tachyon, Apachee Nifi is used to look for incoming data on Remote SFTP Folders, to perform the data ingestion from and push the data to the Distributed File System like Hadoop.
 
 #### For DTP Kafka Setup using Jenkins goto: [DTP Kafka Setup  Process](/integrationlayer/kafka/README.md)
 

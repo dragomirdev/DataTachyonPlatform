@@ -108,7 +108,6 @@ The following table describes each of the Kafka Ecosystem components shown in th
 * Json messages is pushed from say edge node which acts a producer to the Kafka Topic. 
 * Apache Nifi is configured to act as a consumer and consumes the json messages from the Kafka Topic.
 
-#### For DTP Kafka Setup using Jenkins goto: [DTP Kafka Setup  Process](/integrationlayer/kafka/README.md)
 
 ### Apache Nifi
 
@@ -149,6 +148,8 @@ The primary components of NiFi on the JVM are shown by the following diagram:\
 * In case of any Data Flow Transfer Error, those files are stored in the Remote SFTP Error Folders to recorrect and repush.
 
 In Data Tachyon, Apachee Nifi is used to look for incoming data on Remote SFTP Folders, to perform the data ingestion from and push the data to the Distributed File System like Hadoop.
+
+#### For DTP Kafka Setup using Jenkins goto: [DTP Kafka Setup  Process](/integrationlayer/kafka/README.md)
 
 #### For DTP Nifi Setup using Jenkins goto: [DTP NiFi Setup  Process](/integrationlayer/nifi/README.md)
 

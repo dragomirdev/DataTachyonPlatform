@@ -12,6 +12,7 @@ from json import JSONDecoder
 from json import JSONEncoder
 from random import randint
 from datetime import date
+import click
 
 start = 0
 stop = 100
@@ -87,11 +88,11 @@ def getKafkaProducer(kafka_listener):
     return producer
 
 
-def sendMessages(args):
-    kafka_listener = args[1]
-    kafka_topic_name = args[2]
-    kafka_listener = 'JP-DTP-KAFKA-VM:9092'
-    kafka_topic_name = 'DTPTopic'
+@click.command()
+@click.option('--kafka_listener', envvar='KAFKA_LISTENER', default='JP-DTP-KAFKA-VM:9092', help='Kafka listener. example: localhost:9092')
+@click.option('--kafka_topic_name', envvar='KAFKA_TOPIC_NAME', default='DTPTopic', help='Kafka Topic name')
+def sendMessages(kafka_listener, kafka_topic_name):
+    print(f'Connecting to kafka: {kafka_listener} and producing messages to topic: {kafka_topic_name}')
     producer = getKafkaProducer(kafka_listener)
 
     for e in range(5):
@@ -116,5 +117,5 @@ def sendMessages(args):
 
 
 if __name__ == '__main__':
-    sendMessages(sys.argv)
+    sendMessages()
 

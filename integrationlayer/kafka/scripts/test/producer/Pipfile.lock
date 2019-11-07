@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e0fffc03159c79db3276fd8730bd6c03eae4c08a430ccea1fc131d1f99c121d5"
+            "sha256": "6b86a7e2e613a32b5e8d38fb7edd7306e1704a3c1f4fde9a58023925c6cb6774"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3"
+            "python_version": "3.7"
         },
         "sources": [
             {
@@ -24,13 +24,13 @@
             "index": "pypi",
             "version": "==7.0"
         },
-        "kafka": {
+        "kafka-python": {
             "hashes": [
-                "sha256:35a49e9a432f6792aad48b2ab09d03867357aaa06eacba2678b7fd0808156e5c",
-                "sha256:ffb3348cd918c31344b1a2eb61f692cbc423c83b1b06466a86de3db8a3f6a018"
+                "sha256:2f29baad4b3efe05a2bb81ac268855aa01cbc68397f15bac77b494ffd7e2cada",
+                "sha256:4fbebebfcb6fc94903fb720fe883d7bbec7298f4f1acb857c21dd3b4b114ba4b"
             ],
             "index": "pypi",
-            "version": "==1.3.5"
+            "version": "==1.4.7"
         }
     },
     "develop": {}

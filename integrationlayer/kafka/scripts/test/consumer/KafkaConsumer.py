@@ -9,6 +9,7 @@ from json import loads
 import logging
 import sys, time
 import requests, re
+import click
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
@@ -17,19 +18,17 @@ logger = logging.getLogger('KafkaConsumer')
 logger.setLevel(30)
 PERIOD_OF_TIME = 60 # 1min
 
-
-def main(args):
-    kafka_listener = args[1]
-    kafka_topic_name = args[2]
-
-    kafka_listener = 'JP-DTP-KAFKA-VM:9092'
-    kafka_topic_name = 'DTPTopic'
+@click.command()
+@click.option('--kafka_listener', envvar='KAFKA_LISTENER', default='JP-DTP-KAFKA-VM:9092', help='Kafka listener. example: localhost:9092')
+@click.option('--kafka_topic_name', envvar='KAFKA_TOPIC_NAME', default='DTPTopic', help='Kafka Topic name')
+@click.option('--kafka_consumer_group_name', envvar='KAFKA_CONSUMER_GROUP_NAME', default='my-group', help='Kafka contumer group name')
+def main(kafka_listener, kafka_topic_name, kafka_consumer_group_name):
 
     consumer = KafkaConsumer(kafka_topic_name,
-                             bootstrap_servers=[kafka_listener],
+                             bootstrap_servers=kafka_listener.split(','),
                              auto_offset_reset='earliest',
                              enable_auto_commit=True,
-                             group_id='my-group',
+                             group_id=kafka_consumer_group_name,
                              value_deserializer=lambda x: loads(x.decode('utf-8')))
 
     consumer.subscribe([kafka_topic_name])
@@ -44,7 +43,7 @@ def main(args):
 
 
 if __name__ == '__main__':
-    main(sys.argv)
+    main()
 
 
 

@@ -82,7 +82,7 @@ class DateTimeEncoder(JSONEncoder):
 
 
 def getKafkaProducer(kafka_listener):
-    producer = KafkaProducer(bootstrap_servers=[kafka_listener],
+    producer = KafkaProducer(bootstrap_servers=kafka_listener.split(','),
                              value_serializer=lambda x: dumps(x, cls=DateTimeEncoder).encode('utf-8'))
     #json.loads(json.dumps(payload, cls=DateTimeEncoder), cls=DateTimeDecoder)
     return producer

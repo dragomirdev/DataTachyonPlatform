@@ -1,53 +1,52 @@
 
 SHOW DATABASES;
 
-CREATE DATABASE DTPSTREAMINGDB LOCATION "hdfs://JP-DTP-HADOOP-NM-VM:9000/user/hive/warehouse/dtpstreamingdb";
+CREATE DATABASE DTPIAUDITORDB LOCATION "hdfs://JP-DTP-HADOOP-NM-VM:9000/user/hive/warehouse/dtpiauditor";
 
-USE DTPSTREAMINGDB;
+USE DTPIAUDITORDB;
 
 ## Create External Table in Hive to read from hadoop
-DROP TABLE IF EXISTS SENSOR_INFO;
-CREATE EXTERNAL TABLE  SENSOR_INFO (
-id bigint,
-name string,
-temperature float,
-pressure float,
-humidity float,
-latitude float,
-longitude float
+DROP TABLE IF EXISTS IAUDITOR_INSPECTION;
+CREATE EXTERNAL TABLE  IAUDITOR_INSPECTION (
+template_id string,
+audit_id string,
+archived boolean,
+audit_data string,
+total_score float,
+score_percentage float
 )
 ROW FORMAT SERDE 'org.apache.hive.hcatalog.data.JsonSerDe'
 STORED AS TEXTFILE;
 
 #partitioned by (ingestiondate string)
 
-ALTER TABLE SENSOR_INFO SET SERDEPROPERTIES ( "ignore.malformed.json" = "true");
-ALTER TABLE SENSOR_INFO SET LOCATION 'hdfs://JP-DTP-HADOOP-NM-VM:9000/data/dtp/processed/kafka-logs/';
-ALTER TABLE SENSOR_INFO SET  SERDEPROPERTIES ( 'paths'='id, name, temperature, pressure, humidity, latitude, longitude' );
+ALTER TABLE IAUDITOR_INSPECTION SET SERDEPROPERTIES ( "ignore.malformed.json" = "true");
+ALTER TABLE IAUDITOR_INSPECTION SET LOCATION 'hdfs://JP-DTP-HADOOP-NM-VM:9000/data/dtp/processed/iAuditor/';
+ALTER TABLE IAUDITOR_INSPECTION SET  SERDEPROPERTIES ( 'paths'='template_id', 'audit_id', 'archived', 'audit_data', 'total_score', 'score_percentage' );
+ALTER TABLE IAUDITOR_INSPECTION SET SERDEPROPERTIES ('input.regex'=".*:\"(.*?)\",\"audit_data\":\\{\"name\":(\\d),\"total_score\":(\\d),\"score_percentage\":(\\d).*$");
 
-DESC SENSOR_INFO;
-MSCK REPAIR TABLE SENSOR_INFO;
+DESC IAUDITOR_INSPECTION;
+MSCK REPAIR TABLE IAUDITOR_INSPECTION;
 
-SELECT * FROM SENSOR_INFO;
+SELECT * FROM IAUDITOR_INSPECTION;
 
 ## Create External Table in Hive for the ElasticSearch
 
-USE DTPSTREAMINGDB;
+USE DTPIAUDITORDB;
 
-DROP TABLE IF EXISTS ES_SENSOR_INFO;
+DROP TABLE IF EXISTS ES_IAUDITOR_INSPECTION;
 
-CREATE EXTERNAL TABLE ES_SENSOR_INFO(
-id bigint,
-name string,
-temperature float,
-pressure float,
-humidity float,
-lat float,
-lon float
+CREATE EXTERNAL TABLE ES_IAUDITOR_INSPECTION(
+template_id string,
+audit_id string,
+archived boolean,
+audit_data string,
+total_score float,
+score_percentage float
 )
 ROW FORMAT SERDE 'org.elasticsearch.hadoop.hive.EsSerDe'
 stored by 'org.elasticsearch.hadoop.hive.EsStorageHandler'
-tblproperties('es.resource' = 'dtpstreamingdb/sensor_info',
+tblproperties('es.resource' = 'dtpiauditor/IAUDITOR_INSPECTION',
 'es.index.auto.create' = 'true',
 'es.nodes.wan.only' = 'true',
 'es.nodes' = '10.0.4.10',
@@ -55,10 +54,10 @@ tblproperties('es.resource' = 'dtpstreamingdb/sensor_info',
 'es.net.http.auth.pass' = 'JPSpace2019$',
 'es.port' = '9200');
 
-desc ES_SENSOR_INFO;
+desc ES_IAUDITOR_INSPECTION;
 
-INSERT OVERWRITE TABLE  ES_SENSOR_INFO   SELECT *  FROM SENSOR_INFO s;
-SELECT * FROM ES_SENSOR_INFO;
+INSERT OVERWRITE TABLE  ES_IAUDITOR_INSPECTION   SELECT *  FROM IAUDITOR_INSPECTION s;
+SELECT * FROM ES_IAUDITOR_INSPECTION;
 
 
 # geo_location STRUCT<lat:float,lat:float>

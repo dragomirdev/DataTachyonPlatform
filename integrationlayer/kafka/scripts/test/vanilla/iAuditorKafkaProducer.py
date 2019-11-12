@@ -3,7 +3,7 @@ import json
 import sys
 from datetime import datetime, timedelta
 import requests
-from integrationlayer.kafka.scripts.test.vanilla.KafkaUitls import getKafkaProducer
+from KafkaUitls import getKafkaProducer
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s  %(message)s', level=logging.DEBUG)
 
@@ -13,11 +13,14 @@ bearer_token = "2826331ab2e41fa2eec7172e07e9819db375242b6bbfecf93f225a1b28575f8f
 headers = {"Authorization": "Bearer {}".format(bearer_token)}
 # iAuditor Inspection Report Api Endpoint
 inspection_url = "https://api.safetyculture.io/audits/audit_id"
-current_datetime = datetime.now().isoformat()
-modified_before = current_datetime
-no_of_days = 1
-modified_after = '2019-11-11T00:00:00.000Z'
-#modified_after = modified_before - timedelta(days = 1)
+
+#modified_before = '2019-11-12T00:00:00.000Z'
+#modified_after  = '2019-11-11T00:00:00.000Z'
+today = datetime.now()
+one_day = timedelta(days=1)
+yesterday = today - one_day
+modified_before = today.isoformat()
+modified_after = yesterday.isoformat()
 
 
 def sendMessages(args, payload):
@@ -51,7 +54,8 @@ def getAuditInspectionReport(args, audit_ids):
         # extracting data in json format
         inspection_report = audit_response.json()
         logging.debug("inspection_report:%s", inspection_report)
-        sendMessages(args, inspection_report)
+        sendMessages(args, audit_response.text)
+
 
 def getAuditInspectionReports(args):
     # defining a params dict for the parameters to be sent to the API

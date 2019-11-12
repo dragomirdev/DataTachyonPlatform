@@ -9,7 +9,7 @@ import datetime
 from random import randint
 from datetime import date
 
-from integrationlayer.kafka.scripts.test.vanilla.KafkaUitls import getKafkaProducer
+from KafkaUitls import getKafkaProducer
 
 start = 0
 stop = 100

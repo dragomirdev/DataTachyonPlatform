@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "************ Refreshing Hive Tables*********"
+hive --service beeline << EOF
+!connect jdbc:hive2://10.0.4.10:10000 hadoop hadoop
+show databases;
+USE DTPIAUDITORDB;
+show tables;
+DESC IAUDITOR_INSPECTION;
+MSCK REPAIR TABLE IAUDITOR_INSPECTION;
+SELECT * FROM IAUDITOR_INSPECTION;
+desc IAUDITOR_INSPECTION;
+INSERT OVERWRITE TABLE  ES_IAUDITOR_INSPECTION   SELECT *  FROM IAUDITOR_INSPECTION s;
+SELECT * FROM ES_IAUDITOR_INSPECTION;
+EOF

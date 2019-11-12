@@ -44,6 +44,7 @@ def getSensorPayload(id, name, temperature, pressure, humidity, event_date, even
     #print("payload\n", payload)
     return payload
 
+
 ###
 
 class DateTimeDecoder(json.JSONDecoder):
@@ -63,7 +64,6 @@ class DateTimeDecoder(json.JSONDecoder):
         except:
             d['__type__'] = type
             return d
-
 
 
 class DateTimeEncoder(JSONEncoder):
@@ -113,9 +113,8 @@ def sendMessages(kafka_listener, kafka_topic_name):
         print("payload", dict_obj)
         print('Sending Messages to Kafka Topic: ' + kafka_topic_name)
         producer.send(kafka_topic_name, value=dict_obj)
-        producer.flush()
+    producer.flush()
 
 
 if __name__ == '__main__':
     sendMessages()
-

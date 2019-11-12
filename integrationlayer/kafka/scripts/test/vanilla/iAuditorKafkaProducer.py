@@ -51,7 +51,7 @@ def getAuditInspectionReport(args, audit_ids):
         # extracting data in json format
         inspection_report = audit_response.json()
         logging.debug("inspection_report:%s", inspection_report)
-        sendMessages(args, inspection_report)
+        sendMessages(args, audit_response.text)
 
 def getAuditInspectionReports(args):
     # defining a params dict for the parameters to be sent to the API

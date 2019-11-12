@@ -8,8 +8,8 @@ import re
 import time
 
 
-def main(args):
 
+def main(args):
     process_group = "24678882-b46d-3468-7712-81daf325514b"
     hostname_port = "JP-DTP-NIFI-VM:9090"
 

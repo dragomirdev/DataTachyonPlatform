@@ -9,7 +9,6 @@ import time
 
 
 def main(args):
-
     process_group = "44478882-b46d-3468-0128-30936f730e0e"
     hostname_port = "JP-DTP-NIFI-VM:9090"
 

@@ -3,7 +3,7 @@ import json
 import sys
 from datetime import datetime, timedelta
 import requests
-from integrationlayer.kafka.scripts.test.vanilla.KafkaUitls import getKafkaProducer
+from KafkaUitls import getKafkaProducer
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s  %(message)s', level=logging.DEBUG)
 
@@ -24,7 +24,7 @@ def sendMessages(args, payload):
     kafka_listener = args[1]
     kafka_topic_name = args[2]
     kafka_listener = 'JP-DTP-KAFKA-VM:9092'
-    kafka_topic_name = 'DTPTopic'
+    kafka_topic_name = 'DTPiAuditorTopic'
     producer = getKafkaProducer(kafka_listener)
     dict_obj = json.loads(payload)
     # dict_obj = json.loads(json.dumps(payload, cls=DateTimeEncoder), cls=DateTimeDecoder)

@@ -1,7 +1,7 @@
 #! /bin/bash
 
 
-default_input_path="/datadrive/dtp/input/kafka-logs"
+default_input_path="/datadrive/dtp/input/iAuditor"
 input_path=${1:-${default_input_path}}
 default_output_path="/data/dtp/landing/kafka-logs"
 output_path=${2:-${default_output_path}}

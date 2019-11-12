@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 
-DEFAULT_TOPIC_NAME=DTPTopic
+DEFAULT_TOPIC_NAME=DTPiAuditorTopic
 input_kafka_topic=${1:-${DEFAULT_TOPIC_NAME}}
 
 echo "Creating Kafka Topic:" ${input_kafka_topic}

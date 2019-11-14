@@ -84,8 +84,10 @@ def processiAuditorInspectionReport(args):
     items_df.show()
     #.withColumn("rownum", monotonically_increasing_id())
 
-    splitted_items_df = items_df.select(F.split(items_df.items, ' ').alias('arr'))
-    last_item_df = splitted_items_df.select(splitted_items_df.arr[size(splitted_items_df.arr) - 1]).show()
+    #splitted_items_df = items_df.select(F.split(items_df.items, ' ').alias('arr'))
+    #last_item_df = splitted_items_df.select(splitted_items_df.arr[size(splitted_items_df.arr) - 1]).show()
+
+    last_item_df = items_df.withColumn("lastItem", F.last(items_df.items)).drop(items_df.items)
     last_item_df.printSchema()
     last_item_df.show()
 

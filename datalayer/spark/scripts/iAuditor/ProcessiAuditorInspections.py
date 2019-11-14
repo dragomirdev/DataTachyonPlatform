@@ -5,6 +5,7 @@ from pyspark.sql import SparkSession
 from datetime import date
 from pyspark.sql.functions import col, explode, monotonically_increasing_id
 import pyspark.sql.functions as F
+from pyspark.sql.functions import size
 today=date.today().strftime('%Y%m%d')
 print("Date:"+today)
 
@@ -82,9 +83,14 @@ def processiAuditorInspectionReport(args):
     items_df.printSchema()
     items_df.show()
     #.withColumn("rownum", monotonically_increasing_id())
-    last_item_df = json_df.withColumn("lastItem", F.last(json_df.items)).drop(json_df.items)
+
+    last_item_df = json_df.withColumn("lastItem", F.slice(items_df, -1, 1)(0))
     last_item_df.printSchema()
     last_item_df.show()
+
+    #last_item_df = json_df.withColumn("lastItem", F.last(json_df.items)).drop(json_df.items)
+    #last_item_df.printSchema()
+    #last_item_df.show()
 
     #items_count = items_df.count()
     #items_df.printSchema()

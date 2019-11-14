@@ -61,7 +61,7 @@ def processiAuditorInspectionReport(args):
                              col("audit_data.name").alias("audit_name"),
                              col("template_data.metadata.name").alias("template_name"),
                              col("audit_data.authorship.author").alias("audit_author"),
-                  
+
                              col("audit_data.authorship.author_id").alias("audit_authorId"),
                              col("audit_data.authorship.device_id").alias("audit_device_id"),
                              col("audit_data.authorship.owner").alias("audit_owner"),
@@ -97,14 +97,13 @@ def processiAuditorInspectionReport(args):
     result_df = new_df.join(inspector_info_df, new_df.audit_id == inspector_info_df.audit_id).drop(inspector_info_df.audit_id)
     result_df.printSchema()
     result_df.show()
-    hdfs_input_file_name = args[2]
-    output_filename = hdfs_client + output_path +  "audit_inspection_report_"+str(hdfs_input_file_name)+".csv"
-    print("Saving the output to: ", output_filename)
-    #result_df.repartition(1).write.format('json').save(output_filename)
-    result_df.repartition(1).write.csv(output_filename, sep='|', header = 'true')
+    audit_id_str = result_df.select([col(audit_id).alias("audit_id")]).collect()[0]["audit_id"]
+    print("audit_id_str:"+audit_id_str)
+    output_json_filename = hdfs_client + output_path +  "audit_inspection_report_"+str(audit_id_str)+".json"
+    print("Saving the output to: ", output_json_filename)
+    result_df.coalesce(1).write.format('json').save(output_json_filename)
 
 
 if __name__ == '__main__':
     processiAuditorInspectionReport(sys.argv)
-
 

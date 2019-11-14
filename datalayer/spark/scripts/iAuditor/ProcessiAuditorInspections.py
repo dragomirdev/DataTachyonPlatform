@@ -53,7 +53,7 @@ def processiAuditorInspectionReport(args):
     sc = spark.sparkContext
     json_df = getFileFromHdfs(args)
     #json_df = spark.read.option("multiline", "true").json("sample.json")
-    json_df.printSchema()
+    #json_df.printSchema()
     audit_id = "audit_id"
 
     new_df = json_df.select([col(audit_id).alias("audit_id"),
@@ -75,15 +75,15 @@ def processiAuditorInspectionReport(args):
                              col("audit_data.total_score").alias("audit_total_score"),
                              col("template_data.metadata.description").alias("template_description")])
 
-    new_df.printSchema()
-    new_df.show()
+    #new_df.printSchema()
+    #new_df.show()
 
     items_df = json_df.select(col(audit_id), explode(json_df.items)).withColumn("rownum", monotonically_increasing_id())
     items_count = items_df.count()
-    items_df.printSchema()
+    #items_df.printSchema()
     items_df.show(items_count)
     inspection_df = items_df.where(items_df.rownum == items_count-1)
-    inspection_df.printSchema()
+    #inspection_df.printSchema()
     inspection_df.show()
     inspector_info_df = inspection_df.select(col("audit_id").alias("audit_id"),
                                           col("col.responses.name").alias("inspector_full_name"),

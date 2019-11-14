@@ -56,6 +56,12 @@ def extract_ingestion_date(path):
     return tail or ntpath.basename(head)
 
 
+def write_sdf_to_csv(output_filepath, result_df):
+    print("Writing the output to: ", output_filepath)
+    result_df.repartition(1).write.csv(output_filepath, sep=',', header='true', mode='overwrite')
+    print("Completed Writing the CSV output to: ", output_filepath)
+
+
 def processiAuditorInspectionReport(args):
     print("Starting Process iAuditor InspectionReport")
     sc = spark.sparkContext
@@ -99,12 +105,8 @@ def processiAuditorInspectionReport(args):
     result_df.show()
     ingestion_date = extract_ingestion_date(input_path)
     ingestion_date_info =  '/ingestiondate=' + ingestion_date + '/'
-    output_loc = hdfs_client + output_path + ingestion_date_info
-    output_filepath = hdfs_client + output_path
-    print("Saving the output to: ", output_filepath)
-    #result_df.repartition(1).write.format('json').save(output_filename)
-    result_df.repartition(1).write.csv(output_filepath, sep=',', header = 'true', mode='overwrite')
-
+    output_filepath = hdfs_client + output_path + ingestion_date_info
+    write_sdf_to_csv(output_filepath, result_df)
 
 if __name__ == '__main__':
     processiAuditorInspectionReport(sys.argv)

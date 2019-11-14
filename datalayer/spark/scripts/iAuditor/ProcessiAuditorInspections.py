@@ -102,6 +102,8 @@ def processiAuditorInspectionReport(args):
     result_df.printSchema()
     result_df.show()
     ingestion_date = extract_ingestion_date(input_path)
+    print("ingestion_date:"+ingestion_date)
+    ingestion_date = today
     ingestion_date_info = '/ingestiondate=' + ingestion_date + '/'
     output_filepath = hdfs_client + output_path + ingestion_date_info
     write_sdf_to_csv(output_filepath, result_df)

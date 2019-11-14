@@ -79,14 +79,16 @@ def processiAuditorInspectionReport(args):
     #new_df.show()
 
     items_df = json_df.select(json_df.audit_id, json_df.items)
+    items_df.printSchema()
+    items_df.show()
     #.withColumn("rownum", monotonically_increasing_id())
     last_item_df = json_df.withColumn("lastItem", F.last(json_df.items)).drop(json_df.items)
     last_item_df.printSchema()
     last_item_df.show()
 
-    items_count = items_df.count()
+    #items_count = items_df.count()
     #items_df.printSchema()
-    items_df.show(items_count)
+    #items_df.show(items_count)
     #inspection_df = items_df.where(items_df.rownum == items_count-1)
     inspection_df = items_df
     inspection_df.printSchema()

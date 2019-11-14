@@ -41,7 +41,8 @@ def getAuditInspectionReport():
     #print("inspection_report:%s", inspection_report)
     return  audit_response
 
-def getFileFromHdfs(hdfs_input_path):
+def getFileFromHdfs(input_path):
+    hdfs_input_path = hdfs_client + input_path
     print("Reading the HDFS Input Json File ", hdfs_input_path)
     json_df = spark.read.option('multiline', "true").json(hdfs_input_path)
     return json_df
@@ -65,12 +66,9 @@ def processiAuditorInspectionReport(args):
     print("Starting Process iAuditor InspectionReport")
     sc = spark.sparkContext
     input_path = args[1]
-    hdfs_input_path = hdfs_client + input_path
-    json_df = getFileFromHdfs(hdfs_input_path)
-    #json_df = spark.read.option("multiline", "true").json("sample.json")
+    json_df = getFileFromHdfs(input_path)
     json_df.printSchema()
     json_df.show()
-    audit_id = "audit_id"
 
     last_item_df = json_df.withColumn('items_size', F.size(F.col('items')))\
         .withColumn("last_item", F.col('items')[F.col('items_size') - 1]) \
@@ -78,7 +76,7 @@ def processiAuditorInspectionReport(args):
     last_item_df.printSchema()
     last_item_df.show()
 
-    result_df = last_item_df.select([col(audit_id).alias("audit_id"),
+    result_df = last_item_df.select([col("audit_id").alias("audit_id"),
                              col("template_id").alias("template_id"),
                              col("audit_data.name").alias("audit_name"),
                              col("template_data.metadata.name").alias("template_name"),

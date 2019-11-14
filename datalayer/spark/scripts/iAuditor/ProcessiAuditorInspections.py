@@ -84,7 +84,7 @@ def processiAuditorInspectionReport(args):
     items_df.show()
     #.withColumn("rownum", monotonically_increasing_id())
 
-    last_item_df = json_df.withColumn("lastItem", F.slice(items_df, -1, 1)(0))
+    last_item_df = items_df.withColumn("lastItem", F.slice(items_df, -1, 1)(0))
     last_item_df.printSchema()
     last_item_df.show()
 

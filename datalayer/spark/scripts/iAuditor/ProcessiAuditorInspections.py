@@ -97,7 +97,7 @@ def processiAuditorInspectionReport(args):
 
     #df.withColumn("first_two", f.array([f.col("letters")[0], f.col("letters")[1]])).show()
 
-    last_item_df = items_df.withColumn("lastItem", F.col(items_df.items)[size(items_df.items)-1]).drop(items_df.items)
+    last_item_df = items_df.withColumn("lastItem", col(items_df.items)[size(items_df.items)-1]).drop(items_df.items)
     last_item_df.printSchema()
     last_item_df.show()
 

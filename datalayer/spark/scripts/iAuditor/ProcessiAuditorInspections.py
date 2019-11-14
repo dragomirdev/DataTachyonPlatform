@@ -85,11 +85,11 @@ def processiAuditorInspectionReport(args):
                              col("audit_data.score_percentage").alias("audit_score_percentage"),
                              col("audit_data.total_score").alias("audit_total_score"),
                              col("template_data.metadata.description").alias("template_description"),
-                             col("responses.name").alias("inspector_full_name"),
-                             col("responses.image.href").alias("inspector_signature_image_url"),
-                             col("responses.image.label").alias("inspection_signature_image_filename"),
-                             col("responses.timestamp").alias("inspected_timestamp"),
-                             col("responses.image.date_created").alias("inspection_date_created")])
+                             col("last_item.responses.name").alias("inspector_full_name"),
+                             col("last_item.responses.image.href").alias("inspector_signature_image_url"),
+                             col("last_item.responses.image.label").alias("inspection_signature_image_filename"),
+                             col("last_item.responses.timestamp").alias("inspected_timestamp"),
+                             col("last_item.responses.image.date_created").alias("inspection_date_created")])
 
     result_df.printSchema()
     result_df.show()

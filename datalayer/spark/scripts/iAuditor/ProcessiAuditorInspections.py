@@ -41,8 +41,7 @@ def getAuditInspectionReport():
     #print("inspection_report:%s", inspection_report)
     return  audit_response
 
-def getFileFromHdfs(input_path):
-    hdfs_input_path = hdfs_client + input_path
+def getFileFromHdfs(hdfs_input_path):
     print("Reading the HDFS Input Json File ", hdfs_input_path)
     json_df = spark.read.option('multiline', "true").json(hdfs_input_path)
     return json_df
@@ -66,7 +65,8 @@ def processiAuditorInspectionReport(args):
     print("Starting Process iAuditor InspectionReport")
     sc = spark.sparkContext
     input_path = args[1]
-    json_df = getFileFromHdfs(input_path)
+    hdfs_input_path = hdfs_client + input_path
+    json_df = getFileFromHdfs(hdfs_input_path)
     #json_df = spark.read.option("multiline", "true").json("sample.json")
     json_df.printSchema()
     json_df.show()
@@ -104,7 +104,7 @@ def processiAuditorInspectionReport(args):
     result_df.printSchema()
     result_df.show()
     ingestion_date = extract_ingestion_date(input_path)
-    ingestion_date_info =  '/ingestiondate=' + ingestion_date + '/'
+    ingestion_date_info = '/ingestiondate=' + ingestion_date + '/'
     output_filepath = hdfs_client + output_path + ingestion_date_info
     write_sdf_to_csv(output_filepath, result_df)
 

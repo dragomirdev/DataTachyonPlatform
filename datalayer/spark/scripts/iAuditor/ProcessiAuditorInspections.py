@@ -96,9 +96,7 @@ def processiAuditorInspectionReport(args):
     result_df = new_df.join(inspector_info_df, new_df.audit_id == inspector_info_df.audit_id).drop(inspector_info_df.audit_id)
     result_df.printSchema()
     result_df.show()
-    hdfs_input_file_name = args[2]
     output_filepath = hdfs_client + output_path
-    #+  "audit_inspection_report_"+str(hdfs_input_file_name)
     print("Saving the output to: ", output_filepath)
     #result_df.repartition(1).write.format('json').save(output_filename)
     result_df.repartition(1).write.csv(output_filepath, sep=',', header = 'true')

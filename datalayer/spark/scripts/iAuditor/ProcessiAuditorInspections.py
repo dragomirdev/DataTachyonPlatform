@@ -57,6 +57,7 @@ def processiAuditorInspectionReport(args):
     json_df = getFileFromHdfs(args)
     #json_df = spark.read.option("multiline", "true").json("sample.json")
     json_df.printSchema()
+    json_df.show()
     audit_id = "audit_id"
 
     new_df = json_df.select([col(audit_id).alias("audit_id"),

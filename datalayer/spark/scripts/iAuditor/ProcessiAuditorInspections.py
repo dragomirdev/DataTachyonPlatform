@@ -60,12 +60,19 @@ def processiAuditorInspectionReport(args):
     json_df.show()
     audit_id = "audit_id"
 
-    new_df = json_df.select([col(audit_id).alias("audit_id"),
+    last_item_df = json_df.withColumn('items_size', F.size(F.col('items')))\
+        .withColumn("last_item", F.col('items')[F.col('items_size') - 1]) \
+        .drop('items', 'items_size')
+
+    #last_item_df = json_df.withColumn("lastItem", json_df.items[size(json_df.items) - 1]).drop(json_df.items)
+    last_item_df.printSchema()
+    last_item_df.show()
+
+    result_df = last_item_df.select([col(audit_id).alias("audit_id"),
                              col("template_id").alias("template_id"),
                              col("audit_data.name").alias("audit_name"),
                              col("template_data.metadata.name").alias("template_name"),
                              col("audit_data.authorship.author").alias("audit_author"),
-                  
                              col("audit_data.authorship.author_id").alias("audit_authorId"),
                              col("audit_data.authorship.device_id").alias("audit_device_id"),
                              col("audit_data.authorship.owner").alias("audit_owner"),
@@ -77,14 +84,15 @@ def processiAuditorInspectionReport(args):
                              col("audit_data.score").alias("audit_score"),
                              col("audit_data.score_percentage").alias("audit_score_percentage"),
                              col("audit_data.total_score").alias("audit_total_score"),
-                             col("template_data.metadata.description").alias("template_description")])
+                             col("template_data.metadata.description").alias("template_description"),
+                             col("responses.name").alias("inspector_full_name"),
+                             col("responses.image.href").alias("inspector_signature_image_url"),
+                             col("responses.image.label").alias("inspection_signature_image_filename"),
+                             col("responses.timestamp").alias("inspected_timestamp"),
+                             col("responses.image.date_created").alias("inspection_date_created")])
 
-    #new_df.printSchema()
-    #new_df.show()
-
-    last_item_df = json_df.withColumn("lastItem", json_df.items[size(json_df.items) - 1]).drop(json_df.items)
-    last_item_df.printSchema()
-    last_item_df.show()
+    result_df.printSchema()
+    result_df.show()
 
     #items_df = json_df.select(json_df.audit_id, json_df.items)
     #items_df.printSchema()
@@ -136,9 +144,9 @@ def processiAuditorInspectionReport(args):
     inspector_info_df.show()
 
 
-    result_df = new_df.join(inspector_info_df, new_df.audit_id == inspector_info_df.audit_id).drop(inspector_info_df.audit_id)
-    result_df.printSchema()
-    result_df.show()
+    #result_df = new_df.join(inspector_info_df, new_df.audit_id == inspector_info_df.audit_id).drop(inspector_info_df.audit_id)
+    #result_df.printSchema()
+    #result_df.show()
     output_filepath = hdfs_client + output_path
     print("Saving the output to: ", output_filepath)
     #result_df.repartition(1).write.format('json').save(output_filename)

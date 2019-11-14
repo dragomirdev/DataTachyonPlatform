@@ -77,7 +77,6 @@ def processiAuditorInspectionReport(args):
 
     #new_df.printSchema()
     #new_df.show()
-
     items_df = json_df.select(col(audit_id), explode(json_df.items)).withColumn("rownum", monotonically_increasing_id())
     items_count = items_df.count()
     #items_df.printSchema()

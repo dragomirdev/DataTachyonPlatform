@@ -14,7 +14,7 @@ echo "Started Processing   from Landing Folder:"$LANDING_FOLDER " to Processed F
 
 RUN_SPARK_JOB="spark-submit --master spark://JP-DTP-SPARK-MASTER-VM:7077 ProcessiAuditorInspections.py $LANDING_FOLDER  --executor-memory 3g --executor-cores=3 --num-executors 3   --conf spark.dynamicAllocation.enabled=false "
 
-
+$RUN_SPARK_JOB
 
 #$HDFS_LIST_CMD | while read f; do
 #  echo $f

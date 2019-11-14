@@ -117,7 +117,7 @@ def processiAuditorInspectionReport(args):
     #items_df.printSchema()
     #items_df.show(items_count)
     #inspection_df = items_df.where(items_df.rownum == items_count-1)
-    inspection_df = items_df
+    inspection_df = last_item_df
     inspection_df.printSchema()
     inspection_df.show()
     inspector_info_df = inspection_df.select(col("audit_id").alias("audit_id"),

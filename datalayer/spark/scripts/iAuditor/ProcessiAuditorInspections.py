@@ -88,7 +88,8 @@ def processiAuditorInspectionReport(args):
     #last_item_df = splitted_items_df.select(splitted_items_df.arr[size(splitted_items_df.arr) - 1]).show()
 
     #last_item_df = items_df.withColumn("lastItem", F.last(items_df.items)).drop(items_df.items)
-    last_item_df = items_df.withColumn("lastItem", col("items")(size(col("items"))-1)).drop(items_df.items)
+    items_size = size(items_df.items)
+    last_item_df = items_df.withColumn("lastItem", col("items(items_size-1)")).drop(items_df.items)
     last_item_df.printSchema()
     last_item_df.show()
 

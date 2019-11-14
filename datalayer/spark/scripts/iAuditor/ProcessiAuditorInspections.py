@@ -1,6 +1,6 @@
 import json
 import sys
-
+import ntpath
 from pyspark.sql import SparkSession
 from datetime import date
 from pyspark.sql.functions import col, slice, explode, monotonically_increasing_id
@@ -41,8 +41,7 @@ def getAuditInspectionReport():
     #print("inspection_report:%s", inspection_report)
     return  audit_response
 
-def getFileFromHdfs(args):
-    input_path = args[1]
+def getFileFromHdfs(input_path):
     hdfs_input_path = hdfs_client + input_path
     print("Reading the HDFS Input Json File ", hdfs_input_path)
     json_df = spark.read.option('multiline', "true").json(hdfs_input_path)
@@ -51,10 +50,17 @@ def getFileFromHdfs(args):
 def get_last_element(l):
     return l[-1]
 
+
+def extract_ingestion_date(path):
+    head, tail = ntpath.split(path)
+    return tail or ntpath.basename(head)
+
+
 def processiAuditorInspectionReport(args):
-    print("Test")
+    print("Starting Process iAuditor InspectionReport")
     sc = spark.sparkContext
-    json_df = getFileFromHdfs(args)
+    input_path = args[1]
+    json_df = getFileFromHdfs(input_path)
     #json_df = spark.read.option("multiline", "true").json("sample.json")
     json_df.printSchema()
     json_df.show()
@@ -63,8 +69,6 @@ def processiAuditorInspectionReport(args):
     last_item_df = json_df.withColumn('items_size', F.size(F.col('items')))\
         .withColumn("last_item", F.col('items')[F.col('items_size') - 1]) \
         .drop('items', 'items_size')
-
-    #last_item_df = json_df.withColumn("lastItem", json_df.items[size(json_df.items) - 1]).drop(json_df.items)
     last_item_df.printSchema()
     last_item_df.show()
 
@@ -93,60 +97,9 @@ def processiAuditorInspectionReport(args):
 
     result_df.printSchema()
     result_df.show()
-
-    #items_df = json_df.select(json_df.audit_id, json_df.items)
-    #items_df.printSchema()
-    #items_df.show()
-
-    #.withColumn("rownum", monotonically_increasing_id())
-
-    #splitted_items_df = items_df.select(F.split(items_df.items, ' ').alias('arr'))
-    #last_item_df = splitted_items_df.select(splitted_items_df.arr[size(splitted_items_df.arr) - 1]).show()
-
-    #last_item_df = items_df.withColumn("lastItem", F.last(items_df.items)).drop(items_df.items)
-
-    get_last_element_udf = F.udf(get_last_element)
-
-    #df.select(get_last_element(split(df.s, ' ')).alias('1st_from_end')
-
-    #df.withColumn("first_two", f.array([f.col("letters")[0], f.col("letters")[1]])).show()
-
-
-    #last_item_df = items_df.withColumn("lastItem", slice(items_df.items, start=size(items_df.items)-1, length=1)).drop(items_df.items)
-
-
-
-    #last_item_index = items_df.select(size(items_df.items))-1
-    #last_item_index.show()
-    #last_item_df = items_df.withColumn("lastItem", items_df.items(last_item_index)).drop(items_df.items)
-    #last_item_df.printSchema()
-    #last_item_df.show()
-
-    #last_item_df = items_df.withColumn("lastItem", F.slice(items_df, -1, 1)(0))
-
-    #last_item_df = json_df.withColumn("lastItem", F.last(json_df.items)).drop(json_df.items)
-    #last_item_df.printSchema()
-    #last_item_df.show()
-
-    #items_count = items_df.count()
-    #items_df.printSchema()
-    #items_df.show(items_count)
-    #inspection_df = items_df.where(items_df.rownum == items_count-1)
-    inspection_df = last_item_df
-    inspection_df.printSchema()
-    inspection_df.show()
-    inspector_info_df = inspection_df.select(col("audit_id").alias("audit_id"),
-                                          col("responses.name").alias("inspector_full_name"),
-                                          col("responses.image.href").alias("inspector_signature_image_url"),
-                                          col("responses.image.label").alias("inspection_signature_image_filename"),
-                                          col("responses.timestamp").alias("inspected_timestamp"),
-                                          col("responses.image.date_created").alias("inspection_date_created"))
-    inspector_info_df.show()
-
-
-    #result_df = new_df.join(inspector_info_df, new_df.audit_id == inspector_info_df.audit_id).drop(inspector_info_df.audit_id)
-    #result_df.printSchema()
-    #result_df.show()
+    ingestion_date = extract_ingestion_date(input_path)
+    ingestion_date_info =  '/ingestiondate=' + ingestion_date + '/'
+    output_loc = hdfs_client + output_path + ingestion_date_info
     output_filepath = hdfs_client + output_path
     print("Saving the output to: ", output_filepath)
     #result_df.repartition(1).write.format('json').save(output_filename)

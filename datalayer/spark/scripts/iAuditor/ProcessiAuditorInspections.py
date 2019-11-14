@@ -3,7 +3,7 @@ import sys
 
 from pyspark.sql import SparkSession
 from datetime import date
-from pyspark.sql.functions import col, explode, monotonically_increasing_id
+from pyspark.sql.functions import col, slice, explode, monotonically_increasing_id
 import pyspark.sql.functions as F
 from pyspark.sql.functions import size
 today=date.today().strftime('%Y%m%d')
@@ -97,8 +97,8 @@ def processiAuditorInspectionReport(args):
 
     #df.withColumn("first_two", f.array([f.col("letters")[0], f.col("letters")[1]])).show()
 
-    #last_item_df = items_df.withColumn("lastItem", items_df.items[size(items_df.items)-1]).drop(items_df.items)
-    last_item_df = items_df.withColumn("lastItem", F.slice(items_df.items, start=size(items_df.items)-1, length=1)).drop(items_df.items)
+    last_item_df = items_df.withColumn("lastItem", items_df.items[size(items_df.items)-1]).drop(items_df.items)
+    #last_item_df = items_df.withColumn("lastItem", slice(items_df.items, start=size(items_df.items)-1, length=1)).drop(items_df.items)
 
     last_item_df.printSchema()
     last_item_df.show()

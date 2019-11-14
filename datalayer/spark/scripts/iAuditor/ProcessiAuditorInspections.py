@@ -48,6 +48,8 @@ def getFileFromHdfs(args):
     json_df = spark.read.option('multiline', "true").json(hdfs_input_path)
     return json_df
 
+def get_last_element(l):
+    return l[-1]
 
 def processiAuditorInspectionReport(args):
     print("Test")
@@ -88,11 +90,22 @@ def processiAuditorInspectionReport(args):
     #last_item_df = splitted_items_df.select(splitted_items_df.arr[size(splitted_items_df.arr) - 1]).show()
 
     #last_item_df = items_df.withColumn("lastItem", F.last(items_df.items)).drop(items_df.items)
-    last_items_index = items_df.select(size(items_df.items))
-    last_items_index.show()
-    last_item_df = items_df.withColumn("lastItem", items_df.items(last_items_index)).drop(items_df.items)
+
+    get_last_element_udf = F.udf(get_last_element)
+
+    #df.select(get_last_element(split(df.s, ' ')).alias('1st_from_end')
+
+    #df.withColumn("first_two", f.array([f.col("letters")[0], f.col("letters")[1]])).show()
+
+    last_item_df = items_df.withColumn("lastItem", F.col(items_df.items)[size(items_df.items)-1]).drop(items_df.items)
     last_item_df.printSchema()
     last_item_df.show()
+
+    #last_item_index = items_df.select(size(items_df.items))-1
+    #last_item_index.show()
+    #last_item_df = items_df.withColumn("lastItem", items_df.items(last_item_index)).drop(items_df.items)
+    #last_item_df.printSchema()
+    #last_item_df.show()
 
     #last_item_df = items_df.withColumn("lastItem", F.slice(items_df, -1, 1)(0))
 

@@ -78,7 +78,8 @@ def processiAuditorInspectionReport(args):
     #new_df.printSchema()
     #new_df.show()
 
-    items_df = json_df.select(col(audit_id), explode(json_df.items)).withColumn("rownum", monotonically_increasing_id())
+    items_df = json_df.select(col(audit_id), col(json_df.items))
+    #.withColumn("rownum", monotonically_increasing_id())
     last_item_df = json_df.withColumn("lastItem", F.last(json_df.items)).drop(json_df.items)
     last_item_df.printSchema()
     last_item_df.show()
@@ -91,11 +92,11 @@ def processiAuditorInspectionReport(args):
     #inspection_df.printSchema()
     inspection_df.show()
     inspector_info_df = inspection_df.select(col("audit_id").alias("audit_id"),
-                                          col("col.responses.name").alias("inspector_full_name"),
-                                          col("col.responses.image.href").alias("inspector_signature_image_url"),
-                                          col("col.responses.image.label").alias("inspection_signature_image_filename"),
-                                          col("col.responses.timestamp").alias("inspected_timestamp"),
-                                          col("col.responses.image.date_created").alias("inspection_date_created"))
+                                          col("responses.name").alias("inspector_full_name"),
+                                          col("responses.image.href").alias("inspector_signature_image_url"),
+                                          col("responses.image.label").alias("inspection_signature_image_filename"),
+                                          col("responses.timestamp").alias("inspected_timestamp"),
+                                          col("responses.image.date_created").alias("inspection_date_created"))
     inspector_info_df.show()
 
 

@@ -19,7 +19,7 @@ HDFS_LIST_CMD="hdfs dfs -ls $LANDING_FOLDER"
 
 echo "Started Processing   from Landing Folder:"$LANDING_FOLDER " to Processed Folder:"$PROCESSED_FOLDER
 
-RUN_SPARK_JOB="spark-submit --master spark://JP-DTP-SPARK-MASTER-VM:7077 ProcessiAuditorInspections.py $input_date $LANDING_FOLDER $PROCESSED_FOLDER --executor-memory 3g --executor-cores=3 --num-executors 3   --conf spark.dynamicAllocation.enabled=false "
+RUN_SPARK_JOB="spark-submit --master spark://JP-DTP-SPARK-MASTER-VM:7077 ProcessRRiAuditorInspections.py $input_date $LANDING_FOLDER $PROCESSED_FOLDER --executor-memory 3g --executor-cores=3 --num-executors 3   --conf spark.dynamicAllocation.enabled=false "
 
 $RUN_SPARK_JOB
 

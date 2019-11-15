@@ -8,9 +8,9 @@ clear
 
 default_input_date="$(date +'%Y%m%d')"
 input_date=${1:-${default_input_date}}
-default_input_path="/data/dtp/landing/iAuditor"
+default_input_path="/data/dtp/landing/RRiAuditor"
 input_path=${2:-${default_input_path}}/$input_date/*
-default_output_path="/data/dtp/processed/iAuditor"
+default_output_path="/data/dtp/processed/RRiAuditor"
 target_path=${3:-${default_output_path}}
 
 LANDING_FOLDER=$input_path

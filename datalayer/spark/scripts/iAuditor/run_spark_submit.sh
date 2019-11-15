@@ -23,6 +23,7 @@ RUN_SPARK_JOB="spark-submit --master spark://JP-DTP-SPARK-MASTER-VM:7077 Process
 
 $RUN_SPARK_JOB
 
+
 #$HDFS_LIST_CMD | while read f; do
 #  echo $f
 #  hdfs_file_name_path=`echo $f  | awk '{print $8}'`;

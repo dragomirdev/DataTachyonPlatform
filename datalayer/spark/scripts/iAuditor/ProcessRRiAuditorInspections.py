@@ -103,10 +103,10 @@ def processiAuditorInspectionReport(args):
                              col("template_data.metadata.description").alias("template_description"),
                              col("last_item.label").alias("inspection_label"),
                              col("last_item.responses.text").alias("inspection_text"),
-                             col("last_item.responses.failed").alias("inspection_failed"),
-                             col("last_item.media.date_created").alias("inspection_date_created"),
-                             col("last_item.media.href").alias("inspection_media_href"),
-                             col("last_item.media.label").alias("inspection_media_label"))
+                             col("last_item.responses.failed").alias("inspection_failed"))
+    # ,col("last_item.media.date_created").alias("inspection_date_created"),
+    # col("last_item.media.href").alias("inspection_media_href"),
+    # col("last_item.media.label").alias("inspection_media_label")
 
     result_df.printSchema()
     result_df.show()

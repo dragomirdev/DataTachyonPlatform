@@ -6,7 +6,14 @@ export PYSPARK_DRIVER_PYTHON=/usr/bin/python3.6
 export PYSPARK_DRIVER_PYTHON_OPTS=
 clear
 
-LANDING_FOLDER="/data/dtp/landing/iAuditor/20191112/*"
+default_input_date=""
+input_date=${1:-${default_input_date}}
+default_input_path="/data/dtp/landing/iAuditor"
+input_path=${2:-${default_input_path}}/$input_date/*
+default_output_path="/data/dtp/processed/iAuditor"
+target_path=${3:-${default_output_path}}
+
+LANDING_FOLDER=$input_path
 PROCESSED_FOLDER="/data/dtp/processed/iAuditor"
 HDFS_LIST_CMD="hdfs dfs -ls $LANDING_FOLDER"
 

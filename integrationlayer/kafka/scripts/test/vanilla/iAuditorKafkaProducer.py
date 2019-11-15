@@ -7,11 +7,15 @@ from KafkaUitls import getKafkaProducer
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s  %(message)s', level=logging.DEBUG)
 
-# iAuditor Search Api Endpoint
+# iAuditor1 Search Api Endpoint
 audit_search_url = "https://api.safetyculture.io/audits/search"
-bearer_token = "2826331ab2e41fa2eec7172e07e9819db375242b6bbfecf93f225a1b28575f8f"
+
+#jp_bearer_token = "2826331ab2e41fa2eec7172e07e9819db375242b6bbfecf93f225a1b28575f8f"
+#rr_bearer_token = "6f9bdebebc2151f9e41fcfc53f4a4ef4c527606548d38dc7a4fa9c2c5cf872c2"
+bearer_token = "6f9bdebebc2151f9e41fcfc53f4a4ef4c527606548d38dc7a4fa9c2c5cf872c2"
+
 headers = {"Authorization": "Bearer {}".format(bearer_token)}
-# iAuditor Inspection Report Api Endpoint
+# iAuditor1 Inspection Report Api Endpoint
 inspection_url = "https://api.safetyculture.io/audits/audit_id"
 
 #modified_before = '2019-11-12T00:00:00.000Z'

@@ -6,7 +6,7 @@ export PYSPARK_DRIVER_PYTHON=/usr/bin/python3.6
 export PYSPARK_DRIVER_PYTHON_OPTS=
 clear
 
-default_input_date=""
+default_input_date="$(date +'%Y%m%d')"
 input_date=${1:-${default_input_date}}
 default_input_path="/data/dtp/landing/iAuditor"
 input_path=${2:-${default_input_path}}/$input_date/*

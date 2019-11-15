@@ -12,7 +12,7 @@ print("Date:"+today)
 app_name= "ProcessiAuditorInspectionReports"
 hdfs_client = "hdfs://JP-DTP-HADOOP-NM-VM:9000"
 #input_path = "/data/dtp/landing/iAuditor/{}/".format("20191112")
-output_path = "/data/dtp/processed/iAuditor/"
+#output_path = "/data/dtp/processed/iAuditor/"
 
 import requests
 bearer_token = "2826331ab2e41fa2eec7172e07e9819db375242b6bbfecf93f225a1b28575f8f"
@@ -67,6 +67,7 @@ def processiAuditorInspectionReport(args):
     sc = spark.sparkContext
     input_date = args[1]
     input_path = args[2]
+    output_path = args[3]
     json_df = getFileFromHdfs(input_path)
     json_df.printSchema()
     json_df.show()

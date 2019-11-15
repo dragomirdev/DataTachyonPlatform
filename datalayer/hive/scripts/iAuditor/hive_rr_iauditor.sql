@@ -33,7 +33,7 @@ inspection_failed boolean
 partitioned by (ingestiondate string)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
-LOCATION 'hdfs://JP-DTP-HADOOP-NM-VM:9000/data/dtp/processed/iAuditor/'
+LOCATION 'hdfs://JP-DTP-HADOOP-NM-VM:9000/data/dtp/processed/RRiAuditor/'
 TBLPROPERTIES('skip.header.line.count'='1');
 
 ALTER TABLE RR_IAUDITOR_INSPECTION_REPORT SET SERDEPROPERTIES ("timestamp.formats"="yyyy-MM-dd'T'HH:mm:ss.SSSZ");
@@ -41,11 +41,11 @@ DESC RR_IAUDITOR_INSPECTION_REPORT;
 MSCK REPAIR TABLE RR_IAUDITOR_INSPECTION_REPORT;
 SELECT * FROM RR_IAUDITOR_INSPECTION_REPORT;
 
-
-ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
-WITH SERDEPROPERTIES ('quoteChar'='"', 'separatorChar'=',')
-LOCATION 'hdfs://JP-DTP-HADOOP-NM-VM:9000/data/dtp/processed/iAuditor/'
-tblproperties('skip.header.line.count'='1');
+# OpenCSVSerde converts the datatype to string
+#ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+#WITH SERDEPROPERTIES ('quoteChar'='"', 'separatorChar'=',')
+#LOCATION 'hdfs://JP-DTP-HADOOP-NM-VM:9000/data/dtp/processed/RRiAuditor/'
+#tblproperties('skip.header.line.count'='1');
 
 ## Create External Table in Hive for the ElasticSearch
 

@@ -43,10 +43,13 @@ MSCK REPAIR TABLE IAUDITOR_INSPECTION_REPORT;
 SELECT * FROM IAUDITOR_INSPECTION_REPORT;
 
 
-ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
-WITH SERDEPROPERTIES ('quoteChar'='"', 'separatorChar'=',')
-LOCATION 'hdfs://JP-DTP-HADOOP-NM-VM:9000/data/dtp/processed/iAuditor/'
-tblproperties('skip.header.line.count'='1');
+
+# OpenCSVSerde converts the datatype to string
+#ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+#WITH SERDEPROPERTIES ('quoteChar'='"', 'separatorChar'=',')
+#LOCATION 'hdfs://JP-DTP-HADOOP-NM-VM:9000/data/dtp/processed/iAuditor/'
+#tblproperties('skip.header.line.count'='1');
+
 
 ## Create External Table in Hive for the ElasticSearch
 

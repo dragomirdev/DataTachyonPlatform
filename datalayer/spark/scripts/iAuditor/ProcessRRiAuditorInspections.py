@@ -78,9 +78,9 @@ def processiAuditorInspectionReport(args):
     last_item_df.printSchema()
     last_item_df.show()
 
-    last_df = last_item_df.select(last_item_df.last_item)
-    last_df.printSchema()
-    last_df.show()
+    #last_df = last_item_df.select(last_item_df.last_item)
+    #last_df.printSchema()
+    #last_df.show()
 
 
     result_df = last_item_df.select(col("audit_id").alias("audit_id"),

@@ -100,8 +100,7 @@ def processiAuditorInspectionReport(args):
                              col("last_item.responses.failed").alias("inspected_failed"),
                              col("last_item.responses.text").alias("inspected_text"),
                              col("last_item.responses.media.href").alias("inspector_signature_image_url"),
-                             col("last_item.responses.media.label").alias("inspection_signature_image_filename"),
-                             col("last_item.responses.media.date_created").alias("inspection_date_created")])
+                             col("last_item.responses.media.label").alias("inspection_signature_image_filename")])
 
     result_df.printSchema()
     result_df.show()

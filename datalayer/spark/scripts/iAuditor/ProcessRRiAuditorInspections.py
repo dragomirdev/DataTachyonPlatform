@@ -83,7 +83,7 @@ def processiAuditorInspectionReport(args):
     last_df.show()
 
 
-    result_df = last_item_df.select([col("audit_id").alias("audit_id"),
+    result_df = last_item_df.select(col("audit_id").alias("audit_id"),
                              col("archived").alias("archived"),
                              col("template_id").alias("template_id"),
                              col("audit_data.name").alias("audit_name"),
@@ -106,7 +106,7 @@ def processiAuditorInspectionReport(args):
                              col("last_item.responses.failed").alias("inspection_failed"),
                              col("last_item.media.date_created").alias("inspection_date_created"),
                              col("last_item.media.href").alias("inspection_media_href"),
-                             col("last_item.media.label").alias("inspection_media_label")])
+                             col("last_item.media.label").alias("inspection_media_label"))
 
     result_df.printSchema()
     result_df.show()

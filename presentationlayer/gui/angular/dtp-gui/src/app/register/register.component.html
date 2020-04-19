@@ -1,0 +1,137 @@
+﻿<h2 style="color:#0071BC; text-align:center; font-weight: 700; font-size: 30px;">Register</h2>
+
+<div style="text-align:center; font-weight: 600; font-size: 20px;" class="form-group">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <table align="center" style="text-align:center; font-weight: 600; font-size: 20px;">
+
+            <tr align="left">
+                <th>
+                    <label style="text-align:left;height:55px; color:#0071BC;align:left;" for="firstName">First
+                        Name</label>
+                </th>
+                <th>
+                    <input style="align:left;height:15px;" type="text" formControlName="firstName" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"/>
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                    </div>
+
+                </th>
+            </tr>
+
+            <tr align="left">
+                <th>
+                    <label style="text-align:left;height:55px; color:#0071BC;align:left;"
+                           for="lastName">Last Name</label>
+                </th>
+                <th>
+                    <input style="align:left;height:15px;"  type="text" formControlName="lastName" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/>
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                </th>
+            </tr>
+            <tr align="left">
+                <th>
+                    <label style="text-align:left;height:55px; color:#0071BC;align:left;"
+                           for="username">Username</label>
+                </th>
+                <th>
+                    <input style="align:left;height:15px;" type="text" formControlName="username" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+
+                </th>
+            </tr>
+            <tr align="left">
+                <th>
+                    <label style="text-align:left;height:55px; color:#0071BC;align:left;"
+                           for="password">Password</label>
+                </th>
+                <th>
+                    <input style="align:left;height:15px;" type="password" formControlName="password" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </th>
+            </tr>
+            <tr align="left">
+                <th>
+                    <button style="color:#0071BC;align:left;text-align:center;font-weight: 600; font-size: 20px;margin: 13px;"
+                            [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Register
+                    </button>
+                </th>
+                <th>
+                    <button style="color:#0071BC;align:left;text-align:center;font-weight: 600; font-size: 20px;margin: 13px;"
+                            (click)="cancel();"
+                            [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Cancel
+                    </button>
+                    <!--<a routerLink="/login" class="btn btn-link">Cancel</a>-->
+                </th>
+            </tr>
+
+        </table>
+    </form>
+</div>
+<!--
+
+    <br><br>
+    <br><br>
+
+    <div style="text-align:center; font-weight: 600; font-size: 20px;" class="form-group">
+        <label style="text-align:center;height:55px; color:#0071BC;align:left;" for="firstName">First Name</label>
+        <input style="align:left;" type="text" formControlName="firstName" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"/>
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+        </div>
+    </div>
+    <div style="text-align:center; font-weight: 600; font-size: 20px;" class="form-group">
+        <label style="text-align:center;height:55px; color:#0071BC;align:left;" for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/>
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
+    </div>
+    <div style="text-align:center; font-weight: 600; font-size: 20px;" class="form-group">
+        <label style="text-align:center;height:55px; color:#0071BC;align:left;" for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div style="text-align:center; font-weight: 600; font-size: 20px;" class="form-group">
+        <label style="text-align:center;height:55px; color:#0071BC;align:left;" for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+    <div style="text-align:center;font-weight: 600; font-size: 20px;" class="form-group">
+        <button style="align:left;text-align:center;font-weight: 600; font-size: 20px;margin: 13px;"
+                [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Register
+        </button>
+        <button style="align:left;text-align:center;font-weight: 600; font-size: 20px;margin: 13px;" (click)="cancel();"
+                [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Cancel
+        </button>
+        &lt;!&ndash;<a routerLink="/login" class="btn btn-link">Cancel</a>&ndash;&gt;
+    </div>
+</form>
+-->

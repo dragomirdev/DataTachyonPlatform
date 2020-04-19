@@ -1,0 +1,53 @@
+<table style="font-weight: 600; font-size: 20px;">
+    <tr style="color:#0071BC;align:left;background-color:#B7E5F5">
+        <th style="left: 100%; top:0; text-align:left;" align="left">
+            <div align="left">
+                Hi {{currentUser.firstName}}!
+            </div>
+        </th>
+        <th style="text-align:right;position: absolute;right:25px; " align="right">
+            <div align="right">
+                <nav style="align:right" class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+                    <div align="right" style="text-align:right;color:#0071BC;align:right;background-color:#B7E5F5"
+                         class="navbar-nav">
+                        <!-- <a class="nav-item nav-link" routerLink="/"> Home </a>-->
+                        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+                    </div>
+                </nav>
+            </div>
+
+        </th>
+    </tr>
+
+</table>
+<!--
+<h2 style="text-align:left;color:#0071BC;align:left;background-color:#B7E5F5">Hi {{currentUser.firstName}}!</h2>
+
+
+<div align="right">
+    <nav  style="align:right" class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+      <div  style="text-align:right;color:#0071BC;align:right;background-color:#B7E5F5" class="navbar-nav">
+         <a class="nav-item nav-link" routerLink="/"> Home </a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+      </div>
+    </nav>
+  </div>
+
+-->
+
+
+<!--
+<a [routerLink]="['/']">
+  <h1>Hi {{currentUser.firstName}}!</h1>
+</a>
+-->
+
+<!--
+<h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul>
+-->

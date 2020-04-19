@@ -1,0 +1,63 @@
+:host {
+    display: block;
+}
+
+.app-image-viewer {
+    min-height: 300px;
+}
+
+.num-images {
+    position: fixed;
+    padding: 5px;
+    bottom: 0;
+    right: 0;
+    background: #333;
+    color: #fff;
+}
+
+mdTab {
+    font-family: Verdana;
+    font-size: 400%;
+    font-weight: 700;
+    color: #0071BC;
+}
+
+md-tabs md-ink-bar {
+    background-color: black;
+}
+
+md-tab-label {
+    color: #0071BC;
+}
+
+.mat-tab-label-active {
+    color: #0071BC !important;
+}
+
+.background_image {
+    height: 40em;
+    background-size: cover;
+    width: auto;
+    background-position: 50% 50%;
+}
+
+mycontainer {
+    width: 40%;
+    height: 40%;
+    background: #444;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: 300px 100px;
+}
+
+mycontainer img.wide {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+mycontainer img.tall {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+}

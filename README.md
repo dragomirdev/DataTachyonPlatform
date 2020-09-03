@@ -42,7 +42,7 @@ The Business Layer is used to apply business logic to the datasets and create ne
 The Presentation Layer is used to visualise results and provide new data insights that are coming from the Business Layer.
 Visualisations can be expressed in a traditional 2D/3D format or 3D in a Virtual Reality format.
 
-![DTP DataFlow](https://github.com/dragomirdev/DataTachyonPlatform/blob/dev/documentation/dtp/DTP1.4.png)
+![DTP DataFlow](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/documentation/dtp/DTP1.4.png)
 
 ## Software Layers
 

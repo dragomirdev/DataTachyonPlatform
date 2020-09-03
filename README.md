@@ -68,6 +68,7 @@ Each Architectural Layer has a set of Open Source packages which include:
 
 * Keras
 * Tensorflow
+* Tensorflow Quantum
 * Fast-AI
 * PyTorch
 * Numpy
@@ -76,6 +77,7 @@ Each Architectural Layer has a set of Open Source packages which include:
 * Xgboost
 * Gensim
 * Pandas
+* Apache Tomcat
 
 ### Presentation Layer Software Tools
 

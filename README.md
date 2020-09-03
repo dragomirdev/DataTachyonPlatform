@@ -166,22 +166,4 @@ To install Security for DTP-Services please go to [DTP-Security](/common/securit
 
 ## DTP-Live-Services
 
-/**
-### DTP Live Services Running Information
 
-The following DTP Services hosted on their respective DTP Server on their respective VM/Nodes.
-
-|DTP Service|  Service Url | User Credentials |Running on Internal Port | Running on username on VM/Node |
-|---|---|---|---|---|
-| DTP Portal | http://dtp-portal.francecentral.cloudapp.azure.com:8080/web/datatachyonplatform/dashboard | dtpuser@jpyramid.co.uk/Dtpuser2019$ | 8080 | dtpuser |
-| Apache Nifi | https://nifiint.southindia.cloudapp.azure.com | dtpuser/Dtpuser2019$ | 9090 | hadoop |
-| Apache Hadoop | https://dtp-haddop.southindia.cloudapp.azure.com | dtpuser/Dtpuser2019$ | 9870 | hadoop |
-| Apache Spark Master | https://dtp-spark.westindia.cloudapp.azure.com/| dtpuser/Dtpuser2019$ | 8080 | hadoop |
-| Apache Spark Worker | https://dtp-spark-worker1.ukwest.cloudapp.azure.com/| dtpuser/Dtpuser2019$ | 8081 | hadoop |
-| ElasticSearch | http://dtp-elk.southindia.cloudapp.azure.com:9200/| elastic/JPSpace2019$ | 9200 | dtpuser |
-| Kibana | http://dtp-elk.southindia.cloudapp.azure.com:5601/| elastic/JPSpace2019$ | 5601 | dtpuser |
-| Jupyter | http://dtp-jupyter.northeurope.cloudapp.azure.com:8888/| dtpuser/Dtpuser2019$ | 8888 | dtpuser |
-| Hue | http://dtp-hue.westindia.cloudapp.azure.com:8000/| hadoop/JPSpace2019$ | 8000 | hadoop |
-| TensorBoard | http://dtp-ai.francecentral.cloudapp.azure.com/| dtpuser/Dtpuser2019$  | 8008 | hadoop |
-| Jenkins | http://dtp-cicd.westeurope.cloudapp.azure.com:8080/| dtpadmin/JPSpace2019$ | 8080 | jenkins |
-**/

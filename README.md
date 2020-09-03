@@ -166,6 +166,7 @@ To install Security for DTP-Services please go to [DTP-Security](/common/securit
 
 ## DTP-Live-Services
 
+/**
 ### DTP Live Services Running Information
 
 The following DTP Services hosted on their respective DTP Server on their respective VM/Nodes.
@@ -183,3 +184,4 @@ The following DTP Services hosted on their respective DTP Server on their respec
 | Hue | http://dtp-hue.westindia.cloudapp.azure.com:8000/| hadoop/JPSpace2019$ | 8000 | hadoop |
 | TensorBoard | http://dtp-ai.francecentral.cloudapp.azure.com/| dtpuser/Dtpuser2019$  | 8008 | hadoop |
 | Jenkins | http://dtp-cicd.westeurope.cloudapp.azure.com:8080/| dtpadmin/JPSpace2019$ | 8080 | jenkins |
+**/

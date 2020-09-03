@@ -51,7 +51,8 @@ Each Architectural Layer has a set of Open Source packages which include:
 ### Integration Layer Software Tools
 
 * NiFi
-* Spark
+* Kafka
+* Mosquitto
 
 ### Data Layer Software Tools
 
@@ -59,6 +60,9 @@ Each Architectural Layer has a set of Open Source packages which include:
 * Spark
 * Hive
 * Hue
+* Livy
+* MySQL
+* MongoDB
 
 ### Business Layer Software Packages
 

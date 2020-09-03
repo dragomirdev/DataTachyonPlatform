@@ -1,4 +1,4 @@
-# DataTachyonPlatform
+# DataTachyonPlatform 1.4
 
 ## Introduction
 
@@ -42,6 +42,8 @@ The Business Layer is used to apply business logic to the datasets and create ne
 The Presentation Layer is used to visualise results and provide new data insights that are coming from the Business Layer.
 Visualisations can be expressed in a traditional 2D/3D format or 3D in a Virtual Reality format.
 
+![DTP DataFlow](https://github.com/dragomirdev/DataTachyonPlatform/blob/master/documentation/dtp/DTP1.4.png)
+
 ## Software Layers
 
 Each Architectural Layer has a set of Open Source packages which include:
@@ -49,7 +51,8 @@ Each Architectural Layer has a set of Open Source packages which include:
 ### Integration Layer Software Tools
 
 * NiFi
-* Spark
+* Kafka
+* Mosquitto
 
 ### Data Layer Software Tools
 
@@ -57,11 +60,15 @@ Each Architectural Layer has a set of Open Source packages which include:
 * Spark
 * Hive
 * Hue
+* Livy
+* MySQL
+* MongoDB
 
 ### Business Layer Software Packages
 
 * Keras
 * Tensorflow
+* Tensorflow Quantum
 * Fast-AI
 * PyTorch
 * Numpy
@@ -70,6 +77,8 @@ Each Architectural Layer has a set of Open Source packages which include:
 * Xgboost
 * Gensim
 * Pandas
+* Apache Tomcat
+* Trains Server
 
 ### Presentation Layer Software Tools
 
@@ -77,6 +86,9 @@ Each Architectural Layer has a set of Open Source packages which include:
 * Logstash
 * Kibana
 * GoDot
+* Angular
+* React
+* Apache Wicket
 
 ### Continuous Integration / Continuous Delivery Tool
 
@@ -163,3 +175,6 @@ To install Jupyter NoteBook please go to [Jupyter NoteBook Installation Process]
 ## DataTachyonPlatform - Security
 
 To install Security for DTP-Services please go to [DTP-Security](/common/security/README.md)
+
+
+

@@ -177,8 +177,12 @@ To install Jupyter NoteBook please go to [Jupyter NoteBook Installation Process]
 To install Security for DTP-Services please go to [DTP-Security](/common/security/README.md)
 
 
-
 # Support
 
 If you have any questions regarding the DTP please send it to support.dtp@jpyramid.co.uk
+
+# Community Edition License
+
+The DTP (Data Tachyon Platform) 1.4 Community Edition is released under the Apache 2.0 license (https://opensource.org/licenses/Apache-2.0)
+
 

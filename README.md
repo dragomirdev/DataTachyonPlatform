@@ -78,6 +78,7 @@ Each Architectural Layer has a set of Open Source packages which include:
 * Gensim
 * Pandas
 * Apache Tomcat
+* Trains Server
 
 ### Presentation Layer Software Tools
 

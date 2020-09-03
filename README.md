@@ -1,4 +1,4 @@
-# DataTachyonPlatform 1.4
+# DataTachyonPlatform 1.4 - Community Edition
 
 ## Introduction
 
@@ -178,4 +178,7 @@ To install Security for DTP-Services please go to [DTP-Security](/common/securit
 
 
 
+# Support
+
+If you have any questions regarding the DTP please send it to support.dtp@jpyramid.co.uk
 

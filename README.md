@@ -86,6 +86,9 @@ Each Architectural Layer has a set of Open Source packages which include:
 * Logstash
 * Kibana
 * GoDot
+* Angular
+* React
+* Apache Wicket
 
 ### Continuous Integration / Continuous Delivery Tool
 
